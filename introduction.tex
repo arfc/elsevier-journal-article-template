@@ -1,0 +1,23 @@
+\section{Introduction}
+This paper uses Cyclus, the agent-based simulator \cite{huff_fundamental_2016}, to track
+nuclear energy in the EU region. This paper focuses on different scenarios of France,
+and how the French legislation and policy can change the nuclear landscape of the European
+Union. This paper starts off by doing a generic once through fuel cycle, where all the fuel,
+after discharge, goes to a central repository. Next, a reprocessing fuel cycle is evaluated,
+where only the French \gls{PWR}s accept \gls{MOX} fuel, while taking all the spent \gls{UOX}
+fuel from everywhere in the EU. Finally, a EG01-EG23 transition scenario \cite{wigeland_nuclear_2014},
+where a once-through-cycle transitions to a closed cycle with reprocessing and \gls{SFR}s. 
+
+\section{Methodology}
+This study mainly utilizes Cyclus, an agent-based simulator, to simulate the fuel cycle
+and track material flows in the EU countries. An open-source data is acquired from \gls{IAEA}
+\gls{PRIS} as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
+operator, construction date, first criticality date, first grid date, commercial date, shutdown
+date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
+from the csv file. A python script is written up to generate a Cyclus input file from the csv file,
+which lists the individual reactor units as agents. The fuel cycle scenario is defined by modifying
+the input file, and the Cyclus simulation is run. Another python script is written to analyze the 
+output file, which is in SQL format. Different plots are generated with matplotlib that lists the
+output data of the simulation.
+
+\section{Results}
