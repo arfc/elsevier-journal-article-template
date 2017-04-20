@@ -1,4 +1,4 @@
-\documentclass{anstrans}
+\documentclass{article}
 
 %%%% packages and definitions (optional)
 \usepackage{graphicx} % allows inclusion of graphics
@@ -17,13 +17,6 @@
 \title{EU nuclear analysis using Cyclus}
 \author{Jin Whan Bae}
 
-\institute{\underline{}
-Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign
-\and
-Urbana, IL
-}
-\email{jbae11@illinois.edu}
-
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
 	
@@ -37,10 +30,12 @@ Urbana, IL
 \input{introduction.tex}
 \input{current.tex}
 \input{future.tex}
-\input{appendix.tex}
+
 
 
 \bibliographystyle{ans}
-\bibliography{bibliography}
+\bibliography{bibliography.bib}
+
+\input{appendix.tex}
 
 \end{document}
