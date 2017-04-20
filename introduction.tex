@@ -17,8 +17,35 @@ date (if applicable), and unit capacity factor for 2013. Then only the EU countr
 from the csv file. A python script is written up to generate a Cyclus input file from the csv file,
 which lists the individual reactor units as agents. The fuel cycle scenario is defined by modifying
 the input file, and the Cyclus simulation is run. Another python script is written to analyze the 
-output file, which is in SQL format. Different plots are generated with matplotlib that lists the
-output data of the simulation.
+output file, which is in SQL format. Different plots are generated with matplotlib that lists the 
+output data from the simulation. Output data includes uranium mass mined, final used nuclear fuel
+inventory, and major isotope mass over time.
+
+
+\subsection{Depletion Calculations}
+Depletion calculations of the nuclear fuel are done
+naively, with a model burnup depletion recipe (mass fraction) used
+for each reactor type, and the mass of the fuel 
+adjusted linearly with capacity. For example, a PWR of
+1,000 MWe capacity would have 193 assemblies of 4\% enriched
+uranium fuel, with each assembly having a mass of 523.4 kg.
+The core will have a 18 month cycle, where one-third of the 
+core (64 assemblies) are discharged per refueling. The refueling
+is assumed to take 2 months to complete, during which the reactor
+is shut down. The discharged
+assemblies would have a radioisotope inventory of a reference
+depletion calculation from ORIGEN (see appendix).
+
+
+\subsection{Simulation specifics}
+The simulation simplifies the front end of the fuel cycle,
+where a 'source' provides the \gls{UOX} fuel and the natural
+uranium fuel, for the \gls{MAGNOX} case. Then, the fuel is
+irradiated and sent to the sink upon discharge. The discharged
+fuel inventory is measured by isotope as a timeseries.
+
+\subsection{limitations}
+
 
 \section{Scenario Definition}
 The following scenarios are considered: 
