@@ -1,50 +1,67 @@
 \section{Introduction}
-This paper uses Cyclus, the agent-based simulator \cite{huff_fundamental_2016}, to track
-nuclear energy in the EU region. This paper focuses on different scenarios of France,
-and how the French legislation and policy can change the nuclear landscape of the European
-Union. This paper starts off by doing a generic once through fuel cycle, where all the fuel,
-after discharge, goes to a central repository. Next, a reprocessing fuel cycle is evaluated,
-where only the French \gls{PWR}s accept \gls{MOX} fuel, while taking all the spent \gls{UOX}
-fuel from everywhere in the EU. Finally, a EG01-EG23 transition scenario \cite{wigeland_nuclear_2014},
-where a once-through-cycle transitions to a closed cycle with reprocessing and \gls{SFR}s. 
+This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016}, to analyze
+the future nuclear inventory in the European Union. This paper focuses on different scenarios of France,
+and how potential French legislation and policy can change the nuclear landscape of the European
+Union. This paper begins with analysis of a once through fuel cycle, where all the spent nuclear fuel,
+goes to a central repository after discharge from reactors. Next, a reprocessing fuel cycle is evaluated.
+In this fuel cycle only French \gls{PWR}s accept \gls{MOX} fuel, where the spent \gls{UOX} from
+all the member states is recycled in France. Finally, a EG01-EG23 transition scenario \cite{wigeland_nuclear_2014}
+is modeled,
+where a once-through-cycle transitions to a closed cycle with continuous reprocessing and \gls{SFR}s. 
 
 \section{Methodology}
-This study mainly utilizes Cyclus, an agent-based simulator, to simulate the fuel cycle
-and track material flows in the EU countries. An open-source data is acquired from \gls{IAEA}
-\gls{PRIS} as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
+This mainly utilizes CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
+and track material flows in EU nations. An open-source database from \gls{IAEA} called
+\gls{PRIS} is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
-from the csv file. A python script is written up to generate a Cyclus input file from the csv file,
-which lists the individual reactor units as agents. The fuel cycle scenario is defined by modifying
-the input file, and the Cyclus simulation is run. Another python script is written to analyze the 
-output file, which is in SQL format. Different plots are generated with matplotlib that lists the 
-output data from the simulation. Output data includes uranium mass mined, final used nuclear fuel
-inventory, and major isotope mass over time.
+from the csv file. A python script is written up to generate a CYCLUS input file from the csv file,
+which lists the individual reactor units as agents. Various plots are 
+generated with matplotlib to describe the output data which includes mass of fuel used, final used nuclear fuel
+inventory, and major isotope mass inventory over time.
 
+
+\section{Time Scope and Future Projections}
+Because of the eg01-eg23 transition scenario, the simulation should run to a distant
+future to demonstrate substantial change. In this case, the year is set from
+1960 to 2100. From 1960 to current, the existing data is used for the simulation.
+For the near future (~2035), different projections and plans
+made by each governments are taken
+into account to estimate the direction of nuclear fleets in the EU (explained
+further in later sections). For the far future (2035~2100), an equilibrium capacity
+is set and decommissioned reactors are replaced by the exact
+same reactors with the same
+capacity. Of course in the case of the transition scenario the replaced French reactors
+would be SFRs, not LWRs.
 
 \subsection{Depletion Calculations}
 Depletion calculations of the nuclear fuel are done
 naively, with a model burnup depletion recipe (mass fraction) used
 for each reactor type, and the mass of the fuel 
 adjusted linearly with capacity. For example, a PWR of
-1,000 MWe capacity would have 193 assemblies of 4\% enriched
-uranium fuel, with each assembly having a mass of 523.4 kg.
-The core will have a 18 month cycle, where one-third of the 
+1,000 MWe capacity has 193 assemblies of 3.2\% enriched
+uranium fuel, with each assembly with a mass of 523.4 kg.
+The core has a 18 month cycle, where one-third of the 
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. The discharged
-assemblies would have a radioisotope inventory of a reference
+assemblies has a radioisotope inventory of a reference
 depletion calculation from ORIGEN (see appendix).
 
 
-\subsection{Simulation specifics}
-The simulation simplifies the front end of the fuel cycle,
-where a 'source' provides the \gls{UOX} fuel and the natural
-uranium fuel, for the \gls{MAGNOX} case. Then, the fuel is
-irradiated and sent to the sink upon discharge. The discharged
-fuel inventory is measured by isotope as a timeseries.
-
-\subsection{limitations}
+\subsection{Scenario Descriptions}
+The simulation follows the model fuel cycle, where a `source'
+provides natural uranium, which is enriched by an 'enrichment'
+facility to \gls{UOX}, while disposing enrichment waste (tailings)
+to the 'sink' facility. The enriched \gls{UOX} is used
+in the \gls{LWR}s and \gls{UOX} waste is produced. Then the waste
+would either go directly to the sink (scenario 1), or is reprocessed
+for further use (scenario 2 and 3). In scenario 2, the waste is 
+separated in the separations facility (reprocessing plant), into
+two streams, Plutonium and Uranium, and is mixed accordingly to produce
+\gls{MOX}, which is then used in the French PWRs. 
+In scenario 3, the waste goes through the same process but is mixed
+to create \gls{SFR} fuel.
 
 
 \section{Scenario Definition}
@@ -52,4 +69,5 @@ The following scenarios are considered:
 \begin{itemize}
 	\item Once Through Cycle for all EU reactors
 	\item \gls{MOX} reprocessing for French \gls{PWR}s
+	\item Continuous recycle with \gls{SFR}s. (eg23)\cite{wigeland_nuclear_2014}
 \end{itemize}
