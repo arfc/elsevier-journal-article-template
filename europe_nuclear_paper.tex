@@ -1,4 +1,4 @@
-\documentclass{anstrans}
+\documentclass{article}
 
 %%%% packages and definitions (optional)
 \usepackage{graphicx} % allows inclusion of graphics
@@ -14,25 +14,25 @@
 \newcommand{\grad}{\vec{\nabla}} % gradient
 \newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
 \graphicspath{ {images/} }
-
-\title{Future Nuclear Inventory Analysis of the European Union with CYCLUS, an Agent-Based Fuel Cycle Simulator.}
-\author{Jin Whan Bae, Kathyrn Huff, Clifford Singer}
-\institute{\underline{}
-	Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign
-	\and
-	Urbana, IL
-}
-\email{jbae11@illinois.edu}
+\usepackage[affil-it]{authblk}
 
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
 	
 \makeglossaries
 
+\title{Future Nuclear Inventory Analysis of the European Union with CYCLUS, an Agent-Based Fuel Cycle Simulator.}
+\author[1]{Jin Whan Bae, Kathyrn Huff, Clifford Singer}
+\affil[1]{Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign
+		  Urbana, IL}
+\date{}                     %% if you don't need date to appear
+\setcounter{Maxaffil}{0}
+\renewcommand\Affilfont{\itshape\small}
 %%%%%%%%%%%%%%actual words%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
 
 \begin{document}
+\maketitle
 	
 \input{introduction.tex}
 \input{scenario_specifications.tex}
