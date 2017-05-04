@@ -58,16 +58,28 @@ in the \gls{LWR}s and \gls{UOX} waste is produced. Then the waste
 would either go directly to the sink (scenario 1), or is reprocessed
 for further use (scenario 2 and 3). In scenario 2, the waste is 
 separated in the separations facility (reprocessing plant), into
-two streams, Plutonium and Uranium, and is mixed accordingly to produce
-\gls{MOX}, which is then used in the French PWRs. 
+two streams, Plutonium and Uranium. The plutonium is mixed with depleted uranium from enrichment
+to create \gls{MOX}, and the reprocessed uranium is stockpiled in the fabrication facility.
+The produced \gls{MOX} is then used in French \gls{PWR}s.
 In scenario 3, the waste goes through the same process but is mixed
 to create \gls{SFR} fuel.
+
+\subsection{Reprocessed Uranium}
+Reprocessed uranium contains a range of uranium isotopes, from $^{232}U$ to $^{238}U$.
+This brings complications in reusing reprocessed uranium as a fuel source \cite{IAEA_management_2007}.
+The presence of neutron-absorbing isotopes $^{234}U$ and $^{236}U$ requires reprocessed uranium
+to require a higher enrichment of $^{235}U$. There is trace amounts (2 ppb) of fissile istope $^{233}U$,
+which provides little benefit.  
+Also, $^{232}U$ has a decay chain of short-lived
+daughter products that undergo intense beta and gamma radiation.
+The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as fuel \cite{IAEA_management_200&}.
+However for this simulation the reprocessed uranium is simply stockpiled.
 
 
 \section{Scenario Definition}
 The following scenarios are considered: 
 \begin{itemize}
-	\item Once Through Cycle for all EU reactors
-	\item \gls{MOX} reprocessing for French \gls{PWR}s
-	\item Continuous recycle with \gls{SFR}s. (eg23)\cite{wigeland_nuclear_2014}
+	\item Halt reprocessing at 2020.
+	\item \gls{MOX} reprocessing for French \gls{PWR}s.
+	\item Continuous recycle with \gls{SFR}s.
 \end{itemize}
