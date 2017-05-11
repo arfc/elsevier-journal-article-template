@@ -1,13 +1,13 @@
 \section{Introduction}
-This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016}, to analyze
+This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
 the future nuclear inventory in the European Union. This paper focuses on different scenarios of France,
 and how potential French legislation and policy can change the nuclear landscape of the European
 Union. This paper begins with analysis of a once through fuel cycle, where all the spent nuclear fuel,
 goes to a central repository after discharge from reactors. Next, a reprocessing fuel cycle is evaluated.
 In this fuel cycle only French \gls{PWR}s accept \gls{MOX} fuel, where the spent \gls{UOX} from
-all the member states is recycled in France. Finally, a EG01-EG23 transition scenario \cite{wigeland_nuclear_2014}
+all the member states is recycled in France. Finally, a \gls{LWR} to \gls{SFR} transition scenario \cite{wigeland_nuclear_2014}
 is modeled,
-where a once-through-cycle transitions to a closed cycle with continuous reprocessing and \gls{SFR}s. 
+where a once-through-cycle transitions to a closed cycle with continuous reprocessing of Plutonium and minor actinides.
 
 \section{Methodology}
 This mainly utilizes CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
@@ -22,17 +22,14 @@ inventory, and major isotope mass inventory over time.
 
 
 \section{Time Scope and Future Projections}
-Because of the eg01-eg23 transition scenario, the simulation should run to a distant
+Because of the fast reactor transition scenario, the simulation should run to a distant
 future to demonstrate substantial change. In this case, the year is set from
-1960 to 2100. From 1960 to current, the existing data is used for the simulation.
-For the near future (~2035), different projections and plans
+1970 to 2160. From 1970 to 2017, the existing data is used for the simulation.
+For the near future (\textasciitilde 2035), different projections and plans
 made by each governments are taken
 into account to estimate the direction of nuclear fleets in the EU (explained
-further in later sections). For the far future (2035~2100), an equilibrium capacity
-is set and decommissioned reactors are replaced by the exact
-same reactors with the same
-capacity. Of course in the case of the transition scenario the replaced French reactors
-would be SFRs, not LWRs.
+further in later sections). For the far future (2035 \textasciitilde 2100), an equilibrium capacity
+is set and decommissioned reactors are replaced by \gls{EPR}s or \gls{SFR}s.
 
 \subsection{Depletion Calculations}
 Depletion calculations of the nuclear fuel are done
@@ -44,10 +41,14 @@ uranium fuel, with each assembly with a mass of 523.4 kg.
 The core has a 18 month cycle, where one-third of the 
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
-is shut down. The discharged
-assemblies has a radioisotope inventory of a reference
-depletion calculation from ORIGEN (see appendix).
+is shut down. 
+For the fast reactor, a 14-month cycle is used, with a one month
+refueling outage. The reactor specification including the 
+fissile and fertile fuel mass is specified by Martin et al \cite{martin_symbiotic_2017}.
 
+For the compositions of the fuel, a reference depletion calculation
+from ORIGEN is used (see appendix). The recipe has also been used for
+[[[[[[PAPER?????]]]]]]
 
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, where a `source'
@@ -63,6 +64,8 @@ to create \gls{MOX}, and the reprocessed uranium is stockpiled in the fabricatio
 The produced \gls{MOX} is then used in French \gls{PWR}s.
 In scenario 3, the waste goes through the same process but is mixed
 to create \gls{SFR} fuel.
+
+
 
 \subsection{Reprocessed Uranium}
 Reprocessed uranium contains a range of uranium isotopes, from $^{232}U$ to $^{238}U$.
