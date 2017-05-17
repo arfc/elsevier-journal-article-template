@@ -1,13 +1,18 @@
 \section{Introduction}
 This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
-the future nuclear inventory in the European Union. This paper focuses on different scenarios of France,
-and how potential French legislation and policy can change the nuclear landscape of the European
-Union. This paper begins with analysis of a once through fuel cycle, where all the spent nuclear fuel,
-goes to a central repository after discharge from reactors. Next, a reprocessing fuel cycle is evaluated.
-In this fuel cycle only French \gls{PWR}s accept \gls{MOX} fuel, where the spent \gls{UOX} from
-all the member states is recycled in France. Finally, a \gls{LWR} to \gls{SFR} transition scenario \cite{wigeland_nuclear_2014}
-is modeled,
-where a once-through-cycle transitions to a closed cycle with continuous reprocessing of Plutonium and minor actinides.
+the future nuclear inventory in the European Union. This paper focuses on the spent fuel
+inventory in the EU nations in 2060, and analyzes various potential strategies of spent fuel
+management from regional
+repositories to France taking all the spent fuel.
+A major focus of this paper is to see the implications of trade
+relationships and repository partnerships between EU nations.
+This paper looks into the  A CYCLUS simulation is run to see
+how much spent fuel is created from different nations from 1970 to 2060, and then the various
+options mentioned above are explored.  The paper assumes a once-through cycle for all the 
+EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
+make \gls{MOX} from reprocessed plutonium and depleted uranium (tails). It is assumed that
+\gls{MOX} is recycled infinitely. 
+
 
 \section{Methodology}
 This mainly utilizes CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
@@ -22,14 +27,12 @@ inventory, and major isotope mass inventory over time.
 
 
 \section{Time Scope and Future Projections}
-Because of the fast reactor transition scenario, the simulation should run to a distant
-future to demonstrate substantial change. In this case, the year is set from
-1970 to 2160. From 1970 to 2017, the existing data is used for the simulation.
-For the near future (\textasciitilde 2035), different projections and plans
-made by each governments are taken
-into account to estimate the direction of nuclear fleets in the EU (explained
-further in later sections). For the far future (2035 \textasciitilde 2100), an equilibrium capacity
-is set and decommissioned reactors are replaced by \gls{EPR}s or \gls{SFR}s.
+From the \gls{PRIS} data and other sources \cite{world_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2013},
+the future projections of each EU nation's plan for their nuclear program has been assessed.
+The projections go up to 2050 at the latest. This justifies the simulation to take place from
+1970 to 2060, the latest foreseeable future. The specific plans for each EU nation is explained
+in detail in later sections.
+
 
 \subsection{Depletion Calculations}
 Depletion calculations of the nuclear fuel are done
@@ -42,9 +45,6 @@ The core has a 18 month cycle, where one-third of the
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. 
-For the fast reactor, a 14-month cycle is used, with a one month
-refueling outage. The reactor specification including the 
-fissile and fertile fuel mass is specified by Martin et al \cite{martin_symbiotic_2017}.
 
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see appendix). The recipe has also been used for
@@ -55,15 +55,19 @@ The simulation follows the model fuel cycle, where a `source'
 provides natural uranium, which is enriched by an 'enrichment'
 facility to \gls{UOX}, while disposing enrichment waste (tailings)
 to the 'sink' facility. The enriched \gls{UOX} is used
-in the \gls{LWR}s and \gls{UOX} waste is produced. Then the waste
-would either go directly to the sink (scenario 1), or is reprocessed
-for further use (scenario 2 and 3). In scenario 2, the waste is 
-separated in the separations facility (reprocessing plant), into
-two streams, Plutonium and Uranium. The plutonium is mixed with depleted uranium from enrichment
-to create \gls{MOX}, and the reprocessed uranium is stockpiled in the fabrication facility.
-The produced \gls{MOX} is then used in French \gls{PWR}s.
-In scenario 3, the waste goes through the same process but is mixed
-to create \gls{SFR} fuel.
+in the \gls{LWR}s and \gls{UOX} waste is produced. Then the spent fuel
+goes directly to the sink. However, in the case of France, the spent fuel
+is reprocessed to be fabricated into \gls{MOX}.
+
+
+This paper explores two scenarios.
+First is the case of having regional repositories. Taking into consideration 
+the spent fuel inventory, repository research progress and geographical location,
+regional repositories of reasonable capacity ($~70,000$ MTHM) are considered.
+Second is to consider French-centralized repository, where France accepts all
+spent fuel from EU nations. It is also analyzed how much \gls{MOX} can be produced
+from the spent fuel received. In essence, the paper explores how taking fuel
+from EU nations can have an economic incentive to France.
 
 
 
