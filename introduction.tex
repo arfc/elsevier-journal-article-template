@@ -1,14 +1,14 @@
 \section{Introduction}
 This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
 the future nuclear inventory in the European Union. This paper focuses on the spent fuel
-inventory in the EU nations in 2060, and analyzes various potential strategies of spent fuel
-management from regional
-repositories to France taking all the spent fuel.
-A major focus of this paper is to see the implications of trade
-relationships and repository partnerships between EU nations.
+inventory in the EU nations in 2050, and analyzes various potential strategies of spent fuel
+management.
+A major focus of this paper is to see if France has an incentive
+to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
 A CYCLUS simulation is run to see
-how much spent fuel is created from different nations from 1970 to 2060, and then the various
-options mentioned above are explored.  The paper assumes a once-through cycle for all the 
+how much spent fuel is created from different nations from 1970 to 2060, and then amount
+of \gls{MOX} that can be created with the \gls{SNF} inventory is calculated.
+The paper assumes a once-through cycle for all the 
 EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
 make \gls{MOX} from reprocessed plutonium and depleted uranium (tails). It is assumed that
 \gls{MOX} is reprocessed infinitely. 
@@ -29,8 +29,8 @@ inventory, and major isotope mass inventory over time.
 \section{Time Scope and Future Projections}
 From the \gls{PRIS} data and other sources \cite{world_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2013},
 the future projections of each EU nation's plan for their nuclear program has been assessed.
-The projections go up to 2050 at the latest. This justifies the simulation to take place from
-1970 to 2060, the latest foreseeable future. The specific plans for each EU nation is explained
+The projections go up to 2050 at the latest. This allows the simulation to take place from
+1970 to 2050, the latest foreseeable future. The specific plans for each EU nation is explained
 in detail in later sections.
 
 
@@ -55,20 +55,16 @@ The simulation follows the model fuel cycle, where a `source'
 provides natural uranium, which is enriched by an 'enrichment'
 facility to \gls{UOX}, while disposing enrichment waste (tailings)
 to the 'sink' facility. The enriched \gls{UOX} is used
-in the \gls{LWR}s and \gls{UOX} waste is produced. Then the spent fuel
-goes directly to the sink. However, in the case of France, the spent fuel
-is reprocessed to be fabricated into \gls{MOX}.
+in the \gls{LWR}s and \gls{UOX} waste is produced. The spent fuel
+is then reprocessed to separate plutonium and uranium.
+The plutonium is mixed with depleted uranium (tails) to \gls{MOX}.
+The reprocessed uranium is stockpiled. \gls{SNF} decay is assumed
+to have no effect on reprocessing viability.
 
-
-This paper explores two scenarios.
-The first scenario assumes X regional repositories will be built
-in the EU. Taking into consideration 
-the spent fuel inventory, repository research progress and geographical location,
-regional repositories of reasonable capacity ($~70,000$ MTHM) are considered.
-Second is to consider French-centralized repository, where France accepts all
-spent fuel from EU nations. It is also analyzed how much \gls{MOX} can be produced
-from the spent fuel received. In essence, the paper explores how taking fuel
-from EU nations can have an economic incentive to France.
+This paper estimates the \gls{SNF} inventory in EU at 2060,
+and calculates the amount of \gls{MOX} that can be created from the \gls{SNF}.
+The \gls{MOX} amount is converted into 'SFR-Year' units, which is how many
+years of SFR the \gls{MOX} can fuel.
 
 
 
@@ -84,10 +80,3 @@ The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as f
 However for this simulation the reprocessed uranium is simply stockpiled.
 
 
-\section{Scenario Definition}
-The following scenarios are considered: 
-\begin{itemize}
-	\item Halt reprocessing at 2020.
-	\item \gls{MOX} reprocessing for French \gls{PWR}s.
-	\item Continuous recycle with \gls{SFR}s.
-\end{itemize}
