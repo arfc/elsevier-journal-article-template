@@ -5,13 +5,22 @@ inventory in the EU nations in 2050, and analyzes various potential strategies o
 management.
 A major focus of this paper is to see if France has an incentive
 to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
+The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
+with the goal of not having to build new \gls{LWR}s.
 A CYCLUS simulation is run to see
-how much spent fuel is created from different nations from 1970 to 2060, and then amount
+how much spent fuel is created from different nations from 1970 to 2050, and then amount
 of \gls{MOX} that can be created with the \gls{SNF} inventory is calculated.
 The paper assumes a once-through cycle for all the 
 EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
 make \gls{MOX} from reprocessed plutonium and depleted uranium (tails). It is assumed that
 \gls{MOX} is reprocessed infinitely. 
+After obtaining the \gls{SNF} inventory of all EU in 2050, a separate
+simulation is run where the \gls{SNF} inventory is reprocessed and
+used as fuel for the newly deployed \gls{SFR} reactors. Eventually,
+the used \gls{UOX} inventory will run out, and the \gls{SFR}s would be
+fueled by \gls{MOX} created from recycled \gls{MOX}.
+It is assumed that \gls{SFR} is available for deployment
+from 2040. 
 
 
 \section{Methodology}
@@ -21,9 +30,15 @@ and track material flows in EU nations. An open-source database from \gls{IAEA} 
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
 from the csv file. A python script is written up to generate a CYCLUS input file from the csv file,
-which lists the individual reactor units as agents. Various plots are 
-generated with matplotlib to describe the output data which includes mass of fuel used, final used nuclear fuel
-inventory, and major isotope mass inventory over time.
+which lists the individual reactor units as agents. After running the CYCLUS input file,
+the output file is analyzed by another python script.
+
+First, a simulation is run from 1970 to 2050 to see how much
+\gls{SNF} and depleted uranium (tails) EU accumulates up to 2050. 
+The second simulation uses the \gls{SNF} inventory from the previous
+simulation to see how much the \gls{SNF} inventory can fuel
+the newly deployed \gls{SFR}s. French \gls{SFR}s are deployed
+to make up for the decommissioned capacity of \gls{LWR}s.
 
 
 \section{Time Scope and Future Projections}
@@ -32,6 +47,11 @@ the future projections of each EU nation's plan for their nuclear program has be
 The projections go up to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050, the latest foreseeable future. The specific plans for each EU nation is explained
 in detail in later sections.
+
+It is also assumed that all reactors that are 
+currently operating have a lifetime of 60 years, unless their government plans
+early shutdown. This will approximate when and how much \gls{SFR}s need to be built
+to make up for the shutdown of \gls{LWR}s.
 
 
 \subsection{Depletion Calculations}
@@ -44,11 +64,78 @@ uranium fuel, with each assembly with a mass of 523.4 kg.
 The core has a 18 month cycle, where one-third of the 
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
-is shut down. 
+is shut down. For the \gls{SFR}, a model design is adopted from
+MARSAULT–Marie-Sophie et al \cite{marsault-marie-sophie_pre-conceptual_2012}.
 
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see appendix). The recipe has also been used for
 [[[[[[PAPER?????]]]]]]
+
+\subsection{French \gls{SFR} Deployment Schedule}
+
+From 2040, when \gls{SFR}s become available,
+600-MWe \gls{SFR}s are deployed to make up for the 
+decommissioned \gls{LWR} capacities.
+
+Initially, at timestep 841 (2040), 22 \gls{SFR}s
+are deployed for the previously decommissioned
+\gls{LWR}s. This will result in an installed capacity of 60,000 MWe
+of \gls{SFR} by 2076.
+
+\begin{table}[h]
+	\centering
+	\label{tab:sfr_deploy}
+	\caption{French SFR Deployment Schedule to Maintain Installed Capacity}
+	\begin{tabular}{|c|c|c|c|}	
+		\hline
+		Months from 1970 & Decommissioned Capacity [MWe] & \gls{SFR}s Deployed & \gls{SFR} Capacity \\ \hline
+		Total & 51,700 & 86 &  60000\\ \hline
+		841 & NA & 22 & 13200 \\ \hline
+		842 & 915 & 2 & 14400 \\ \hline
+		847 & 915 & 1 & 15000 \\ \hline
+		851 & 915 & 2 & 16200 \\ \hline
+		852 & 915 & 2 & 17400 \\ \hline
+		853 & 890 & 1 & 18000 \\ \hline
+		856 & 915 & 2 & 19200 \\ \hline
+		857 & 915 & 1 & 19800 \\ \hline
+		859 & 890 & 2 & 21000 \\ \hline
+		870 & 910 & 1 & 21600 \\ \hline
+		874 & 905 & 2 & 22800 \\ \hline
+		879 & 915 & 1 & 23400 \\ \hline
+		880 & 910 & 2 & 24600 \\ \hline
+		883 & 910 & 1 & 25200 \\ \hline
+		885 & 905 & 2 & 26400 \\ \hline
+		891 & 1330 & 2 & 27600  \\ \hline
+		894 & 1330 & 2 & 28800 \\ \hline
+		895 & 915 & 2 & 30000 \\ \hline
+		897 & 915 & 1 & 30600 \\ \hline
+		906 & 1335 & 2 & 31800 \\ \hline
+		907 & 910 & 2 & 33000 \\ \hline
+		908 & 1330 & 2 & 34200 \\ \hline
+		914 & 1330 & 2 & 35400 \\ \hline
+		916 & 1335 & 2 & 36600 \\ \hline
+		921 & 1300 & 3 & 38400 \\ \hline
+		930 & 1300 & 2 & 39600 \\ \hline
+		931 & 1310 & 2 & 40800 \\ \hline
+		933 & 905 & 2 & 42000 \\ \hline
+		940 & 1310 & 2 & 43200 \\ \hline
+		944 & 1310 & 2 & 44400 \\ \hline
+		960 & 1300 & 2 & 45600 \\ \hline
+		962 & 1330 & 2 & 46800 \\ \hline
+		963 & 1310 & 2 & 48000 \\ \hline
+		975 & 1300 & 3 & 49800 \\ \hline
+		983 & 1330 & 2 & 51000 \\ \hline
+		1000 & 1310 & 2 & 52200 \\ \hline
+		1038 & 1500 & 2 & 53400 \\ \hline
+		1045 & 1500 & 3 & 55200 \\ \hline
+		1054 & 1495 & 3 & 57000 \\ \hline
+		1078 & 1495 & 2 & 58200 \\ \hline
+		1283 & 1600 & 3 & 60000 \\ \hline
+		
+		\end{tabular}
+\end{table}
+
+
 
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, where a `source'
@@ -61,10 +148,12 @@ The plutonium is mixed with depleted uranium (tails) to \gls{MOX}.
 The reprocessed uranium is stockpiled. \gls{SNF} decay is assumed
 to have no effect on reprocessing viability.
 
-This paper estimates the \gls{SNF} inventory in EU at 2060,
-and calculates the amount of \gls{MOX} that can be created from the \gls{SNF}.
-The \gls{MOX} amount is converted into 'SFR-Year' units, which is how many
-years of SFR the \gls{MOX} can fuel.
+The second scenario estimates the \gls{SNF} inventory in EU at 2050,
+and reprocesses the \gls{SNF} to separate plutonium. The separated
+plutonium is mixed with the depleted uranium inventory from 2050
+to create \gls{MOX}, which is used in the \gls{SFR}s. The used
+\gls{MOX} is also reprocessed to extract plutonium, which also
+is mixed with depleted uranium to produce \gls{MOX}.
 
 
 
