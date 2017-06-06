@@ -3,23 +3,26 @@ This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} t
 the future nuclear inventory in the European Union. This paper focuses on the spent fuel
 inventory in the EU nations in 2050, and analyzes various potential strategies of spent fuel
 management.
-A major focus of this paper is to see if France has an incentive
+A major focus of this paper is to determine the extent to which France has an incentive
 to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
-with the goal of not having to build new \gls{LWR}s.
-A CYCLUS simulation is run to see
-how much spent fuel is created from different nations from 1970 to 2050, and then amount
-of \gls{MOX} that can be created with the \gls{SNF} inventory is calculated.
-The paper assumes a once-through cycle for all the 
+and may allow France to avoid building additional \glspl{LWR}.
+A CYCLUS simulation is run to calculate
+how much spent fuel is created from EU nations from 1970 to 2050, as well as the amount
+of \gls{MOX} that can be created with the \gls{SNF} inventory.
+The paper assumes a once-through cycle for all 
 EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
-make \gls{MOX} from reprocessed plutonium and depleted uranium (tails). It is assumed that
-\gls{MOX} is reprocessed infinitely. 
+produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
+The simulation assumes \gls{MOX} is reprocessed infinitely. 
 After obtaining the \gls{SNF} inventory of all EU in 2050, a separate
 simulation is run where the \gls{SNF} inventory is reprocessed and
-used as fuel for the newly deployed \gls{SFR} reactors. Eventually,
-the used \gls{UOX} inventory will run out, and the \gls{SFR}s would be
+used as fuel for the newly deployed \gls{SFR} reactors.
+\gls{SFR} reactors are reactors that use \gls{MOX} fuel to a burnup
+of approximately 100 GWdth/t. This allows enough production of plutonium
+for an equivalent mass of \gls{MOX}, if mixed with tailings.  Eventually,
+the used \gls{UOX} inventory will be exhausted, and the \glspl{SFR} must be
 fueled by \gls{MOX} created from recycled \gls{MOX}.
-It is assumed that \gls{SFR} is available for deployment
+It is assumed that \glspl{SFR} are available for deployment
 from 2040. 
 
 
@@ -33,25 +36,26 @@ from the csv file. A python script is written up to generate a CYCLUS input file
 which lists the individual reactor units as agents. After running the CYCLUS input file,
 the output file is analyzed by another python script.
 
-First, a simulation is run from 1970 to 2050 to see how much
-\gls{SNF} and depleted uranium (tails) EU accumulates up to 2050. 
+First, a simulation is run from 1970 to 2050 to calculate the mass of 
+\gls{SNF} and depleted uranium (tails) EU accumulates before 2050. 
 The second simulation uses the \gls{SNF} inventory from the previous
-simulation to see how much the \gls{SNF} inventory can fuel
+simulation to calculate the mass of the \gls{SNF} inventory can fuel
 the newly deployed \gls{SFR}s. French \gls{SFR}s are deployed
 to make up for the decommissioned capacity of \gls{LWR}s.
 
 
 \section{Time Scope and Future Projections}
-From the \gls{PRIS} data and other sources \cite{world_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2013},
-the future projections of each EU nation's plan for their nuclear program has been assessed.
-The projections go up to 2050 at the latest. This allows the simulation to take place from
-1970 to 2050, the latest foreseeable future. The specific plans for each EU nation is explained
+Projections of future reactor deployment in this simulation were
+assessed based on analysis from references \gls{PRIS},
+\cite{world_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2013}.
+The projections extend to 2050 at the latest. This allows the simulation to take place from
+1970 to 2050, the latest foreseeable future. The specific plans for each EU nation are explained
 in detail in later sections.
 
 It is also assumed that all reactors that are 
 currently operating have a lifetime of 60 years, unless their government plans
-early shutdown. This will approximate when and how much \gls{SFR}s need to be built
-to make up for the shutdown of \gls{LWR}s.
+early shutdown. This will approximate when and how much \glspl{SFR} need to be built
+to make up for the shutdown of \glspl{LWR}.
 
 
 \subsection{Depletion Calculations}
@@ -65,11 +69,11 @@ The core has a 18 month cycle, where one-third of the
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. For the \gls{SFR}, a model design is adopted from
-MARSAULT–Marie-Sophie et al \cite{marsault-marie-sophie_pre-conceptual_2012}.
+MARSAULT–Marie-Sophie et al. \cite{marsault-marie-sophie_pre-conceptual_2012}.
 
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see appendix). The recipe has also been used for
-[[[[[[PAPER?????]]]]]]
+\cite{wilson_adoption_2009}.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
@@ -77,9 +81,9 @@ From 2040, when \gls{SFR}s become available,
 600-MWe \gls{SFR}s are deployed to make up for the 
 decommissioned \gls{LWR} capacities.
 
-Initially, at timestep 841 (2040), 22 \gls{SFR}s
+Initially, in 2040, 22 \gls{SFR}s
 are deployed for the previously decommissioned
-\gls{LWR}s. This will result in an installed capacity of 60,000 MWe
+\gls{LWR}s. This results in an installed capacity of 60,000 MWe
 of \gls{SFR} by 2076.
 
 \begin{table}[h]
@@ -88,52 +92,70 @@ of \gls{SFR} by 2076.
 	\caption{French SFR Deployment Schedule to Maintain Installed Capacity}
 	\begin{tabular}{|c|c|c|c|}	
 		\hline
-		Months from 1970 & Decommissioned Capacity [MWe] & \gls{SFR}s Deployed & \gls{SFR} Capacity \\ \hline
-		Total & 51,700 & 86 &  60000\\ \hline
-		841 & NA & 22 & 13200 \\ \hline
-		842 & 915 & 2 & 14400 \\ \hline
-		847 & 915 & 1 & 15000 \\ \hline
-		851 & 915 & 2 & 16200 \\ \hline
-		852 & 915 & 2 & 17400 \\ \hline
-		853 & 890 & 1 & 18000 \\ \hline
-		856 & 915 & 2 & 19200 \\ \hline
-		857 & 915 & 1 & 19800 \\ \hline
-		859 & 890 & 2 & 21000 \\ \hline
-		870 & 910 & 1 & 21600 \\ \hline
-		874 & 905 & 2 & 22800 \\ \hline
-		879 & 915 & 1 & 23400 \\ \hline
-		880 & 910 & 2 & 24600 \\ \hline
-		883 & 910 & 1 & 25200 \\ \hline
-		885 & 905 & 2 & 26400 \\ \hline
-		891 & 1330 & 2 & 27600  \\ \hline
-		894 & 1330 & 2 & 28800 \\ \hline
-		895 & 915 & 2 & 30000 \\ \hline
-		897 & 915 & 1 & 30600 \\ \hline
-		906 & 1335 & 2 & 31800 \\ \hline
-		907 & 910 & 2 & 33000 \\ \hline
-		908 & 1330 & 2 & 34200 \\ \hline
-		914 & 1330 & 2 & 35400 \\ \hline
-		916 & 1335 & 2 & 36600 \\ \hline
-		921 & 1300 & 3 & 38400 \\ \hline
-		930 & 1300 & 2 & 39600 \\ \hline
-		931 & 1310 & 2 & 40800 \\ \hline
-		933 & 905 & 2 & 42000 \\ \hline
-		940 & 1310 & 2 & 43200 \\ \hline
-		944 & 1310 & 2 & 44400 \\ \hline
-		960 & 1300 & 2 & 45600 \\ \hline
-		962 & 1330 & 2 & 46800 \\ \hline
-		963 & 1310 & 2 & 48000 \\ \hline
-		975 & 1300 & 3 & 49800 \\ \hline
-		983 & 1330 & 2 & 51000 \\ \hline
-		1000 & 1310 & 2 & 52200 \\ \hline
-		1038 & 1500 & 2 & 53400 \\ \hline
-		1045 & 1500 & 3 & 55200 \\ \hline
-		1054 & 1495 & 3 & 57000 \\ \hline
-		1078 & 1495 & 2 & 58200 \\ \hline
-		1283 & 1600 & 3 & 60000 \\ \hline
+		Months from 1970 & Decommissioned Capacity [MWe] & \gls{SFR}s Deployed & \gls{SFR} Capacity [GWe] \\ \hline
+		Total & 51,700 & 86 &  60\\ \hline
+		841 & NA & 22 & 13.2 \\ \hline
+		842 & 915 & 2 & 14.4 \\ \hline
+		847 & 915 & 1 & 15 \\ \hline
+		851 & 915 & 2 & 16.2 \\ \hline
+		852 & 915 & 2 & 17.4 \\ \hline
+		853 & 890 & 1 & 18 \\ \hline
+		856 & 915 & 2 & 19.2 \\ \hline
+		857 & 915 & 1 & 19.8 \\ \hline
+		859 & 890 & 2 & 21 \\ \hline
+		870 & 910 & 1 & 21.6 \\ \hline
+		874 & 905 & 2 & 22.8 \\ \hline
+		879 & 915 & 1 & 23.4 \\ \hline
+		880 & 910 & 2 & 24.6 \\ \hline
+		883 & 910 & 1 & 25.2 \\ \hline
+		885 & 905 & 2 & 26.4 \\ \hline
+		891 & 1330 & 2 & 27.6  \\ \hline
+		894 & 1330 & 2 & 28.8 \\ \hline
+		895 & 915 & 2 & 30. \\ \hline
+		897 & 915 & 1 & 30.6 \\ \hline
+		906 & 1335 & 2 & 31.8 \\ \hline
+		907 & 910 & 2 & 33. \\ \hline
+		908 & 1330 & 2 & 34.2 \\ \hline
+		914 & 1330 & 2 & 35.4 \\ \hline
+		916 & 1335 & 2 & 36.6 \\ \hline
+		921 & 1300 & 3 & 38.4 \\ \hline
+		930 & 1300 & 2 & 39.6 \\ \hline
+		931 & 1310 & 2 & 40.8 \\ \hline
+		933 & 905 & 2 & 42. \\ \hline
+		940 & 1310 & 2 & 43.2 \\ \hline
+		944 & 1310 & 2 & 44.4 \\ \hline
+		960 & 1300 & 2 & 45.6 \\ \hline
+		962 & 1330 & 2 & 46.8 \\ \hline
+		963 & 1310 & 2 & 48. \\ \hline
+		975 & 1300 & 3 & 49.8 \\ \hline
+		983 & 1330 & 2 & 51. \\ \hline
+		1000 & 1310 & 2 & 52.2 \\ \hline
+		1038 & 1500 & 2 & 53.4 \\ \hline
+		1045 & 1500 & 3 & 55.2 \\ \hline
+		1054 & 1495 & 3 & 57. \\ \hline
+		1078 & 1495 & 2 & 58.2 \\ \hline
+		1283 & 1600 & 3 & 60. \\ \hline
 		
 		\end{tabular}
 \end{table}
+
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics{./images/power_plot.png}
+	\end{center}
+	\caption{Timeseries of installed capacity of \gls{SFR}s}
+	\label{fig:sfr_cap}
+\end{figure}
+
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics{./images/number_plot.png}
+	\end{center}
+	\caption{Timeseries of number of \gls{SFR}s}
+	\label{fig:sfr_num}
+\end{figure}
 
 
 
