@@ -170,6 +170,45 @@ The plutonium is mixed with depleted uranium (tails) to \gls{MOX}.
 The reprocessed uranium is stockpiled. \gls{SNF} decay is assumed
 to have no effect on reprocessing viability.
 
+\iffalse
+\begin{tikzpicture}
+\matrix [column sep=7mm, row sep=5mm] {
+	\node (sr) [draw, shape=circle] {Source}; \
+	\node (nu) [draw, shape=rectangle] {Natural Uranium}; \
+	\node (enr) [draw, shape=circle] {Enrichment}; &
+	\node (tl) [draw, shape=rectangle] {Tailings}; &
+	\node (sk) [draw, shape=circle] {Sink}; \
+	\node (uox) [draw, shape=rectangle] {Enriched UOX (3.1\%)}; &
+	\node (snf) [draw, shape=rectangle] {Spent UOX}; \
+	\node (lwr) [draw, shape=circle] {Light Water Reactors}; \
+	\node (snf2) [draw, shape=rectangle] {Spent UOX}; \
+	\node (rep) [draw, shape=circle] {Reprocessing Plant}; &
+	\node (pu) [draw, shape=rectangle] {Separated Plutonium}; &
+	\node (mix) [draw, shape=circle] {Mixer}; \
+	\node (mox) [draw, shape=rectangle] {MOX - 91\% Tailings, 9\% Reprocessed Pu}; \	
+	\node (mxr) [draw, shape=circle] {MOX Reactors (French PWR, FR)}; &
+	\node (tl2) [draw, shape=rectangle] {Tailings}; &	
+	\node (u) [draw, shape=rectangle] {Seperated Uranium}; \ 	};
+\draw[->, thick] (sr) -- (nu);
+\draw[->, thick] (nu) -- (enr);
+\draw[->, thick] (enr) -- (tl);
+\draw[->, thick] (enr) -- (tl2);
+\draw[->, thick] (tl) -- (sk);
+\draw[->, thick] (tl2) -- (mix);
+\draw[->, thick] (enr) -- (uox);
+\draw[->, thick] (uox) -- (lwr);
+\draw[->, thick] (lwr) -- (snf);
+\draw[->, thick] (lwr) -- (snf2);
+\draw[->, thick] (snf) -- (sk);
+\draw[->, thick] (snf2) -- (rep);
+\draw[->, thick] (rep) -- (u);
+\draw[->, thick] (rep) -- (pu);
+\draw[->, thick] (pu) -- (mix);
+\draw[->, thick] (mix) -- (mox);
+\draw[->, thick] (mox) -- (mxr);
+\end{tikzpicture}
+\fi
+
 The second scenario estimates the \gls{SNF} inventory in EU at 2050,
 and reprocesses the \gls{SNF} to separate plutonium. The separated
 plutonium is mixed with the depleted uranium inventory from 2050
