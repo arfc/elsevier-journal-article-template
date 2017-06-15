@@ -1,5 +1,12 @@
 \section{Scenario Specifications}
 
+Two simulations are run for this paper.
+The first simulation is a historical operation of EU reactors, with a
+realistic reprocessing capacity, modeled after the French La Hague site.
+The second simulation is an ideal French Transition scenario to \gls{SFR},
+where an ASTRID-type \gls{SFR} is deployed to make up for the decommissioned
+capacity of \glspl{LWR} in France.
+
 \subsection{Historical Operation of EU Reactors}
 \begin{itemize}
 	\item \textbf{Simulation Time:}  1970-2050 
@@ -15,6 +22,7 @@
 \subsection{French Transition to \gls{SFR}}
 \begin{itemize}
 	\item \textbf{Simulation Time:}  1970-2160
+	\item \textbf{\gls{SFR} Available Year:} 2040
 	\item \textbf{Reprocessing Capacity:}  infinite 
 	\item \textbf{Reprocessing Efficiency:}  99.8\%  
 	\item \textbf{Reprocessing Streams:} Plutonium and Uranium
@@ -27,8 +35,8 @@
 \end{itemize}
 
 \section{Reactor Specifications}
-
-
+Two major reactors are used in the simulation, \gls{PWR} and ASTRID - type reactors.
+The two reactors and their specifications are defined in tables \ref{tab:pwr} and \ref{tab:sfr}.
 
 \begin{table}[h]
 	\centering
@@ -60,7 +68,7 @@
 		Fuel Mass per Batch & 16,300 kg \\
 		Batch per Core & 4 \\
 		Power Output & 600 MWe \\
-		Fuel & \gls{MOX}\\
+		Fuel & \gls{MOX} (91\% Tailings, 9\% Separated Pu)\\
 		\hline
 	\end{tabular}
 	\caption {\gls{SFR} ASTRID Specifications}
