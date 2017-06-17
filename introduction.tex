@@ -1,5 +1,5 @@
 \section{Introduction}
-This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
+This paper uses \Cyclus, the agent-based simulator \cite{huff_fundamental_2016} to analyze
 the future nuclear inventory in the European Union. This paper focuses on the spent fuel
 inventory in the EU nations in 2050, and analyzes various potential strategies of spent fuel
 management.
@@ -7,7 +7,7 @@ A major focus of this paper is to determine the extent to which France has an in
 to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and may allow France to avoid building additional \glspl{LWR}.
-A CYCLUS simulation is run to calculate
+A \Cyclus simulation is run to calculate
 how much spent fuel is created from EU nations from 1970 to 2050, as well as the amount
 of \gls{MOX} that can be created with the \gls{SNF} inventory.
 The paper assumes a once-through cycle for all 
@@ -29,13 +29,13 @@ from 2040.
 
 
 \section{Methodology}
-The work relies on CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
+The work relies on \Cyclus, an agent-based simulator, to simulate the nuclear fuel cycle
 and track material flows in EU nations. An open-source database from \gls{IAEA} called
 \gls{PRIS} is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
-from the csv file. A python script is written up to generate a CYCLUS input file from the csv file,
-which lists the individual reactor units as agents. After running the CYCLUS input file,
+from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
+which lists the individual reactor units as agents. After running the \Cyclus input file,
 the output file is analyzed by another python script.
 
 First, a simulation is run from 1970 to 2050 to calculate the mass of 
