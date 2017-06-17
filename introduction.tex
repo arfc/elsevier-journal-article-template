@@ -30,8 +30,9 @@ from 2040.
 
 \section{Methodology}
 The work relies on \Cyclus, an agent-based simulator, to simulate the nuclear fuel cycle
-and track material flows in \gls{EU} nations. An open-source database from \gls{IAEA} called
-\gls{PRIS} is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
+and track material flows in \gls{EU} nations. The \gls{PRIS} open-source 
+database from \gls{IAEA} was used to populate the simulation with deployment 
+information. That database is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
 from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
