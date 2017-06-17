@@ -47,20 +47,20 @@ the newly deployed \glspl{SFR}. French \gls{SFR}s are deployed
 to make up for the decommissioned capacity of \gls{LWR}s, to
 remain a constant installed capacity of 60,000 MWe.
 
-\section{Assumptions}
+\subsection{Assumptions}
 This paper makes the following assumptions:
 \begin{itemize}
-	\item SFR available in 2040
-	\item Decay has no effect on reprocessing viability
-	\item Reactors construct always on time and successfully
-	\item Separated Uranium is stockpiled (unused)
-	\item Nuclear power plants have a lifetime of 60 years, unless stated otherwise (early shutdown)
-	\item (Only for SFR Case) French nuclear capacity remains constant at 60,000 MWe
-	\item (Only for SFR Case) Infinite reprocessing and fabrication capacity
+        \item \gls{SFR} technology available in 2040
+        \item Decay has no effect on reprocessing viability
+        \item Reactor construction is always completed on time 
+        \item Unused separated uranium is stockpiled
+        \item Nuclear power plants have a lifetime of 60 years, unless stated otherwise (early shutdown)
+        \item (Only for SFR Case) French nuclear capacity remains constant at 60,000 MWe
+        \item (Only for SFR Case) Infinite reprocessing and fabrication capacity
 \end{itemize}
 
 
-\section{Time Scope and Future Projections}
+\subsection{Deployment Timeline}
 Projections of future reactor deployment in this simulation were
 assessed based on analysis from references like \gls{PRIS},
 \cite{world_nuclear_association_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2015}.
@@ -72,24 +72,6 @@ It is also assumed that all reactors that are
 currently operating have a lifetime of 60 years, unless their government plans
 early shutdown. This will approximate when and how much \glspl{SFR} need to be built
 to make up for the shutdown of \glspl{LWR}.
-
-
-\subsection{Depletion Calculations}
-Depletion calculations of the nuclear fuel are done
-naively, with a model burnup depletion recipe (mass fraction) used
-for each reactor type, and the mass of the fuel 
-adjusted linearly with capacity. For example, a PWR of
-1,000 MWe capacity has 193 assemblies of 3.2\% enriched
-uranium fuel, with each assembly with a mass of 523.4 kg.
-The core has a 18 month cycle, where one-third of the 
-core (64 assemblies) are discharged per refueling. The refueling
-is assumed to take 2 months to complete, during which the reactor
-is shut down. For the \gls{SFR}, a model design is adopted from
-Marsault–Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
-
-For the compositions of the fuel, a reference depletion calculation
-from ORIGEN is used (see appendix). The recipe has also been used for
-\cite{wilson_adoption_2009}.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
@@ -105,20 +87,20 @@ This results in an installed capacity of 60,000 MWe
 of \gls{SFR} by 2076.
 
 \begin{figure}[htbp!]
-	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
-	\end{center}
-	\caption{Timeseries of installed capacity of \gls{SFR}s}
-	\label{fig:sfr_cap}
+        \begin{center}
+                \includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
+        \end{center}
+        \caption{Timeseries of installed capacity of \gls{SFR}s}
+        \label{fig:sfr_cap}
 \end{figure}
 
 
 \begin{figure}[htbp!]
-	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/number_plot.png}
-	\end{center}
-	\caption{Timeseries of number of \gls{SFR}s}
-	\label{fig:sfr_num}
+        \begin{center}
+                \includegraphics[scale=0.7]{./images/french-transition/number_plot.png}
+        \end{center}
+        \caption{Timeseries of number of \gls{SFR}s}
+        \label{fig:sfr_num}
 \end{figure}
 
 
@@ -126,6 +108,25 @@ Figures \ref{fig:sfr_cap} and \ref{fig:sfr_num}display
 the \gls{SFR} number and capacity over time.
 The sharp increase from 2035 to 2060 is due mainly to
 French aggressive growth from 1975 to 2000.
+
+
+
+\subsection{Depletion Calculations}
+Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
+and spent fuel recipe is used for each reactor type. To capture varying reactor 
+capacity, a linear burnup model was assumed and extrapolated from the 
+appropriate recipe. For example, a PWR of
+1,000 MWe capacity has 193 assemblies of 3.2\% enriched
+uranium fuel, with each assembly with a mass of 523.4 kg.
+The core has a 18 month cycle, where one-third of the 
+core (64 assemblies) are discharged per refueling. The refueling
+is assumed to take 2 months to complete, during which the reactor
+is shut down. For the \gls{SFR}, a model design is adopted from
+Marsault–Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
+
+For the compositions of the fuel, a reference depletion calculation
+from ORIGEN is used (see appendix). The recipe has also been used for
+\cite{wilson_adoption_2009}.
 
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, where a `source'
@@ -150,54 +151,54 @@ minimum height=2em]
 
 
 \begin{figure}
-	\centering
-	\scalebox{0.8}{
-		\begin{tikzpicture}[align=center, node distance = 3cm and 3cm, auto]
-		% Place nodes
-		\node [block] (sr) {Source};
-		\node [cloud, below of=sr] (nu) {Nat U};
-		\node [block, below of=nu] (enr) {Enrichment};
-		\node [cloud, below of=enr] (uox) {\gls{UOX}};
-		\node [block, below of=uox] (lwr) {\gls{LWR}};
-		\node [cloud, right of=uox] (snf2) {\gls{SNF}};
-		\node [cloud, left of=lwr] (tl2) {Tailings};
-		\node [cloud, right of=enr] (tl) {Tailings};
-		\node [block, right of=tl] (sk) {Sink};
-		\node [cloud, below of=lwr] (snf) {\gls{SNF}};
-		\node [block, below of=snf] (rep) {Reprocessing (Separations)};
-		\node [cloud, below of=rep] (u) {Sep. U} ;
-		\node [cloud, left of=rep] (pu) {Sep. Pu};
-		\node [block, left of=pu] (mix) {Mixer (Fabrication)};
-		\node [cloud, below of=mix] (mox) {\gls{MOX}};
-		\node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
-		\node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
-		
-		
-		\draw[->, thick] (sr) -- (nu);
-		\draw[->, thick] (nu) -- (enr);
-		\draw[->, thick] (enr) -- (tl);
-		\draw[->, thick] (enr) -- (tl2);
-		\draw[->, thick] (tl) -- (sk);
-		\draw[->, thick] (tl2) -- (mix);
-		\draw[->, thick] (enr) -- (uox);
-		\draw[->, thick] (uox) -- (lwr);
-		\draw[->, thick] (lwr) -- (snf);
-		\draw[->, thick] (lwr) -- (snf2);
-		\draw[->, thick] (snf2) -- (sk);
-		\draw[->, thick] (snf) -- (rep);
-		\draw[->, thick] (rep) -- (u);
-		\draw[->, thick] (rep) -- (pu);
-		\draw[->, thick] (pu) -- (mix);
-		\draw[->, thick] (mix) -- (mox);
-		\draw[->, thick] (mox) -- (mxr);
-		\draw[->, thick] (mxr) -- (snmox);
-		\draw[->, thick] (snmox) -- (rep);
-		
-		\end{tikzpicture}
-	
-		}
-		\caption{Model Fuel Cycle with \gls{MOX} Reprocessing}
-		\label{diag:fc}
+        \centering
+        \scalebox{0.8}{
+                \begin{tikzpicture}[align=center, node distance = 3cm and 3cm, auto]
+                % Place nodes
+                \node [block] (sr) {Source};
+                \node [cloud, below of=sr] (nu) {Nat U};
+                \node [block, below of=nu] (enr) {Enrichment};
+                \node [cloud, below of=enr] (uox) {\gls{UOX}};
+                \node [block, below of=uox] (lwr) {\gls{LWR}};
+                \node [cloud, right of=uox] (snf2) {\gls{SNF}};
+                \node [cloud, left of=lwr] (tl2) {Tailings};
+                \node [cloud, right of=enr] (tl) {Tailings};
+                \node [block, right of=tl] (sk) {Sink};
+                \node [cloud, below of=lwr] (snf) {\gls{SNF}};
+                \node [block, below of=snf] (rep) {Reprocessing (Separations)};
+                \node [cloud, below of=rep] (u) {Sep. U} ;
+                \node [cloud, left of=rep] (pu) {Sep. Pu};
+                \node [block, left of=pu] (mix) {Mixer (Fabrication)};
+                \node [cloud, below of=mix] (mox) {\gls{MOX}};
+                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
+                \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
+                
+                
+                \draw[->, thick] (sr) -- (nu);
+                \draw[->, thick] (nu) -- (enr);
+                \draw[->, thick] (enr) -- (tl);
+                \draw[->, thick] (enr) -- (tl2);
+                \draw[->, thick] (tl) -- (sk);
+                \draw[->, thick] (tl2) -- (mix);
+                \draw[->, thick] (enr) -- (uox);
+                \draw[->, thick] (uox) -- (lwr);
+                \draw[->, thick] (lwr) -- (snf);
+                \draw[->, thick] (lwr) -- (snf2);
+                \draw[->, thick] (snf2) -- (sk);
+                \draw[->, thick] (snf) -- (rep);
+                \draw[->, thick] (rep) -- (u);
+                \draw[->, thick] (rep) -- (pu);
+                \draw[->, thick] (pu) -- (mix);
+                \draw[->, thick] (mix) -- (mox);
+                \draw[->, thick] (mox) -- (mxr);
+                \draw[->, thick] (mxr) -- (snmox);
+                \draw[->, thick] (snmox) -- (rep);
+                
+                \end{tikzpicture}
+        
+                }
+                \caption{Model Fuel Cycle with \gls{MOX} Reprocessing}
+                \label{diag:fc}
 \end{figure}
 
 
