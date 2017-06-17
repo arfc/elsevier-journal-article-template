@@ -4,17 +4,17 @@ the future nuclear inventory in the European Union. This paper focuses on the sp
 inventory in \gls{EU} member states in 2050, and analyzes various potential strategies of spent fuel
 management.
 A major focus of this paper is to determine the extent to which France has an incentive
-to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
+to receive all the \gls{SNF} from \gls{EU} nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and may allow France to avoid building additional \glspl{LWR}.
 A \Cyclus simulation is run to calculate
-how much spent fuel is created from EU nations from 1970 to 2050, as well as the amount
+how much spent fuel is created from \gls{EU} nations from 1970 to 2050, as well as the amount
 of \gls{MOX} that can be created with the \gls{SNF} inventory.
 The paper assumes a once-through cycle for all 
-EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
+\gls{EU} nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
 produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
 The simulation assumes \gls{MOX} is reprocessed infinitely. 
-After obtaining the \gls{SNF} inventory of all EU in 2050, a separate
+After obtaining the \gls{SNF} inventory of all \gls{EU} in 2050, a separate
 simulation is run where the \gls{SNF} inventory is reprocessed and
 used as fuel for the newly deployed \gls{SFR} reactors.
 \gls{SFR} reactors in this paper models after the ASTRID reactor,
@@ -30,16 +30,16 @@ from 2040.
 
 \section{Methodology}
 The work relies on \Cyclus, an agent-based simulator, to simulate the nuclear fuel cycle
-and track material flows in EU nations. An open-source database from \gls{IAEA} called
+and track material flows in \gls{EU} nations. An open-source database from \gls{IAEA} called
 \gls{PRIS} is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
-date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
+date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
 from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
 which lists the individual reactor units as agents. After running the \Cyclus input file,
 the output file is analyzed by another python script.
 
 First, a simulation is run from 1970 to 2050 to calculate the mass of 
-\gls{SNF} and depleted uranium (tails) EU accumulates before 2050. 
+\gls{SNF} and depleted uranium (tails) \gls{EU} accumulates before 2050. 
 The second simulation only looks at France, where France
 uses the entire \gls{SNF} inventory from the previous
 simulation to fuel
@@ -65,7 +65,7 @@ Projections of future reactor deployment in this simulation were
 assessed based on analysis from references like \gls{PRIS},
 \cite{world_nuclear_association_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
-1970 to 2050, the latest foreseeable future. The specific plans for each EU nation are explained
+1970 to 2050, the latest foreseeable future. The specific plans for each \gls{EU} nation are explained
 in detail in later sections.
 
 It is also assumed that all reactors that are 
@@ -201,7 +201,7 @@ minimum height=2em]
 \end{figure}
 
 
-The second scenario estimates the \gls{SNF} inventory in EU at 2050,
+The second scenario estimates the \gls{SNF} inventory in \gls{EU} at 2050,
 and reprocesses the \gls{SNF} to separate plutonium. The separated
 plutonium is mixed with the depleted uranium inventory from 2050
 to create \gls{MOX}, which is used in the \gls{SFR}s. The used
