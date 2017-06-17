@@ -14,6 +14,10 @@
 \newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
 \graphicspath{ {images/} }
 \usepackage[affil-it]{authblk}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes }
+
+
 
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
@@ -34,15 +38,16 @@
 \begin{document}
 \maketitle
 	
-\input{introduction.tex}
-\input{scenario_specifications.tex}
-\input{current.tex}
-\input{future.tex}
+\input{introduction}
+\input{scenario_specifications}
+\input{current}
+\input{future}
+\input{results}
+\input{discussion}
 
 
-
-\bibliographystyle{plainurl}
-\bibliography{bibliography.bib}
+\bibliographystyle{abbrv}
+\bibliography{./bibliography.bib}
 
 \input{appendix.tex}
 

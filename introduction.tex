@@ -1,35 +1,78 @@
 \section{Introduction}
 This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
-the future nuclear inventory in the European Union. This paper focuses on different scenarios of France,
-and how potential French legislation and policy can change the nuclear landscape of the European
-Union. This paper begins with analysis of a once through fuel cycle, where all the spent nuclear fuel,
-goes to a central repository after discharge from reactors. Next, a reprocessing fuel cycle is evaluated.
-In this fuel cycle only French \gls{PWR}s accept \gls{MOX} fuel, where the spent \gls{UOX} from
-all the member states is recycled in France. Finally, a \gls{LWR} to \gls{SFR} transition scenario \cite{wigeland_nuclear_2014}
-is modeled,
-where a once-through-cycle transitions to a closed cycle with continuous reprocessing of Plutonium and minor actinides.
+the future nuclear inventory in the European Union. This paper focuses on the spent fuel
+inventory in the EU nations in 2050, and analyzes various potential strategies of spent fuel
+management.
+A major focus of this paper is to determine the extent to which France has an incentive
+to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
+The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
+and may allow France to avoid building additional \glspl{LWR}.
+A CYCLUS simulation is run to calculate
+how much spent fuel is created from EU nations from 1970 to 2050, as well as the amount
+of \gls{MOX} that can be created with the \gls{SNF} inventory.
+The paper assumes a once-through cycle for all 
+EU nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
+produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
+The simulation assumes \gls{MOX} is reprocessed infinitely. 
+After obtaining the \gls{SNF} inventory of all EU in 2050, a separate
+simulation is run where the \gls{SNF} inventory is reprocessed and
+used as fuel for the newly deployed \gls{SFR} reactors.
+\gls{SFR} reactors in this paper models after the ASTRID reactor,
+and use \gls{MOX} fuel created from 9\% reprocessed plutonium
+and 91\% tailings to a burnup
+of approximately 100 GWdth/t. The high burnup allows enough production of plutonium
+for an equivalent mass of \gls{MOX}, if mixed with tailings.  Eventually,
+the used \gls{UOX} inventory will be exhausted, and the \glspl{SFR} must be
+fueled by \gls{MOX} created from recycled \gls{MOX}.
+It is assumed that \glspl{SFR} are available for deployment
+from 2040. 
+
 
 \section{Methodology}
-This mainly utilizes CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
+The work relies on CYCLUS, an agent-based simulator, to simulate the nuclear fuel cycle
 and track material flows in EU nations. An open-source database from \gls{IAEA} called
 \gls{PRIS} is imported as a csv file, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the EU countries are extracted
 from the csv file. A python script is written up to generate a CYCLUS input file from the csv file,
-which lists the individual reactor units as agents. Various plots are 
-generated with matplotlib to describe the output data which includes mass of fuel used, final used nuclear fuel
-inventory, and major isotope mass inventory over time.
+which lists the individual reactor units as agents. After running the CYCLUS input file,
+the output file is analyzed by another python script.
+
+First, a simulation is run from 1970 to 2050 to calculate the mass of 
+\gls{SNF} and depleted uranium (tails) EU accumulates before 2050. 
+The second simulation only looks at France, where France
+uses the entire \gls{SNF} inventory from the previous
+simulation to fuel
+the newly deployed \glspl{SFR}. French \gls{SFR}s are deployed
+to make up for the decommissioned capacity of \gls{LWR}s, to
+remain a constant installed capacity of 60,000 MWe.
+
+\section{Assumptions}
+This paper makes the following assumptions:
+\begin{itemize}
+	\item SFR available in 2040
+	\item Decay has no effect on reprocessing viability
+	\item Reactors construct always on time and successfully
+	\item Separated Uranium is stockpiled (unused)
+	\item Nuclear power plants have a lifetime of 60 years, unless stated otherwise (early shutdown)
+	\item (Only for SFR Case) French nuclear capacity remains constant at 60,000 MWe
+	\item (Only for SFR Case) Infinite reprocessing and fabrication capacity
+\end{itemize}
 
 
 \section{Time Scope and Future Projections}
-Because of the fast reactor transition scenario, the simulation should run to a distant
-future to demonstrate substantial change. In this case, the year is set from
-1970 to 2160. From 1970 to 2017, the existing data is used for the simulation.
-For the near future (\textasciitilde 2035), different projections and plans
-made by each governments are taken
-into account to estimate the direction of nuclear fleets in the EU (explained
-further in later sections). For the far future (2035 \textasciitilde 2100), an equilibrium capacity
-is set and decommissioned reactors are replaced by \gls{EPR}s or \gls{SFR}s.
+Projections of future reactor deployment in this simulation were
+assessed based on analysis from references like \gls{PRIS},
+\cite{world_nuclear_association_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2015}.
+The projections extend to 2050 at the latest. This allows the simulation to take place from
+1970 to 2050, the latest foreseeable future. The specific plans for each EU nation are explained
+in detail in later sections.
+
+It is also assumed that all reactors that are 
+currently operating have a lifetime of 60 years, unless their government plans
+early shutdown. This will approximate when and how much \glspl{SFR} need to be built
+to make up for the shutdown of \glspl{LWR}.
+
 
 \subsection{Depletion Calculations}
 Depletion calculations of the nuclear fuel are done
@@ -41,29 +84,129 @@ uranium fuel, with each assembly with a mass of 523.4 kg.
 The core has a 18 month cycle, where one-third of the 
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
-is shut down. 
-For the fast reactor, a 14-month cycle is used, with a one month
-refueling outage. The reactor specification including the 
-fissile and fertile fuel mass is specified by Martin et al \cite{martin_symbiotic_2017}.
+is shut down. For the \gls{SFR}, a model design is adopted from
+Marsault–Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
 
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see appendix). The recipe has also been used for
-[[[[[[PAPER?????]]]]]]
+\cite{wilson_adoption_2009}.
+
+\subsection{French \gls{SFR} Deployment Schedule}
+
+From 2040, when \gls{SFR}s become available,
+600-MWe \gls{SFR}s are deployed to make up for the 
+decommissioned \gls{LWR} capacities.
+
+Initially in 2040, 22 \gls{SFR}s
+are deployed for the previously decommissioned
+\gls{LWR}s. From then, \glspl{SFR} are deployed to
+make up for the decommissioned \gls{LWR} capacity.
+This results in an installed capacity of 60,000 MWe
+of \gls{SFR} by 2076.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
+	\end{center}
+	\caption{Timeseries of installed capacity of \gls{SFR}s}
+	\label{fig:sfr_cap}
+\end{figure}
+
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[scale=0.7]{./images/french-transition/number_plot.png}
+	\end{center}
+	\caption{Timeseries of number of \gls{SFR}s}
+	\label{fig:sfr_num}
+\end{figure}
+
+
+Figures \ref{fig:sfr_cap} and \ref{fig:sfr_num}display
+the \gls{SFR} number and capacity over time.
+The sharp increase from 2035 to 2060 is due mainly to
+French aggressive growth from 1975 to 2000.
 
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, where a `source'
 provides natural uranium, which is enriched by an 'enrichment'
 facility to \gls{UOX}, while disposing enrichment waste (tailings)
 to the 'sink' facility. The enriched \gls{UOX} is used
-in the \gls{LWR}s and \gls{UOX} waste is produced. Then the waste
-would either go directly to the sink (scenario 1), or is reprocessed
-for further use (scenario 2 and 3). In scenario 2, the waste is 
-separated in the separations facility (reprocessing plant), into
-two streams, Plutonium and Uranium. The plutonium is mixed with depleted uranium from enrichment
-to create \gls{MOX}, and the reprocessed uranium is stockpiled in the fabrication facility.
-The produced \gls{MOX} is then used in French \gls{PWR}s.
-In scenario 3, the waste goes through the same process but is mixed
-to create \gls{SFR} fuel.
+in the \gls{LWR}s and \gls{UOX} waste is produced. The spent fuel
+is then reprocessed to separate plutonium and uranium.
+The plutonium is mixed with depleted uranium (tails) to \gls{MOX}.
+The reprocessed uranium is stockpiled. \gls{SNF} decay is assumed
+to have no effect on reprocessing viability.
+
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+minimum height=2em]
+
+
+\begin{figure}
+	\centering
+	\scalebox{0.8}{
+		\begin{tikzpicture}[align=center, node distance = 3cm and 3cm, auto]
+		% Place nodes
+		\node [block] (sr) {Source};
+		\node [cloud, below of=sr] (nu) {Nat U};
+		\node [block, below of=nu] (enr) {Enrichment};
+		\node [cloud, below of=enr] (uox) {\gls{UOX}};
+		\node [block, below of=uox] (lwr) {\gls{LWR}};
+		\node [cloud, right of=uox] (snf2) {\gls{SNF}};
+		\node [cloud, left of=lwr] (tl2) {Tailings};
+		\node [cloud, right of=enr] (tl) {Tailings};
+		\node [block, right of=tl] (sk) {Sink};
+		\node [cloud, below of=lwr] (snf) {\gls{SNF}};
+		\node [block, below of=snf] (rep) {Reprocessing (Separations)};
+		\node [cloud, below of=rep] (u) {Sep. U} ;
+		\node [cloud, left of=rep] (pu) {Sep. Pu};
+		\node [block, left of=pu] (mix) {Mixer (Fabrication)};
+		\node [cloud, below of=mix] (mox) {\gls{MOX}};
+		\node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
+		\node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
+		
+		
+		\draw[->, thick] (sr) -- (nu);
+		\draw[->, thick] (nu) -- (enr);
+		\draw[->, thick] (enr) -- (tl);
+		\draw[->, thick] (enr) -- (tl2);
+		\draw[->, thick] (tl) -- (sk);
+		\draw[->, thick] (tl2) -- (mix);
+		\draw[->, thick] (enr) -- (uox);
+		\draw[->, thick] (uox) -- (lwr);
+		\draw[->, thick] (lwr) -- (snf);
+		\draw[->, thick] (lwr) -- (snf2);
+		\draw[->, thick] (snf2) -- (sk);
+		\draw[->, thick] (snf) -- (rep);
+		\draw[->, thick] (rep) -- (u);
+		\draw[->, thick] (rep) -- (pu);
+		\draw[->, thick] (pu) -- (mix);
+		\draw[->, thick] (mix) -- (mox);
+		\draw[->, thick] (mox) -- (mxr);
+		\draw[->, thick] (mxr) -- (snmox);
+		\draw[->, thick] (snmox) -- (rep);
+		
+		\end{tikzpicture}
+	
+		}
+		\caption{Model Fuel Cycle with \gls{MOX} Reprocessing}
+		\label{diag:fc}
+\end{figure}
+
+
+The second scenario estimates the \gls{SNF} inventory in EU at 2050,
+and reprocesses the \gls{SNF} to separate plutonium. The separated
+plutonium is mixed with the depleted uranium inventory from 2050
+to create \gls{MOX}, which is used in the \gls{SFR}s. The used
+\gls{MOX} is also reprocessed to extract plutonium, which also
+is mixed with depleted uranium to produce \gls{MOX}.
 
 
 
@@ -79,10 +222,3 @@ The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as f
 However for this simulation the reprocessed uranium is simply stockpiled.
 
 
-\section{Scenario Definition}
-The following scenarios are considered: 
-\begin{itemize}
-	\item Halt reprocessing at 2020.
-	\item \gls{MOX} reprocessing for French \gls{PWR}s.
-	\item Continuous recycle with \gls{SFR}s.
-\end{itemize}
