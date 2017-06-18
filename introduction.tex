@@ -1,3 +1,15 @@
+\section{Abstract}
+France is in pursuit of closing the fuel cycle by transitioning from a \gls{LWR} fleet
+to a \gls{SFR} one with recycling of \gls{SNF}. Past transition scenarios looked at
+deploying additional \glspl{LWR} in order to meet \gls{SNF} demands for \gls{MOX} production.
+This paper uses CYCLUS to check the feasibility of using \gls{SNF}from other EU nations
+for French transition into a \gls{SFR}fleet without additional construction of \glspl{LWR}.
+A CYCLUS simulation is run from 1950 to 2160 for EU to track the \gls{SNF} mass
+and how much reprocessing and \gls{MOX} fabrication capacity is required to fuel
+the transition into \glspl{SFR}. The study concludes that France can avoid deployment
+of additional \glspl{LWR} by accepting \gls{SNF} from other EU nations.
+
+
 \section{Introduction}
 This paper uses CYCLUS, the agent-based simulator \cite{huff_fundamental_2016} to analyze
 the future nuclear inventory in the European Union. This paper focuses on the spent fuel
@@ -7,6 +19,14 @@ A major focus of this paper is to determine the extent to which France has an in
 to receive all the \gls{SNF} from EU nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and may allow France to avoid building additional \glspl{LWR}.
+
+Past research focuses only on France, where additional \glspl{LWR},
+namely \glspl{EPR} are constructed in order to supply \gls{SNF} required
+for \gls{MOX} production \cite{carre_overview_2009, martin_symbiotic_2007, freynet_multiobjective_2016}.
+There has been little attention in reprocessing legacy \gls{SNF} from other
+EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
+This rids the need to construct additional \glspl{LWR}.
+
 A CYCLUS simulation is run to calculate
 how much spent fuel is created from EU nations from 1970 to 2050, as well as the amount
 of \gls{MOX} that can be created with the \gls{SNF} inventory.
@@ -62,8 +82,9 @@ This paper makes the following assumptions:
 
 \section{Time Scope and Future Projections}
 Projections of future reactor deployment in this simulation were
-assessed based on analysis from references like \gls{PRIS},
-\cite{world_nuclear_association_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2015}.
+assessed based on analysis from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_nodate},
+and the World Nuclear Association and two other papers for future plans in EU nations
+\cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050, the latest foreseeable future. The specific plans for each EU nation are explained
 in detail in later sections.
