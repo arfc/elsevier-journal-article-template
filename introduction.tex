@@ -1,3 +1,14 @@
+\section{Abstract}
+The French strategy recommended by 2012-2015 Commission Nationale d'Evaluation reports
+\cite{cne2_noauthor_2015} emphasizes preparation for a transition from \glspl{LWR} to \glspl{SFR}.
+This paper uses \Cyclus to explore the feasibility of using \gls{SNF}from other EU nations
+for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
+A \Cyclus simulation is run from 1950 to 2160 for EU to track the \gls{SNF} mass
+and to determine the necessary reprocessing and \gls{MOX} fabrication capacity to support
+the transition into \glspl{SFR}. The study concludes that France can avoid deployment
+of additional \glspl{LWR} by accepting \gls{SNF} from other EU nations.
+
+
 \section{Introduction}
 This paper uses \Cyclus, the agent-based simulator \cite{huff_fundamental_2016} to analyze
 the future nuclear inventory in the European Union. This paper focuses on the spent fuel
@@ -7,8 +18,18 @@ A major focus of this paper is to determine the extent to which France has an in
 to receive all the \gls{SNF} from \gls{EU} nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and may allow France to avoid building additional \glspl{LWR}.
+
+Past research which focuses solely on France has made the assumptions that additional \glspl{LWR},
+namely \glspl{EPR} are constructed in order to supply \gls{SNF} required
+for \gls{MOX} production \cite{carre_overview_2009, martin_symbiotic_2007, freynet_multiobjective_2016}.
+There has been little attention in reprocessing legacy \gls{SNF} from other
+EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
+The present work finds that this collaborative strategy can reduce the
+need to construct additional \glspl{LWR} in France.
+
 A \Cyclus simulation is run to calculate
 how much spent fuel is created from \gls{EU} nations from 1970 to 2050, as well as the amount
+
 of \gls{MOX} that can be created with the \gls{SNF} inventory.
 The paper assumes a once-through cycle for all 
 \gls{EU} nations with the exception of France. France can reprocess spent \gls{UOX} and \gls{MOX} to
@@ -63,8 +84,9 @@ This paper makes the following assumptions:
 
 \subsection{Deployment Timeline}
 Projections of future reactor deployment in this simulation were
-assessed based on analysis from references like \gls{PRIS},
-\cite{world_nuclear_association_nuclear_2017} \cite{joskow_future_2012} \cite{hatch_politics_2015}.
+assessed based on analysis from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_nodate},
+and the World Nuclear Association and two other papers for future plans in EU nations
+\cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050, the latest foreseeable future. The specific plans for each \gls{EU} nation are explained
 in detail in later sections.
@@ -105,7 +127,7 @@ of \gls{SFR} by 2076.
 \end{figure}
 
 
-Figures \ref{fig:sfr_cap} and \ref{fig:sfr_num}display
+\Cref{fig:sfr_cap} and \cref{fig:sfr_num} display
 the \gls{SFR} number and capacity over time.
 The sharp increase from 2035 to 2060 is due mainly to
 French aggressive growth from 1975 to 2000.
@@ -220,7 +242,7 @@ to require a higher enrichment of $^{235}U$. There is trace amounts (2 ppb) of f
 which provides little benefit.  
 Also, $^{232}U$ has a decay chain of short-lived
 daughter products that undergo intense beta and gamma radiation.
-The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as fuel \cite{IAEA_management_200&}.
+The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as fuel \cite{IAEA_management_2007}.
 However for this simulation the reprocessed uranium is simply stockpiled.
 
 
