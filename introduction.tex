@@ -116,6 +116,7 @@ of \gls{SFR} by 2076.
         \caption{Timeseries of installed capacity of \gls{SFR}s}
         \label{fig:sfr_cap}
 \end{figure}
+\FloatBarrier
 
 
 \begin{figure}[htbp!]
@@ -125,6 +126,7 @@ of \gls{SFR} by 2076.
         \caption{Timeseries of number of \gls{SFR}s}
         \label{fig:sfr_num}
 \end{figure}
+\FloatBarrier
 
 
 \Cref{fig:sfr_cap} and \cref{fig:sfr_num} display
@@ -178,20 +180,20 @@ minimum height=2em]
         \scalebox{0.8}{
                 \begin{tikzpicture}[align=center, node distance = 3cm and 3cm, auto]
                 % Place nodes
-                \node [block] (sr) {Source};
+                \node [block] (sr) {Mine (\texttt{SOURCE})};
                 \node [cloud, below of=sr] (nu) {Nat U};
-                \node [block, below of=nu] (enr) {Enrichment};
+                \node [block, below of=nu] (enr) {Enrichment (\texttt{ENRICHMENT})};
                 \node [cloud, below of=enr] (uox) {\gls{UOX}};
-                \node [block, below of=uox] (lwr) {\gls{LWR}};
+                \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
                 \node [cloud, right of=uox] (snf2) {\gls{SNF}};
                 \node [cloud, left of=lwr] (tl2) {Tailings};
                 \node [cloud, right of=enr] (tl) {Tailings};
-                \node [block, right of=tl] (sk) {Sink};
+                \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
                 \node [cloud, below of=lwr] (snf) {\gls{SNF}};
-                \node [block, below of=snf] (rep) {Reprocessing (Separations)};
+                \node [block, below of=snf] (rep) {Reprocessing (\texttt{SEPARATIONS})};
                 \node [cloud, below of=rep] (u) {Sep. U} ;
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
-                \node [block, left of=pu] (mix) {Mixer (Fabrication)};
+                \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
                 \node [cloud, below of=mix] (mox) {\gls{MOX}};
                 \node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
                 \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};

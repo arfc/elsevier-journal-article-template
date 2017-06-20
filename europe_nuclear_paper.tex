@@ -3,11 +3,18 @@
 %%%% packages and definitions (optional)
 \usepackage{graphicx} % allows inclusion of graphics
 \usepackage{graphics}
+\usepackage{placeins}
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
 \usepackage{xspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{xspace}
+\usepackage{hhline}
+
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
 
 \newcommand{\SN}{S$_N$}
 \renewcommand{\vec}[1]{\bm{#1}} %vector is bold italic

@@ -5,34 +5,52 @@ The first simulation is a historical operation of \gls{EU} reactors, with a
 realistic reprocessing capacity, modeled after the French La Hague site.
 The second simulation is an ideal French Transition scenario to \gls{SFR},
 where an ASTRID-type \gls{SFR} is deployed to make up for the decommissioned
-capacity of \glspl{LWR} in France.
+capacity of \glspl{LWR} in France. The specifications of the simulations
+are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 
-\subsection{Historical Operation of \gls{EU} Reactors}
-\begin{itemize}
-	\item \textbf{Simulation Time:}  1970-2050 
-	\item \textbf{Reprocessing Capacity:}  91.6 MTHM per month \cite{schneider_spent_2008}  
-	\item \textbf{Reprocessing Efficiency:}  99.8\%  
-	\item \textbf{Reprocessing Streams:}  Plutonium and Uranium  
-	\item \textbf{\gls{MOX} Fabrication:}  ~10\% Reprocessed Pu and ~90\% Depleted Uranium  
-	\item \textbf{\gls{MOX} Fabrication Throughput}: 30 MTHM per month per facility \cite{hugelmann_melox_1999}
-	\item \textbf{\gls{MOX} Fuel Reprocessing Stage:}  Infinite - used \gls{MOX} fuel gets reprocessed again.  
-	\item\textbf{Reprocessed Uranium Usage:}  None. Stockpile reprocessed Uranium. \\
-\end{itemize} 
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{bb}
+		\hline
+		Specification & Value \\
+		\hline
+		Simulation Time & 1970-2050 \\ 
+		Reprocessing Capacity & 91.6 MTHM per month \cite{schneider_spent_2008} \\
+		Reprocessing Efficiency & 99.8\% \\
+		Reprocessing Streams & Plutonium and Uranium \\
+		\gls{MOX} Fabrication & \small{10\% Reprocessed Pu + 90\% Depleted U} \\
+		\gls{MOX} Fabrication Throughput & 30 MTHM per month per facility \cite{hugelmann_melox_1999} \\
+		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\  
+		Reprocessed Uranium Usage &  None. Stockpile reprocessed U \\
+		\hline
+	\end{tabularx}
+	\caption {Historical Operation of \gls{EU} Reactors}
+	\label{tab:sim_eu}
+\end{table}
 
-\subsection{French Transition to \gls{SFR}}
-\begin{itemize}
-	\item \textbf{Simulation Time:}  1970-2160
-	\item \textbf{\gls{SFR} Available Year:} 2040
-	\item \textbf{Reprocessing Capacity:}  infinite 
-	\item \textbf{Reprocessing Efficiency:}  99.8\%  
-	\item \textbf{Reprocessing Streams:} Plutonium and Uranium
-	\item \textbf{Initial Spent \gls{UOX} and Depleted Uranium inventory}: Mass from first simulation - none is added.
-	\item \textbf{No Continued Source of Spent \gls{UOX} or Depleted Uranium}  
-	\item \textbf{\gls{MOX} Fabrication:}  ~10\% Reprocessed Pu and ~90\% Depleted Uranium  
-	\item \textbf{\gls{MOX} Fabrication Throughput}: infinite
-	\item \textbf{\gls{MOX} Fuel Reprocessing Stage:}  Infinite - used \gls{MOX} fuel gets reprocessed again.  
-	\item\textbf{Reprocessed Uranium Usage:}  None. Stockpile reprocessed Uranium. \\
-\end{itemize}
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{bb}
+		\hline
+		Specification & Value \\
+		\hline
+		Simulation Time & 1970-2160 \\
+		\gls{SFR} Available Year & 2040 \\
+		Reprocessing Capacity & infinite \\
+		Reprocessing Efficiency & 99.8 \% \\
+		Reprocessing Streams & Plutonium and Uranium \\
+		\small{Spent \gls{UOX} and Depleted U Inventory} & Mass from first simulation \\
+		\small{Additional Spent \gls{UOX} or Depleted U} & None  \\
+		\gls{MOX} Fabrication &  \small{10\% Reprocessed Pu + 90\% Depleted U}  \\
+		\gls{MOX} Fabrication Throughput & infinite \\
+		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\
+		Reprocessed Uranium Usage &  None. Stockpile reprocessed U. \\
+		\hline
+	\end{tabularx}
+	\caption {French Transition to \gls{SFR}}
+	\label{tab:sim_france}
+\end{table}
+
 
 \section{Reactor Specifications}
 Two major reactors are used in the simulation, \gls{PWR} and ASTRID - type reactors.
@@ -40,7 +58,7 @@ The two reactors and their specifications are defined in \cref{tab:pwr} and \cre
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabularx}{\textwidth}{bb}
 		\hline
 		Specification & Value \\
 		\hline
@@ -49,16 +67,16 @@ The two reactors and their specifications are defined in \cref{tab:pwr} and \cre
 		Fuel Mass per Assembly & 523.4 kg \\
 		Num. of Aseem. per Core & 257 for 1,330 MWe, linearly adjusted\\
 		Num. of Assem. per Batch & 1/3 of the core \\
-		Fuel & French \glspl{PWR} prefer \gls{MOX} but also accept \gls{UOX}\\
+		Fuel & \small{French \glspl{PWR} prefer \gls{MOX} but also accept \gls{UOX}}\\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 	\caption {\gls{PWR} Specifications}
 	\label{tab:pwr}
 	\end{table}
 	
 \begin{table}[h]
 	\centering
-	\begin{tabular}{|c|c|}
+	\begin{tabularx}{\textwidth}{bb}
 		\hline
 		Specification & Value \\
 		\hline
@@ -67,9 +85,9 @@ The two reactors and their specifications are defined in \cref{tab:pwr} and \cre
 		Fuel Mass per Batch & 16,300 kg \\
 		Batch per Core & 4 \\
 		Power Output & 600 MWe \\
-		Fuel & \gls{MOX} (91\% Tailings, 9\% Separated Pu)\\
+		Fuel & {\small \gls{MOX} (90\% Tailings, 10\% Separated Pu)}\\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 	\caption {\gls{SFR} ASTRID Specifications}
 	\cite{marsaultmarie-sophie_pre-conceptual_2012}
 	\label{tab:sfr}
