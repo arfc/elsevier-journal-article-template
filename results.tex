@@ -13,7 +13,8 @@
 			Total MOX Usage [t] & 118 & \\ \hline
 			Total Spent UOX [t] & 183,807 & \\ \hline
 			Total Spent MOX [t] & 0 & All is Reprocessed. \\ \hline
-			Total Tailings [t] & 1,125,798 & \\ \hline
+			Total Tailings [t] & 1,127,905 & \\ \hline
+			Total Natural U [t] & 1,316,959 & \\ \hline
 		\end{tabular}}
 		\caption{Simulation Results}
 		\label{tab:sim_result}
@@ -22,9 +23,6 @@
 \Cref{tab:sim_result} lists the important metrics
 obtained from the first simulation. The following
 values are the \gls{EU} inventory and history at year 2050.
-
-Tables \ref{tab:eu_num} and \ref{tab:eu_pow} display the
-timeseries of number of reactors and installed capacity in \gls{EU}.
 
 
 
@@ -43,14 +41,11 @@ timeseries of number of reactors and installed capacity in \gls{EU}.
 	\caption{Timeseries of installed nuclear capacity in \gls{EU}.}
 	\label{fig:eu_pow}
 \end{figure}
+\FloatBarrier
 
-Figures \ref{fig:eu_tail} and \ref{fig:snf} show the 
-timeseries of mass of tailings and spent fuel accumulation in \gls{EU}.
+Figures \ref{fig:eu_num} and \ref{fig:eu_pow} display the
+timeseries of number of reactors and installed capacity in \gls{EU}.
 
-Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
-
-Note that the MOX usage is so little that it is invisible in the
-plot. 
 
 
 \begin{figure}[htbp!]
@@ -74,9 +69,18 @@ plot.
 	\begin{center}
 			\includegraphics[scale=0.7]{./images/eu_future/snf.png}
 	\end{center}
-	\caption{Timeseries of Spent Nuclear Fuel in Sink.}
+	\caption{Timeseries of Spent Nuclear Fuel.}
 	\label{fig:eu_snf}
 \end{figure}
+\FloatBarrier
+
+Figures \ref{fig:eu_tail} and \ref{fig:eu_snf} show the 
+timeseries of mass of tailings and spent fuel accumulation in \gls{EU}.
+
+Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
+
+Note that the MOX usage is so little that it is invisible in the
+plot. 
 
 \begin{table}[h]
 	\centering
@@ -95,8 +99,8 @@ plot.
 \end{table}
 
 
-To create \gls{MOX}, 10\% Pu and 90\% depleted uranium is used.
-Thus $1,720$ tons of plutonium yields $17,200$ tons of
+To create \gls{MOX}, 9\% Pu and 91\% depleted uranium is used.
+Thus $1,720$ tons of plutonium yields $19,111$ tons of
 \gls{MOX}. \Cref{tab:pu} lists the isotope, mass fraction,
 and quantity of plutonium that can be obtained from the 2050 \gls{SNF} inventory.
 
@@ -105,25 +109,21 @@ and quantity of plutonium that can be obtained from the 2050 \gls{SNF} inventory
 
 From Varaine et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}, a French
 ASTRID-type \gls{SFR} of capacity $600 MWe$ needs $1.225$ tons of
-plutonium a year, with an initial plutonium loading of $4.9$ tons.
-Thus, it can be assumed that the ASTRID reactor takes in $49$ tons of 
-\gls{MOX}, and refuels a quarter of its fuel every year. Simply,
-an ASTRID reactor needs $12.25$ tons of \gls{MOX} per year. 
+plutonium a year, with an initial plutonium loading of $4.9$ tons. 
+Thus, the number of \glspl{SFR} that can be loaded with the reprocessed
+plutonium from \gls{SNF} can be estimated to $\frac{1,720}{4.9} \approx 351$ \glspl{SFR},
+assuming infinite reprocessing and fabrication capacity as well as
+abundant depleted uranium supply.
 
-The number of SFR-years worth of fuel that can be created with
-the \gls{SNF} from 2050 is $\frac{17,611.3 t}{12.25} = 1,437.65 $,
-assuming infinite reprocessing and \gls{MOX} fabrication capacity.
-
-However, assuming that \gls{MOX} can be recycled indefinitely,
+Also, assuming that \gls{MOX} can be recycled indefinitely,
 spent \gls{MOX} from an ASTRID reactor
 contains enough plutonium to produce a \gls{MOX} fuel with
 the same mass, if mixed with depleted uranium. For example,
-spent \gls{MOX} from an ASTRID reactor is 38\% plutonium,
-whereas a fresh \gls{MOX} is 10\% plutonium.
+spent \gls{MOX} from an ASTRID reactor is 12.6\% plutonium,
+whereas a fresh \gls{MOX} is 9\% plutonium.
 The compositions are in \cref{tab:comp}.
 Separating plutonium from spent \gls{MOX} from
-an ASTRID reactor can create \gls{MOX} more than
-three times the mass of spent \gls{MOX}.
+an ASTRID reactor can create \gls{MOX} of the mass of spent \gls{MOX}.
 
 The second scenario, with the tails and spent \gls{UOX}
 inventory, evaluates if the French can transition into \gls{SFR}
@@ -185,12 +185,14 @@ or plutonium left due to a high burnup.
 \begin{table}[h]
 	\centering
 	\scalebox{0.86}{
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|c|c|}
 			\hline
-			Category [unit] & Value & Specifics \\ \hline
-			Total MOX used [t] & 164,141 & \\ \hline
-			Total MOX from UOX Waste [t] & 2,347.2  &  \\ \hline
-			Total MOX from MOX Waste [t] & 161,793.8 & \\ \hline
+			Category [unit] & Value  \\ \hline
+			Total MOX used [t] & 169,960  \\ \hline
+			Total MOX from UOX Waste [t] & 19,136  \\ \hline
+			Total MOX from MOX Waste [t] & 150,823  \\ \hline
+			Total Tailings used [t] & 154,663  \\ \hline
+			Total legacy SNF reprocessed [t] & 183,688 \\ \hline
 		\end{tabular}}
 		\caption {\gls{SFR} Simulation Results}
 		\label{tab:sfr_sim_result}
