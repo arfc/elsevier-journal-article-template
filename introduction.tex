@@ -1,7 +1,7 @@
 \section{Abstract}
 The French strategy recommended by 2012-2015 Commission Nationale d'Evaluation reports
 \cite{noauthor_cne2_nodate} emphasizes preparation for a transition from \glspl{LWR} to \glspl{SFR}.
-This paper uses \Cyclus to explore the feasibility of using \gls{SNF}from other EU nations
+This paper uses \Cyclus to explore the feasibility of using \gls{SNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation is run from 1950 to 2160 for EU to track the \gls{SNF} mass
 and to determine the necessary reprocessing and \gls{MOX} fabrication capacity to support
@@ -21,7 +21,7 @@ and may allow France to avoid building additional \glspl{LWR}.
 
 Past research which focuses solely on France has made the assumptions that additional \glspl{LWR},
 namely \glspl{EPR} are constructed in order to supply \gls{SNF} required
-for \gls{MOX} production \cite{carre_overview_2009, martin_symbiotic_2007, freynet_multiobjective_2016}.
+for \gls{MOX} production \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
 There has been little attention in reprocessing legacy \gls{SNF} from other
 EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
 The present work finds that this collaborative strategy can reduce the
@@ -71,7 +71,7 @@ remain a constant installed capacity of 60,000 MWe.
 \subsection{Assumptions}
 This paper makes the following assumptions:
 \begin{itemize}
-        \item \gls{SFR} technology available in 2040
+        \item \gls{SFR} technology available for deployment in 2040
         \item Decay has no effect on reprocessing viability
         \item Reactor construction is always completed on time 
         \item Unused separated uranium is stockpiled
@@ -84,7 +84,7 @@ This paper makes the following assumptions:
 \subsection{Deployment Timeline}
 Projections of future reactor deployment in this simulation were
 assessed based on analysis from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_nodate},
-and the World Nuclear Association and two other papers for future plans in EU nations
+the World Nuclear Association and two other papers for future plans in EU nations
 \cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050, the latest foreseeable future. The specific plans for each \gls{EU} nation are explained
@@ -92,14 +92,16 @@ in detail in later sections.
 
 It is also assumed that all reactors that are 
 currently operating have a lifetime of 60 years, unless their government plans
-early shutdown. This will approximate when and how much \glspl{SFR} need to be built
+early shutdown. This will approximate when and how many \glspl{SFR} need to be built
 to make up for the shutdown of \glspl{LWR}.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
 From 2040, when \gls{SFR}s become available,
 600-MWe \gls{SFR}s are deployed to make up for the 
-decommissioned \gls{LWR} capacities.
+decommissioned \gls{LWR} capacities. Note that a second
+separate simulation is run to emphasize France apart from
+all other EU nations.
 
 Initially in 2040, 22 \gls{SFR}s
 are deployed for the previously decommissioned
@@ -112,14 +114,14 @@ of \gls{SFR} by 2076.
         \begin{center}
                 \includegraphics[scale=0.7]{./images/french-transition/number_plot.png}
         \end{center}
-        \caption{Timeseries of number of \gls{SFR}s}
+        \caption{French Transition Capacity}
         \label{fig:sfr_num}
 \end{figure}
 \FloatBarrier
 
 
-\Cref{fig:sfr_num} display
-the \gls{SFR} capacity over time.
+\Cref{fig:sfr_num} displays
+the French transition into \glspl{SFR} over time.
 The sharp increase from 2035 to 2060 is due mainly to
 French aggressive growth from 1975 to 2000. The decommissioned
 \glspl{LWR} are replaced with \glspl{SFR}. Note the jump in
@@ -141,7 +143,7 @@ The core has a 18 month cycle, where one-third of the
 core (64 assemblies) are discharged per refueling. The refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. For the \gls{SFR}, a model design is adopted from
-Marsault–Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
+Marsault-Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
 
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see appendix). The recipe has also been used for
@@ -150,13 +152,14 @@ from ORIGEN is used (see appendix). The recipe has also been used for
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, where a `source'
 provides natural uranium, which is enriched by an 'enrichment'
-facility to \gls{UOX}, while disposing enrichment waste (tailings)
+facility to produce \gls{UOX}, while disposing enrichment waste (tailings)
 to the 'sink' facility. The enriched \gls{UOX} is used
 in the \gls{LWR}s and \gls{UOX} waste is produced. The spent fuel
 is then reprocessed to separate plutonium and uranium.
 The plutonium is mixed with depleted uranium (tails) to \gls{MOX}.
 The reprocessed uranium is stockpiled. \gls{SNF} decay is assumed
-to have no effect on reprocessing viability.
+to have no effect on reprocessing viability. The cycle is illustrated in
+\cref{diag:fc}.
 
 
 % Define block styles
@@ -233,9 +236,9 @@ is mixed with depleted uranium to produce \gls{MOX}.
 \subsection{Reprocessed Uranium}
 Reprocessed uranium contains a range of uranium isotopes, from $^{232}U$ to $^{238}U$.
 This brings complications in reusing reprocessed uranium as a fuel source \cite{IAEA_management_2007}.
-The presence of neutron-absorbing isotopes $^{234}U$ and $^{236}U$ requires reprocessed uranium
-to require a higher enrichment of $^{235}U$. There is trace amounts (2 ppb) of fissile istope $^{233}U$,
-which provides little benefit.  
+The presence of neutron-absorbing isotopes, $^{234}U$ and $^{236}U$, requires reprocessed uranium
+to be enriched to have a higher concentration of $^{235}U$. There are trace amounts (2 ppb) 
+of fissile isotope $^{233}U$, which provides little benefit.  
 Also, $^{232}U$ has a decay chain of short-lived
 daughter products that undergo intense beta and gamma radiation.
 The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as fuel \cite{IAEA_management_2007}.

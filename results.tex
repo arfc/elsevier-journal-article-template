@@ -24,6 +24,8 @@
 obtained from the first simulation. The following
 values are the \gls{EU} inventory and history at year 2050.
 
+Figures \ref{fig:eu_num} and \ref{fig:eu_pow} display the
+timeseries of number of reactors and installed capacity in \gls{EU}.
 
 
 \begin{figure}[htbp!]
@@ -43,9 +45,11 @@ values are the \gls{EU} inventory and history at year 2050.
 \end{figure}
 \FloatBarrier
 
-Figures \ref{fig:eu_num} and \ref{fig:eu_pow} display the
-timeseries of number of reactors and installed capacity in \gls{EU}.
 
+Figures \ref{fig:eu_tail} and \ref{fig:eu_snf} show the 
+timeseries of mass of tailings and spent fuel accumulation in \gls{EU}.
+
+Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 
 
 \begin{figure}[htbp!]
@@ -73,11 +77,6 @@ timeseries of number of reactors and installed capacity in \gls{EU}.
 	\label{fig:eu_snf}
 \end{figure}
 \FloatBarrier
-
-Figures \ref{fig:eu_tail} and \ref{fig:eu_snf} show the 
-timeseries of mass of tailings and spent fuel accumulation in \gls{EU}.
-
-Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 
 Note that the MOX usage is so little that it is invisible in the
 plot. 
@@ -108,12 +107,12 @@ and quantity of plutonium that can be obtained from the 2050 \gls{SNF} inventory
 \subsection{French \gls{SFR} Transition Scenario}
 
 From Varaine et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}, a French
-ASTRID-type \gls{SFR} of capacity $600 MWe$ needs $1.225$ tons of
+ASTRID-type \gls{SFR} of capacity 600 MWe needs $1.225$ tons of
 plutonium a year, with an initial plutonium loading of $4.9$ tons. 
 Thus, the number of \glspl{SFR} that can be loaded with the reprocessed
 plutonium from \gls{SNF} can be estimated to $\frac{1,720}{4.9} \approx 351$ \glspl{SFR},
 assuming infinite reprocessing and fabrication capacity as well as
-abundant depleted uranium supply.
+abundant depleted uranium supply. 
 
 Also, assuming that \gls{MOX} can be recycled indefinitely,
 spent \gls{MOX} from an ASTRID reactor
@@ -145,10 +144,8 @@ stops increasing around 2050, which means that the spent
 	\label{fig:fuel}
 \end{figure}
 
-\Cref{fig:mox_fab} shows the progression of mox created from
-the fabrication plant over time. \Cref{fig:mox_fab} shows
-the separated plutonium demand from spent \gls{MOX} to fuel the 
-ASTRID reactors.
+\Cref{fig:pu_demand} shows the separated plutonium demand
+ from spent \gls{MOX} to fuel the ASTRID reactors.
 
 \Cref{fig:reprocess_waste} shows the amount of reprocessing waste
 (any content from spent fuel other than U, Pu) over time. Note that 
@@ -156,14 +153,17 @@ the amount of reprocessing waste is much greater when reprocessing
 spent \gls{MOX} from ASTRID reactors, since there is little uranium
 or plutonium left due to a high burnup.
 
+\Cref{fig:pu_isotopics} shows the isotopics of the plutonium that are
+reprocessed from the spent fuel inventory. Note the increase in 2040 is due to
+ASTRID reactors produce high plutonium spent fuel.
+
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/mox_from_mixer.png}
+		\includegraphics[scale=0.7]{./images/french-transition/rep_pu.png}
 	\end{center}
-	\caption{Timeseries of MOX produced from Fabrications}
-	\label{fig:mox_fab}
+	\caption{Plutonium timeseries separated by isotope}
+	\label{fig:pu_isotopics}
 \end{figure}
-
 
 \begin{figure}[htbp!]
 	\begin{center}
@@ -189,6 +189,7 @@ or plutonium left due to a high burnup.
 			\hline
 			Category [unit] & Value  \\ \hline
 			Total MOX used [t] & 169,960  \\ \hline
+			Total Reactors Deployed & 200 \\ \hline
 			Total MOX from UOX Waste [t] & 19,136  \\ \hline
 			Total MOX from MOX Waste [t] & 150,823  \\ \hline
 			Total Tailings used [t] & 154,663  \\ \hline
