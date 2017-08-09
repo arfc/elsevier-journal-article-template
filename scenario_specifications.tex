@@ -1,11 +1,11 @@
 \section{Scenario Specifications}
-
-Two simulations are run for this paper.
+%% EARLY???
+This paper uses results from two separate simulations.
 The first simulation is a historical operation of \gls{EU} reactors, with a
 realistic reprocessing and \gls{MOX} fabrication capacity, 
 modeled after the French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}.
 The second simulation is an ideal French Transition scenario to \gls{SFR},
-where an ASTRID-type \gls{SFR} is deployed to make up for the decommissioned
+where an ASTRID-type \gls{SFR} replaces the decommissioned
 capacity of \glspl{LWR} in France. The specifications of the simulations
 are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 
@@ -37,11 +37,11 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 		\hline
 		Simulation Time & 1970-2160 \\
 		\gls{SFR} Available Year & 2040 \\
-		Reprocessing Capacity & infinite \\
+		Reprocessing Capacity & $\infty$ \\
 		Reprocessing and Fabrication Begins & 2020 \\
-		Reprocessing Efficiency & 99.8 \% \\
-		Reprocessing Streams & Plutonium and Uranium \\
-		\small{Used \gls{UOX} and Depleted U Inventory} & Mass from first simulation \\
+		Separation Efficiency & 99.8 \% \\
+		Reprocessing Streams & plutonium and uranium \\
+		\small{Used \gls{UOX} and Depleted U Inventory} & 157,472 MTHM (From first simulation) \\
 		\small{Additional Used \gls{UOX} or Depleted U} & None  \\
 		\gls{MOX} Fabrication &  \small{11\% Reprocessed Pu + 89\% Depleted U}  \\
 		\gls{MOX} Fabrication Throughput & infinite \\
@@ -59,13 +59,13 @@ Two major reactors are used in the simulation, \gls{PWR} and ASTRID - type react
 For simplicity, the few \glspl{BWR} in the \gls{EU} fleet are assumed to be \glspl{PWR}.
 
 For \glspl{PWR}, a linear core size model was assumed to capture
-varying reactor capacity. For example, a PWR of
-1,330 MWe capacity has 257 assemblies \gls{UOX}, with each
-assembly a mass of 523.4 kg.
-The core has a 18 month cycle, where one-third of the 
-core (85 assemblies) are discharged per refueling. The refueling
+varying reactor capacity. For example, a 
+1,330 MWe PWR has 257 \gls{UOX} assemblies, each
+weighing 523.4 kg.
+After each 18 month cycle, one-third of the 
+core (85 assemblies) discharge. Refueling
 is assumed to take 2 months to complete, during which the reactor
-is shut down. The specifications are defined in \cref{tab:pwr}
+is shut down. The specifications are defined in \cref{tab:pwr}.
 
 For the \gls{SFR}, a model design is adopted from
 Marsault-Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
@@ -105,8 +105,8 @@ The specifications are defined in \cref{tab:sfr}.
 		Fuel & {\small \gls{MOX} (89\% Tailings, 11\% Separated Pu)}\\
 		\hline
 	\end{tabularx}
-	\caption {\gls{SFR} ASTRID Specifications}
-	\cite{marsaultmarie-sophie_pre-conceptual_2012}
+	\caption {\gls{SFR} ASTRID Specifications \cite{marsaultmarie-sophie_pre-conceptual_2012}}
 	\label{tab:sfr}
 \end{table}
+\FloatBarrier
 
