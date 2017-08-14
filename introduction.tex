@@ -128,7 +128,7 @@ of \gls{SFR} by 2076.
 
 \begin{figure}[htbp!]
         \begin{center}
-                \includegraphics[scale=0.7]{./images/french-transition/number_plot.png}
+                \includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
         \end{center}
         \caption{French Transition into an SFR Fleet}
         \label{fig:sfr_num}
@@ -163,7 +163,13 @@ to the 'sink' facility. The enriched \gls{UOX} fuels
 the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
 is then reprocessed to separate plutonium and uranium.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
-The reprocessed uranium is unused and stockpiled.
+The reprocessed uranium is unused and stockpiled. Uranium is reprocessed
+in order to separate the raffinate (Minor actinides and fission products)
+from 'usable' material. Though not utilized in this paper, reprocessed
+uranium may substitute depleted uranium for \gls{MOX} production. In this
+paper, there was sufficient depleted uranium inventory that using reprocessed
+uranium was not considered. However, further in the future where the depleted
+uranium inventory drains, reprocessed uranium will need to be utilized. 
 
 
 % Define block styles
@@ -231,21 +237,6 @@ minimum height=2em]
 The second scenario separates plutonium from the \gls{UNF}
 inventory from the previous simulation. The separated
 plutonium mixed with the depleted uranium inventory from the previous simulation
-creates \gls{MOX}, which fuels the \gls{SFR}s. The used
-\gls{MOX} is also reprocessed to extract plutonium, which is also
+creates \gls{MOX}, which fuels the \gls{SFR}s. The reprocessing plants
+separates the plutonium from the used \gls{MOX}. The separated plutonium is also
 mixed with depleted uranium to produce \gls{MOX}.
-
-
-
-\subsection{Reprocessed Uranium}
-Reprocessed uranium contains a range of uranium isotopes, from $^{232}U$ to $^{238}U$.
-This complicates reusing reprocessed uranium as a fuel source \cite{IAEA_management_2007}.
-The presence of neutron-absorbing isotopes, $^{234}U$ and $^{236}U$, requires reprocessed uranium
-to be enriched to have a higher concentration of $^{235}U$. There are trace amounts (2 ppb) 
-of fissile isotope $^{233}U$, which provides little benefit.  
-Also, $^{232}U$ has a decay chain of short-lived
-daughter products that undergo intense beta and gamma radiation.
-The French nuclear program utilizes a fraction (1/3) of reprocessed uranium as fuel \cite{IAEA_management_2007}.
-However for this simulation the reprocessed uranium is unused and stockpiled.
-
-
