@@ -5,7 +5,7 @@ This paper uses \Cyclus to explore the feasibility of using \gls{UNF} from other
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
 and to determine the necessary reprocessing and \gls{MOX} fabrication capacity to support
-the transition into \glspl{SFR} (60MWe - 100 \glspl{SFR}). The study concludes that France can avoid deployment
+the transition into \glspl{SFR} (60GWe - 100 \glspl{SFR}). The study concludes that France can avoid deployment
 of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 
 
@@ -169,7 +169,7 @@ from 'usable' material. Though not utilized in this paper, reprocessed
 uranium may substitute depleted uranium for \gls{MOX} production. In this
 paper, there was sufficient depleted uranium inventory that using reprocessed
 uranium was not considered. However, further in the future where the depleted
-uranium inventory drains, reprocessed uranium will need to be utilized. 
+uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
 
 
 % Define block styles
@@ -189,7 +189,7 @@ minimum height=2em]
                 % Place nodes
                 \node [block] (sr) {Mine (\texttt{SOURCE})};
                 \node [cloud, below of=sr] (nu) {Nat U};
-                \node [block, below of=nu] (enr) {Enrichment (\texttt{ENRICHMENT})};
+                \node [block, below of=nu] (enr) {Enrichment ({\small \texttt{ENRICHMENT}})};
                 \node [cloud, below of=enr] (uox) {\gls{UOX}};
                 \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
                 \node [cloud, right of=uox] (snf2) {\gls{UNF}};
@@ -197,7 +197,7 @@ minimum height=2em]
                 \node [cloud, right of=enr] (tl) {Tailings};
                 \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
                 \node [cloud, below of=lwr] (snf) {\gls{UNF}};
-                \node [block, below of=snf] (rep) {Reprocessing (\texttt{SEPARATIONS})};
+                \node [block, below of=snf] (rep) {Reprocessing ({\small \texttt{SEPARATIONS}})};
                 \node [cloud, below of=rep] (u) {Sep. U} ;
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
                 \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
