@@ -9,16 +9,16 @@ and will be reprocessed in the second simulation.
 
 \begin{table}[h]
 	\centering
-	\scalebox{0.86}{
+%	\scalebox{0.86}{
 		\begin{tabular}{|c|c|c|c|}
 			\hline
 			Category & Unit & Value & Specifics\\ \hline
-			Total UOX Usage & MTHM & 178,865 &  \\ \hline
-			Total MOX Usage & MTHM & 8,909 & \\ \hline
-			Total Used UOX Stored & MTHM & 157,472 & \gls{UNF} that is not reprocessed\\ \hline
-			Total Used  MOX Stored & MTHM & 679 & \gls{UNF} that is not reprocessed \\ \hline
-			Total Tailings & MTHM & 1,063,909 & \\ \hline
-			Total Natural U Used & MTHM & 1,251,658 & \\ \hline
+			Total UOX Usage & MTHM & 181,471 &  \\ \hline
+			Total MOX Usage & MTHM & 6,302 & \\ \hline
+			Total Used UOX Stored & MTHM & 141,659 & \gls{UNF} that is not reprocessed\\ \hline
+			Total Used  MOX Stored & MTHM & 3,611 & \gls{UNF} that is not reprocessed \\ \hline
+			Total Tailings & MTHM & 1,081,826 & \\ \hline
+			Total Natural U Used & MTHM & 1,269,897 & \\ \hline
 		\end{tabular}}
 		\caption{Simulation Results for Historical Nuclear Operation of \gls{EU} Nations}
 		\label{tab:sim_result}
@@ -33,9 +33,9 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/eu_future/tailings.png}
+		\includegraphics[scale=0.7]{./images/eu_future/tails.png}
 	\end{center}
-	\caption{Timeseries of Tailings Mass in the \gls{EU}.}
+	\caption{Timeseries of Tails Mass in the \gls{EU}.}
 	\label{fig:eu_tail}
 \end{figure}
 
@@ -50,7 +50,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 
 \begin{figure}[htbp!]
 	\begin{center}
-			\includegraphics[scale=0.7]{./images/eu_future/snf.png}
+			\includegraphics[scale=0.7]{./images/eu_future/snf_discharge.png}
 	\end{center}
 	\caption{Timeseries of Used Nuclear Fuel in \gls{EU}.}
 	\label{fig:eu_snf}
@@ -82,7 +82,7 @@ and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory
 \subsection{French \gls{SFR} Transition Scenario}
 
 Reprocessing \gls{UNF} collected from all EU nations can start approximately
-300 \glspl{SFR}, which is more than enough for two generations of 60GWe \gls{SFR}
+300 \glspl{SFR}, which is more than enough for two generations of 66GWe \gls{SFR}
 fleet. With the \gls{SFR} breeding ratio of over one, France can transition into
 a fully \gls{SFR} fleet without extra construction of \glspl{LWR}. 
 
@@ -107,12 +107,15 @@ $\approx 1.145$.
 
 \Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per timestep.
 The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
+The initial loading of new \glspl{SFR} are done with the \gls{MOX} created
+from legacy \gls{UNF}. Once there are enough amounts of extra plutonium creation
+by deployed \glspl{SFR}, the legacy \gls{UNF} no longer is used. 
 
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/fuel_no_cum.png}
+		\includegraphics[scale=0.7]{./images/french-transition/where_fuel.png}
 	\end{center}
-	\caption{Timeseries of fuel loaded into \glspl{SFR} [tons]}
+	\caption{Timeseries of fuel loaded into \glspl{SFR}}
 	\label{fig:fuel}
 \end{figure}
 
@@ -121,9 +124,9 @@ The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
 waste discharge is due to large influx of spent fuel from
 decommissioned \glspl{SFR}.\Cref{fig:pu_no_cum} shows the separated plutonium discharge
 per timestep from the reprocessing plant. The plutonium outflux
-does not follow the fuel demand because \Cyclus has buffers for
-the fuel fabrication plant, which store fabricated fuel for 
-later usage. 
+does not precisely follow the fuel demand because \Cyclus agents have
+material buffers that store commodity fuel for later usage. 
+\Cref{tab:sfr_sim_result} lists metrics obtained from the second simulation.
 
 \begin{figure}[htbp!]
 	\begin{center}
@@ -136,7 +139,7 @@ later usage.
 
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/reprocess_waste_no_cum.png}
+		\includegraphics[scale=0.7]{./images/french-transition/reprocess_waste.png}
 	\end{center}
 	\caption{Reprocessing waste discharge from Reprocessing Plant}
 	\label{fig:reprocess_waste}
@@ -149,16 +152,18 @@ later usage.
 		\begin{tabular}{|c|c|c|}
 			\hline
 			Category & Unit & Value  \\ \hline
-			Total MOX used & MTHM & 115,235  \\ \hline
+			Total MOX used & MTHM & 127,640  \\ \hline
 			Total \glspl{SFR} Deployed & & 200 \\ \hline
-			Total Plutonium Reprocessed & MTHM & 14,320 \\ \hline
-			Total MOX from UOX Waste & MTHM & 9,727  \\ \hline
-			Total MOX from MOX Waste & MTHM  & 149,385 \\ \hline
-			Total Tails used & MTHM & 104,864 \\ \hline
-			Total legacy UNF reprocessed & MTHM & 97,278 \\ \hline
-			Total Reprocessed Uranium Stockpile & MTHM & 250,430 \\ \hline
-			Total Reprocess Waste & MTHM & 14,320 \\ \hline
+			Total Plutonium Reprocessed & MTHM & 16,352 \\ \hline
+			Total MOX from UOX Waste & MTHM & 6,570  \\ \hline
+			Total MOX from MOX Waste & MTHM  & 121,070 \\ \hline
+			Total Tails used & MTHM & 116,153 \\ \hline
+			Total legacy UNF reprocessed & MTHM & 77,082 \\ \hline
+			Total Reprocessed Uranium Stockpile & MTHM & 184,172 \\ \hline
+			Total Reprocess Waste & MTHM & 16,352 \\ \hline
 		\end{tabular}}
 		\caption {\gls{SFR} Simulation Results}
 		\label{tab:sfr_sim_result}
 \end {table}
+
+

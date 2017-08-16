@@ -5,7 +5,7 @@ This paper uses \Cyclus to explore the feasibility of using \gls{UNF} from other
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
 and to determine the necessary reprocessing and \gls{MOX} fabrication capacity to support
-the transition into \glspl{SFR} (60GWe - 100 \glspl{SFR}). The study concludes that France can avoid deployment
+the transition into \glspl{SFR} (66GWe - 110 \glspl{SFR}). The study concludes that France can avoid deployment
 of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 
 
@@ -57,20 +57,20 @@ After obtaining the \gls{UNF} inventory of all \gls{EU} in 2050, the second
 simulation runs where the \gls{UNF} inventory is reprocessed and used
 as fuel for the newly deployed \gls{SFR} reactors.
 ASTRID-type \glspl{SFR} deployment makes up for the decommissioned capacity
-of \glspl{LWR} in France, to remain a constant installed capacity of $60,000$ MWe up to 2160.
+of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
 \gls{SFR} reactors in this paper model after the ASTRID reactor.
 They use \gls{MOX} fuel created from 11\% reprocessed plutonium
 and 89\% tails and burns the \gls{MOX} fuel to approximately 100 GWdth/t.
 The high burnup allows breeding of plutonium.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
-fuels the entire fleet of 100 \glspl{SFR}.
+fuels the entire fleet of 110 \glspl{SFR}.
 
 
 \subsection{Assumptions}
-This paper makes the following assumptions:
+The simulation ran for this paper had the following assumptions:
 \begin{itemize}
         \item \gls{SFR} technology is available for deployment in 2040.
-        \item Decay has no effect on reprocessing viability.
+        \item Decay is not taken into account.
         \item Reactor construction is always completed on time.
         \item Separated uranium is unused and stockpiled.
         \item \glspl{LWR} have a lifetime of 60 years, unless shut down prematurely.
@@ -78,7 +78,7 @@ This paper makes the following assumptions:
         \item Additional assumptions in the \gls{SFR} case include:
         \begin{itemize}
         	\item Reprocessing and \gls{MOX} fabrication begins in 2020.
-        	\item French nuclear capacity remains constant at 60,000 MWe.
+        	\item French nuclear capacity remains constant at 66,000 MWe.
         	\item Reprocessing and fabrication capacity is unlimited.
         \end{itemize}
 \end{itemize}
@@ -92,16 +92,8 @@ the World Nuclear Association and two other papers for future plans in EU nation
 The projections extend to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050, the latest foreseeable future. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
-Figures \ref{fig:eu_num} and \ref{fig:eu_pow} display the
-timeseries of number of reactors and installed capacity in \gls{EU} nations.
-
-\begin{figure}[htbp!]
-	\begin{center}
-		\includegraphics[scale=0.7]{./images/eu_future/number_plot.png}
-	\end{center}
-	\caption{Timeseries of number of reactors in \gls{EU}.}
-	\label{fig:eu_num}
-\end{figure}
+Figure \ref{fig:eu_pow} displays the
+timeseries of installed capacity in \gls{EU} nations.
 
 \begin{figure}[htbp!]
 	\begin{center}
@@ -116,15 +108,9 @@ timeseries of number of reactors and installed capacity in \gls{EU} nations.
 
 Once \glspl{SFR} become available, in 2040,
 600-MWe \glspl{SFR} are deployed to make up for the 
-decommissioned \gls{LWR} capacities. A second
-separate simulation only looks at France's nuclear reactors.
-
-Initially in 2040, 22 \gls{SFR}s
-replace previously decommissioned
-\gls{LWR}s. Thereafter, \glspl{SFR} are deployed to
-make up for the decommissioned \gls{LWR} capacity.
-This results in an installed capacity of 60,000 MWe
-of \gls{SFR} by 2076.
+decommissioned \gls{LWR} capacities. 
+This results in an installed capacity of 66,000 MWe
+of \gls{SFR} by 2076, when the last \gls{LWR} decommissions.
 
 \begin{figure}[htbp!]
         \begin{center}
@@ -133,18 +119,21 @@ of \gls{SFR} by 2076.
         \caption{French Transition into an SFR Fleet}
         \label{fig:sfr_num}
 \end{figure}
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[scale=0.7]{./images/french-transition/sfr_deploy.png}
+	\end{center}
+	\caption{Deployment of French \glspl{SFR} and total installed capacity}
+	\label{fig:dep}
+\end{figure}
 \FloatBarrier
 
 
-\Cref{fig:sfr_num} displays
+\Cref{fig:sfr_num} and \cref{fig:dep} displays
 the French transition to \glspl{SFR} over time.
-The steep transition from 2035 to 2060 reflects the scheduled
+The steep transition from 2040 to 2060 reflects the scheduled
 decommissioning of reactors built in the 1975-2000
 era of aggressive nuclear growth in France.
-%% FIX THIS
-The jump in 2040 is due to an attempt to make up for the gap between the
-mass decommission of old \glspl{LWR} and the availability
-of \glspl{SFR}.
 
 
 \subsection{Material Definitions}
@@ -161,7 +150,9 @@ where a `source' provides natural uranium, which is enriched by an 'enrichment'
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
 to the 'sink' facility. The enriched \gls{UOX} fuels
 the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
-is then reprocessed to separate plutonium and uranium.
+is sent to a pool to cool for 3 years \cite{carre_overview_2009}.
+The cooled fuel is then reprocessed to separate plutonium and uranium,
+or sent to a repository.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
 The reprocessed uranium is unused and stockpiled. Uranium is reprocessed
 in order to separate the raffinate (Minor actinides and fission products)
@@ -192,11 +183,13 @@ minimum height=2em]
                 \node [block, below of=nu] (enr) {Enrichment ({\small \texttt{ENRICHMENT}})};
                 \node [cloud, below of=enr] (uox) {\gls{UOX}};
                 \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
-                \node [cloud, right of=uox] (snf2) {\gls{UNF}};
-                \node [cloud, left of=lwr] (tl2) {Tailings};
-                \node [cloud, right of=enr] (tl) {Tailings};
+                \node [cloud, right of=lwr] (snf) {\gls{UNF}};
+                \node [cloud, right of=uox] (cunf) {Cooled \gls{UNF}};
+                \node [block, right of=snf] (pool) {Pool (\texttt{Storage})};
+                \node [cloud, left of=lwr] (tl2) {Dep U};
+                \node [cloud, right of=enr] (tl) {Dep U};
                 \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
-                \node [cloud, below of=lwr] (snf) {\gls{UNF}};
+                \node [cloud, below of=pool] (cunf2) {Cooled \gls{UNF}};
                 \node [block, below of=snf] (rep) {Reprocessing ({\small \texttt{SEPARATIONS}})};
                 \node [cloud, below of=rep] (u) {Sep. U} ;
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
@@ -215,9 +208,14 @@ minimum height=2em]
                 \draw[->, thick] (enr) -- (uox);
                 \draw[->, thick] (uox) -- (lwr);
                 \draw[->, thick] (lwr) -- (snf);
-                \draw[->, thick] (lwr) -- (snf2);
-                \draw[->, thick] (snf2) -- (sk);
-                \draw[->, thick] (snf) -- (rep);
+                
+                \draw[->, thick] (lwr) -- (snf);
+                \draw[->, thick] (snf) -- (pool);
+                \draw[->, thick] (pool) -- (cunf);
+                \draw[->, thick] (pool) -- (cunf2);
+                \draw[->, thick] (cunf) -- (sk);
+                \draw[->, thick] (cunf2) -- (rep);
+                
                 \draw[->, thick] (rep) -- (u);
                 \draw[->, thick] (rep) -- (pu);
                 \draw[->, thick] (pu) -- (mix);
