@@ -19,10 +19,10 @@ and will be reprocessed in the second simulation.
 			Total Used  MOX Stored & MTHM & 3,611 & \gls{UNF} that is not reprocessed \\ \hline
 			Total Tailings & MTHM & 1,081,826 & \\ \hline
 			Total Natural U Used & MTHM & 1,269,897 & \\ \hline
-		\end{tabular}}
+		\end{tabular}
 		\caption{Simulation Results for Historical Nuclear Operation of \gls{EU} Nations}
 		\label{tab:sim_result}
-		\end {table}
+\end {table}
 \FloatBarrier
 
 
@@ -63,12 +63,12 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{tabular}{|c|c|c|}
 		\hline
 		Isotope & Mass Fraction in Used Fuel [\%] & Quantity [t] \\ \hline
-		Total & 0.9358 & 1,473 \\ \hline
-		Pu238 & 0.0111 & 17.47 \\ \hline
-		Pu239 & 0.518 & 815.7 \\ \hline
-		Pu240 & 0.232 & 365.33 \\ \hline
-		Pu241 & 0.126 & 198.41 \\ \hline
-		Pu242 & 0.0487 & 76.68 \\ \hline
+		Total & 0.9358 & 1,325 \\ \hline
+		Pu238 & 0.0111 & 15.72 \\ \hline
+		Pu239 & 0.518 & 733.79 \\ \hline
+		Pu240 & 0.232 & 328.64 \\ \hline
+		Pu241 & 0.126 & 178.49 \\ \hline
+		Pu242 & 0.0487 & 68.98 \\ \hline
 	\end{tabular}
 	\caption{Plutonium From Used Fuel}
 	\label{tab:pu}
@@ -82,7 +82,7 @@ and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory
 \subsection{French \gls{SFR} Transition Scenario}
 
 Reprocessing \gls{UNF} collected from all EU nations can start approximately
-300 \glspl{SFR}, which is more than enough for two generations of 66GWe \gls{SFR}
+270 \glspl{SFR}, which is more than enough for two generations of 66GWe \gls{SFR}
 fleet. With the \gls{SFR} breeding ratio of over one, France can transition into
 a fully \gls{SFR} fleet without extra construction of \glspl{LWR}. 
 
@@ -90,13 +90,12 @@ From Varaine et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}, a French
 ASTRID-type \gls{SFR} of capacity 600 MWe needs $1.225$ tons of
 plutonium a year, with an initial plutonium loading of $4.9$ tons. 
 Thus, the number of \glspl{SFR} that can be loaded with the reprocessed
-plutonium from \gls{UNF} can be estimated to $\frac{Pu \ from \ legacy \ \gls{UNF}}{4.9} \approx 300$ \glspl{SFR},
+plutonium from \gls{UNF} can be estimated to $\frac{Pu \ from \ legacy \ \gls{UNF}}{4.9} \approx 270$ \glspl{SFR},
 assuming infinite reprocessing and fabrication capacity as well as
 abundant depleted uranium supply. 
 
 Also, assuming that \gls{MOX} can be recycled indefinitely,
-used \gls{MOX} from an ASTRID reactor
-contains enough plutonium to produce a \gls{MOX} fuel with
+used \gls{MOX} from an ASTRID reactorcontains enough plutonium to produce a \gls{MOX} fuel with
 the same mass, if mixed with depleted uranium. For example,
 used \gls{MOX} from an ASTRID reactor is assumed to be 12.6\% plutonium
 in this simulation (see \cref{tab:comp}), whereas a fresh \gls{MOX} is 11\% plutonium.
@@ -105,11 +104,11 @@ an ASTRID reactor can create \gls{MOX} of the mass of used \gls{MOX}.
 The plutonium breeding ratio in this simulation is thus assumed to be
 $\approx 1.145$.
 
-\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per timestep.
+\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.
 The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
 The initial loading of new \glspl{SFR} are done with the \gls{MOX} created
 from legacy \gls{UNF}. Once there are enough amounts of extra plutonium creation
-by deployed \glspl{SFR}, the legacy \gls{UNF} no longer is used. 
+by deployed \glspl{SFR}, the legacy \gls{UNF} is no longer used. 
 
 \begin{figure}[htbp!]
 	\begin{center}
@@ -123,7 +122,7 @@ by deployed \glspl{SFR}, the legacy \gls{UNF} no longer is used.
 (minor actinides, fission products) over time. The spikes in the 
 waste discharge is due to large influx of spent fuel from
 decommissioned \glspl{SFR}.\Cref{fig:pu_no_cum} shows the separated plutonium discharge
-per timestep from the reprocessing plant. The plutonium outflux
+per month from the reprocessing plant. The plutonium outflux
 does not precisely follow the fuel demand because \Cyclus agents have
 material buffers that store commodity fuel for later usage. 
 \Cref{tab:sfr_sim_result} lists metrics obtained from the second simulation.

@@ -1,17 +1,19 @@
 \section{Abstract}
-The French strategy recommended by the 2012-2015 Commission Nationale d'Evaluation reports
-\cite{noauthor_cne2_nodate} emphasizes preparation for a transition from \glspl{LWR} to \glspl{SFR}.
+The French 2012-2015 Commission Nationale d'Evaluation reports
+\cite{noauthor_cne2_nodate} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
 This paper uses \Cyclus to explore the feasibility of using \gls{UNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
-and to determine the necessary reprocessing and \gls{MOX} fabrication capacity to support
+and tails inventory to support
 the transition into \glspl{SFR} (66GWe - 110 \glspl{SFR}). The study concludes that France can avoid deployment
 of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 
 
 \section{Introduction}
-We used \Cyclus, the agent-based simulator \cite{huff_fundamental_2016} to analyze
-the future nuclear inventory in the European Union. This paper focuses on the used fuel
+We used \Cyclus to analyze
+the future nuclear inventory in the European Union. \Cyclus is an agent-based extensible
+framework for modeling the flow of material through future nuclear cycles \cite{huff_fundamental_2016}.
+This paper focuses on the used fuel
 inventory in \gls{EU} member states in 2050, and focuses on a potential strategy of used fuel
 management.
 A major focus of this paper is to determine the extent to which France has an incentive
@@ -23,15 +25,12 @@ Past research focused solely on France typically assumes that additional \glspl{
 namely \glspl{EPR} supply \gls{UNF} to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
 Studies exist on implementation of partitioning and transmutation
 in a regional (European) context, with \glspl{ADS} and Gen-IV reactors \cite{fazio_study_2013}.
-There are little attention paid to reprocessing legacy \gls{UNF} from other
+There is little attention paid to reprocessing legacy \gls{UNF} from other
 EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
 The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 \section{Methodology}
-The work relies on \Cyclus, an agent-based simulator, to simulate the nuclear fuel cycle
-and track material flows in \gls{EU} nations. \Cyclus is an agent-based and extensible
-framework for modeling the flow of material through future nuclear cycles. 
 The nuclear history of EU nations are modeled, using the \gls{PRIS} open-source 
 database from \gls{IAEA}. That database is imported as a csv file, to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
@@ -47,8 +46,8 @@ Two \Cyclus simulations are run for this paper.
 The first simulation calculates
 the mass and composition of used fuel and tails \gls{EU} nations accumulate from 1970 to 2050,
 as well as the amount of \gls{MOX} that the \gls{UNF} inventory creates.
-This paper explains a once-through cycle for all 
-\gls{EU} nations with the exception of France. France can reprocess used \gls{UOX} and \gls{MOX} to
+All EU nations with the exception of France adopts a once-through fuel cycle.
+France can reprocess used \gls{UOX} and \gls{MOX} to
 produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
 The simulation assumes infinite \gls{MOX} reprocessing. 
 
@@ -56,10 +55,10 @@ The simulation assumes infinite \gls{MOX} reprocessing.
 After obtaining the \gls{UNF} inventory of all \gls{EU} in 2050, the second
 simulation runs where the \gls{UNF} inventory is reprocessed and used
 as fuel for the newly deployed \gls{SFR} reactors.
-ASTRID-type \glspl{SFR} deployment makes up for the decommissioned capacity
-of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
 \gls{SFR} reactors in this paper model after the ASTRID reactor.
-They use \gls{MOX} fuel created from 11\% reprocessed plutonium
+ASTRID-type \glspl{SFR} make up for the decommissioned capacity
+of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
+It is assumed that ASTRID-type reactors use \gls{MOX} fuel created from 11\% reprocessed plutonium
 and 89\% tails and burns the \gls{MOX} fuel to approximately 100 GWdth/t.
 The high burnup allows breeding of plutonium.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
@@ -73,7 +72,7 @@ The simulation ran for this paper had the following assumptions:
         \item Decay is not taken into account.
         \item Reactor construction is always completed on time.
         \item Separated uranium is unused and stockpiled.
-        \item \glspl{LWR} have a lifetime of 60 years, unless shut down prematurely.
+        \item \glspl{LWR} have an assumed lifetime of 60 years, unless shut down prematurely.
         \item Newly deployed \glspl{SFR} have a lifetime of 80 years.
         \item Additional assumptions in the \gls{SFR} case include:
         \begin{itemize}
@@ -129,7 +128,7 @@ of \gls{SFR} by 2076, when the last \gls{LWR} decommissions.
 \FloatBarrier
 
 
-\Cref{fig:sfr_num} and \cref{fig:dep} displays
+\Cref{fig:sfr_num} and \cref{fig:dep} display
 the French transition to \glspl{SFR} over time.
 The steep transition from 2040 to 2060 reflects the scheduled
 decommissioning of reactors built in the 1975-2000
@@ -235,6 +234,4 @@ minimum height=2em]
 The second scenario separates plutonium from the \gls{UNF}
 inventory from the previous simulation. The separated
 plutonium mixed with the depleted uranium inventory from the previous simulation
-creates \gls{MOX}, which fuels the \gls{SFR}s. The reprocessing plants
-separates the plutonium from the used \gls{MOX}. The separated plutonium is also
-mixed with depleted uranium to produce \gls{MOX}.
+creates \gls{MOX}, which fuels the \gls{SFR}s. 
