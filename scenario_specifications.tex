@@ -55,17 +55,22 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 
 
 \section{Reactor Specifications}
-Two major reactors are used in the simulation, \gls{PWR} and ASTRID - type reactors.
-For simplicity, the few \glspl{BWR} in the \gls{EU} fleet are assumed to be \glspl{PWR}.
+Three major reactors are used in the simulation, \gls{PWR}, gls{BWR}, and ASTRID - type reactors.
 
 For \glspl{PWR}, a linear core size model was assumed to capture
 varying reactor capacity. For example, a 
-1,330 MWe PWR has 257 \gls{UOX} assemblies, each
+1,000 MWe PWR has 193 \gls{UOX} assemblies, each
 weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
-core (85 assemblies) discharge. Refueling
+core (64 assemblies) discharge. Refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. The specifications are defined in \cref{tab:pwr}.
+
+For \glspl{BWR}, a linear core size model was assumed to capture
+varying reactor capacity as well. It assumed a assembly size of
+180 kg, with 1000 MWe BWR plant having 764 assemblies, adjusted
+linearly by capacity. The refueling cycle is identical to that
+of a \gls{PWR}.
 
 For the \gls{SFR}, a model design is adopted from
 Marsault-Marie-Sophie et al. \cite{marsaultmarie-sophie_pre-conceptual_2012}.
@@ -81,7 +86,7 @@ The specifications are defined in \cref{tab:sfr}.
 		PWR Refueling Outage & 2 months \\
 		Fuel Mass per Assembly & 523.4 kg \\
 		Burnup & 51 GWd/tons \\
-		Num. of Aseem. per Core & 257 for 1,330 MWe, linearly adjusted\\
+		Num. of Aseem. per Core & 193 for 1,000 MWe, linearly adjusted\\
 		Num. of Assem. per Batch & 1/3 of the core \\
 		Fuel & \small{French \glspl{PWR} prefer \gls{MOX} but also accept \gls{UOX}}\\
 		\hline
@@ -89,6 +94,24 @@ The specifications are defined in \cref{tab:sfr}.
 	\caption {\gls{PWR} Specifications}
 	\label{tab:pwr}
 	\end{table}
+	
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{bb}
+		\hline
+		Specification & Value \\
+		\hline
+		BWR Cycle Time & 18 months \\ 
+		PWR Refueling Outage & 2 months \\
+		Fuel Mass per Assembly & 180 kg \\
+		Burnup & 51 GWd/tons \\
+		Num. of Aseem. per Core & 764 for 1,000 MWe, linearly adjusted\\
+		Num. of Assem. per Batch & 1/3 of the core \\
+		\hline
+	\end{tabularx}
+	\caption {\gls{BWR} Specifications}
+	\label{tab:bwr}
+\end{table}
 	
 \begin{table}[h]
 	\centering
