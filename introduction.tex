@@ -1,6 +1,6 @@
 \section{Abstract}
 The French 2012-2015 Commission Nationale d'Evaluation reports
-\cite{noauthor_cne2_nodate} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
+\cite{noauthor_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
 This paper uses \Cyclus to explore the feasibility of using \gls{UNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
@@ -39,7 +39,7 @@ date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} 
 from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
 which lists the individual reactor units as agents. After running the \Cyclus input file,
 another python script analyzes the output file. All the scripts and data used
-in this paper are available in \url{https://github.com/jbae11/transition-scenarios}.
+in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 %% Probably a separate repository is needed..?
 
 Two \Cyclus simulations are run for this paper. 
@@ -66,7 +66,7 @@ fuels the entire fleet of 110 \glspl{SFR}.
 
 
 \subsection{Assumptions}
-The simulation ran for this paper had the following assumptions:
+The paper makes the following assumptions:
 \begin{itemize}
         \item \gls{SFR} technology is available for deployment in 2040.
         \item Decay is not taken into account.
@@ -196,7 +196,6 @@ minimum height=2em]
                 \node [cloud, below of=mix] (mox) {\gls{MOX}};
                 \node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
                 \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
-                
                 
                 \draw[->, thick] (sr) -- (nu);
                 \draw[->, thick] (nu) -- (enr);
