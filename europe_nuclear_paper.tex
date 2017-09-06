@@ -28,7 +28,7 @@
 \usetikzlibrary{positioning, arrows, decorations, shapes }
 \usepackage{cleveref}
 
-
+\usepackage{datatool}
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
 	
@@ -50,13 +50,12 @@
 	
 \input{introduction}
 \input{scenario_specifications}
-\input{current}
 \input{future}
 \input{results}
 \input{discussion}
 
 \bibliographystyle{abbrv}
-\bibliography{./bibliography.bib}
+\bibliography{bibliography}
 
 \input{appendix.tex}
 

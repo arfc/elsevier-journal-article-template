@@ -3,7 +3,7 @@
 The future of nuclear energy in \gls{EU} nations is organized
 in the table by the World Nuclear Association \cite{world_nuclear_association_nuclear_2017}.
 It is assumed in the simulations that all the planned constructions 
-are completed in their expected date without delay
+are completed on their expected date without delay
 or failure. Also, the newly constructed nuclear power plants are assumed to have a lifetime of 60 years.
 
 \Cref{tab:eu_deployment} lists the reactors that are currently  planned or under construction.
@@ -30,11 +30,11 @@ or failure. Also, the newly constructed nuclear power plants are assumed to have
 		2025 & Bulgaria & Kozloduy 7 & AP1000? & 950 \\
 		2026 & UK & Hinkley Point C1 & EPR & 1670 \\
 		2027 & UK & Hinkley Point C2 & EPR & 1670 \\
-		2029 & Poland & Choczewo? & N/A & 3000 \\
-		2035 & Poland & East? & N/A & 3000 \\
-		2035 & Czech Rep & Dukovany 5 & ? & 1200 \\
-		2035 & Czech Rep & Temelin 3 & AP1000? & 1200 \\
-		2040 & Czech Rep & Temelin 4 & AP1000? & 1200 \\
+		2029 & Poland & Choczewo & N/A & 3000 \\
+		2035 & Poland & N/A & N/A & 3000 \\
+		2035 & Czech Rep & Dukovany 5 & N/A & 1200 \\
+		2035 & Czech Rep & Temelin 3 & AP1000 & 1200 \\
+		2040 & Czech Rep & Temelin 4 & AP1000 & 1200 \\
 		\hline
 	\end{tabular}
 	}
@@ -42,18 +42,19 @@ or failure. Also, the newly constructed nuclear power plants are assumed to have
 \FloatBarrier
 
 For each \gls{EU} nation, the growth trajectory is categorized from
-"Aggressive Growth" to "Aggressive Shutdown". Aggressive growth is
+``Aggressive Growth'' to ``Aggressive Shutdown''. Aggressive growth is
 characterized by a rigorous expansion of nuclear power while 
 Aggressive Shutdown is characterized as a transition to rapidly
 de-nuclearize the nation's electric grid. A nation's growth trajectory is
-categorized into five spectra:
+categorized into five degrees depending on x, 
+given by $\frac{Nuclear\ capacity\ in\ 2040}{Nuclear\ capacity\ in\ 2017}$.
 
 \begin{itemize}
-	\item Aggressive Growth
-	\item Modest Growth 
-	\item Maintenance
-	\item Modest Reduction
-	\item Aggressive Reduction
+	\item Aggressive Growth ($x \geq 2$)
+	\item Modest Growth ($1.2 \leq x < 2$)
+	\item Maintenance ($0.8 \leq x < 1.2$)
+	\item Modest Reduction ($0.5 \leq x< 0.8$)
+	\item Aggressive Reduction ($x \leq 0.5$)
 \end{itemize}
 
 The growth trajectory and specific plan of each nation in the \gls{EU} 
@@ -70,21 +71,21 @@ is listed in Table \ref{tab:eu_growth}.
 			\hline
 			Poland & Aggressive Growth & Additional 6,000 MWe by 2035.\\
 			\hline
+			Hungary & Aggressive Growth & Additional 2,400 MWe (VVER-1200) by 2025. \\ 
+			\hline
 			Finland & Modest Growth & Additional EPR in 2018, VVER in 2024.\\
 			\hline
 			Bulgaria & Modest Growth & Additional AP1000 (1,000 MWe) construction in 2035. \\
 			\hline
 			Romania & Modest Growth & Additional 1,440 MWe by 2020. \\
 			\hline
-			Hungary & Modest Growth & Additional 2,400 MWe (VVER-1200) by 2025. \\ 
-			\hline
 			Czech Rep. & Modest Growth & Additional 2,400 MWe (AP1000s) by 2035.\\
 			\hline
-			Spain & Maintenance & No plans to expand or early shutdown. \\
-			\hline
-			Italy & Maintenance  & No plans to expand or early shutdown. \\
-			\hline
 			France & Maintenance & Shutdown nuclear plants if they reach end of lifetime. No new construction.\\
+			\hline
+			Spain & Modest Reduction & No plans to expand or early shutdown. \\
+			\hline
+			Italy & Modest Reduction & No plans to expand or early shutdown. \\
 			\hline
 			Belgium & Aggressive Reduction & All shut down 2025.\\
 			\hline
