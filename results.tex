@@ -20,7 +20,10 @@ and will be reprocessed in the second simulation.
 			Total Tailings & MTHM & 1,081,826 & \\ \hline
 			Total Natural U Used & MTHM & 1,269,897 & \\ \hline
 		\end{tabular}
-		\caption{Simulation Results for Historical Nuclear Operation of \gls{EU} Nations}
+		\caption{Listed are the important metrics from the historical nuclear operation of \gls{EU} nations.
+				 The difference between total \gls{UOX} usage and \gls{UOX} stored is the amount
+				 that has been reprocessed for \gls{MOX}. Only the stored \gls{UOX} is used in the 
+				 second simulation.}
 		\label{tab:sim_result}
 \end {table}
 \FloatBarrier
@@ -35,7 +38,9 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/tails.png}
 	\end{center}
-	\caption{Timeseries of Tails Mass in the \gls{EU}.}
+	\caption{This plot shows the timeseries of tails mass accumulation and discharge in the \gls{EU} nations.
+			 Tails mass accumulation is fairly steady, with peaks occurring when
+			 new reactors are deployed.}
 	\label{fig:eu_tail}
 \end{figure}
 
@@ -43,7 +48,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/total_fuel.png}
 	\end{center}
-	\caption{Timeseries of Total Fuel Usage in \gls{EU}.}
+	\caption{This plot shows the timeseries of total fuel usage in the \gls{EU} nations.}
 	\label{fig:eu_fuel}
 \end{figure}
 
@@ -52,7 +57,8 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{center}
 			\includegraphics[scale=0.7]{./images/eu_future/snf_discharge.png}
 	\end{center}
-	\caption{Timeseries of Used Nuclear Fuel inventory in \gls{EU}.}
+	\caption{This plot displays the timeseries of \gls{UNF} accumulation and discharge in the \gls{EU} nations.
+			 The peaks are caused by decommissioning of reactors, where all the core is sent to the repository.}
 	\label{fig:eu_snf}
 \end{figure}
 \FloatBarrier
@@ -114,13 +120,16 @@ by deployed \glspl{SFR}, the legacy \gls{UNF} is no longer used.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/where_fuel.png}
 	\end{center}
-	\caption{Timeseries of fuel loaded into \glspl{SFR}}
+	\caption{This plot displays the timeseries of fuel loaded into \glspl{SFR}.
+			 The initial purple bars denote that the fuel is from reprocessing
+			 the previously used \gls{UOX} inventory. The peaks coincide
+			 with the new deployment of \glspl{SFR}.}
 	\label{fig:fuel}
 \end{figure}
 
 \Cref{fig:reprocess_waste} shows the amount of reprocessing waste
 (minor actinides, fission products) over time. The spikes in the 
-waste discharge is due to large influx of spent fuel from
+waste discharge is due to large influx of used fuel from
 decommissioned \glspl{SFR}.\Cref{fig:pu_no_cum} shows the separated plutonium discharge
 per month from the reprocessing plant. The plutonium outflux
 does not precisely follow the fuel demand because \Cyclus agents have
@@ -131,7 +140,10 @@ material buffers that store commodity fuel for later usage.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/pu.png}
 	\end{center}
-	\caption{Separated plutonium discharge from Reprocessing Plant}
+	\caption{This plot shows the separated plutonium discharge from the reprocessing plant.
+			 The plutonium from reprocessing legacy fuel is a flat rectangle because the 
+			 reprocessing throughput was set to 20 $\frac{tons}{month}$ to avoid reprocessing
+			 all the legacy in one timestep.}
 	\label{fig:pu_no_cum}
 \end{figure}
 
@@ -140,7 +152,10 @@ material buffers that store commodity fuel for later usage.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/reprocess_waste.png}
 	\end{center}
-	\caption{Reprocessing waste discharge from Reprocessing Plant}
+	\caption{This plot displays raffinate discharge from each reprocessing plant.
+			The plutonium from reprocessing legacy fuel is a flat rectangle because the 
+			reprocessing throughput was set to 20 $\frac{tons}{month}$ to avoid reprocessing
+			all the legacy in one timestep.}
 	\label{fig:reprocess_waste}
 \end{figure}
 
@@ -161,7 +176,10 @@ material buffers that store commodity fuel for later usage.
 			Total Reprocessed Uranium Stockpile & MTHM & 184,172 \\ \hline
 			Total Reprocess Waste & MTHM & 16,352 \\ \hline
 		\end{tabular}}
-		\caption {\gls{SFR} Simulation Results}
+		\caption {Listed are the important metrics from the French transition to \gls{SFR} scenario.
+				  The total legacy \gls{UNF} reprocessed is the amount of \gls{UNF} France would need
+				  for a transition into a fully \gls{SFR} fleet. The tails used is almost a tenth
+				  of the original tails inventory from the previous simulation.}
 		\label{tab:sfr_sim_result}
 \end {table}
 
