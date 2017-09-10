@@ -13,7 +13,7 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 	\centering
 	\begin{tabularx}{\textwidth}{bb}
 		\hline
-		Specification & Value \\
+		\textbf{Specification} &\textbf{ Value} \\
 		\hline
 		Simulation Time & 1970-2050 \\ 
 		Reprocessing Capacity & 91.6 MTHM of \gls{UNF} per month \cite{schneider_spent_2008} \\
@@ -33,11 +33,12 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 	\centering
 	\begin{tabularx}{\textwidth}{bb}
 		\hline
-		Specification & Value \\
+		\textbf{Specification }& \textbf{Value} \\
 		\hline
 		Simulation Time & 1970-2160 \\
 		\gls{SFR} Available Year & 2040 \\
-		Reprocessing Capacity & $\infty$ \\
+		\gls{UOX} Reprocessing Capacity & 20 tons per timestep \\
+		\gls{MOX} Reprocessing Capacity & $\infty$ \\
 		Reprocessing and Fabrication Begins & 2020 \\
 		Separation Efficiency & 99.8 \% \\
 		Reprocessing Streams & plutonium and uranium \\
@@ -81,8 +82,9 @@ The specifications are defined in \cref{tab:sfr}.
 	\centering
 	\begin{tabularx}{\textwidth}{bb}
 		\hline
-		Specification & Value \\
+		\textbf{Specification} & \textbf{Value} \\
 		\hline
+		Lifetime & 60 years unless shutdown prematurely \\
 		PWR Cycle Time & 18 months \\ 
 		PWR Refueling Outage & 2 months \\
 		Fuel Mass per Assembly & 523.4 kg \\
@@ -90,6 +92,7 @@ The specifications are defined in \cref{tab:sfr}.
 		Num. of Aseem. per Core & 193 for 1,000 MWe, linearly adjusted\\
 		Num. of Assem. per Batch & 1/3 of the core \\
 		Fuel & \small{French \glspl{PWR} prefer \gls{MOX} but also accept \gls{UOX}}\\
+
 		\hline
 	\end{tabularx}
 	\caption {\gls{PWR} Specifications}
@@ -100,8 +103,9 @@ The specifications are defined in \cref{tab:sfr}.
 	\centering
 	\begin{tabularx}{\textwidth}{bb}
 		\hline
-		Specification & Value \\
+		\textbf{Specification} &\textbf{ Value} \\
 		\hline
+		Lifetime & 60 years unless shutdown prematurely \\
 		BWR Cycle Time & 18 months \\ 
 		PWR Refueling Outage & 2 months \\
 		Fuel Mass per Assembly & 180 kg \\
@@ -118,14 +122,14 @@ The specifications are defined in \cref{tab:sfr}.
 	\centering
 	\begin{tabularx}{\textwidth}{bb}
 		\hline
-		Specification & Value \\
+		\textbf{Specification} &\textbf{ Value} \\
 		\hline
 		SFR Cycle Time & 12 months \\ 
 		SFR Refueling Outage & 2 months \\
 		Fuel Mass per Batch & 11,136 kg \\
 		Batch per Core & 4 \\
 		Power Output & 600 MWe \\
-		lifetime & 80 years \\
+		Lifetime & 80 years \\
 		Fuel & {\small \gls{MOX} (89\% Tailings, 11\% Separated Pu)}\\
 		\hline
 	\end{tabularx}
