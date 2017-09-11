@@ -42,7 +42,7 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 		Reprocessing and Fabrication Begins & 2020 \\
 		Separation Efficiency & 99.8 \% \\
 		Reprocessing Streams & plutonium and uranium \\
-		\small{Used \gls{UOX} and Depleted U Inventory} & 141,659 MTHM {\small (From first simulation)} \\
+		\small{Used \gls{UOX} and Depleted U Inventory} & 125,453 MTHM {\small (From first simulation)} \\
 		\small{Additional Used \gls{UOX} or Depleted U} & None  \\
 		\gls{MOX} Fabrication &  \small{11\% Reprocessed Pu + 89\% Depleted U}  \\
 		\gls{MOX} Fabrication Throughput & infinite \\
@@ -50,29 +50,23 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 		Reprocessed Uranium Usage &  None. Stockpile reprocessed U. \\
 		\hline
 	\end{tabularx}
-	\caption {Specification for French Transition to \gls{SFR} case }
+	\caption {Specification for French Transition to \gls{SFR} Case}
 	\label{tab:sim_france}
 \end{table}
 
 
 \section{Reactor Specifications}
-Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID - type reactors.
+Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID - type \gls{SFR}reactors.
 
-For \glspl{PWR}, a linear core size model was assumed to capture
+For \glspl{LWR}, a linear core size model was assumed to capture
 varying reactor capacity. For example, a 
-1,000 MWe PWR has 193 \gls{UOX} assemblies, each
+1,200 MWe PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
 weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
-core (64 assemblies) discharge. Refueling
+core (77 assemblies) discharge. Refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. This value is acquired by averaging the 
-historical refueling outage. The specifications are defined in \cref{tab:pwr}.
-
-For \glspl{BWR}, a linear core size model was assumed to capture
-varying reactor capacity as well. It assumed an assembly size of
-180 kg, with 1000 MWe BWR plant having 764 assemblies, adjusted
-linearly by capacity. The refueling cycle is identical to that
-of a \gls{PWR}. The specifications are defined in \cref{tab:bwr}.
+historical refueling outage. The specifications are defined in \cref{tab:lwr}.
 
 For the \gls{SFR}, a model design is adopted from
 Marsault-Marie-Sophie et al. \cite{varaine_pre-conceptual_2012}.
@@ -80,43 +74,23 @@ The specifications are defined in \cref{tab:sfr}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabularx}{\textwidth}{bb}
+	\begin{tabularx}{\textwidth}{bcc}
 		\hline
-		\textbf{Specification} & \textbf{Value} \\
+		\textbf{Specification} & \textbf{\gls{PWR}} & \textbf{\gls{BWR}} \\
 		\hline
-		Lifetime & 60 years unless shutdown prematurely \\
-		PWR Cycle Time & 18 months \\ 
-		PWR Refueling Outage & 2 months \\
-		Fuel Mass per Assembly & 523.4 kg \\
-		Burnup & 51 GWd/tons \\
-		Num. of Aseem. per Core & 193 for 1,000 MWe, linearly adjusted\\
-		Num. of Assem. per Batch & 1/3 of the core \\
-		Fuel & \small{French \glspl{PWR} prefer \gls{MOX} but also accept \gls{UOX}}\\
-
+		Lifetime & \multicolumn{2}{c}{60 years unless shutdown prematurely} \\
+		PWR Cycle Time & \multicolumn{2}{c}{18 months}\\ 
+		PWR Refueling Outage & \multicolumn{2}{c}{2 months} \\
+		Fuel Mass per Assembly & 523.4 kg & 180 kg \\
+		Burnup & \multicolumn{2}{c}{51 GWd/tons }\\
+		Assembly per Core & 193 for 1,000 MWe & 764 for 1,000 MWe\\
+		Assembly per Batch & \multicolumn{2}{c}{1/3 of the core }\\
+		Fuel & \gls{UOX}, \gls{MOX} & \gls{UOX} \\
 		\hline
 	\end{tabularx}
-	\caption {\gls{PWR} Specifications}
-	\label{tab:pwr}
+	\caption {\gls{LWR} Specifications}
+	\label{tab:lwr}
 	\end{table}
-	
-\begin{table}[h]
-	\centering
-	\begin{tabularx}{\textwidth}{bb}
-		\hline
-		\textbf{Specification} &\textbf{ Value} \\
-		\hline
-		Lifetime & 60 years unless shutdown prematurely \\
-		BWR Cycle Time & 18 months \\ 
-		PWR Refueling Outage & 2 months \\
-		Fuel Mass per Assembly & 180 kg \\
-		Burnup & 51 GWd/tons \\
-		Num. of Aseem. per Core & 764 for 1,000 MWe, linearly adjusted\\
-		Num. of Assem. per Batch & 1/3 of the core \\
-		\hline
-	\end{tabularx}
-	\caption {\gls{BWR} Specifications}
-	\label{tab:bwr}
-\end{table}
 	
 \begin{table}[h]
 	\centering

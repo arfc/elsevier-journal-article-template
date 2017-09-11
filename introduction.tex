@@ -1,6 +1,6 @@
 \section{Abstract}
 The French 2012-2015 Commission Nationale d'Evaluation reports
-\cite{noauthor_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
+\cite{cne2_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
 We used \Cyclus to explore the feasibility of using \gls{UNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
@@ -55,12 +55,9 @@ produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
 After obtaining the \gls{UNF} inventory of all \gls{EU} in 2050, the second
 simulation runs where the \gls{UNF} inventory is reprocessed and fabricated
 as fuel for the newly deployed \gls{SFR} reactors.
-\gls{SFR} per model after the ASTRID reactor.
-ASTRID-type \glspl{SFR} make up for the decommissioned capacity
+\glspl{SFR} are modeled after the ASTRID breeder reactor \cite{varaine_pre-conceptual_2012}.
+The ASTRID-type \glspl{SFR} make up for the decommissioned capacity
 of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
-It is assumed that ASTRID-type reactors use \gls{MOX} fuel created from 11\% reprocessed plutonium
-and 89\% tails and burns the \gls{MOX} fuel to approximately 100 GWdth/t.
-The high burnup allows breeding of plutonium.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
 fuels the entire fleet of 110 \glspl{SFR}.
 
@@ -82,13 +79,13 @@ which can contain multiple \texttt{Institute} agents.
 For example, `France' would be a \texttt{Region} agent,
 that may contain two \texttt{Institute} agents \glspl{LWR}
 and \glspl{SFR}. The \texttt{Institute} agents would then deploy
-\glspl{LWR} and \glspl{SFR}, respectively, according to a pre-defined deployment
+\glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
 scheme.
 
 
-\subsection{Deployment Timeline}
+\subsection{\gls{EU} Historical Deployment Scheme}
 Projections of future reactor deployment in this simulation is based on assessment of analyses
-from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_nodate},
+from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_nuclear_2017},
 the World Nuclear Association and two other papers for future plans in EU nations
 \cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
@@ -110,7 +107,7 @@ timeseries of installed capacity in \gls{EU} nations.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
-Once \glspl{SFR} become available, in 2040,
+Once \glspl{SFR} become available in 2040,
 600-MWe \glspl{SFR} are deployed to make up for the 
 decommissioned \gls{LWR} capacities. 
 This results in an installed capacity of 66,000 MWe
@@ -150,11 +147,11 @@ In reality, building five reactors every year is highly unrealistic. However,
 this analysis is done in respect to material flow, claiming that, if such an aggressive
 deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
 More realistically, the deployment of new \glspl{SFR} can be spread out by
-staggering decommissioning of \glspl{LWR} through lifetime extensions.
+staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
 
 \subsection{Material Definitions}
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
-and used fuel recipe is used for each reactor type.
+and used fuel recipe is defined for each reactor type.
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
 \cite{wilson_adoption_2009}.
@@ -162,9 +159,9 @@ from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
 
 \subsection{Scenario Descriptions}
 The simulation follows the model fuel cycle, illustrated in \cref{diag:fc},
-where a `source' provides natural uranium, which is enriched by an 'enrichment'
+where a source provides natural uranium, which is enriched by an enrichment
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
-to the 'sink' facility. The enriched \gls{UOX} fuels
+to the sink facility. The enriched \gls{UOX} fuels
 the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
 is sent to a pool to cool for 3 years \cite{carre_overview_2009}.
 The cooled fuel is then reprocessed to separate plutonium and uranium,
@@ -172,7 +169,7 @@ or sent to a repository.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
 The reprocessed uranium is unused and stockpiled. Uranium is reprocessed
 in order to separate the raffinate (Minor actinides and fission products)
-from 'usable' material. Though not utilized in this paper, reprocessed
+from `usable' material. Though not utilized in this paper, reprocessed
 uranium may substitute depleted uranium for \gls{MOX} production. In the
 simulations, there were sufficient depleted uranium inventory that using reprocessed
 uranium was not considered. However, further in the future where the depleted
