@@ -33,17 +33,6 @@ The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 \section{Methodology}
-The nuclear history of EU nations is modeled, using the \gls{PRIS} open-source 
-database from \gls{IAEA}. That database is imported as a csv file, to populate the simulation
-with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
-operator, construction date, first criticality date, first grid date, commercial date, shutdown
-date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
-from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
-which lists the individual reactor units as agents. After running the \Cyclus input file,
-another python script analyzes the output file. All the scripts and data used
-in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
-%% Probably a separate repository is needed..?
-
 Two \Cyclus simulations are run for this paper. 
 The first simulation calculates
 the mass and composition of used fuel and tails \gls{EU} nations accumulate from 1970 to 2050,
@@ -60,6 +49,9 @@ The ASTRID-type \glspl{SFR} make up for the decommissioned capacity
 of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
 fuels the entire fleet of 110 \glspl{SFR}.
+
+All the scripts and data used
+in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 
 \subsection{\Cyclus}
 \Cyclus is an agent-based fuel cycle simulation framework, meaning that
@@ -84,6 +76,15 @@ scheme.
 
 
 \subsection{\gls{EU} Historical Deployment Scheme}
+
+The historical nuclear operation of \gls{EU} nations is based on
+the \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017}. That database is imported as a csv file, to populate the simulation
+with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
+operator, construction date, first criticality date, first grid date, commercial date, shutdown
+date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
+from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
+which lists the individual reactor units as agents. 
+
 Projections of future reactor deployment in this simulation is based on assessment of analyses
 from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_nuclear_2017},
 the World Nuclear Association and two other papers for future plans in EU nations
@@ -115,7 +116,7 @@ of \gls{SFR} by 2076, when the last \gls{LWR} decommissions.
 
 \begin{figure}[htbp!]
         \begin{center}
-                \includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
+                \includegraphics[scale=0.6]{./images/french-transition/power_plot.png}
         \end{center}
         \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
 				 The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
@@ -125,7 +126,7 @@ of \gls{SFR} by 2076, when the last \gls{LWR} decommissions.
 \end{figure}
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/sfr_deploy.png}
+		\includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
 	\end{center}
 	\caption{The deployment of \glspl{SFR} in France is characterized by a period of
 		     aggressive building. An average of four reactors are built per year to
@@ -144,7 +145,7 @@ decommissioning of reactors built in the 1975-2000
 era of aggressive nuclear growth in France.
 
 In reality, building five reactors every year is highly unrealistic. However,
-this analysis is done in respect to material flow, claiming that, if such an aggressive
+this analysis is done to analyze material flow, claiming that, if such an aggressive
 deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
 More realistically, the deployment of new \glspl{SFR} can be spread out by
 staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
@@ -157,7 +158,7 @@ from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
 \cite{wilson_adoption_2009}.
 
 
-\subsection{Scenario Descriptions}
+\subsection{Material Flow}
 The simulation follows the model fuel cycle, illustrated in \cref{diag:fc},
 where a source provides natural uranium, which is enriched by an enrichment
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
@@ -245,9 +246,3 @@ minimum height=2em]
 	                	 \glspl{SFR}.}
                 \label{diag:fc}
 \end{figure}
-
-
-The second scenario separates plutonium from the \gls{UNF}
-inventory from the previous simulation. The separated
-plutonium mixed with the depleted uranium inventory from the previous simulation
-creates \gls{MOX}, which fuels the \gls{SFR}s. 
