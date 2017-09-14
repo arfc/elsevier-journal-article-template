@@ -1,7 +1,7 @@
 \section{Abstract}
 The French 2012-2015 Commission Nationale d'Evaluation reports
 \cite{cne2_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
-We used \Cyclus to explore the feasibility of using \gls{UNF} from other EU nations
+We used \Cyclus \cite{huff_fundamental_2016} to explore the feasibility of using \gls{UNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
 A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
 and tails inventory to support
@@ -14,7 +14,7 @@ of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 \section{Introduction}
 We used \Cyclus to analyze
 the future nuclear inventory in the European Union. \Cyclus is an agent-based extensible
-framework for modeling the flow of material through future nuclear cycles \cite{huff_fundamental_2016}.
+framework for modeling the flow of material through future nuclear cycles .
 This paper focuses on the used fuel
 inventory in \gls{EU} member states in 2050, and focuses on a potential strategy of used fuel
 management.
@@ -57,20 +57,20 @@ in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 \Cyclus is an agent-based fuel cycle simulation framework, meaning that
 each reactor, reprocessing plant, and fuel fabrication plant is modeled as agents. At each timestep (one month),
 agents put out their bids for materials (supply and/or demand) and exchange
-with one another using a market-like mechanism called the 
-dynamic resource exchange \cite{huff_fundamental_2016}.
-Each material item has a quantity, composition, name, and unique identifiers
+with one another. This is done using a market-like mechanism called the 
+dynamic resource exchange \cite{gidden_agent-based_2015}.
+Each material item has a quantity, composition, name, and a unique identifier
 for output analysis. 
 A \Cyclus input file contains archetypes, which are fuel cycle facilities with
 pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
-An \texttt{Institute} agent deploys \texttt{facility} agents
+An \texttt{Institution} agent deploys \texttt{facility} agents
 according to a user-defined deployment scheme at pre-defined timesteps.
-The \texttt{Institute} agent is part of a \texttt{Region} agent,
-which can contain multiple \texttt{Institute} agents.
+The \texttt{Institution} agent is part of a \texttt{Region} agent,
+which can contain multiple \texttt{Institution} agents.
 
 For example, `France' would be a \texttt{Region} agent,
-that may contain two \texttt{Institute} agents \glspl{LWR}
-and \glspl{SFR}. The \texttt{Institute} agents would then deploy
+that may contain two \texttt{Institution} agents \glspl{LWR}
+and \glspl{SFR}. The \texttt{Institution} agents would then deploy
 \glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
 scheme.
 
@@ -82,7 +82,7 @@ the \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017}. That database is im
 with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
-from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
+from the csv file. We wrote up a python script to generate a \Cyclus input file from the csv file,
 which lists the individual reactor units as agents. 
 
 Projections of future reactor deployment in this simulation is based on assessment of analyses
@@ -99,9 +99,9 @@ timeseries of installed capacity in \gls{EU} nations.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/power_plot.png}
 	\end{center}
-	\caption{The timeseries of installed nuclear capacity in the EU are separated by \texttt{Region}s in \Cyclus.
-			 The sudden drops in capacity is caused by nuclear phaseout plans by nations like Germany and Belgium.
-			 Net capacity means the installed net capacity of nuclear power in the \gls{EU}.}
+	\caption{The timeseries of installed nuclear capacity in the EU are separated by \texttt{Regions} in \Cyclus.
+			 The sudden drops in capacity are caused by nuclear phaseout plans by nations like Germany and Belgium.
+			 }
 	\label{fig:eu_pow}
 \end{figure}
 \FloatBarrier
