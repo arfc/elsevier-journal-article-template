@@ -1,5 +1,5 @@
 \section{Abstract}
-The French 2012-2015 Commission Nationale d'Evaluation reports
+The French 2012-2015 Commission Nationale d'Evaluation Reports
 \cite{cne2_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
 We used \Cyclus \cite{huff_fundamental_2016} to explore the feasibility of using \gls{UNF} from other EU nations
 for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
@@ -13,8 +13,8 @@ of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 \section{Introduction}
 We used \Cyclus to analyze
 the future nuclear inventory in the European Union. \Cyclus is an agent-based extensible
-framework for modeling the flow of material through future nuclear cycles .
-We estimate the used fuel
+framework for modeling the flow of material through future nuclear cycles.
+We calculate the used fuel
 inventory in \gls{EU} member states in 2050, and propose a potential collaborative strategy of used fuel
 management.
 A major focus of this paper is to determine the extent to which France has an incentive
@@ -23,7 +23,7 @@ The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and allow France to avoid building additional \glspl{LWR}.
 
 Past research, focused solely on France, typically assumes that additional \glspl{LWR},
-namely \glspl{EPR} supply \gls{UNF} to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
+namely \glspl{EPR} supply the \gls{UNF} required to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
 Studies also exist on implementation of partitioning and transmutation
 in a regional (European) context, with \glspl{ADS} and Gen-IV reactors \cite{fazio_study_2013}.
 There is little attention paid to reprocessing legacy \gls{UNF} from other
@@ -32,10 +32,9 @@ The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 \section{Methodology}
-Two \Cyclus simulations are run for this paper. 
+Two \Cyclus simulations ran for this paper. 
 The first simulation calculates
-the mass and composition of used fuel and tails \gls{EU} nations accumulate from 1970 to 2050,
-as well as the amount of \gls{MOX} that the \gls{UNF} inventory creates.
+the mass and composition of used fuel and tails accumulated by \gls{EU} nations from 1970 to 2050.
 All EU nations with the exception of France adopts a once-through fuel cycle.
 France can reprocess used \gls{UOX} and \gls{MOX} to
 produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
@@ -49,7 +48,7 @@ of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MW
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
 fuels the entire fleet of 110 \glspl{SFR}.
 
-All the scripts and data used
+All scripts and data used
 in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 
 \subsection{\Cyclus}
@@ -77,7 +76,7 @@ scheme.
 \subsection{\gls{EU} Historical Deployment Scheme}
 
 The historical nuclear operation of \gls{EU} nations is based on
-the \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017}. That database is imported as a csv file, to populate the simulation
+the \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017}. The database is imported as a csv file, to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
@@ -89,7 +88,7 @@ from references such as \gls{PRIS} for reactors planned for construction \cite{i
 the World Nuclear Association and two other papers for future plans in EU nations
 \cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
 The projections extend to 2050 at the latest. This allows the simulation to take place from
-1970 to 2050, the latest foreseeable future. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
+1970 to 2050. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
 Figure \ref{fig:eu_pow} displays the
 timeseries of installed capacity in \gls{EU} nations.
@@ -144,7 +143,7 @@ decommissioning of reactors built in the 1975-2000
 era of aggressive nuclear growth in France.
 
 In reality, building five reactors every year is highly unrealistic. However,
-this analysis is done to analyze material flow, claiming that, if such an aggressive
+this analysis is to analyze material flow, claiming that, if such an aggressive
 deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
 More realistically, the deployment of new \glspl{SFR} can be spread out by
 staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
