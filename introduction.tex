@@ -1,10 +1,10 @@
 \section{Abstract}
 The French 2012-2015 Commission Nationale d'Evaluation Reports
 \cite{cne2_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
-We used \Cyclus \cite{huff_fundamental_2016} to explore the feasibility of using \gls{UNF} from other EU nations
-for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
-A \Cyclus simulation ran from 1950 to 2050 for EU to track the \gls{UNF} mass
-and tails inventory. Another simulation ran to model French
+We used \Cyclus \cite{huff_fundamental_2016} to explore the feasibility of enabling a French
+transition to an \gls{SFR} fleet by using \gls{UNF} from other \gls{EU} nations.
+A \Cyclus simulation ran from 1950 to 2050 for \gls{EU} nations to track the \gls{UNF} mass
+and tails inventory. Another simulation ran to model the French
 transition to \glspl{SFR} supported by reprocessing the \gls{UNF} inventory accumulated by the \gls{EU} nations.
 These simulations demonstrate that France can avoid deployment
 of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
@@ -22,49 +22,55 @@ to receive all the \gls{UNF} from \gls{EU} nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and allow France to avoid building additional \glspl{LWR}.
 
-Past research, focused solely on France, typically assumes that additional \glspl{LWR},
+Past research focuses solely on France, and typically assumes that additional \glspl{LWR},
 namely \glspl{EPR} supply the \gls{UNF} required to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
-Studies also exist on implementation of partitioning and transmutation
+Other recent works implement partitioning and transmutation
 in a regional (European) context, with \glspl{ADS} and Gen-IV reactors \cite{fazio_study_2013}.
-There is little attention paid to reprocessing legacy \gls{UNF} from other
-EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
+Little recent work considers synergistic international spent fuel arrangements.
 The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 \section{Methodology}
-Two \Cyclus simulations ran for this paper. 
-The first simulation calculates
+This work is based off of  two \Cyclus simulations. 
+The first simulation calculated
 the mass and composition of used fuel and tails accumulated by \gls{EU} nations from 1970 to 2050.
-All EU nations with the exception of France adopts a once-through fuel cycle.
+All EU nations with the exception of France adopt a once-through fuel cycle.
 France can reprocess used \gls{UOX} and \gls{MOX} to
 produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
 
-After obtaining the \gls{UNF} inventory of all \gls{EU} in 2050, the second
-simulation runs where the \gls{UNF} inventory is reprocessed and fabricated
+!!!!diagram of material flow??
+
+After obtaining the \gls{UNF} inventory of all the \gls{EU} nations in 2050, the second
+simulation runs. It it, the \gls{UNF} inventory is reprocessed and fabricated
 as fuel for the newly deployed \gls{SFR} reactors.
 \glspl{SFR} are modeled after the ASTRID breeder reactor \cite{varaine_pre-conceptual_2012}.
 The ASTRID-type \glspl{SFR} make up for the decommissioned capacity
-of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
+of \glspl{LWR} in France, to maintain a constant installed capacity of $66,000$ MWe up to 2160.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
 fuels the entire fleet of 110 \glspl{SFR}.
 
 All scripts and data used
 in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 
+
 \subsection{\Cyclus}
 \Cyclus is an agent-based fuel cycle simulation framework, meaning that
-each reactor, reprocessing plant, and fuel fabrication plant is modeled as agents. At each timestep (one month),
+each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
+At each timestep (one month),
 agents put out their bids for materials (supply and/or demand) and exchange
-with one another. This is done using a market-like mechanism called the 
-dynamic resource exchange \cite{gidden_agent-based_2015}.
+with one another. A market-like mechanism called the dynamic resource exchange
+\cite{gidden_agent-based_2015} governs the exchanges.
 Each material item has a quantity, composition, name, and a unique identifier
 for output analysis. 
-A \Cyclus input file contains archetypes, which are fuel cycle facilities with
+A \Cyclus input file contains prototypes, which are fuel cycle facilities with
 pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
-An \texttt{Institution} agent deploys \texttt{facility} agents
-according to a user-defined deployment scheme at pre-defined timesteps.
+Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
+A \texttt{Region} agent holds a set of \texttt{Institution}s. 
+An \texttt{Institution} agent can deploy or decommission \texttt{facility} agents.
 The \texttt{Institution} agent is part of a \texttt{Region} agent,
 which can contain multiple \texttt{Institution} agents.
+
+!!!! Venn Diagram of Region / inst / facility
 
 For example, `France' would be a \texttt{Region} agent,
 that may contain two \texttt{Institution} agents \glspl{LWR}
@@ -75,18 +81,20 @@ scheme.
 
 \subsection{\gls{EU} Historical Deployment Scheme}
 
-The historical nuclear operation of \gls{EU} nations is based on
-the \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017}. The database is imported as a csv file, to populate the simulation
+The \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017} contains reactor
+operation history.
+The database is imported as a csv file, to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
-from the csv file. We wrote up a python script to generate a \Cyclus input file from the csv file,
+from the csv file. We developed a python script to generate a \Cyclus input file from the csv file,
 which lists the individual reactor units as agents. 
 
-Projections of future reactor deployment in this simulation is based on assessment of analyses
+!!!!diagram of computational workflow
+
+Projections of future reactor deployment in this simulation are based on assessment of analyses
 from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_nuclear_2017},
-the World Nuclear Association and two other papers for future plans in EU nations
-\cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
+the World Nuclear Association \cite{world_nuclear_association_nuclear_2017}, and works on the future of nuclear power in a global \cite{joskow_future_2012} and European context \cite{hatch_politics_2015}. 
 The projections extend to 2050 at the latest. This allows the simulation to take place from
 1970 to 2050. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
