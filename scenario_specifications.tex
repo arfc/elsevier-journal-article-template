@@ -1,13 +1,11 @@
 \section{Scenario Specifications}
 %% EARLY???
-This paper shows results from two separate simulations.
-The first simulation is a historical operation of \gls{EU} reactors, with a
-realistic reprocessing and \gls{MOX} fabrication capacity, 
-modeled after the French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}.
-The second simulation is an ideal French Transition scenario to \gls{SFR},
-where an ASTRID-type \gls{SFR} replaces the decommissioned
-capacity of \glspl{LWR} in France. The specifications of the simulations
-are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
+
+The scenario specifications for both simulations are
+listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
+The reprocessing and \gls{MOX} fabrication capacity for the 
+first simulation are modeled after the 
+French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}.
 
 \begin{table}[h]
 	\centering
@@ -18,7 +16,7 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 		Simulation Time & 1970-2050 \\ 
 		Reprocessing Capacity & 91.6 MTHM of \gls{UNF} per month \cite{schneider_spent_2008} \\
 		Reprocessing Efficiency & 99.8\% \\
-		Reprocessing Streams & Plutonium and Uranium \\
+		Reprocessing Streams & plutonium and uranium \\
 		\gls{MOX} Fabrication & \small{9\% Reprocessed Pu + 91\% Depleted U} \\
 		\gls{MOX} Fabrication Throughput & 16.25 MTHM of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
 		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\  
@@ -58,19 +56,17 @@ are listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
 \section{Reactor Specifications}
 Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID-type \gls{SFR}reactors.
 
-For \glspl{LWR}, a linear core size model was assumed to capture
+For \glspl{LWR}, we used a linear core size model to capture
 varying reactor capacity. For example, a 
 1,200 MWe PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
 weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
-core (77 assemblies) discharge. Refueling
+core (77 assemblies) discharges. Refueling
 is assumed to take 2 months to complete, during which the reactor
 is shut down. This value is acquired by averaging the 
 historical refueling outage. The specifications are defined in \cref{tab:lwr}.
 
-For the \gls{SFR}, a model design is adopted from
-Marsault-Marie-Sophie et al. \cite{varaine_pre-conceptual_2012}.
-The specifications are defined in \cref{tab:sfr}.
+For the \gls{SFR}, the specifications are defined in \cref{tab:sfr}.
 
 \begin{table}[h]
 	\centering
@@ -100,11 +96,11 @@ The specifications are defined in \cref{tab:sfr}.
 		\hline
 		SFR Cycle Time & 12 months \\ 
 		SFR Refueling Outage & 2 months \\
-		Fuel Mass per Batch & 11,136 kg \\
+		Fuel Mass per Batch & 5,568 kg \\
 		Batch per Core & 4 \\
 		Power Output & 600 MWe \\
 		Lifetime & 80 years \\
-		Fuel & {\small \gls{MOX} (89\% Tailings, 11\% Separated Pu)}\\
+		Fuel & {\small \gls{MOX} (78\% Tailings, 22\% Separated Pu)}\\
 		\hline
 	\end{tabularx}
 	\caption {\gls{SFR} ASTRID Specifications \cite{varaine_pre-conceptual_2012}}
