@@ -67,7 +67,7 @@ which lists the individual reactor units as agents.
 \node (script2) [process, below of=output]{Analysis Script (\texttt{analysis.py})};
 
 \draw [arrow] (database) -- (script); 
-\draw [arrow] (script) -- (input); 
+\draw [arrow] (script) -- (input);
 \draw [arrow] (input) -- (cyclus);
 \draw [arrow] (cyclus) -- (output);
 \draw [arrow] (output) -- (script2);
@@ -305,14 +305,7 @@ minimum height=2em]
 	                	 \glspl{SFR}.}
                 \label{diag:fc}
 \end{figure}
-\FloatBarrier
 
-\subsection{Material Definitions}
-Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
-and used fuel recipe is defined for each reactor type.
-For the compositions of the fuel, a reference depletion calculation
-from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
-\cite{wilson_adoption_2009}.
 \subsection{Scenario Specifications}
 %% EARLY???
 
@@ -413,3 +406,10 @@ historical refueling outage. The specifications are defined in
 	
 \FloatBarrier
 
+
+\subsection{Material Definitions}
+Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
+and used fuel recipe is defined for each reactor type.
+For the compositions of the fuel, a reference depletion calculation
+from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
+\cite{wilson_adoption_2009}.
