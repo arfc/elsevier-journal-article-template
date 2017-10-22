@@ -1,96 +1,121 @@
 \section{Abstract}
-The French 2012-2015 Commission Nationale d'Evaluation reports
-\cite{noauthor_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
-This paper uses \Cyclus to explore the feasibility of using \gls{UNF} from other EU nations
-for French transition into a \gls{SFR} fleet without additional construction of \glspl{LWR}.
-A \Cyclus simulation ran from 1950 to 2160 for EU to track the \gls{UNF} mass
-and tails inventory to support
-the transition into \glspl{SFR}. Another simulation ran to model French
-transition to \glspl{SFR} supported by reprocessing the \gls{UNF} inventory.
-The study concludes that France can avoid deployment
+The French 2012-2015 Commission Nationale d'Evaluation Reports
+\cite{cne2_reports_2015} emphasize preparation for a transition from \glspl{LWR} to \glspl{SFR}.
+We used \Cyclus \cite{huff_fundamental_2016} to explore the feasibility of enabling a French
+transition to an \gls{SFR} fleet by using \gls{UNF} from other \gls{EU} nations.
+A \Cyclus simulation ran from 1950 to 2050 for \gls{EU} nations to track the \gls{UNF} mass
+and tails inventory. Another simulation ran to model the French
+transition to \glspl{SFR} supported by reprocessing the \gls{UNF} inventory accumulated by the \gls{EU} nations.
+These simulations demonstrate that France can avoid deployment
 of additional \glspl{LWR} by accepting \gls{UNF} from other EU nations.
 
 
 \section{Introduction}
 We used \Cyclus to analyze
 the future nuclear inventory in the European Union. \Cyclus is an agent-based extensible
-framework for modeling the flow of material through future nuclear cycles \cite{huff_fundamental_2016}.
-This paper focuses on the used fuel
-inventory in \gls{EU} member states in 2050, and focuses on a potential strategy of used fuel
+framework for modeling the flow of material through future nuclear cycles.
+We calculate the used fuel
+inventory in \gls{EU} member states in 2050, and propose a potential collaborative strategy of used fuel
 management.
 A major focus of this paper is to determine the extent to which France has an incentive
 to receive all the \gls{UNF} from \gls{EU} nations to create \gls{MOX}.
 The \gls{MOX} created will fuel French transition to a \gls{SFR} fleet
 and allow France to avoid building additional \glspl{LWR}.
 
-Past research, focused solely on France, typically assumes that additional \glspl{LWR},
-namely \glspl{EPR} supply \gls{UNF} to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
-Studies exist on implementation of partitioning and transmutation
+Past research focuses solely on France, and typically assumes that additional \glspl{LWR},
+namely \glspl{EPR} supply the \gls{UNF} required to produce \gls{MOX} \cite{carre_overview_2009, martin_symbiotic_2017, freynet_multiobjective_2016}.
+Other recent works implement partitioning and transmutation
 in a regional (European) context, with \glspl{ADS} and Gen-IV reactors \cite{fazio_study_2013}.
-There is little attention paid to reprocessing legacy \gls{UNF} from other
-EU nations to produce \gls{MOX} for the newly deployed \glspl{SFR}.
+Little recent work considers synergistic international spent fuel arrangements.
 The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 \section{Methodology}
-The nuclear history of EU nations is modeled, using the \gls{PRIS} open-source 
-database from \gls{IAEA}. That database is imported as a csv file, to populate the simulation
-with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
-operator, construction date, first criticality date, first grid date, commercial date, shutdown
-date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
-from the csv file. A python script is written up to generate a \Cyclus input file from the csv file,
-which lists the individual reactor units as agents. After running the \Cyclus input file,
-another python script analyzes the output file. All the scripts and data used
-in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
-%% Probably a separate repository is needed..?
-
-Two \Cyclus simulations are run for this paper. 
-The first simulation calculates
-the mass and composition of used fuel and tails \gls{EU} nations accumulate from 1970 to 2050,
-as well as the amount of \gls{MOX} that the \gls{UNF} inventory creates.
-All EU nations with the exception of France adopts a once-through fuel cycle.
+This work is based off of  two \Cyclus simulations. 
+The first simulation calculated
+the mass and composition of used fuel and tails accumulated by \gls{EU} nations from 1970 to 2050.
+All EU nations with the exception of France adopt a once-through fuel cycle.
 France can reprocess used \gls{UOX} and \gls{MOX} to
 produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
+\Cref{diag:fc} shows the material flow.
 
-%%% PASSIVE PHRASE WHAT TO DO
-After obtaining the \gls{UNF} inventory of all \gls{EU} in 2050, the second
-simulation runs where the \gls{UNF} inventory is reprocessed and fabricated
+After obtaining the \gls{UNF} inventory of all the \gls{EU} nations in 2050, the second
+simulation runs. It it, the \gls{UNF} inventory is reprocessed and fabricated
 as fuel for the newly deployed \gls{SFR} reactors.
-\gls{SFR} per model after the ASTRID reactor.
-ASTRID-type \glspl{SFR} make up for the decommissioned capacity
-of \glspl{LWR} in France, to remain a constant installed capacity of $66,000$ MWe up to 2160.
-It is assumed that ASTRID-type reactors use \gls{MOX} fuel created from 11\% reprocessed plutonium
-and 89\% tails and burns the \gls{MOX} fuel to approximately 100 GWdth/t.
-The high burnup allows breeding of plutonium.
+\glspl{SFR} are modeled after the ASTRID breeder reactor \cite{varaine_pre-conceptual_2012}.
+The ASTRID-type \glspl{SFR} make up for the decommissioned capacity
+of \glspl{LWR} in France, to maintain a constant installed capacity of $66,000$ MWe up to 2160.
 Eventually, the  \gls{MOX} created from recycled \gls{MOX}
 fuels the entire fleet of 110 \glspl{SFR}.
 
-
-\subsection{Assumptions}
-The paper makes the following assumptions:
-\begin{itemize}
-        \item \gls{SFR} technology is available for deployment in 2040.
-        \item Decay is not taken into account.
-        \item Reactor construction is always completed on time.
-        \item Separated uranium is unused and stockpiled.
-        \item \glspl{LWR} have an assumed lifetime of 60 years, unless shut down prematurely.
-        \item Newly deployed \glspl{SFR} have a lifetime of 80 years.
-        \item Additional assumptions in the \gls{SFR} case include:
-        \begin{itemize}
-        	\item Reprocessing and \gls{MOX} fabrication begins in 2020.
-        	\item French nuclear capacity remains constant at 66,000 MWe.
-        	\item Reprocessing and fabrication capacity is unlimited.
-        \end{itemize}
-\end{itemize}
+All scripts and data used
+in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 
 
-\subsection{Deployment Timeline}
-Projections of future reactor deployment in this simulation is based on assessment of analyses
-from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_nodate},
-the World Nuclear Association and two other papers for future plans in EU nations
-\cite{world_nuclear_association_nuclear_2017, joskow_future_2012, hatch_politics_2015}.
+\subsection{\Cyclus}
+\Cyclus is an agent-based fuel cycle simulation framework, meaning that
+each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
+At each timestep (one month),
+agents put out their bids for materials (supply and/or demand) and exchange
+with one another. A market-like mechanism called the dynamic resource exchange
+\cite{gidden_agent-based_2015} governs the exchanges.
+Each material item has a quantity, composition, name, and a unique identifier
+for output analysis. 
+A \Cyclus input file contains prototypes, which are fuel cycle facilities with
+pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
+Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
+A \texttt{Region} agent holds a set of \texttt{Institution}s. 
+An \texttt{Institution} agent can deploy or decommission \texttt{facility} agents.
+The \texttt{Institution} agent is part of a \texttt{Region} agent,
+which can contain multiple \texttt{Institution} agents.
+
+
+For example, `France' would be a \texttt{Region} agent,
+that may contain two \texttt{Institution} agents \glspl{LWR}
+and \glspl{SFR}. The \texttt{Institution} agents would then deploy
+\glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
+scheme.
+
+
+\subsection{\gls{EU} Historical Deployment Scheme}
+
+The \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017} contains reactor
+operation history.
+The database is imported as a csv file, to populate the simulation
+with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
+operator, construction date, first criticality date, first grid date, commercial date, shutdown
+date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
+from the csv file. We developed a python script to generate a \Cyclus input file from the csv file,
+which lists the individual reactor units as agents. 
+
+\begin{figure}
+        \centering
+
+\begin{tikzpicture}[node distance=1.5cm]
+\node (database) [object] {Database (\texttt{.csv})};
+\node (script) [process, below of=database] {Input Generation Script (\texttt{write\_deployinst\_input.py})};
+\node (input) [object, below of=script] {\Cyclus Input File (\texttt{.xml})};
+\node (cyclus) [process, below of=input]{\Cyclus};
+\node (output) [object, below of=cyclus]{\texttt{Output File (\texttt{.Sqlite})}};
+\node (script2) [process, below of=output]{Analysis Script (\texttt{analysis.py})};
+
+\draw [arrow] (database) -- (script); 
+\draw [arrow] (script) -- (input); 
+\draw [arrow] (input) -- (cyclus);
+\draw [arrow] (cyclus) -- (output);
+\draw [arrow] (output) -- (script2);
+\end{tikzpicture}
+
+\caption{Computational Workflow for this work. The green circles represent files, and the green
+         boxes represent codes that process the files.}
+\label{diag:comp}
+\end{figure}
+
+Projections of future reactor deployment in this simulation are based on assessment of analyses
+from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_nuclear_2017},
+the World Nuclear Association \cite{Worldd_nuclear_association_nuclear_2017}, and works on the future of nuclear power in a global \cite{joskow_future_2012} and European context \cite{hatch_politics_2015}. 
 The projections extend to 2050 at the latest. This allows the simulation to take place from
-1970 to 2050, the latest foreseeable future. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
+1970 to 2050. Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
 Figure \ref{fig:eu_pow} displays the
 timeseries of installed capacity in \gls{EU} nations.
@@ -99,31 +124,40 @@ timeseries of installed capacity in \gls{EU} nations.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/power_plot.png}
 	\end{center}
-	\caption{Timeseries of installed nuclear capacity in \gls{EU}.}
+	\caption{The timeseries of installed nuclear capacity in the EU are separated by \texttt{Region}s in \Cyclus.
+			 The sudden drops in capacity are caused by nuclear phaseout plans by nations like Germany and Belgium.
+			 }
 	\label{fig:eu_pow}
 \end{figure}
 \FloatBarrier
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
-Once \glspl{SFR} become available, in 2040,
+Once \glspl{SFR} become available in 2040,
 600-MWe \glspl{SFR} are deployed to make up for the 
 decommissioned \gls{LWR} capacities. 
-This results in an installed capacity of 66,000 MWe
-of \gls{SFR} by 2076, when the last \gls{LWR} decommissions.
+This results in an installed \gls{SFR} capacity of 66,000 MWe
+ by 2076, when the last \gls{LWR} decommissions.
 
 \begin{figure}[htbp!]
         \begin{center}
-                \includegraphics[scale=0.7]{./images/french-transition/power_plot.png}
+                \includegraphics[scale=0.6]{./images/french-transition/power_plot.png}
         \end{center}
-        \caption{French Transition into an SFR Fleet}
+        \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
+				 The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
+				 of nuclear in the 2040s, which would be replaced by new \glspl{SFR}. The net
+				 capacity is kept at a constant of 66 GWe.}
         \label{fig:sfr_num}
 \end{figure}
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/sfr_deploy.png}
+		\includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
 	\end{center}
-	\caption{Deployment of French \glspl{SFR} and total installed capacity}
+	\caption{The deployment of \glspl{SFR} in France is characterized by a period of
+		     aggressive building. An average of four reactors are built per year to
+		     make up for the decommissioned power plants built in the 1980s and 1990s.
+		     The second period of aggressive building occurs when the first generation
+		     of \glspl{SFR} decommission after 80 years.}
 	\label{fig:dep}
 \end{figure}
 \FloatBarrier
@@ -135,31 +169,36 @@ The steep transition from 2040 to 2060 reflects the scheduled
 decommissioning of reactors built in the 1975-2000
 era of aggressive nuclear growth in France.
 
+In reality, building five reactors every year is highly unrealistic. However,
+this analysis is to analyze material flow, claiming that, if such an aggressive
+deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
+More realistically, the deployment of new \glspl{SFR} can be spread out by
+staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
 
 \subsection{Material Definitions}
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
-and used fuel recipe is used for each reactor type.
+and used fuel recipe is defined for each reactor type.
 For the compositions of the fuel, a reference depletion calculation
 from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
 \cite{wilson_adoption_2009}.
 
 
-\subsection{Scenario Descriptions}
-The simulation follows the model fuel cycle, illustrated in \cref{diag:fc},
-where a `source' provides natural uranium, which is enriched by an 'enrichment'
+\subsection{Material Flow}
+The simulated fuel cycle is illustrated in \cref{diag:fc}.
+It it a source provides natural uranium. The uranium is enriched by an enrichment
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
-to the 'sink' facility. The enriched \gls{UOX} fuels
+to the sink facility. The enriched \gls{UOX} fuels
 the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
 is sent to a pool to cool for 3 years \cite{carre_overview_2009}.
 The cooled fuel is then reprocessed to separate plutonium and uranium,
 or sent to a repository.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
-The reprocessed uranium is unused and stockpiled. Uranium is reprocessed
+Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
 in order to separate the raffinate (Minor actinides and fission products)
-from 'usable' material. Though not utilized in this paper, reprocessed
-uranium may substitute depleted uranium for \gls{MOX} production. In this
-paper, there was sufficient depleted uranium inventory that using reprocessed
-uranium was not considered. However, further in the future where the depleted
+from `usable' material. Though neglected in this paper, reprocessed
+uranium may substitute depleted uranium for \gls{MOX} production. In the
+simulations, sufficient depleted uranium existed that using reprocessed
+uranium was overlooked. However, further in the future where the depleted
 uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
 
 
@@ -180,7 +219,7 @@ minimum height=2em]
                 % Place nodes
                 \node [block] (sr) {Mine (\texttt{SOURCE})};
                 \node [cloud, below of=sr] (nu) {Nat U};
-                \node [block, below of=nu] (enr) {Enrichment ({\small \texttt{ENRICHMENT}})};
+                \node [block, below of=nu] (enr) {Enrichment ({\footnotesize \texttt{ENRICHMENT}})};
                 \node [cloud, below of=enr] (uox) {\gls{UOX}};
                 \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
                 \node [cloud, right of=lwr] (snf) {\gls{UNF}};
@@ -190,7 +229,7 @@ minimum height=2em]
                 \node [cloud, right of=enr] (tl) {Dep U};
                 \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
                 \node [cloud, below of=pool] (cunf2) {Cooled \gls{UNF}};
-                \node [block, below of=snf] (rep) {Reprocessing ({\small \texttt{SEPARATIONS}})};
+                \node [block, below of=snf] (rep) {{\small Reprocessing ({\footnotesize \texttt{SEPARATIONS}})}};
                 \node [cloud, below of=rep] (u) {Sep. U} ;
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
                 \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
@@ -226,12 +265,10 @@ minimum height=2em]
                 \end{tikzpicture}
         
                 }
-                \caption{Model Fuel Cycle with \gls{MOX} Reprocessing}
+                \caption{The blue boxes represent fuel cycle facilities, and the red ovals
+	                	 represent materials. The facility names in parenthesis are archetype names
+	                	 used in \Cyclus. \gls{MOX} Reactors include both \gls{MOX} \glspl{LWR} and
+	                	 \glspl{SFR}.}
                 \label{diag:fc}
 \end{figure}
-
-
-The second scenario separates plutonium from the \gls{UNF}
-inventory from the previous simulation. The separated
-plutonium mixed with the depleted uranium inventory from the previous simulation
-creates \gls{MOX}, which fuels the \gls{SFR}s. 
+\FloatBarrier

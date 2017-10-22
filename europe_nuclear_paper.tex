@@ -10,9 +10,10 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xspace}
 \usepackage{hhline}
+\usepackage{amsmath}
 
 \usepackage{tabularx}
-\newcolumntype{b}{X}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
 \newcolumntype{s}{>{\hsize=.5\hsize}X}
 \newcolumntype{m}{>{\hsize=.75\hsize}X}
 
@@ -24,13 +25,22 @@
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
 \graphicspath{ {images/} }
 \usepackage[affil-it]{authblk}
+\usepackage[numbers]{natbib}
+\usepackage{notoccite}
 \usepackage{tikz}
-\usetikzlibrary{positioning, arrows, decorations, shapes }
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 \usepackage{cleveref}
 
 \usepackage{datatool}
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
+
 	
 \makeglossaries
 
@@ -54,7 +64,7 @@
 \input{results}
 \input{discussion}
 
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrtnat}
 \bibliography{bibliography}
 
 \input{appendix.tex}
