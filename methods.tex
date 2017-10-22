@@ -1,0 +1,415 @@
+\section{Methods}
+This work is based off of  two \Cyclus simulations. 
+The first simulation calculated
+the mass and composition of used fuel and tails accumulated by \gls{EU} nations from 1970 to 2050.
+All EU nations with the exception of France adopt a once-through fuel cycle.
+France can reprocess used \gls{UOX} and \gls{MOX} to
+produce \gls{MOX} from reprocessed plutonium and depleted uranium (tails).
+\Cref{diag:fc} shows the material flow.
+
+After obtaining the \gls{UNF} inventory of all the \gls{EU} nations in 2050, the second
+simulation runs. It it, the \gls{UNF} inventory is reprocessed and fabricated
+as fuel for the newly deployed \gls{SFR} reactors.
+\glspl{SFR} are modeled after the ASTRID breeder reactor \cite{varaine_pre-conceptual_2012}.
+The ASTRID-type \glspl{SFR} make up for the decommissioned capacity
+of \glspl{LWR} in France, to maintain a constant installed capacity of $66,000$ MWe up to 2160.
+Eventually, the  \gls{MOX} created from recycled \gls{MOX}
+fuels the entire fleet of 110 \glspl{SFR}.
+
+All scripts and data used
+in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
+
+
+\subsection{\Cyclus}
+\Cyclus is an agent-based fuel cycle simulation framework, meaning that
+each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
+At each timestep (one month),
+agents put out their bids for materials (supply and/or demand) and exchange
+with one another. A market-like mechanism called the dynamic resource exchange
+\cite{gidden_agent-based_2015} governs the exchanges.
+Each material item has a quantity, composition, name, and a unique identifier
+for output analysis.
+A \Cyclus input file contains prototypes, which are fuel cycle facilities with
+pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
+Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
+A \texttt{Region} agent holds a set of \texttt{Institution}s.
+An \texttt{Institution} agent can deploy or decommission \texttt{facility} agents.
+The \texttt{Institution} agent is part of a \texttt{Region} agent,
+which can contain multiple \texttt{Institution} agents.
+
+
+For example, `France' would be a \texttt{Region} agent,
+that may contain two \texttt{Institution} agents \glspl{LWR}
+and \glspl{SFR}. The \texttt{Institution} agents would then deploy
+\glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
+scheme.
+
+\subsection{Nuclear Deployment in the European Union}
+
+The \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017} contains reactor
+operation history.
+The database is imported as a csv file, to populate the simulation
+with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
+operator, construction date, first criticality date, first grid date, commercial date, shutdown
+date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
+from the csv file. We developed a python script to generate a \Cyclus input file from the csv file,
+which lists the individual reactor units as agents. 
+
+\begin{figure}
+        \centering
+
+\begin{tikzpicture}[node distance=1.5cm]
+\node (database) [object] {Database (\texttt{.csv})};
+\node (script) [process, below of=database] {Input Generation Script (\texttt{write\_deployinst\_input.py})};
+\node (input) [object, below of=script] {\Cyclus Input File (\texttt{.xml})};
+\node (cyclus) [process, below of=input]{\Cyclus};
+\node (output) [object, below of=cyclus]{\texttt{Output File (\texttt{.Sqlite})}};
+\node (script2) [process, below of=output]{Analysis Script (\texttt{analysis.py})};
+
+\draw [arrow] (database) -- (script); 
+\draw [arrow] (script) -- (input);
+\draw [arrow] (input) -- (cyclus);
+\draw [arrow] (cyclus) -- (output);
+\draw [arrow] (output) -- (script2);
+\end{tikzpicture}
+
+\caption{Computational Workflow for this work. The green circles represent files, and the green
+         boxes represent codes that process the files.}
+\label{diag:comp}
+\end{figure}
+
+
+Projections of future reactor deployment in this simulation are based on
+assessment of analyses from references such as \gls{PRIS} for reactors planned
+for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
+\cite{world_nuclear_association_nuclear_2017}, and works on the future of
+nuclear power in a global \cite{joskow_future_2012} and European context
+\cite{hatch_politics_2015}.  The projections extend to 2050 at the latest. This
+allows the simulation to take place from 1970 to 2050. Later sections explain,
+in detail, the specific plans for each \gls{EU} nation.
+
+\Cref{tab:eu_deployment} lists the reactors that are currently  planned or
+under construction.  All  planned constructions are completed without delay or
+failure and are assumed to reach a lifetime of 60 years.  
+
+
+\begin{table}[h]
+    \centering
+
+    \label{tab:eu_deployment}
+    \scalebox{0.9}{
+    \begin{tabular}{ccccc}
+        \hline
+        \textbf{Exp. Operational }&\textbf{ Country} &\textbf{ Reactor} & \textbf{Type} & \textbf{Gross MWe}\\
+        \hline
+        2018 & Slovakia  & Mochovce 3 & PWR & 440\\
+        2018 & Slovakia & Mochovce 4 & PWR & 440 \\
+        2018 & France & Flamanville 3 & PWR & 1600 \\
+        2018 & Finland & Olkilouto 3 & PWR & 1720 \\
+        2019 & Romania & Cernavoda 3 & PHWR & 720 \\
+        2020 & Romania & Cernavoda 4 & PHWR & 720 \\
+        2024 & Finland & Hanhikivi & VVER1200 & 1200 \\
+        2024 & Hungary & Paks 5 & VVER1200 & 1200 \\
+        2025 & Hungary & Paks 6 & VVER1200 & 1200 \\
+        2025 & Bulgaria & Kozloduy 7 & AP1000? & 950 \\
+        2026 & UK & Hinkley Point C1 & EPR & 1670 \\
+        2027 & UK & Hinkley Point C2 & EPR & 1670 \\
+        2029 & Poland & Choczewo & N/A & 3000 \\
+        2035 & Poland & N/A & N/A & 3000 \\
+        2035 & Czech Rep & Dukovany 5 & N/A & 1200 \\
+        2035 & Czech Rep & Temelin 3 & AP1000 & 1200 \\
+        2040 & Czech Rep & Temelin 4 & AP1000 & 1200 \\
+        \hline
+    \end{tabular}
+    }
+    \caption {Power Reactors under construction and planned.
+        Replicated from \cite{world_nuclear_association_nuclear_2017}.}
+\end{table}
+\FloatBarrier
+
+For each \gls{EU} nation, the growth trajectory is categorized from
+``Aggressive Growth'' to ``Aggressive Shutdown''. Aggressive growth is
+characterized by a rigorous expansion of nuclear power while
+Aggressive Shutdown is characterized as a transition to rapidly
+de-nuclearize the nation's electric grid. A nation's growth trajectory is
+categorized into five degrees depending on G, the growth trajectory metric.
+
+ \[
+ G = \left\{\begin{array}{ll}
+ \text{Aggressive Growth}, & \text{for } G \geq 2\\
+ \text{Modest Growth}, & \text{for } 1.2 \leq G < 2\\
+ \text{Maintanence}, & \text{for } 0.8 \leq G < 1.2 \\
+ \text{Modest Reduction}, & \text{for } 0.5 \leq G< 0.8\\
+ \text{Aggressive Reduction}, & \text{for } G \leq 0.5
+ \end{array}\right\} = \frac{C_{2040}}{C_{2017}}\\\\
+ \]
+ \[
+  G = \text{Growth Trajectory  } [-]
+ \]
+ \[
+ C_{i} = \text{Nuclear Capacity in Year i  } [MWe]
+ \]
+
+The growth trajectory and specific plan of each nation in the \gls{EU}
+is listed in Table \ref{tab:eu_growth}.
+
+\begin{table}[h]
+    \centering
+        \begin{tabularx}{\textwidth}{lmb}
+            \hline
+
+            \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
+            \hline
+            UK & Aggressive Growth & {\small  13 units (17,900 MWe) by 2030.}\\
+            \hline
+            Poland & Aggressive Growth &  {\small Additional 6,000 MWe by 2035.}\\
+            \hline
+            Hungary & Aggressive Growth &  {\small Additional 2,400 MWe by 2025.} \\
+            \hline
+            Finland & Modest Growth &  {\small Additional 2,920 MWe by 2024.}\\
+            \hline
+            Bulgaria & Modest Growth &  {\small Additional 1,000 MWe by 2035.} \\
+            \hline
+            Romania & Modest Growth &  {\small Additional 1,440 MWe by 2020.} \\
+            \hline
+            Czech Rep. & Modest Growth & {\small  Additional 2,400 MWe by 2035.}\\
+            \hline
+            France & Modest Reduction & {\small No expansion or early shutdown.}\\
+            \hline
+            Spain & Modest Reduction &  {\small No expansion or early shutdown.} \\
+            \hline
+            Italy & Modest Reduction & {\small No expansion or early shutdown. }\\
+            \hline
+            Belgium & Aggressive Reduction & All shut down 2025.\\
+            \hline
+            Sweden & Aggressive Reduction & All shut down 2050.\\
+            \hline
+            Germany & Aggressive Reduction & All shut down by 2022.\\
+            \hline
+
+        \end{tabularx}
+
+    \caption {Future Nuclear Programs of \gls{EU} Nations \cite{world_nuclear_association_nuclear_2017}}
+  \label{tab:eu_growth}
+\end{table}
+
+
+Figure \ref{fig:eu_pow} displays the
+timeseries of installed capacity in \gls{EU} nations.
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[scale=0.7]{./images/eu_future/power_plot.png}
+	\end{center}
+	\caption{The timeseries of installed nuclear capacity in the EU are separated by \texttt{Region}s in \Cyclus.
+			 The sudden drops in capacity are caused by nuclear phaseout plans by nations like Germany and Belgium.
+			 }
+	\label{fig:eu_pow}
+\end{figure}
+
+
+Once \glspl{SFR} become available in 2040,
+600-MWe \glspl{SFR} are deployed to make up for the 
+decommissioned \gls{LWR} capacities. 
+This results in an installed \gls{SFR} capacity of 66,000 MWe
+ by 2076, when the last \gls{LWR} decommissions. The specific deployment 
+ schedule is determined by the logic within the Cycamore GrowthRegion archetype. 
+
+
+
+\subsection{Material Flow}
+The simulated fuel cycle is illustrated in \cref{diag:fc}.
+It it a source provides natural uranium. The uranium is enriched by an enrichment
+facility to produce \gls{UOX}, while disposing enrichment waste (tails)
+to the sink facility. The enriched \gls{UOX} fuels
+the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
+is sent to a pool to cool for 3 years \cite{carre_overview_2009}.
+The cooled fuel is then reprocessed to separate plutonium and uranium,
+or sent to a repository.
+The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
+Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
+in order to separate the raffinate (Minor actinides and fission products)
+from `usable' material. Though neglected in this paper, reprocessed
+uranium may substitute depleted uranium for \gls{MOX} production. In the
+simulations, sufficient depleted uranium existed that using reprocessed
+uranium was overlooked. However, further in the future where the depleted
+uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
+
+
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+minimum height=2em]
+
+
+\begin{figure}
+        \centering
+        \scalebox{0.7}{
+                \begin{tikzpicture}[align=center, node distance = 3cm and 3cm, auto]
+                % Place nodes
+                \node [block] (sr) {Mine (\texttt{SOURCE})};
+                \node [cloud, below of=sr] (nu) {Nat U};
+                \node [block, below of=nu] (enr) {Enrichment ({\footnotesize \texttt{ENRICHMENT}})};
+                \node [cloud, below of=enr] (uox) {\gls{UOX}};
+                \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
+                \node [cloud, right of=lwr] (snf) {\gls{UNF}};
+                \node [cloud, right of=uox] (cunf) {Cooled \gls{UNF}};
+                \node [block, right of=snf] (pool) {Pool (\texttt{Storage})};
+                \node [cloud, left of=lwr] (tl2) {Dep U};
+                \node [cloud, right of=enr] (tl) {Dep U};
+                \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
+                \node [cloud, below of=pool] (cunf2) {Cooled \gls{UNF}};
+                \node [block, below of=snf] (rep) {{\small Reprocessing ({\footnotesize \texttt{SEPARATIONS}})}};
+                \node [cloud, below of=rep] (u) {Sep. U} ;
+                \node [cloud, left of=rep] (pu) {Sep. Pu};
+                \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
+                \node [cloud, below of=mix] (mox) {\gls{MOX}};
+                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
+                \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
+                
+                \draw[->, thick] (sr) -- (nu);
+                \draw[->, thick] (nu) -- (enr);
+                \draw[->, thick] (enr) -- (tl);
+                \draw[->, thick] (enr) -- (tl2);
+                \draw[->, thick] (tl) -- (sk);
+                \draw[->, thick] (tl2) -- (mix);
+                \draw[->, thick] (enr) -- (uox);
+                \draw[->, thick] (uox) -- (lwr);
+                \draw[->, thick] (lwr) -- (snf);
+                
+                \draw[->, thick] (lwr) -- (snf);
+                \draw[->, thick] (snf) -- (pool);
+                \draw[->, thick] (pool) -- (cunf);
+                \draw[->, thick] (pool) -- (cunf2);
+                \draw[->, thick] (cunf) -- (sk);
+                \draw[->, thick] (cunf2) -- (rep);
+                
+                \draw[->, thick] (rep) -- (u);
+                \draw[->, thick] (rep) -- (pu);
+                \draw[->, thick] (pu) -- (mix);
+                \draw[->, thick] (mix) -- (mox);
+                \draw[->, thick] (mox) -- (mxr);
+                \draw[->, thick] (mxr) -- (snmox);
+                \draw[->, thick] (snmox) -- (rep);
+                
+                \end{tikzpicture}
+        
+                }
+                \caption{The blue boxes represent fuel cycle facilities, and the red ovals
+	                	 represent materials. The facility names in parenthesis are archetype names
+	                	 used in \Cyclus. \gls{MOX} Reactors include both \gls{MOX} \glspl{LWR} and
+	                	 \glspl{SFR}.}
+                \label{diag:fc}
+\end{figure}
+
+\subsection{Scenario Specifications}
+%% EARLY???
+
+The scenario specifications for both simulations are
+listed in tables \ref{tab:sim_eu} and \ref{tab:sim_france}.
+The reprocessing and \gls{MOX} fabrication capacity for the 
+first simulation are modeled after the 
+French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}.
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{bb}
+		\hline
+		\textbf{Specification} &\textbf{ Value} \\
+		\hline
+		Simulation Time & 1970-2050 \\ 
+		Reprocessing Capacity & 91.6 MTHM of \gls{UNF} per month \cite{schneider_spent_2008} \\
+		Reprocessing Efficiency & 99.8\% \\
+		Reprocessing Streams & plutonium and uranium \\
+		\gls{MOX} Fabrication & \small{9\% Reprocessed Pu + 91\% Depleted U} \\
+		\gls{MOX} Fabrication Throughput & 16.25 MTHM of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
+		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\  
+		Reprocessed Uranium Usage &  None. Stockpile reprocessed U \\
+		\hline
+	\end{tabularx}
+	\caption {Specification for Historical Operation of \gls{EU} Case}
+	\label{tab:sim_eu}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{bb}
+		\hline
+		\textbf{Specification }& \textbf{Value} \\
+		\hline
+		Simulation Time & 1970-2160 \\
+		\gls{SFR} Available Year & 2040 \\
+		\gls{UOX} Reprocessing Capacity & 20 tons per timestep \\
+		\gls{MOX} Reprocessing Capacity & $\infty$ \\
+		Reprocessing and Fabrication Begins & 2020 \\
+		Separation Efficiency & 99.8 \% \\
+		Reprocessing Streams & plutonium and uranium \\
+		\small{Used \gls{UOX} and Depleted U Inventory} & 125,453 MTHM {\small (From first simulation)} \\
+		\small{Additional Used \gls{UOX} or Depleted U} & None  \\
+		\gls{MOX} Fabrication &  \small{11\% Reprocessed Pu + 89\% Depleted U}  \\
+		\gls{MOX} Fabrication Throughput & infinite \\
+		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\
+		Reprocessed Uranium Usage &  None. Stockpile reprocessed U. \\
+		\hline
+	\end{tabularx}
+	\caption {Specification for French Transition to \gls{SFR} Case}
+	\label{tab:sim_france}
+\end{table}
+
+
+\subsection{Reactor Specifications}
+Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID-type \gls{SFR}reactors.
+
+For \glspl{LWR}, we used a linear core size model to capture
+varying reactor capacity. For example, a 
+1,200 MWe PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
+weighing 523.4 kg.
+After each 18 month cycle, one-third of the 
+core (77 assemblies) discharges. Refueling
+is assumed to take 2 months to complete, during which the reactor
+is shut down. This value is acquired by averaging the 
+historical refueling outage. The specifications are defined in 
+\Cref{tab:reactor-specs} details the reactor specifications in this simulation.
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{blll}
+		\hline
+		\textbf{Specification} & \textbf{\gls{PWR}} & \textbf{\gls{BWR}} & \textbf{\gls{SFR}}\\
+		\hline
+                Lifetime [y] & 60 & 60 & 80 \\
+                Cycle Time [mos.]& 18 & 18 & 12\\ 
+                Refueling Outage [mos.]& 2 & 2  & 2\\
+                Rated Power [MWe] & 1000 & 1000 & 600\\
+                Assembly mass [kg] & 523.4 & 180 & -- \\
+                Batch mass [kg] & -- & -- & 5,568\\
+                Discharge Burnup [GWd/tHM] & 51 & 51 & 105 \\
+                Assemblies per core & 193  & 764 & -- \\
+                Batches per core & 3 & 3 & 4\\
+                Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
+		\hline
+	\end{tabularx}
+        \caption {\gls{LWR} Specifications are derived from 
+                \cite{duderstadt_nuclear_1976} while \gls{ASTRID} \gls{SFR} 
+                specifications were sourced from 
+        \cite{varaine_pre-conceptual_2012}. The simulated reactor lifetime reaches the licensed lifetime unless 
+        the reactor is shut down prematurely.  The number of assemblies and corresponding \gls{LWR} core 
+        masses are reported for a 1000MWe core. Reactors with different core  
+        powers are modeled with a linear mass assumption.}
+	\label{tab:reactor-specs}
+	\end{table}
+
+	
+\FloatBarrier
+
+
+\subsection{Material Definitions}
+Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
+and used fuel recipe is defined for each reactor type.
+For the compositions of the fuel, a reference depletion calculation
+from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
+\cite{wilson_adoption_2009}.

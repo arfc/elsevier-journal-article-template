@@ -1,6 +1,6 @@
 \section{Results}
 
-\subsection{Historical Operation of \gls{EU} Reactors}
+\subsection{Nuclear Material Inventory}
 
 \Cref{tab:sim_result} lists  \gls{EU} inventory and
 history at year 2050, and the used \gls{UOX} will be
@@ -87,7 +87,56 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory.
 
 
-\subsection{French \gls{SFR} Transition Scenario}
+\subsection{French SFR Deployment}
+
+The Cycamore GrowthRegion archetype is able to dynamically increase, decrease,
+or maintain installed nuclear capacity by deploying reactors according to net
+electricity demand. In this simulation, the demand for installed nuclear
+capacity in France was constant over time. After \glspl{SFR} became available
+in 2040, the GrowthRegion therefore deployed \glspl{SFR} capacity to make up
+for decommissioned \gls{LWR} capacity.  This resulted in an installed
+\gls{SFR} capacity of 66,000 MWe by 2076, when the final \gls{LWR}
+decommissioned. The specific deployment schedule is determined by the logic
+within the Cycamore GrowthRegion archetype as shown in \cref{fig:sfr_num} and
+\cref{fig:dep}. 
+
+\begin{figure}[htbp!]
+        \begin{center}
+                \includegraphics[scale=0.6]{./images/french-transition/power_plot.png}
+        \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
+                 The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
+                 of nuclear in the 2040s, which would be replaced by new \glspl{SFR}. The net
+                 capacity is kept at a constant of 66 GWe.}
+        \label{fig:sfr_num}
+        \end{center}
+\end{figure}
+
+\begin{figure}[htbp!]
+    \begin{center}
+        \includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
+    \caption{The deployment of \glspl{SFR} in France is characterized by a period of
+             aggressive building. An average of four reactors are built per year to
+             make up for the decommissioned power plants built in the 1980s and 1990s.
+             The second period of aggressive building occurs when the first generation
+             of \glspl{SFR} decommission after 80 years.}
+    \label{fig:dep}
+    \end{center}
+\end{figure}
+
+\Cref{fig:sfr_num} and \cref{fig:dep} display
+the French transition to \glspl{SFR} over time.
+The steep transition from 2040 to 2060 reflects the scheduled
+decommissioning of reactors built in the 1975-2000
+era of aggressive nuclear growth in France.
+
+In reality, building five reactors every year is highly unrealistic. However,
+this analysis is to analyze material flow, claiming that, if such an aggressive
+deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
+More realistically, the deployment of new \glspl{SFR} can be spread out by
+staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
+
+\FloatBarrier
+\subsection{Transition Reprocessing Dynamics}
 
 Reprocessing \gls{UNF} collected from all EU nations can start approximately
 240 \glspl{SFR}, which is more than enough for two generations of 66GWe \gls{SFR}
