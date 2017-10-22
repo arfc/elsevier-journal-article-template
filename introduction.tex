@@ -19,28 +19,3 @@ The present work finds that this collaborative strategy can reduce the
 need to construct additional \glspl{LWR} in France.
 
 
-
-\subsection{\Cyclus}
-\Cyclus is an agent-based fuel cycle simulation framework, meaning that
-each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
-At each timestep (one month),
-agents put out their bids for materials (supply and/or demand) and exchange
-with one another. A market-like mechanism called the dynamic resource exchange
-\cite{gidden_agent-based_2015} governs the exchanges.
-Each material item has a quantity, composition, name, and a unique identifier
-for output analysis.
-A \Cyclus input file contains prototypes, which are fuel cycle facilities with
-pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
-Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
-A \texttt{Region} agent holds a set of \texttt{Institution}s.
-An \texttt{Institution} agent can deploy or decommission \texttt{facility} agents.
-The \texttt{Institution} agent is part of a \texttt{Region} agent,
-which can contain multiple \texttt{Institution} agents.
-
-
-For example, `France' would be a \texttt{Region} agent,
-that may contain two \texttt{Institution} agents \glspl{LWR}
-and \glspl{SFR}. The \texttt{Institution} agents would then deploy
-\glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
-scheme.
-
