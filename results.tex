@@ -1,30 +1,27 @@
 \section{Results}
 
-\subsection{Historical Operation of \gls{EU} Reactors}
+\subsection{\gls{UNF} and tails inventory in the \gls{EU}}
 
-\Cref{tab:sim_result} lists  \gls{EU} inventory and
-history at year 2050, and the used \gls{UOX} will be
-reprocessed.
+\Cref{tab:sim_result1} lists \gls{EU} material inventory and
+at the end of the simulation.
 
 \begin{table}[h]
 	\centering
 %	\scalebox{0.86}{
 		\begin{tabular}{cccc}
 			\hline
-			\textbf{Category} & \textbf{Unit} & \textbf{Value} & \textbf{Specifics}\\ 
-			\hline
-			Total UOX Usage & MTHM & 163,826 &  \\ 
-			Total MOX Usage & MTHM & 6,560 & \\ 
-			Total Used UOX Stored & MTHM & 125,453 & \gls{UNF} that is not reprocessed\\ 
-			Total Used  MOX Stored & MTHM & 3,438 & \gls{UNF} that is not reprocessed \\ 
-			Total Tailings & MTHM & 975,938 & \\ 
-			Total Natural U Used & MTHM & 1,146,420 & \\ \hline
+			\textbf{Category } & \textbf{Value} & \textbf{Unit} & \textbf{Specifics}\\ \hline
+			Total UOX Usage  & 176,600 & MTHM &  \\ 
+			Total MOX Usage  & 6,953 & MTHM & \\ 
+			\textcolor{red}{Total Used UOX Stored}  & 110,013 & MTHM & \gls{UNF} that is not reprocessed\\
+			\textcolor{red}{Total Used UOX Stored (France)} & 12,943 & MTHM & \gls{UNF} that is not reprocessed \\
+			Total Tails  & 1,059,210 & MTHM & \\ 
+			Total Natural U Used  & 1,235,810 & MTHM & \\ \hline
 		\end{tabular}
 		\caption{Listed are the metrics from the historical nuclear operation of \gls{EU} nations.
 				 The difference between total \gls{UOX} usage and \gls{UOX} stored is the amount
-				 that has been reprocessed for \gls{MOX}. Only the stored \gls{UOX} is used in the 
-				 second simulation.}
-		\label{tab:sim_result}
+				 that has been reprocessed for \gls{MOX}. Only the stored \gls{UOX} is used for \gls{ASTRID} fuel production.}
+		\label{tab:sim_result1}
 \end {table}
 \FloatBarrier
 
@@ -69,12 +66,12 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{tabular}{ccc}
 		\hline
 		\textbf{Isotope} & \textbf{Mass Fraction in Used Fuel [\%]} & \textbf{Quantity [t]} \\ \hline
-		Total & 0.9358 & 1,173 \\ \hline
-		Pu238 & 0.0111 & 13.9 \\ 
-		Pu239 & 0.518 & 649.8 \\ 
-		Pu240 & 0.232 & 291.05 \\ 
-		Pu241 & 0.126 & 158.07 \\ 
-		Pu242 & 0.0487 & 61.09 \\ \hline
+		Total & 0.9358 & 1,029 \\ \hline
+		Pu238 & 0.0111 & 12.2 \\ 
+		Pu239 & 0.518 & 569.8 \\ 
+		Pu240 & 0.232 & 255.2 \\ 
+		Pu241 & 0.126 & 138.6 \\ 
+		Pu242 & 0.0487 & 53.5 \\ \hline
 	\end{tabular}
 	\caption{Plutonium From \gls{UNF} Inventory. This table assumes no decay
 			 took place. The long half-life of the fissile Pu-239 (24,100 years)
