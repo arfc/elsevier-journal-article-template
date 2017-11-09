@@ -33,7 +33,6 @@ French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}
 		Reprocessing Capacity & 91.6 MTHM of \gls{UNF} per month \cite{schneider_spent_2008} \\
 		Reprocessing Efficiency & 99.8\% \\
 		Reprocessing Streams & plutonium and uranium \\
-		\gls{PWR} \gls{MOX} Fabrication & \small{9\% Reprocessed Pu + 91\% Depleted U} \\
 		\gls{MOX} Fabrication Throughput & 16.25 MTHM of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
 		\gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} is not reprocessed. \\  
 		\hline
@@ -50,7 +49,6 @@ French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}
 		\hline
 		Separation Efficiency & 99.8 \% \\
 		Reprocessing Streams & plutonium and uranium \\
-		\gls{ASTRID} Fuel Fabrication &  \small{22\% Reprocessed Pu + 78\% Depleted U}  \\
 		\gls{ASTRID} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\
 		\hline
 	\end{tabularx}
@@ -58,9 +56,10 @@ French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}
 	\label{tab:sim_france}
 \end{table}
 
+\pagebreak
 
 \section{Reactor Specifications}
-Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID-type \gls{SFR}reactors.
+Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID-type \gls{SFR} reactors.
 
 For \glspl{LWR}, we used a linear core size model to capture
 varying reactor capacity. For example, a 
@@ -75,33 +74,29 @@ historical refueling outage. The specifications are defined in
 
 \begin{table}[h]
 	\centering
-	\begin{tabularx}{\textwidth}{blll}
+	\begin{tabular}{cccc}
 		\hline
 		\textbf{Specification} & \textbf{\gls{PWR} \cite{sutharshan_ap1000tm_2011}} & \textbf{\gls{BWR} \cite{hinds_next-generation_2006}} & \textbf{\gls{SFR}} \cite{varaine_pre-conceptual_2012}\\
 		\hline
-                Lifetime [y] & 60 & 60 & 80 \\
+                Lifetime [y] \tablefootnote{The simulated reactor lifetime reaches the licensed lifetime unless 
+        the reactor is shut down prematurely.} & 60 & 60 & 80 \\
                 Cycle Time [mos.]& 18 & 18 & 12\\ 
                 Refueling Outage [mos.]& 2 & 2  & 2\\
                 Rated Power [MWe] & 1000 & 1000 & 600\\
                 Assembly mass [kg] & 523.4 & 180 & -- \\
                 Batch mass [kg] & -- & -- & 5,568\\
                 Discharge Burnup [GWd/tHM] & 51 & 51 & 105 \\
-                Assemblies per core & 193  & 764 & -- \\
+                Assemblies per core \tablefootnote{Number of assemblies and corresponding \gls{LWR} core 
+        masses are reported for a 1000-MWe core. Reactors with different core  
+        powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
+
                 Batches per core & 3 & 3 & 4\\
-                Initial Fissile Loading & 3.1t U235 & 4.2t U235 & 4.9t Pu \\
+                Initial Fissile Loading [t] & 3.1  $^{235}U$ & 4.2  $^{235}U$ & 4.9  Pu \\
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
 		\hline
-	\end{tabularx}
+	\end{tabular}
         \caption {Model \gls{LWR} and \gls{ASTRID} specifications used for the simulations are listed, and \glspl{LWR} are modified
         linearly for varying power capacity. }
 	\label{tab:reactor-specs}
+
 	\end{table}
-
-        \footnotetext{The simulated reactor lifetime reaches the licensed lifetime unless 
-        the reactor is shut down prematurely.} 
-        \footnotetext{Number of assemblies and corresponding \gls{LWR} core 
-        masses are reported for a 1000MWe core. Reactors with different core  
-        powers are modeled with a linear mass assumption.}
-	
-\FloatBarrier
-
