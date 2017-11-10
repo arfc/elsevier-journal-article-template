@@ -9,11 +9,13 @@ starting from 2040. France begins Production of fuel for \glspl{SFR}
 in 2020 by recycling the stored \gls{UNF}.
 The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.
 
+
 All scripts and data used
 in this paper are available in \cite{bae_arfc/transition-scenarios:_2017}.
 
 
 \subsection{\Cyclus}
+
 \Cyclus is an agent-based fuel cycle simulation framework \cite{huff_fundamental_2016}, meaning that
 each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
 At each timestep (one month),
@@ -32,6 +34,7 @@ which can contain multiple \texttt{Institution} agents. Several versions of \tex
 and \texttt{Region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
  \texttt{DeployInst} is used as the institution archetype for this work, where the institution
 deploys agents in a user-defined time. 
+
 
 For example, `France' would be a \texttt{Region} agent,
 that may contain two \texttt{Institution} agents \glspl{LWR}
@@ -53,7 +56,6 @@ from the csv file. We developed a python script to generate a \Cyclus input file
 which lists the individual reactor units as agents. 
 
 
-
 \begin{figure}
         \centering
         \scalebox{0.7}{
@@ -73,31 +75,39 @@ which lists the individual reactor units as agents.
 \end{tikzpicture}
 }
 \caption{Computational Workflow for this work. The green circles represent files, and the blue
+
          boxes represent codes that process the files.}
 \label{diag:comp}
 \end{figure}
 
-Projections of future reactor deployment in this simulation are based on assessment of analyses
-from references such as \gls{PRIS} for reactors planned for construction \cite{iaea_pris_2017},
-the World Nuclear Association \cite{world_nuclear_association_nuclear_2017}, and works on the future of nuclear power in a global \cite{joskow_future_2012} and European context \cite{hatch_politics_2015}. 
-The projections extend to 2050 at the latest. 
-Later sections explain, in detail, the specific plans for each \gls{EU} nation.
+
+Projections of future reactor deployment in this simulation are based on
+assessment of analyses from references such as \gls{PRIS} for reactors planned
+for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
+\cite{world_nuclear_association_nuclear_2017}, and works on the future of
+nuclear power in a global \cite{joskow_future_2012} and European context
+\cite{hatch_politics_2015}.  The projections extend to 2050 at the latest. This
+allows the simulation to take place from 1970 to 2050. Later sections explain,
+in detail, the specific plans for each \gls{EU} nation.
+
+\Cref{tab:eu_deployment} lists the reactors that are currently  planned or
+under construction.  All  planned constructions are completed without delay or
+failure and are assumed to reach a lifetime of 60 years.  
 
 
-\Cref{tab:eu_deployment} lists the reactors that are currently  planned or under construction.
-
- 
 \begin{table}[h]
     \centering
+
+    \label{tab:eu_deployment}
     \scalebox{0.9}{
     \begin{tabular}{ccccc}
         \hline
-        \textbf{Exp. Operational} & \textbf{Country} & \textbf{Reactor} & \textbf{Type} & \textbf{Gross MWe}\\
+        \textbf{Exp. Operational }&\textbf{ Country} &\textbf{ Reactor} & \textbf{Type} & \textbf{Gross MWe}\\
         \hline
-        2018 & Slovakia  & Mochovce 3 & PWR & 471 \\
-        2018 & Slovakia & Mochovce 4 & PWR & 471 \\
+        2018 & Slovakia  & Mochovce 3 & PWR & 440\\
+        2018 & Slovakia & Mochovce 4 & PWR & 440 \\
         2018 & France & Flamanville 3 & PWR & 1600 \\
-        2018 & Finland & Olkilouto 3 & PWR & 1720 \\        
+        2018 & Finland & Olkilouto 3 & PWR & 1720 \\
         2019 & Romania & Cernavoda 3 & PHWR & 720 \\
         2020 & Romania & Cernavoda 4 & PHWR & 720 \\
         2024 & Finland & Hanhikivi & VVER1200 & 1200 \\
@@ -122,11 +132,11 @@ Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
 For each \gls{EU} nation, the growth trajectory is categorized from
 ``Aggressive Growth'' to ``Aggressive Shutdown''. Aggressive growth is
-characterized by a rigorous expansion of nuclear power while 
+characterized by a rigorous expansion of nuclear power while
 Aggressive Shutdown is characterized as a transition to rapidly
 de-nuclearize the nation's electric grid. A nation's growth trajectory is
 categorized into five degrees depending on G, the growth trajectory metric.
-  
+
  \[
  G = \left\{\begin{array}{ll}
  \text{Aggressive Growth}, & \text{for } G \geq 2\\
@@ -142,7 +152,7 @@ categorized into five degrees depending on G, the growth trajectory metric.
  \[
  C_{i} = \text{Nuclear Capacity in Year i  } [MWe]
  \]
- 
+
 The growth trajectory and specific plan of each nation in the \gls{EU} 
 is listed in Table \ref{tab:eu_growth}.
 
@@ -199,7 +209,6 @@ timeseries of installed capacity in \gls{EU} nations.
   \label{tab:eu_growth}
 \end{table}
 \FloatBarrier
-
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -271,13 +280,16 @@ staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
 An analysis of the effect of \gls{LWR} lifetime extension is shown in a later section.
 
 
+
 \subsection{Material Flow}
 The simulated fuel cycle is illustrated in \cref{diag:fc}.
+
 A source provides natural uranium, which is enriched by an enrichment
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
 to the sink. The enriched \gls{UOX} fuels
 the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
 is sent to a pool to cool for at least 3 years \cite{carre_overview_2009}.
+
 The cooled fuel is then reprocessed to separate plutonium and uranium,
 or sent to a repository.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
@@ -424,6 +436,7 @@ French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}
 \section{Reactor Specifications}
 Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRID-type \gls{SFR} reactors.
 
+
 For \glspl{LWR}, we used a linear core size model to capture
 varying reactor capacity. For example, a 
 1,200 MWe PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
@@ -466,6 +479,7 @@ historical refueling outage. The specifications are defined in
 
 
 
+
 \subsection{Material Definitions}
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
 and used fuel recipe is defined for each reactor type.
@@ -490,5 +504,3 @@ from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
         \caption{Fresh fuel compositions used for the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
         \label{tab:sim_result}
 \end {table}
-
-
