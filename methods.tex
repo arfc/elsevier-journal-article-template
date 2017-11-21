@@ -49,7 +49,7 @@ scheme.
 The \gls{IAEA} \gls{PRIS} database \cite{iaea_pris_2017} contains reactor
 operation history.
 The database is imported as a csv file, to populate the simulation
-with deployment information, listing the country, reactor unit, type, net capacity (MWe), status,
+with deployment information, listing the country, reactor unit, type, net capacity (\gls{MWe}), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
 from the csv file. We developed a python script to generate a \Cyclus input file from the csv file,
@@ -101,7 +101,7 @@ failure and are assumed to reach a lifetime of 60 years.
     \scalebox{0.9}{
     \begin{tabular}{ccccc}
         \hline
-        \textbf{Exp. Operational }&\textbf{ Country} &\textbf{ Reactor} & \textbf{Type} & \textbf{Gross MWe}\\
+        \textbf{Exp. Operational }&\textbf{ Country} &\textbf{ Reactor} & \textbf{Type} & \textbf{Gross \gls{MWe}}\\
         \hline
         2018 & Slovakia  & Mochovce 3 & PWR & 440\\
         2018 & Slovakia & Mochovce 4 & PWR & 440 \\
@@ -149,7 +149,7 @@ categorized into five degrees depending on G, the growth trajectory metric.
   G = \text{Growth Trajectory  } [-] 
  \]
  \[
- C_{i} = \text{Nuclear Capacity in Year i  } [MWe]
+ C_{i} = \text{Nuclear Capacity in Year i  } [\gls{MWe}]
  \]
 
 The growth trajectory and specific plan of each nation in the \gls{EU} 
@@ -167,21 +167,21 @@ timeseries of installed capacity in \gls{EU} nations.
                     
                     \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
                     \hline
-                    UK & Aggressive Growth & {\small  13 units (17,900 MWe) by 2030.}\\
+                    UK & Aggressive Growth & {\small  13 units (17,900 \gls{MWe}) by 2030.}\\
                     \hline
-                    Poland & Aggressive Growth &  {\small Additional 6,000 MWe by 2035.}\\
+                    Poland & Aggressive Growth &  {\small Additional 6,000 \gls{MWe} by 2035.}\\
                     \hline
-                    Hungary & Aggressive Growth &  {\small Additional 2,400 MWe by 2025.} \\ 
+                    Hungary & Aggressive Growth &  {\small Additional 2,400 \gls{MWe} by 2025.} \\ 
                     \hline
-                    Finland & Modest Growth &  {\small Additional 2,920 MWe by 2024.}\\
+                    Finland & Modest Growth &  {\small Additional 2,920 \gls{MWe} by 2024.}\\
                     \hline
-                    Slovakia & Modest Growth & {\small Additional 942 MWe by 2025.}\\
+                    Slovakia & Modest Growth & {\small Additional 942 \gls{MWe} by 2025.}\\
                     \hline
-                    Bulgaria & Modest Growth &  {\small Additional 1,000 MWe by 2035.} \\
+                    Bulgaria & Modest Growth &  {\small Additional 1,000 \gls{MWe} by 2035.} \\
                     \hline
-                    Romania & Modest Growth &  {\small Additional 1,440 MWe by 2020.} \\
+                    Romania & Modest Growth &  {\small Additional 1,440 \gls{MWe} by 2020.} \\
                     \hline
-                    Czech Rep. & Modest Growth & {\small  Additional 2,400 MWe by 2035.}\\
+                    Czech Rep. & Modest Growth & {\small  Additional 2,400 \gls{MWe} by 2035.}\\
                     \hline
                     France & Modest Reduction & {\small No expansion or early shutdown.}\\
                     \hline
@@ -225,9 +225,9 @@ timeseries of installed capacity in \gls{EU} nations.
 \subsection{French \gls{SFR} Deployment Schedule}
 
 From 2040,
-600-MWe \glspl{SFR} are deployed to make up for the 
+600-\gls{MWe} \glspl{SFR} are deployed to make up for the 
 decommissioned \gls{LWR} capacities. 
-This results in an installed \gls{SFR} capacity of 66,000 MWe
+This results in an installed \gls{SFR} capacity of 66,000 \gls{MWe}
  by 2076, when the last \gls{LWR} decommissions.
 
 \begin{figure}[htbp!]
@@ -438,7 +438,7 @@ Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRI
 
 For \glspl{LWR}, we used a linear core size model to capture
 varying reactor capacity. For example, a 
-1,200 MWe PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
+1,200 \gls{MWe} PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
 weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
 core (77 assemblies) discharges. Refueling
@@ -457,12 +457,12 @@ historical refueling outage. The specifications are defined in
         the reactor is shut down prematurely.} & 60 & 60 & 80 \\
                 Cycle Time [mos.]& 18 & 18 & 12\\ 
                 Refueling Outage [mos.]& 2 & 2  & 2\\
-                Rated Power [MWe] & 1000 & 1000 & 600\\
+                Rated Power [\gls{MWe}] & 1000 & 1000 & 600\\
                 Assembly mass [kg] & 523.4 & 180 & -- \\
                 Batch mass [kg] & -- & -- & 5,568\\
                 Discharge Burnup [GWd/tHM] & 51 & 51 & 105 \\
                 Assemblies per core \tablefootnote{Number of assemblies and corresponding \gls{LWR} core 
-        masses are reported for a 1000-MWe core. Reactors with different core  
+        masses are reported for a 1000-\gls{MWe} core. Reactors with different core  
         powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
 
                 Batches per core & 3 & 3 & 4\\
