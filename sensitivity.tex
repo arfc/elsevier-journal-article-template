@@ -1,27 +1,26 @@
 \section{Sensitivity Analysis}
 
-The most important aspect of any fuel cycle transition scenario
+An important aspect of any fuel cycle transition scenario
 is the accrual of fissile materials for new reactor deployment.
-The collaborative strategy makes a transition possible materialistically,
-but the aggressive transition demands an increase in reprocessing capacity.
-This is due to both high initial plutonium loading of the \gls{ASTRID}
-reactors and the low plutonium composition in spent \gls{UOX} fuel.
+The collaborative strategy makes a transition possible 
+from the perspective of material availability,
+but the aggressive transition demands a significant increase in reprocessing capacity.
 
 We varied two parameters, the lifetime of French \glspl{LWR} and the
-breeding ratio of \gls{ASTRID} reactors. The parameters and their values
-are listed in \cref{tab:sen_par}
+breeding ratio of \gls{ASTRID} reactors. The range over which we varies these parameters (\cref{tab:sen_par})
+sought to capture the full span of their uncertainty.
 
 \begin{table}[h]
     \centering
     \begin{tabularx}{\textwidth}{lbb}
         \hline
-        \textbf{Parameter} & \textbf{Original} & \textbf{Values} \\
+        \textbf{Parameter} & \textbf{Default} & \textbf{Values} \\
         \hline
         Lifetime of French \glspl{LWR} [years] & 60  & 65, 70, 80 \\
         Breeding Ratio of \glspl{ASTRID} & 1.08 & 1.11, 1.15, 1.18 \\ 
         \hline
     \end{tabularx}
-    \caption {Two parameters are varied for the sensitivity analysis - the 
+    \caption {Two parameters were varied for the sensitivity analysis - the 
               lifetime of French \glspl{LWR} and the breeding ratio of \glspl{ASTRID}.
               The parameters are increased to analyze their impact on the reprocessing
               demand for the transition.}
@@ -30,21 +29,19 @@ are listed in \cref{tab:sen_par}
 
 \subsection{Breeding Ratio}
 
-The result of the breeding ratio sensitivity analysis is shown in
-\cref{fig:br_rep}.
 Increase in the breeding ratio of \gls{ASTRID} reactors
-decreases the monthly average reprocessing, but the 
-average \gls{UOX} reprocessing demand doesn't dramatically change,
-because the time that \gls{ASTRID} fuel supplied from reprocessed
-\gls{UOX} decrease with increase breeding ratio. The average monthly reprocessing
-demands are calculated by dividing the total amount by the number of non-zero elements.
+decreases the monthly average reprocessing up to five percent,
+as shown in \cref{fig:br_rep}.
+However, average \gls{UOX} reprocessing demand shows little change,
+because the time that reprocessed \gls{UOX} is required decrease with
+increase in breeding ratio. 
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/sensitivity/br.png}
     \end{center}
-    \caption{Increasing the breeding ratio decreases the average monthly reprocessing for all fuels,
-             but the average monthly \gls{UOX} reprocessing does not decrease due to shorter supply time. }
+    \caption{Increasing the breeding ratio decreases the average monthly reprocessing demand for all fuels,
+             but the average monthly \gls{UOX} reprocessing does not decrease due to a decrease in the time reprocess \gls{UOX} is needed. }
     \label{fig:br_rep}
 \end{figure}
 
@@ -54,8 +51,8 @@ demands are calculated by dividing the total amount by the number of non-zero el
         \includegraphics[scale=0.6]{./images/sensitivity/br_uox.png}
     \end{center}
     \caption{Increasing the breeding ratio decreases the number of total \gls{UOX} \gls{UNF}
-             since the \gls{ASTRID} becomes self-sustaining earlier, no longer requiring
-             plutonium from reprocessing \gls{UOX}.}
+             required. The \glspl{ASTRID} produce more plutonium, reducing the plutonium influx
+             from reprocessed \gls{UOX}.}
     \label{fig:eu_tail}
 \end{figure}
 
@@ -63,8 +60,8 @@ demands are calculated by dividing the total amount by the number of non-zero el
 \subsection{Lifetime Extension of French \glspl{LWR}}
 Extending the lifetime of French \glspl{LWR} dramatically lowers the average
 monthly \gls{UOX} reprocessing demand, since the \gls{ASTRID} deployment becomes less
-aggressive. the plutonium demand is delayed and allows the reprocessing plant more
-time to produce the same amount of plutonium for \gls{ASTRID} reactors. The
+aggressive. The plutonium demand is delayed allowing the reprocessing plant more
+time to produce plutonium for \gls{ASTRID} reactors. The
 extended deployment schemes are illustrated in figure \ref{fig:ext}. 
 
 \begin{figure}[htbp!]
@@ -82,7 +79,7 @@ extended deployment schemes are illustrated in figure \ref{fig:ext}.
         \includegraphics[scale=0.6]{./images/sensitivity/ext_all.png}
     \end{center}
     \caption{The shift in \gls{ASTRID} deployment has little impact on the total monthly
-             reprocessing capacity.}
+             reprocessing demand.}
     \label{fig:ext}
 \end{figure}
 
@@ -99,28 +96,7 @@ extended deployment schemes are illustrated in figure \ref{fig:ext}.
     \label{fig:ext}
 \end{figure}
 
-\iffalse
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{./images/sensitivity/5.png}
-        \caption{5 years}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{./images/sensitivity/10.png}
-        \caption{10 years}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{./images/sensitivity/20.png}
-        \caption{20 years}
-    \end{subfigure}
-    \caption{The shift in \gls{ASTRID} deployment allows more time for the reprocessing
-             plant to prepare the plutonium for \gls{ASTRID} fuel production, lowering
-             the average monthly reprocessing capacity.}
-    \label{fig:ext_hor}
-\end{figure}
-\fi
 
-The lifetime extension of French \glspl{LWR} have little impact on the total
+The lifetime extension of French \glspl{LWR} has little impact on the total
 monthly reprocessing capacity, since the amount of plutonium in the \gls{ASTRID} used fuel
 remains the same.
