@@ -1,11 +1,12 @@
 
 \section{Methodology}
-The \gls{EU} nations' nuclear reactor operating
+To calculate the \gls{EU} nuclear material inventory,
+the \gls{EU} nations' nuclear reactor operating
 history is modeled to the furthest foreseeable future.
 The \gls{UNF} from \gls{EU} nations is stored for later usage.
 France, on top of its historical operation with \gls{MOX} production
 for its \glspl{PWR}, transitions into a 66GWe \gls{SFR} fleet
-starting from 2040. France begins Production of fuel for \glspl{SFR}
+starting from 2040. France begins production of fuel for \glspl{SFR}
 in 2020 by recycling the stored \gls{UNF}.
 The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.
 
@@ -85,9 +86,7 @@ assessment of analyses from references such as \gls{PRIS} for reactors planned
 for construction \cite{iaea_pris_2017}, the World Nuclear Association
 \cite{world_nuclear_association_nuclear_2017}, and works on the future of
 nuclear power in a global \cite{joskow_future_2012} and European context
-\cite{hatch_politics_2015}.  The projections extend to 2050 at the latest. This
-allows the simulation to take place from 1970 to 2050. Later sections explain,
-in detail, the specific plans for each \gls{EU} nation.
+\cite{hatch_politics_2015}.  The projections extend to 2050 at the latest.  Later sections explain, in detail, the specific plans for each \gls{EU} nation.
 
 \Cref{tab:eu_deployment} lists the reactors that are currently  planned or
 under construction.  All  planned constructions are completed without delay or
@@ -210,9 +209,8 @@ timeseries of installed capacity in \gls{EU} nations.
 
 From 2040,
 600-\gls{MWe} \glspl{SFR} are deployed to make up for the 
-decommissioned \gls{LWR} capacities. 
-This results in an installed \gls{SFR} capacity of 66,000 \gls{MWe}
- by 2076, when the last \gls{LWR} decommissions.
+decommissioned \gls{LWR} capacities, to remain an installed 
+capacity of 66,000 \gls{MWe}. 
 
 \begin{figure}[htbp!]
         \begin{center}
@@ -265,8 +263,6 @@ An analysis of the effect of \gls{LWR} lifetime extension is shown in a later se
 
 
 \subsection{Material Flow}
-The simulated fuel cycle is illustrated in \cref{diag:fc}.
-
 A source provides natural uranium, which is enriched by an enrichment
 facility to produce \gls{UOX}, while disposing enrichment waste (tails)
 to the sink. The enriched \gls{UOX} fuels
@@ -283,6 +279,9 @@ uranium may substitute depleted uranium for \gls{MOX} production. In the
 simulations, sufficient depleted uranium existed that using reprocessed
 uranium was overlooked. However, further in the future where the depleted
 uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
+
+The simulated fuel cycle is illustrated in figure \ref{diag:fc}.
+
 
 
 % Define block styles
@@ -427,8 +426,7 @@ weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
 core (77 assemblies) discharges. Refueling
 is assumed to take 2 months to complete, during which the reactor
-is shut down. This value is acquired by averaging the 
-historical refueling outage. The specifications are defined in 
+is shut down. The specifications are defined in 
 \Cref{tab:reactor-specs} details the reactor specifications in this simulation.
 
 \begin{table}[h]
