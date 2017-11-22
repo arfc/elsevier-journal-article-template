@@ -7,7 +7,7 @@ from the perspective of material availability,
 but the aggressive transition demands a significant increase in reprocessing capacity.
 
 We varied two parameters, the lifetime of French \glspl{LWR} and the
-breeding ratio of \gls{ASTRID} reactors. The range over which we varies these parameters (\cref{tab:sen_par})
+breeding ratio of \gls{ASTRID} reactors. The range over which we varied these parameters (\cref{tab:sen_par})
 sought to capture the full span of their uncertainty.
 
 \begin{table}[h]
@@ -16,8 +16,8 @@ sought to capture the full span of their uncertainty.
         \hline
         \textbf{Parameter} & \textbf{Default} & \textbf{Values} \\
         \hline
-        Lifetime of French \glspl{LWR} [years] & 60  & 65, 70, 80 \\
         Breeding Ratio of \glspl{ASTRID} & 1.08 & 1.11, 1.15, 1.18 \\ 
+        Lifetime of French \glspl{LWR} [years] & 60  & 65, 70, 80 \\
         \hline
     \end{tabularx}
     \caption {Two parameters were varied for the sensitivity analysis - the 
@@ -31,7 +31,7 @@ sought to capture the full span of their uncertainty.
 
 Increase in the breeding ratio of \gls{ASTRID} reactors
 decreases the monthly average reprocessing up to five percent,
-as shown in \cref{fig:br_rep}.
+as shown in figure \ref{fig:br_rep}.
 However, average \gls{UOX} reprocessing demand shows little change,
 because the time that reprocessed \gls{UOX} is required decrease with
 increase in breeding ratio. 
@@ -53,7 +53,7 @@ increase in breeding ratio.
     \caption{Increasing the breeding ratio decreases the number of total \gls{UOX} \gls{UNF}
              required. The \glspl{ASTRID} produce more plutonium, reducing the plutonium influx
              from reprocessed \gls{UOX}.}
-    \label{fig:eu_tail}
+    \label{fig:br_uox}
 \end{figure}
 
 
@@ -61,16 +61,27 @@ increase in breeding ratio.
 Extending the lifetime of French \glspl{LWR} dramatically lowers the average
 monthly \gls{UOX} reprocessing demand, since the \gls{ASTRID} deployment becomes less
 aggressive. The plutonium demand is delayed allowing the reprocessing plant more
-time to produce plutonium for \gls{ASTRID} reactors. The
+time to prepare plutonium for \gls{ASTRID} reactors. The
 extended deployment schemes are illustrated in figure \ref{fig:ext}. 
 
+Figure \ref{fig:ext_uox} shows the decrease in the average monthly
+\gls{UOX} reprocessing burden with increased lifetime of \glspl{LWR},
+which reduces to the current capacity of the La Hague site if all the
+French \glspl{LWR} extended their operation for 20 years.
+Figure \ref{fig:ext_all} shows that lifetime extension has little
+effect on the average total monthly reprocessing demand, because
+the amount of plutonium in the \gls{ASTRID} used fuel remains the same.
+ The initial increase is due to the decrease in the time for \gls{MOX} 
+ reprocessing, since \gls{MOX} reprocessing is delayed with the
+  delay of \gls{SFR} deployment.
+ 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/sensitivity/ext_uox.png}
     \end{center}
     \caption{Increasing the lifetime of French \glspl{LWR} decreases the monthly
              average \gls{UOX} reprocessing demand.}
-    \label{fig:ext}
+    \label{fig:ext_uox}
 \end{figure}
 
 
@@ -80,7 +91,7 @@ extended deployment schemes are illustrated in figure \ref{fig:ext}.
     \end{center}
     \caption{Increasing the lifetime of French \glspl{LWR} has little impact on the total monthly
              reprocessing demand.}
-    \label{fig:ext}
+    \label{fig:ext_all}
 \end{figure}
 
 
@@ -90,13 +101,11 @@ extended deployment schemes are illustrated in figure \ref{fig:ext}.
         \includegraphics[height=0.25\textheight]{./images/sensitivity/10.png}
         \includegraphics[height=0.25\textheight]{./images/sensitivity/20.png}
     \end{center}
-    \caption{The shift in \gls{ASTRID} deployment allows more time for the reprocessing
-             plant to prepare the plutonium for \gls{ASTRID} fuel production, lowering
-             the average monthly reprocessing capacity.}
+    \caption{These plots show the deployment scheme of \glspl{SFR} given 
+              \gls{LWR} lifetime extension of five, 10, and 20 years, 
+              respectively. The shift in \gls{ASTRID} deployment allows more
+              time for the reprocessing plant to prepare the plutonium 
+              for \gls{ASTRID} fuel production, lowering
+             the average monthly \gls{UOX}reprocessing capacity.}
     \label{fig:ext}
 \end{figure}
-
-
-The lifetime extension of French \glspl{LWR} has little impact on the total
-monthly reprocessing capacity, since the amount of plutonium in the \gls{ASTRID} used fuel
-remains the same.
