@@ -2,35 +2,41 @@
 
 \subsection{Nuclear Material Inventory}
 
-\Cref{tab:sim_result} lists  \gls{EU} inventory and
-history at year 2050, and the used \gls{UOX} will be
-reprocessed.
+\Cref{tab:sim_result1} lists \gls{EU} material inventory in 2050.
+The materials continue to accumulate after 2050, but the
+\gls{UNF} France receives before 2050 is most impactful for the
+feasibility of the transition.
+
 
 \begin{table}[h]
 	\centering
 %	\scalebox{0.86}{
-		\begin{tabular}{cccc}
+		\begin{tabular}{ccc}
 			\hline
-			\textbf{Category} & \textbf{Unit} & \textbf{Value} & \textbf{Specifics}\\ 
-			\hline
-			Total UOX Usage & MTHM & 163,826 &  \\ 
-			Total MOX Usage & MTHM & 6,560 & \\ 
-			Total Used UOX Stored & MTHM & 125,453 & \gls{UNF} that is not reprocessed\\ 
-			Total Used  MOX Stored & MTHM & 3,438 & \gls{UNF} that is not reprocessed \\ 
-			Total Tailings & MTHM & 975,938 & \\ 
-			Total Natural U Used & MTHM & 1,146,420 & \\ \hline
+			\textbf{Category } & \textbf{Value [MTHM]} & \textbf{Specifics}\\ \hline
+			UOX Usage  & 158,794 &  \\ 
+			MOX Usage  & 6,671  & \\ 
+			\textbf{Used UOX Stored}  & \textbf{95,161}  & \gls{UNF} that is not reprocessed\\
+			\textbf{Used UOX Stored (France)} & \textbf{9,979}  & \gls{UNF} that is not reprocessed \\
+			Tails  & 979,463  & \\ 
+			Natural U Used  & 1,141,916  & \\ \hline
 		\end{tabular}
-		\caption{Listed are the metrics from the historical nuclear operation of \gls{EU} nations.
+		\caption{Nuclear material inventory in the \gls{EU} in 2050 is summarized. 
 				 The difference between total \gls{UOX} usage and \gls{UOX} stored is the amount
-				 that has been reprocessed for \gls{MOX}. Only the stored \gls{UOX} is used in the 
-				 second simulation.}
-		\label{tab:sim_result}
+				 that has been reprocessed for \gls{MOX}. Only the stored \gls{UOX} is used for \gls{ASTRID} fuel production.}
+		\label{tab:sim_result1}
 \end {table}
 \FloatBarrier
 
 
 Figures \ref{fig:eu_tail} and \ref{fig:eu_snf} show the 
-timeseries of tails and used fuel inventory accumulation in \gls{EU}.
+accumulation of tails and used fuel over time in the \gls{EU}.
+Tails accumulate as a by-product of uranium enrichment. For every
+ton of \gls{UOX} fuel, about nine times of tails is produced. 
+Spent fuel is discharged from reactors every refueling period.
+The entire core is discharged when the reactor decommissions.
+A total of about $1,000,000 MTHM$ of tails and $100,000 MTHM$ of
+\gls{UNF} accumulate in 2050.
 Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 
 
@@ -69,12 +75,12 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 	\begin{tabular}{ccc}
 		\hline
 		\textbf{Isotope} & \textbf{Mass Fraction in Used Fuel [\%]} & \textbf{Quantity [t]} \\ \hline
-		Total & 0.9358 & 1,173 \\ \hline
-		Pu238 & 0.0111 & 13.9 \\ 
-		Pu239 & 0.518 & 649.8 \\ 
-		Pu240 & 0.232 & 291.05 \\ 
-		Pu241 & 0.126 & 158.07 \\ 
-		Pu242 & 0.0487 & 61.09 \\ \hline
+		Pu238 & 0.0111 & 10.5628 \\ 
+		Pu239 & 0.518 & 492.93 \\ 
+		Pu240 & 0.232 & 220.7 \\ 
+		Pu241 & 0.126 & 119.9 \\ 
+		Pu242 & 0.0487 & 46.3 \\ \hline
+		\textbf{Total} & \textbf{0.9358} & \textbf{890.5} \\ \hline
 	\end{tabular}
 	\caption{Plutonium From \gls{UNF} Inventory. This table assumes no decay
 			 took place. The long half-life of the fissile Pu-239 (24,100 years)
@@ -83,83 +89,26 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in \gls{EU}.
 \end{table}
 
 
-\Cref{tab:pu} lists the isotope, mass fraction,
-and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory.
 
-
-\subsection{French SFR Deployment}
-
-The Cycamore GrowthRegion archetype is able to dynamically increase, decrease,
-or maintain installed nuclear capacity by deploying reactors according to net
-electricity demand. In this simulation, the demand for installed nuclear
-capacity in France was constant over time. After \glspl{SFR} became available
-in 2040, the GrowthRegion therefore deployed \glspl{SFR} capacity to make up
-for decommissioned \gls{LWR} capacity.  This resulted in an installed
-\gls{SFR} capacity of 66,000 MWe by 2076, when the final \gls{LWR}
-decommissioned. The specific deployment schedule is determined by the logic
-within the Cycamore GrowthRegion archetype as shown in \cref{fig:sfr_num} and
-\cref{fig:dep}. 
-
-\begin{figure}[htbp!]
-        \begin{center}
-                \includegraphics[scale=0.6]{./images/french-transition/power_plot.png}
-        \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
-                 The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
-                 of nuclear in the 2040s, which would be replaced by new \glspl{SFR}. The net
-                 capacity is kept at a constant of 66 GWe.}
-        \label{fig:sfr_num}
-        \end{center}
-\end{figure}
-
-\begin{figure}[htbp!]
-    \begin{center}
-        \includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
-    \caption{The deployment of \glspl{SFR} in France is characterized by a period of
-             aggressive building. An average of four reactors are built per year to
-             make up for the decommissioned power plants built in the 1980s and 1990s.
-             The second period of aggressive building occurs when the first generation
-             of \glspl{SFR} decommission after 80 years.}
-    \label{fig:dep}
-    \end{center}
-\end{figure}
-
-\Cref{fig:sfr_num} and \cref{fig:dep} display
-the French transition to \glspl{SFR} over time.
-The steep transition from 2040 to 2060 reflects the scheduled
-decommissioning of reactors built in the 1975-2000
-era of aggressive nuclear growth in France.
-
-In reality, building five reactors every year is highly unrealistic. However,
-this analysis is to analyze material flow, claiming that, if such an aggressive
-deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
-More realistically, the deployment of new \glspl{SFR} can be spread out by
-staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
-
-\FloatBarrier
-\subsection{Transition Reprocessing Dynamics}
+\subsection{French \gls{SFR} Deployment}
 
 Reprocessing \gls{UNF} collected from all EU nations can start approximately
-240 \glspl{SFR}, which is more than enough for two generations of 66GWe \gls{SFR}
-fleet. With the \gls{SFR} breeding ratio of over one, France can transition into
+180 \glspl{SFR}. Table \ref{tab:pu} lsits the isotope, mass fraction,
+and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory.
+ With the \gls{SFR} breeding ratio above one, France can transition into
 a fully \gls{SFR} fleet without extra construction of \glspl{LWR}. 
 
 From Varaine et al. \cite{varaine_pre-conceptual_2012}, a French
-ASTRID-type \gls{SFR} of capacity 600 MWe needs $1.225$ tons of
+ASTRID-type \gls{SFR} of capacity 600 \gls{MWe} needs $1.225$ tons of
 plutonium a year, with an initial plutonium loading of $4.9$ tons. 
 Thus, the number of \glspl{SFR} that can be loaded with the reprocessed
-plutonium from \gls{UNF} can be estimated to $\frac{Pu \ from \ legacy \ \gls{UNF}}{4.9} \approx 240$ \glspl{SFR},
-assuming infinite reprocessing and fabrication capacity as well as
-abundant depleted uranium supply. 
-
-Also, assuming that \gls{MOX} can be recycled indefinitely,
-used \gls{MOX} from an ASTRID reactor contains enough plutonium to produce a \gls{MOX} fuel with
-the same mass, if mixed with depleted uranium. For example,
-used \gls{MOX} from an ASTRID reactor is assumed to be 12.6\% plutonium
-in this simulation (see \cref{tab:comp}), whereas a fresh \gls{MOX} is 11\% plutonium.
-Separating plutonium from used \gls{MOX} from
-an ASTRID reactor can create \gls{MOX} of the mass of used \gls{MOX}.
+plutonium from \gls{UNF} can be estimated to $\frac{Pu \ from \ legacy \ \gls{UNF}}{4.9} \approx 181$ \glspl{SFR},
+assuming abundant depleted uranium supply. 
+ 
+Used \gls{MOX} from an ASTRID reactor is 23.95\% plutonium
+in this simulation (see \cref{tab:comp}), whereas a fresh \gls{MOX} is 22\% plutonium.
 The plutonium breeding ratio in this simulation is thus assumed to be
-$\approx 1.145$.
+$\approx 1.08$.
 
 \Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.
 The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
@@ -171,20 +120,17 @@ from legacy \gls{UNF}. Once the deployed \glspl{SFR} create enough amounts
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/where_fuel.png}
 	\end{center}
-	\caption{This plot displays the timeseries of fuel loaded into \glspl{SFR}.
-			 The initial purple bars denote that the fuel is from reprocessing
-			 the previously used \gls{UOX} inventory. The peaks coincide
-			 with the new deployment of \glspl{SFR}.}
+	\caption{This plot shows the timeseries of fuel loaded into \glspl{SFR}.
+			 The plot has peaks during a period of aggressive deployment of \glspl{SFR}
+			 followed by an equilibrium at 150 \gls{MTHM}. The peaks reoccur with the
+			 deployment of the second generation of \glspl{SFR}.}
 	\label{fig:fuel}
 \end{figure}
-
-\Cref{fig:reprocess_waste} shows the amount of raffinate
-(minor actinides, fission products) over time. The spikes in the 
-waste discharge is due to large influx of used fuel from
-decommissioned \glspl{SFR}. \Cref{fig:pu_no_cum} shows the separated plutonium discharge
+ \Cref{fig:pu_no_cum} shows the separated plutonium discharge
 per month from the reprocessing plant. The plutonium outflux
 does not precisely follow the fuel demand because \Cyclus agents have
-material buffers that store commodity fuel for later usage. 
+material buffers that store commodity fuel for later usage. The reprocessed
+plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}.
 \Cref{tab:sfr_sim_result} lists metrics obtained from the second simulation.
 
 \begin{figure}[htbp!]
@@ -192,24 +138,13 @@ material buffers that store commodity fuel for later usage.
 		\includegraphics[scale=0.7]{./images/french-transition/pu.png}
 	\end{center}
 	\caption{This plot shows the separated plutonium discharge from the reprocessing plant.
+			 The reprocessing demand for the first aggressive deployment of \glspl{SFR}
+			 are lessened because the plutonium demand is met with plutonium separated from legacy \gls{UNF}.
 			 The plutonium from reprocessing legacy fuel is a flat rectangle because the 
 			 reprocessing throughput was set to 20 $\frac{tons}{month}$ to avoid reprocessing
-			 all the legacy in one timestep.}
+			 all the legacy in one timestep. }
 	\label{fig:pu_no_cum}
 \end{figure}
-
-
-\begin{figure}[htbp!]
-	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/reprocess_waste.png}
-	\end{center}
-	\caption{This plot displays raffinate discharge from each reprocessing plant.
-			The plutonium from reprocessing legacy fuel is a flat rectangle because the 
-			reprocessing throughput was set to 20 $\frac{tons}{month}$ to avoid reprocessing
-			all the legacy in one timestep.}
-	\label{fig:reprocess_waste}
-\end{figure}
-
 
 \begin{table}[h]
 	\centering
@@ -217,15 +152,18 @@ material buffers that store commodity fuel for later usage.
 		\begin{tabular}{ccc}
 			\hline
 			\textbf{Category} & \textbf{Unit} & \textbf{Value}  \\ \hline
-			Total MOX used & MTHM & 127,200  \\ 
-			Total \glspl{SFR} Deployed & & 220 \\
-			Total Plutonium Reprocessed & MTHM & 16,200 \\ 
-			Total MOX from UOX Waste & MTHM & 6,570  \\ 
-			Total MOX from MOX Waste & MTHM  & 121,070 \\ 
-			Total Tails used & MTHM & 116,153 \\ 
-			Total legacy UNF reprocessed & MTHM & 77,082 \\ 
-			Total Reprocessed Uranium Stockpile & MTHM & 226,197 \\ 
-			Total Reprocess Waste & MTHM & 16,352 \\ \hline
+			Total MOX used & MTHM & 63,820  \\ 
+			\textbf{Average UOX Reprocessing} & MTHM/month & \textbf{118.92} \\
+			\textbf{Average Total Reprocessing} & MTHM/month & \textbf{73.27} \\
+			\textbf{Average Fuel Fabrication} & MTHM/month & \textbf{45.2} \\
+			Total \glspl{SFR} Deployed & & 220 \\ 
+			Total Plutonium Reprocessed & MTHM & 15,099 \\ 
+			Total \gls{ASTRID} fuel from UOX Waste & MTHM & 2,923  \\ 
+			Total \gls{ASTRID} fuel from MOX Waste & MTHM  & 60,535 \\ 
+			Total Tails used & MTHM & 49,779 \\ 
+			\textbf{Total legacy UNF reprocessed} & MTHM & \textbf{54,111} \\ 
+			Total Reprocessed Uranium Stockpile & MTHM & 183,740 \\ 
+			Total Raffinate & MTHM & 33,806 \\ \hline
 		\end{tabular}}
 		\caption {Listed are the metrics from the French transition to \gls{SFR} scenario.
 				  The total legacy \gls{UNF} reprocessed is the amount of \gls{UNF} France would need
@@ -233,5 +171,12 @@ material buffers that store commodity fuel for later usage.
 				  of the original tails inventory from the previous simulation.}
 		\label{tab:sfr_sim_result}
 \end {table}
+
+Despite the large amount of initial plutonium that has to be reprocessed
+prior to \gls{ASTRID} deployment, the 20 years of preparation of
+\gls{ASTRID} fuel (2020-2040) allows a reasonable level of average
+\gls{UOX} reprocessing capacity demand. \gls{UOX} reprocessing continues 
+until 2057, when the \gls{ASTRID} spent fuel can supply the plutonium
+for its own fuel.
 
 

@@ -1,7 +1,6 @@
 \documentclass{article}
 
 %%%% packages and definitions (optional)
-\usepackage{graphicx} % allows inclusion of graphics
 \usepackage{graphics}
 \usepackage{placeins}
 \usepackage{booktabs} % nice rules (thick lines) for tables
@@ -11,6 +10,13 @@
 \usepackage{xspace}
 \usepackage{hhline}
 \usepackage{amsmath}
+
+\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{threeparttable, tablefootnote}
 
 \usepackage{tabularx}
 \newcolumntype{b}{>{\hsize=1.0\hsize}X}
@@ -45,7 +51,7 @@
 \makeglossaries
 
 \title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
-\author{Jin Whan Bae, Kathryn Huff, Clifford Singer}
+\author{Jin Whan Bae$^1$, Kathryn D. Huff$^1$, Clifford E. Singer}
 \affil{Dept. of Nuclear, Plasma, and Radiological Engineering, University of Illinois at Urbana-Champaign
 	
 		  Urbana, IL}
@@ -57,15 +63,18 @@
 
 \begin{document}
 \maketitle
-\input{abstract}	
+\input{abstract}
 \input{introduction}
 \input{methods}
+\FloatBarrier
 \input{results}
+\input{sensitivity}
+\FloatBarrier
 \input{conclusion}
 
 \bibliographystyle{unsrtnat}
 \bibliography{bibliography}
-
+\pagebreak
 \input{appendix.tex}
 
 
