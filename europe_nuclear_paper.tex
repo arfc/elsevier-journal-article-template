@@ -1,19 +1,25 @@
-\documentclass{article}
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno}
+\usepackage{xspace}
+\modulolinenumbers[5]
+
+\journal{Progress in Nuclear Energy}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% packages and definitions (optional)
-\usepackage{graphics}
 \usepackage{placeins}
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{microtype} % improves typography for PDF
-\usepackage{xspace}
-\usepackage[hidelinks]{hyperref}
-\usepackage{xspace}
 \usepackage{hhline}
 \usepackage{amsmath}
 
-\usepackage[demo]{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
+%\usepackage[demo]{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
 
 \usepackage{booktabs}
 \usepackage{threeparttable, tablefootnote}
@@ -23,16 +29,10 @@
 \newcolumntype{s}{>{\hsize=.5\hsize}X}
 \newcolumntype{m}{>{\hsize=.75\hsize}X}
 
-\newcommand{\SN}{S$_N$}
-\renewcommand{\vec}[1]{\bm{#1}} %vector is bold italic
-\newcommand{\vd}{\bm{\cdot}} % slightly bold vector dot
-\newcommand{\grad}{\vec{\nabla}} % gradient
-\newcommand{\ud}{\mathop{}\!\mathrm{d}} % upright derivative symbol
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
 \graphicspath{ {images/} }
-\usepackage[affil-it]{authblk}
-\usepackage[numbers]{natbib}
-\usepackage{notoccite}
+
+% tikz %
 \usepackage{tikz}
 \usetikzlibrary{positioning, arrows, decorations, shapes}
 
@@ -41,29 +41,35 @@
 \tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 
+% hyperref %
+\usepackage[hidelinks]{hyperref}
+% after hyperref %
 \usepackage{cleveref}
-
 \usepackage{datatool}
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
 
-	
 \makeglossaries
 
-\title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
-\author[1]{Jin Whan Bae}
-\author[1]{Kathryn D. Huff}
-\author[1]{Clifford E. Singer}
-\affil[1]{Dept. of Nuclear, Plasma, and Radiological Engineering, University of 
-Illinois at Urbana-Champaigni, Urbana, IL}
-\date{}                     %% if you don't need date to appear
-\setcounter{Maxaffil}{0}
-\renewcommand\Affilfont{\itshape\small}
-%%%%%%%%%%%%%%actual words%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-
-
 \begin{document}
-\maketitle
+\begin{frontmatter}
+\title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
+
+\date{}                     %% if you don't need date to appear
+
+%% Authors
+\input{authors}
+
+% Institutes of the authors
+\input{institutions}
+
+\begin{keyword}
+nuclear fuel cycle \sep simulation \sep transition \sep nuclear engineering \sep europe \sep systems analysis
+\end{keyword}
+\end{frontmatter}
+
+\linenumbers
+
 \input{abstract}
 \input{introduction}
 \input{methods}
@@ -73,12 +79,9 @@ Illinois at Urbana-Champaigni, Urbana, IL}
 \FloatBarrier
 \input{conclusion}
 
-\bibliographystyle{unsrtnat}
 \bibliography{bibliography}
+
 \pagebreak
-\input{appendix.tex}
-
-
+\input{appendix}
 
 \end{document}
-\grid
