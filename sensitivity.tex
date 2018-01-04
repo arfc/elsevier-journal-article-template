@@ -30,28 +30,28 @@ sought to capture the full span of their uncertainty.
 \subsection{Breeding Ratio}
 
 Increase in the breeding ratio of \gls{ASTRID} reactors
-decreases the monthly average reprocessing up to five percent,
-as shown in figure \ref{fig:br_rep}.
-However, average \gls{UOX} reprocessing demand shows little change,
-because the time that reprocessed \gls{UOX} is required decrease with
-increase in breeding ratio. 
+decreases the monthly reprocessing demand, as shown in figure \ref{fig:br_rep}.
+Increase in breeding ratio also reduces the number of total \gls{UOX} \gls{UNF}
+required for the transition, because the \gls{ASTRID} creates more plutonium.
+
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/br.png}
+        \includegraphics[scale=0.6]{./images/sensitivity/br_tot_rep.png}
     \end{center}
-    \caption{Increasing the breeding ratio decreases the average monthly reprocessing demand for all fuels,
-             but the average monthly \gls{UOX} reprocessing does not decrease due to a decrease in the time reprocess \gls{UOX} is needed. }
+    \caption{Increasing the breeding ratio decreases the monthly reprocessing demand. The
+             demand up to 2050 is unaffected by breeding ratio because only \gls{UOX} \gls{UNF}
+             is reprocessed.}
     \label{fig:br_rep}
 \end{figure}
 
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/br_uox.png}
+        \includegraphics[scale=0.6]{./images/sensitivity/br_uox_unf_cum.png}
     \end{center}
     \caption{Increasing the breeding ratio decreases the number of total \gls{UOX} \gls{UNF}
-             required. The \glspl{ASTRID} produce more plutonium, reducing the plutonium influx
+             required. The \glspl{ASTRID} produce more plutonium, reducing the plutonium demand
              from reprocessed \gls{UOX}.}
     \label{fig:br_uox}
 \end{figure}
@@ -59,10 +59,9 @@ increase in breeding ratio.
 
 \subsection{Lifetime Extension of French \glspl{LWR}}
 Extending the lifetime of French \glspl{LWR} dramatically lowers the average
-monthly \gls{UOX} reprocessing demand, since the \gls{ASTRID} deployment becomes less
-aggressive. The plutonium demand is delayed allowing the reprocessing plant more
-time to prepare plutonium for \gls{ASTRID} reactors. The
-extended deployment schemes are illustrated in figure \ref{fig:ext}. 
+monthly \gls{UOX} reprocessing demand, since the \gls{ASTRID} deployment becomes 
+delayed (shown in figure \ref{fig:pow_diff}). The plutonium demand is delayed,
+ allowing the reprocessing plant more time to prepare plutonium for \gls{ASTRID} reactors. 
 
 Figure \ref{fig:ext_uox} shows the decrease in the average monthly
 \gls{UOX} reprocessing burden with increased \gls{LWR} lifetimes,
@@ -78,35 +77,33 @@ the average.
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/ext_uox.png}
+        \includegraphics[scale=0.6]{./images/sensitivity/ext_uox_rep.png}
     \end{center}
     \caption{Increasing the lifetime of French \glspl{LWR} decreases the monthly
-             average \gls{UOX} reprocessing demand.}
+             \gls{UOX} reprocessing demand, by allowing a less aggressive transition
+             to \glspl{ASTRID}.}
     \label{fig:ext_uox}
 \end{figure}
 
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/ext_all.png}
+        \includegraphics[scale=0.6]{./images/sensitivity/ext_tot_rep.png}
     \end{center}
-    \caption{Increasing the lifetime of French \glspl{LWR} has little impact on the total monthly
-             reprocessing demand.}
+    \caption{Increasing the lifetime of French \glspl{LWR} simply delays the
+             reprocessing demand, and has little impact on the amount of reprocessing
+             required.}
     \label{fig:ext_all}
 \end{figure}
 
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[height=0.25\textheight]{./images/sensitivity/5.png}
-        \includegraphics[height=0.25\textheight]{./images/sensitivity/10.png}
-        \includegraphics[height=0.25\textheight]{./images/sensitivity/20.png}
+        \includegraphics[height=0.25\textheight]{./images/sensitivity/pow_ratio.png}
     \end{center}
-    \caption{These plots show the deployment scheme of \glspl{SFR} given 
-              \gls{LWR} lifetime extension of five, 10, and 20 years, 
-              respectively. The shift in \gls{ASTRID} deployment allows more
+    \caption{This plot shows the ratio of \glspl{ASTRID} to \glspl{LWR} in France.
+             The delay in \gls{ASTRID} deployment allows more
               time for the reprocessing plant to prepare the plutonium 
-              for \gls{ASTRID} fuel production, lowering
-             the average monthly \gls{UOX}reprocessing capacity.}
-    \label{fig:ext}
+              for \gls{ASTRID} fuel production.}
+    \label{fig:pow_diff}
 \end{figure}
