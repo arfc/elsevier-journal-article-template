@@ -1,12 +1,12 @@
 
 \section{Methodology}
-We modeled the nuclear reactor operating
-history in the \gls{EU} to the furthest foreseeable future.
+We simulated the nuclear reactor operating history in the \gls{EU} beginning in 
+1970 including \gls{MOX} production and use in France. 
+The simulation captured all discrete regions, reactor facilities, and materials 
+involved in \gls{EU} historical reactor operation
+using \Cyclus fuel cycle simulation framework and \Cycamore agents.
 In this simulation, the \gls{UNF} from \gls{EU} nations is stored for later use 
-in French \glspl{SFR}.
-France, in addition to its historical operation with \gls{MOX} production
-for its \glspl{PWR}, transitions into a 66GWe \gls{SFR} fleet
-starting from 2040. France begins production of fuel for \glspl{SFR}
+in French \glspl{SFR} and France begins production of fuel for \glspl{SFR}
 in 2020 by recycling the stored \gls{UNF}.
 The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.
 
@@ -16,15 +16,11 @@ All scripts and data used for the simulations in this article are available in
 
 \subsection{\Cyclus}
 
-\Cyclus is an agent-based fuel cycle simulation framework \cite{huff_fundamental_2016}, meaning that
-each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
-At each timestep (one month),
-agents put out their bids for materials (supply and/or demand) and exchange
-with one another. A market-like mechanism called the dynamic resource exchange
-\cite{gidden_agent-based_2015} governs the exchanges.
-Each material item has a quantity, composition, name, and a unique identifier
-for output analysis. 
-A \Cyclus input file contains prototypes, which are fuel cycle facilities with
+\Cyclus is an agent-based fuel cycle simulation framework 
+\cite{huff_fundamental_2016}, which means 
+that each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
+
+A \Cyclus simulation contains prototypes, which are fuel cycle facilities with
 pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
 Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
 A \texttt{Region} agent holds a set of \texttt{Institution}s. 
@@ -33,14 +29,19 @@ The \texttt{Institution} agent is part of a \texttt{Region} agent,
 which can contain multiple \texttt{Institution} agents. Several versions of \texttt{Institution}
 and \texttt{Region} exist, varying in complexity and functions \cite{huff_extensions_2014}.
  \texttt{DeployInst} is used as the institution archetype for this work, where the institution
-deploys agents in a user-defined time. 
+deploys agents at user-defined timesteps. 
 
+At each timestep (one month),
+agents make requests for materials or bid to supply them and exchange
+with one another. A market-like mechanism called the dynamic resource exchange
+\cite{gidden_agent-based_2015} governs the exchanges.
+Each material resource has a quantity, composition, name, and a unique identifier
+for output analysis. 
 
-For example, `France' would be a \texttt{Region} agent,
-that may contain two \texttt{Institution} agents \glspl{LWR}
-and \glspl{SFR}. The \texttt{Institution} agents would then deploy
-\glspl{LWR} and \glspl{SFR} agents, respectively, according to a pre-defined deployment
-scheme. 
+In this work, each nation is represented as a distinct \texttt{Region} agent,
+that may contain \texttt{Institution} agents, each deploying  \texttt{Facility} 
+agents. The \texttt{Institution} agents then deploy agents according to 
+a user-defined deployment scheme.
 
 
 \subsection{Nuclear Deployment in the \gls{EU}}
