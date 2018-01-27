@@ -47,9 +47,9 @@ a user-defined deployment scheme.
 \subsection{Nuclear Deployment in the \gls{EU}}
 
 
-The \gls{IAEA} \gls{PRIS} database \cite{iaea_pris_2017} contains reactor
+The \gls{IAEA} \gls{PRIS} database \cite{iaea_pris_2017} contains worldwide reactor
 operation history.
-The database is imported as a csv file, to populate the simulation
+We import this database directly as a csv file, to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (\gls{MWe}), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
@@ -75,7 +75,7 @@ which lists the individual reactor units as agents.
 \draw [arrow] (output) -- (script2);
 \end{tikzpicture}
 }
-\caption{Computational Workflow for this work. The green circles represent files, and the blue
+\caption{Computational workflow in this work. The green circles represent files, and the blue
          boxes represent codes that process the files.}
 \label{diag:comp}
 \end{figure}
@@ -84,23 +84,22 @@ which lists the individual reactor units as agents.
 Projections of future reactor deployment in this simulation are based on
 assessment of analyses from references such as \gls{PRIS} for reactors planned
 for construction \cite{iaea_pris_2017}, the World Nuclear Association
-\cite{world_nuclear_association_nuclear_2017}, and works on the future of
+\cite{world_nuclear_association_nuclear_2017}, and literature concerning the future of
 nuclear power in a global \cite{joskow_future_2012} and European context
-\cite{hatch_politics_2015}.  The projections extend to 2050 at the latest.  Later sections explain, in detail, the specific plans for each \gls{EU} nation.
+\cite{hatch_politics_2015}.  Existing projections extend to 2050 at the latest.  
 
 \Cref{tab:eu_deployment} lists the reactors that are currently  planned or
-under construction.  All  planned constructions are completed without delay or
-failure and are assumed to reach a lifetime of 60 years.  
-
+under construction. In the simulation, all  planned constructions are completed 
+without delay or failure and are assumed to reach a lifetime of 60 years.  
 
 \begin{table}[h]
     \centering
 
     \label{tab:eu_deployment}
     \scalebox{0.9}{
-    \begin{tabular}{ccccc}
+    \begin{tabular}{ccccr}
         \hline
-        \textbf{Exp. Operational }&\textbf{ Country} &\textbf{ Reactor} & \textbf{Type} & \textbf{Gross \gls{MWe}}\\
+        \textbf{Exp. Operational }&\textbf{Country} &\textbf{Reactor} & \textbf{Type} & \textbf{Gross \gls{MWe}}\\
         \hline
         2018 & Slovakia  & Mochovce 3 & PWR & 440\\
         2018 & Slovakia & Mochovce 4 & PWR & 440 \\
@@ -128,7 +127,7 @@ failure and are assumed to reach a lifetime of 60 years.
 \end{table}
 \FloatBarrier
 
-For each \gls{EU} nation, the growth trajectory is categorized from
+For each \gls{EU} nation, we categorize the growth trajectory is categorized from
 ``Aggressive Growth'' to ``Aggressive Shutdown''. Aggressive growth is
 characterized by a rigorous expansion of nuclear power while
 Aggressive Shutdown is characterized as a transition to rapidly
@@ -152,18 +151,14 @@ categorized into five degrees depending on G, the growth trajectory metric.
  \]
 
 The growth trajectory and specific plan of each nation in the \gls{EU} 
-is listed in Table \ref{tab:eu_growth}.
-
-
-Figure \ref{fig:eu_pow} displays the
+is listed in Table \ref{tab:eu_growth}. Meanwhile, \cref{fig:eu_pow} displays the
 timeseries of installed capacity in \gls{EU} nations.
 
 
 \begin{table}[h]
     \centering
-        \begin{tabular}{ccc}
+        \begin{tabular}{lll}
             \hline 
-                    
                     \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
                     \hline
                     UK & Aggressive Growth & {\small  13 units (17,900 \gls{MWe}) by 2030.}\\
@@ -204,13 +199,15 @@ timeseries of installed capacity in \gls{EU} nations.
 \end{figure}
 
 
-
 \subsection{French \gls{SFR} Deployment Schedule}
 
-From 2040,
-600-\gls{MWe} \glspl{SFR} are deployed to make up for the 
-decommissioned \gls{LWR} capacities, to maintain an installed 
-capacity of 66,000 \gls{MWe}. 
+\Cref{fig:sfr_num} and \ref{fig:dep} display
+the French transition to \glspl{SFR} modeled in this simulation.
+Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
+decommissioned French \gls{LWR} capacity. This results in an installed 
+\gls{SFR} 
+capacity of 66,000 \gls{MWe} by 2078 when the final \gls{LWR} is 
+decommissioned. 
 
 \begin{figure}[htbp!]
         \begin{center}
@@ -218,8 +215,8 @@ capacity of 66,000 \gls{MWe}.
         \end{center}
         \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
                  The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
-                 of nuclear in the 2040s, which would be replaced by new \glspl{SFR}. The net
-                 capacity is kept at a constant of 66 GWe.}
+                 of nuclear in the 2040s, which, in the simulation, are replaced by new 
+                 \glspl{SFR}. The net capacity is kept at a constant of 66 GWe.}
         \label{fig:sfr_num}
 \end{figure}
 \begin{figure}[htbp!]
@@ -245,45 +242,26 @@ capacity of 66,000 \gls{MWe}.
 \end{figure}
 
 
-\Cref{fig:sfr_num} and \ref{fig:dep} display
-the French transition to \glspl{SFR} over time.
 \Cref{fig:tot_dep} displays the total deployment
 scheme of the simulation.
 The steep transition from 2040 to 2060 reflects the scheduled
 decommissioning of reactors built in the 1975-2000
 era of aggressive nuclear growth in France.
 
-In reality, building five reactors every year is highly unrealistic. However,
-this analysis is to analyze material flow, claiming that, if such an aggressive
-deployment scheme was to take place, the \glspl{SFR} would have enough fuel.
-More realistically, the deployment of new \glspl{SFR} can be spread out by
-staggering scheduled decommissioning of \glspl{LWR} through lifetime extensions.
-An analysis of the effect of \gls{LWR} lifetime extension is shown in a later section.
-
-
+These figures reflect that, for the given assumptions, bursts of construction
+are necessary to maintain capacity.  In reality, a construction rate of five 
+reactors every year is highly unrealistic. However, this analysis is to analyze 
+material flow, and demonstrates that, if such an aggressive deployment scheme 
+took place, the \glspl{SFR} would have enough fuel.  More realistically, the 
+deployment of new \glspl{SFR} can be spread out by staggering scheduled 
+decommissioning of \glspl{LWR} through lifetime extensions.  An analysis of the 
+effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life}.
 
 \subsection{Material Flow}
-A source provides natural uranium, which is enriched by an enrichment
-facility to produce \gls{UOX}, while disposing enrichment waste (tails)
-to the sink. The enriched \gls{UOX} fuels
-the \gls{LWR}s and \gls{UOX} waste is produced. The used fuel
-is sent to a pool to cool for at least 3 years \cite{carre_overview_2009}.
 
-The cooled fuel is then reprocessed to separate plutonium and uranium,
-or sent to a repository.
-The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
-Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
-in order to separate the raffinate (minor actinides and fission products)
-from `usable' material. Though neglected in this work, reprocessed
-uranium may substitute depleted uranium for \gls{MOX} production. In the
-simulations, sufficient depleted uranium existed that using reprocessed
-uranium was overlooked. However, further in the future where the depleted
-uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
-
-The material flow is illustrated in figure \ref{diag:fc}, along with
+The fuel cycle is represented by a series of facility agents whose material 
+flow is illustrated in figure \ref{diag:fc}, along with
 the \Cyclus archetypes that were used to model each facility.
-
-
 
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
@@ -354,6 +332,24 @@ minimum height=2em]
                          \glspl{SFR}.}
                 \label{diag:fc}
 \end{figure}
+
+A mine facility provides natural uranium, which is enriched by an enrichment
+facility to produce \gls{UOX}. Enrichment waste (tails) is disposed of to a 
+sink facility representing ultimate disposal. The enriched \gls{UOX} fuels
+the \glspl{LWR} which in turn produce spent \gls{UOX}. The used fuel
+is sent to a wet storage facility to cool for at least 3 years \cite{carre_overview_2009}.
+
+The cooled fuel is then reprocessed to separate plutonium and uranium,
+or sent to the repository.
+The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
+Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
+in order to separate the raffinate (minor actinides and fission products)
+from `usable' material. Though neglected in this work, reprocessed
+uranium may substitute depleted uranium for \gls{MOX} production. In the
+simulations, sufficient depleted uranium existed that using reprocessed
+uranium was overlooked. However, further in the future where the depleted
+uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
+
 \FloatBarrier
 
 \section{Scenario Specifications}
@@ -407,7 +403,7 @@ French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}
         \hline
         Separation Efficiency & 99.8 \% \\
         Reprocessing Streams & plutonium and uranium \\
-        \gls{ASTRID} Fuel Reprocessing Stage &  Used \gls{MOX} gets reprocessed infinitely. \\
+        \gls{ASTRID} Fuel Reprocessing Stage &  Used \gls{MOX} is reprocessed infinitely. \\
         \hline
     \end{tabularx}
     \caption {Specification for French Transition to \glspl{ASTRID} }
@@ -449,7 +445,7 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
         powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
 
                 Batches per core & 3 & 3 & 4\\
-                Initial Fissile Loading & 3.1 t  $^{235}U$ & 4.2 t  $^{235}U$ & 4.9 t  Pu \\
+        Initial Fissile Loading [t] & 3.1  $^{235}U$ & 4.2  $^{235}U$ & 4.9 Pu \\
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
         \hline
     \end{tabular}
