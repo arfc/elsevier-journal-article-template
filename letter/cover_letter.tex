@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plain Cover Letter
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%       PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{letter} % Default font size of the document, change to 10pt to fit more text
+\usepackage{graphicx}
+%\usepackage{newcent} % Default font is the New Century Schoolbook PostScript font
+%\usepackage{helvet} % Uncomment this (while commenting the above line) to use the Helvetica font
+
+% Margins
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+%\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
+
+\usepackage{eso-pic,graphicx}
+ \begin{document}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.pdf}}
+
+%----------------------------------------------------------------------------------------
+%       ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{Professor Yousry Azmy\\
+Professor Malcolm Joyce\\
+Professor Guanghui Su\\
+Editors, Progress in Nuclear Energy}
+
+%----------------------------------------------------------------------------------------
+%       YOUR NAME & ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+\address{Kathryn D. Huff\\
+118 Talbot Laboratory\\
+MC-234\\
+104 S. Wright Street\\
+Urbana, IL 61801}
+
+
+%----------------------------------------------------------------------------------------
+%       LETTER CONTENT SECTION
+%----------------------------------------------------------------------------------------
+
+\opening{Dear Professors Azmy, Joyce, and Su,}
+
+Please find enclosed a manuscript entitled: ``Synergistic Spent Nuclear Fuel Dynamics Within the European Union'' which my coauthors and I are submitting for exclusive 
+consideration for publication as a research article in Progress in Nuclear Energy.
+
+This manuscript describes multi-region, dynamic, nuclear energy system transition simulations using the Cyclus nuclear fuel cycle simulator framework and its modeling ecosystem. These simulations investigate and demonstrate the material feasibility of a collaborative spent fuel management strategy across nuclear nations in the European Union.  
+
+These simulations are motivated and described in the context of relevant
+socio-political dynamics in the European Union. However the focus of these
+simulations primarily emphasize the technical challenges tied to material transmutation
+and reactor deployment. We conclude that a collaborative strategy for spent fuel management in the European Union will have international benefits.
+
+Thank you for your consideration of this work. I expect it will be of interest
+to a broad readership concerned with the nuclear fuel cycle, advanced reactors,
+spent fuel management, and applications of agent-based and object-oriented
+simulation to nuclear engineering.  Please address correspondence concerning
+this manuscript to me at the University of Illinois.
+
+\closing{Sincere regards,
+\includegraphics[height=2cm]{signature}\\
+\fromsig{Kathryn Huff}
+}
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+
