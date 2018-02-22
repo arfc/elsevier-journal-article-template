@@ -11,20 +11,21 @@ feasibility of the transition.
 \begin{table}[h]
 	\centering
 %	\scalebox{0.86}{
-		\begin{tabular}{ccc}
+	\caption{Nuclear material inventory in the \gls{EU} in 2050 is
+                  summarized. The \gls{UOX} in the simulation is either stored or reprocessed to create \gls{MOX}}
+
+		\begin{tabular}{lrl}
 			\hline
-			\textbf{Category } & \textbf{Value [MTHM]} & \textbf{Specifics}\\ \hline
-			UOX Usage  & 158,794 &  \\ 
-			MOX Usage  & 6,671  & \\ 
-			\textbf{Used UOX Stored}  & \textbf{95,161}  & \gls{UNF} that is not reprocessed\\
-			\textbf{Used UOX Stored (France)} & \textbf{9,979}  & \gls{UNF} that is not reprocessed \\
-			Tails  & 979,463  & \\ 
+			\textbf{Category} & \textbf{Value [MTHM]} & Specifics \\ \hline
+			UOX Loaded  & 158,794 & UOX that is loaded into the reactors up until 2050 in all EU nations \\ 
+			MOX Loaded  & 6,671  & MOX that is loaded in to the reactors up until 2050 in all French reactors \\ 
+			\textbf{Used UOX Available for Reprocessing (EU except France)}  & \textbf{95,161}  & Used UOX from all EU nations except fro France that is stored to be reprocessed for ASTRID MOX production.\\
+			\textbf{Used UOX Available for Reprocessing(France)} & \textbf{9,979}  & Used UOX from all EU nations except fro France that is stored to be reprocessed for ASTRID MOX production. \\
+			\textbf{Reprocessed French UOX} & 53654 & French used UOX that has already been reprocessed for the production of LWR MOX
+			Tails  & 979,463  & (Tails generated as byproduct of enrichment) - (Tails used for production of LWR MOX)\\ 
 			Natural U Used  & 1,141,916  & \\ \hline
 		\end{tabular}
-		\caption{Nuclear material inventory in the \gls{EU} in 2050 is
-                  summarized. The \gls{UOX} in the simulation is either stored or reprocessed to 
-                  created \gls{MOX}.  destined for \gls{ASTRID} reactors.}
-
+		
 		\label{tab:sim_result1}
 \end {table}
 \FloatBarrier
@@ -73,7 +74,10 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{ccc}
+	\caption{Plutonium from \gls{UNF} inventory. This table assumes no decay
+			 took place. The long half-life of the fissile Pu-239 (24,100 years)
+			 weakens the impact of decay on the usability of \gls{UNF}.}
+	\begin{tabular}{lrr}
 		\hline
 		\textbf{Isotope} & \textbf{Mass Fraction in Used Fuel [\%]} & \textbf{Quantity [t]} \\ \hline
 		Pu238 & 0.0111 & 10.5628 \\ 
@@ -83,9 +87,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 		Pu242 & 0.0487 & 46.3 \\ \hline
 		\textbf{Total} & \textbf{0.9358} & \textbf{890.5} \\ \hline
 	\end{tabular}
-	\caption{Plutonium from \gls{UNF} inventory. This table assumes no decay
-			 took place. The long half-life of the fissile Pu-239 (24,100 years)
-			 weakens the impact of decay on the usability of \gls{UNF}.}
+	
 	\label{tab:pu}
 \end{table}
 
@@ -150,8 +152,16 @@ plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}
 
 \begin{table}[h]
 	\centering
+	\caption {In the French transition to \glspl{SFR},
+				  the total legacy \gls{UNF} reprocessed is the 
+                                  amount of \gls{UNF} France needs 
+				  for a transition into a fully \gls{SFR} fleet. 
+                                  %The tails used is around ninth of the original tails inventory from the previous simulation.
+                                  %KDH note: What does this mean?
+                                  %thought there was only one simulation. . . 
+                          }
 	\scalebox{0.86}{
-		\begin{tabular}{ccc}
+		\begin{tabular}{llr}
 			\hline
 			\textbf{Category} & \textbf{Unit} & \textbf{Value}  \\ \hline
 			Total MOX used & MTHM & 63,820  \\ 
@@ -167,14 +177,7 @@ plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}
 			Total Reprocessed Uranium Stockpile & MTHM & 183,740 \\ 
 			Total Raffinate & MTHM & 33,806 \\ \hline
 		\end{tabular}}
-		\caption {In the French transition to \glspl{SFR},
-				  the total legacy \gls{UNF} reprocessed is the 
-                                  amount of \gls{UNF} France needs 
-				  for a transition into a fully \gls{SFR} fleet. 
-                                  %The tails used is around ninth of the original tails inventory from the previous simulation.
-                                  %KDH note: What does this mean?
-                                  %thought there was only one simulation. . . 
-                          }
+		
 		\label{tab:sfr_sim_result}
 \end {table}
 
