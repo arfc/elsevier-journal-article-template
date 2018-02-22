@@ -191,7 +191,6 @@ timeseries of installed capacity in \gls{EU} nations.
     \end{center}
     \caption{The timeseries of installed nuclear capacity in the EU is separated by \texttt{Region}s in \Cyclus.
              The sudden drops in capacity are caused by nuclear phaseout plans by nations such as Germany and Belgium.
-             The extrapolations into the future are made
              }
     \label{fig:eu_pow}
 \end{figure}
@@ -282,11 +281,11 @@ minimum height=2em]
                 \node [cloud, below of=enr] (uox) {\gls{UOX}};
                 \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
                 \node [cloud, right of=lwr] (snf) {\gls{UNF}};
-                \node [cloud, right of=uox] (cunf) {Cooled \gls{UNF}};
                 \node [block, right of=snf] (pool) {Pool (\texttt{Storage})};
                 \node [cloud, left of=lwr] (tl2) {Dep U};
                 \node [cloud, right of=enr] (tl) {Dep U};
                 \node [block, right of=tl] (sk) {Repository (\texttt{SINK})};
+                \node [cloud, below of=sk] (cunf) {Cooled \gls{UNF}};
                 \node [cloud, below of=pool] (cunf2) {Cooled \gls{UNF}};
                 \node [block, below of=snf] (rep) {{\small Reprocessing ({\footnotesize \texttt{SEPARATIONS}})}};
                 \node [cloud, below of=rep] (u) {Sep. U} ;
