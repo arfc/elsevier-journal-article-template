@@ -8,9 +8,7 @@ using \Cyclus fuel cycle simulation framework and \Cycamore agents.
 In this simulation, the \gls{UNF} from \gls{EU} nations is stored for later use 
 in French \glspl{SFR} and France begins production of fuel for \glspl{SFR}
 in 2020 by recycling the stored \gls{UNF}.
-The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.
-
-All scripts and data used for the simulations in this article are available in 
+The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.All scripts and data used for the simulations in this article are available in 
 \cite{bae_arfc/transition-scenarios:_2017}.
 
 
@@ -39,7 +37,7 @@ Each material resource has a quantity, composition, name, and a unique identifie
 for output analysis. 
 
 In this work, each nation is represented as a distinct \texttt{Region} agent,
-that may contain \texttt{Institution} agents, each deploying  \texttt{Facility} 
+that contains \texttt{Institution} agents, each deploying  \texttt{Facility} 
 agents. The \texttt{Institution} agents then deploy agents according to 
 a user-defined deployment scheme.
 
@@ -86,7 +84,7 @@ assessment of analyses from references such as \gls{PRIS} for reactors planned
 for construction \cite{iaea_pris_2017}, the World Nuclear Association
 \cite{world_nuclear_association_nuclear_2017}, and literature concerning the future of
 nuclear power in a global \cite{joskow_future_2012} and European context
-\cite{hatch_politics_2015}.  Existing projections extend to 2050 at the latest.  
+\cite{hatch_politics_2015}.  Existing projections extend to 2050.
 
 \Cref{tab:eu_deployment} lists the reactors that are currently  planned or
 under construction. In the simulation, all  planned constructions are completed 
@@ -193,7 +191,7 @@ timeseries of installed capacity in \gls{EU} nations.
     \end{center}
     \caption{The timeseries of installed nuclear capacity in the EU is separated by \texttt{Region}s in \Cyclus.
              The sudden drops in capacity are caused by nuclear phaseout plans by nations such as Germany and Belgium.
-             The predictions into the future are made to the farthest planned future.
+             The extrapolations into the future are made
              }
     \label{fig:eu_pow}
 \end{figure}
@@ -224,7 +222,7 @@ decommissioned.
         \includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
     \end{center}
     \caption{The deployment of \glspl{SFR} in France is characterized by a period of
-             aggressive building. An average of four reactors are built per year to
+             aggressive building. Four reactors on average are built per year to
              make up for the decommissioned power plants built in the 1980s and 1990s.
              The second period of aggressive building occurs when the first generation
              of \glspl{SFR} decommission after 80 years.}
@@ -344,7 +342,7 @@ or sent to the repository.
 The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
 Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
 in order to separate the raffinate (minor actinides and fission products)
-from `usable' material. Though neglected in this work, reprocessed
+from usable material. Though neglected in this work, reprocessed
 uranium may substitute depleted uranium for \gls{MOX} production. In the
 simulations, sufficient depleted uranium existed that using reprocessed
 uranium was overlooked. However, further in the future where the depleted
@@ -358,7 +356,7 @@ The scenario specifications  are
 listed in tables \ref{tab:gen}, \ref{tab:sim_eu}, and \ref{tab:sim_france}.
 The reprocessing and \gls{MOX} fabrication capacity in France
 prior to 2020 is modeled after the 
-French La Hague and MELOX site \cite{schneider_spent_2008, hugelmann_melox_1999}.
+French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999}.
 
 
 \begin{table}[h]
@@ -422,7 +420,7 @@ varying reactor capacity. For example, a
 weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
 core (77 assemblies) discharges. Refueling
-is assumed to take 2 months to complete, during which the reactor
+is assumed to take two months to complete, during which the reactor
 is shut down. The specifications are defined in 
 table \ref{tab:reactor-specs} which details the reactor specifications in this simulation.
 
@@ -445,7 +443,7 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
         powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
 
                 Batches per core & 3 & 3 & 4\\
-        Initial Fissile Loading [t] & 3.1  $^{235}U$ & 4.2  $^{235}U$ & 4.9 Pu \\
+        Initial Fissile Loading [t] & 3.1  $^{235}$U & 4.2  $^{235}$U & 4.9 Pu \\
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
         \hline
     \end{tabular}
@@ -460,8 +458,9 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
 and used fuel recipe is defined for each reactor type.
 For the compositions of the used fuel, a reference depletion calculation
-from ORIGEN is used (see \cref{tab:comp}). The recipe has also been used for
-\cite{wilson_adoption_2009}.
+from ORIGEN is used (see \cref{tab:comp}). ORIGEN is a computer code
+system for calculating buildup, decay, and processing of radioactive materials
+\cite{parks_overview_1992} The recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
 
 \begin{table}[h]
     \centering
