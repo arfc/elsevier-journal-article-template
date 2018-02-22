@@ -92,7 +92,8 @@ without delay or failure and are assumed to reach a lifetime of 60 years.
 
 \begin{table}[h]
     \centering
-
+    \caption {Power Reactors under construction and planned.
+        Replicated from \cite{world_nuclear_association_nuclear_2017}.}
     \label{tab:eu_deployment}
     \scalebox{0.9}{
     \begin{tabular}{ccccr}
@@ -119,9 +120,7 @@ without delay or failure and are assumed to reach a lifetime of 60 years.
         \hline
     \end{tabular}
     }
-    \label{tab:eu_deployment}
-    \caption {Power Reactors under construction and planned.
-        Replicated from \cite{world_nuclear_association_nuclear_2017}.}
+    
 \end{table}
 \FloatBarrier
 
@@ -155,6 +154,7 @@ timeseries of installed capacity in \gls{EU} nations.
 
 \begin{table}[h]
     \centering
+    \caption {Future Nuclear Programs of \gls{EU} Nations \cite{world_nuclear_association_nuclear_2017}}
         \begin{tabular}{lll}
             \hline 
                     \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
@@ -180,7 +180,7 @@ timeseries of installed capacity in \gls{EU} nations.
                     
         \end{tabular}
 
-    \caption {Future Nuclear Programs of \gls{EU} Nations \cite{world_nuclear_association_nuclear_2017}}
+    
   \label{tab:eu_growth}
 \end{table}
 \FloatBarrier
@@ -361,52 +361,30 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
 
 \begin{table}[h]
     \centering
+    \caption {Simulation Specifications}
     \begin{tabularx}{\textwidth}{bb}
         \hline
         \textbf{Specification} &\textbf{ Value} \\
         \hline
-        Simulation Time & 1970-2160 \\ 
-        Reprocessed Uranium Usage &  None. Stockpile reprocessed U \\
-        Storage Residence Time & 36 months \\
-        \gls{SFR} available year & 2040 \\
+        Simulation Starts & 1970 \\
+        Simulation Ends & 2160 \\ 
         Production of \gls{ASTRID} fuel begins & 2020 \\
+        Year \glspl{SFR} become available & 2040 \\
+        Reprocessed uranium usage &  None. Stockpile reprocessed U \\
+        Used fuel cool time prior usage  & 36 months \\
+        Separation efficiency & 99.8\% \\
+        Reprocessing streams & plutonium and uranium \\
+        Reprocessing capacity before 2040 & 91.6 tonnes of \gls{UNF} per month \cite{schneider_spent_2008} \\
+        Reprocessing capacity after 2040 & $\infty$  \\
+        \gls{LWR} \gls{MOX} fab. throughput & 16.25 tonnes of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
+        \gls{ASTRID} \gls{MOX} fab. throughput & $\infty$  \\
+        \gls{LWR} \gls{MOX} fuel rep. stage  &  Used \gls{MOX} is not reprocessed. \\
+        \gls{ASTRID} \gls{MOX} fuel rep. stage & Used \gls{MOX} is reprocessed infinitely. \\  
         \hline
     \end{tabularx}
-    \caption {General Simulation Specifications}
     \label{tab:gen}
 \end{table}
 
-\begin{table}[h]
-    \centering
-    \begin{tabularx}{\textwidth}{bb}
-        \hline
-        \textbf{Specification} &\textbf{ Value} \\
-        \hline
-        Reprocessing Capacity & 91.6 MTHM of \gls{UNF} per month \cite{schneider_spent_2008} \\
-        Reprocessing Efficiency & 99.8\% \\
-        Reprocessing Streams & plutonium and uranium \\
-        \gls{MOX} Fabrication Throughput & 16.25 MTHM of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
-        \gls{MOX} Fuel Reprocessing Stage &  Used \gls{MOX} is not reprocessed. \\  
-        \hline
-    \end{tabularx}
-    \caption {Specification for Historical Operation of \gls{EU}}
-    \label{tab:sim_eu}
-\end{table}
-
-\begin{table}[h]
-    \centering
-    \begin{tabularx}{\textwidth}{bb}
-        \hline
-        \textbf{Specification }& \textbf{Value} \\
-        \hline
-        Separation Efficiency & 99.8 \% \\
-        Reprocessing Streams & plutonium and uranium \\
-        \gls{ASTRID} Fuel Reprocessing Stage &  Used \gls{MOX} is reprocessed infinitely. \\
-        \hline
-    \end{tabularx}
-    \caption {Specification for French Transition to \glspl{ASTRID} }
-    \label{tab:sim_france}
-\end{table}
 
 \pagebreak
 
@@ -426,6 +404,8 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
 
 \begin{table}[h]
     \centering
+    \caption {Model \gls{LWR} and \gls{ASTRID} specifications used for the simulations are listed, and \glspl{LWR} are modified
+        linearly for varying power capacity. }
     \begin{tabular}{cccc}
         \hline
         \textbf{Specification} & \textbf{\gls{PWR} \cite{sutharshan_ap1000tm_2011}} & \textbf{\gls{BWR} \cite{hinds_next-generation_2006}} & \textbf{\gls{SFR}} \cite{varaine_pre-conceptual_2012}\\
@@ -447,8 +427,7 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
         \hline
     \end{tabular}
-        \caption {Model \gls{LWR} and \gls{ASTRID} specifications used for the simulations are listed, and \glspl{LWR} are modified
-        linearly for varying power capacity. }
+        
     \label{tab:reactor-specs}
 
     \end{table}
@@ -464,6 +443,7 @@ system for calculating buildup, decay, and processing of radioactive materials
 
 \begin{table}[h]
     \centering
+    \caption{Fresh fuel compositions used for the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
 %   \scalebox{0.86}{
         \begin{tabular}{cccc}
             \hline
@@ -475,6 +455,6 @@ system for calculating buildup, decay, and processing of radioactive materials
             Fresh \gls{ASTRID} Fuel & 0.2 & 77.7 & 22 \\
             \hline
         \end{tabular}
-        \caption{Fresh fuel compositions used for the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
+        
         \label{tab:sim_result}
 \end {table}
