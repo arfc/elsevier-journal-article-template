@@ -60,7 +60,7 @@ which lists the individual reactor units as agents.
         \scalebox{0.7}{
 \begin{tikzpicture}[node distance=1.5cm]
 \node (database) [object] {Database (\texttt{.csv})};
-\node (script) [process, below of=database] {Input Generation Script (\texttt{write\_deployinst\_input.py})};
+\node (script) [process, below of=database] {Input Generation Script (\texttt{write\_input.py})};
 \node (input) [object, below of=script] {\Cyclus Input File (\texttt{.xml})};
 \node (cyclus) [process, below of=input]{\Cyclus};
 \node (output) [object, below of=cyclus]{\texttt{Output File (\texttt{.Sqlite})}};
