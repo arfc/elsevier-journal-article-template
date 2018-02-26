@@ -251,7 +251,32 @@ reactors every year is highly unrealistic. However, this analysis is to analyze
 material flow, and demonstrates that, if such an aggressive deployment scheme 
 took place, the \glspl{SFR} would have enough fuel.  More realistically, the 
 deployment of new \glspl{SFR} can be spread out by staggering scheduled 
-decommissioning of \glspl{LWR} through lifetime extensions.  An analysis of the 
+decommissioning of \glspl{LWR} through lifetime extensions. For example,
+we increased the original lifetime of French \glspl{LWR} (60 years) randomly 
+by sampling from a uniform distribution from zero to 25 years. 
+This results in a more moderate transition and \gls{ASTRID} construction
+burden, as shown in figure \ref{sfr_num_norm} and \ref{sfr_dep_norm}.
+
+\begin{figure}[htbp!]
+    \begin{center}
+        \includegraphics[scale=0.6]{./images/french-transition/unif_0_25.png}
+    \end{center}
+    \caption{Transition to \glspl{ASTRID} becomes less gradual if the
+             French \glspl{LWR} are given lifetime extensions from a 
+             uniform distribution from zero to 25 years.}
+    \label{fig:sfr_num_norm}
+\end{figure}
+
+\begin{figure}[htbp!]
+    \begin{center}
+        \includegraphics[scale=0.6]{./images/french-transition/unif_0_25_dep.png}
+    \end{center}
+    \caption{The construction burden of \glspl{ASTRID} lessen if the
+             lifetime of French \glspl{LWR} are extended by a uniform
+             distribution from zero to 25 years.}
+    \label{fig:sfr_dep_norm}
+\end{figure}
+
 effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life}.
 
 \subsection{Material Flow}
@@ -351,8 +376,7 @@ uranium inventory drains, reprocessed uranium (or, natural uranium) will need to
 
 \section{Scenario Specifications}
 
-The scenario specifications  are
-listed in tables \ref{tab:gen}, \ref{tab:sim_eu}, and \ref{tab:sim_france}.
+The scenario specifications  are listed in table \ref{tab:gen}.
 The reprocessing and \gls{MOX} fabrication capacity in France
 prior to 2020 is modeled after the 
 French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999}.
@@ -373,8 +397,8 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
         Used fuel cool time prior usage  & 36 months \\
         Separation efficiency & 99.8\% \\
         Reprocessing streams & plutonium and uranium \\
-        Reprocessing capacity before 2040 & 91.6 tonnes of \gls{UNF} per month \cite{schneider_spent_2008} \\
-        Reprocessing capacity after 2040 & $\infty$  \\
+        Reprocessing capacity before 2020 & 91.6 tonnes of \gls{UNF} per month \cite{schneider_spent_2008} \\
+        Reprocessing capacity after 2020 & $\infty$  \\
         \gls{LWR} \gls{MOX} fab. throughput & 16.25 tonnes of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
         \gls{ASTRID} \gls{MOX} fab. throughput & $\infty$  \\
         \gls{LWR} \gls{MOX} fuel rep. stage  &  Used \gls{MOX} is not reprocessed. \\
@@ -450,7 +474,7 @@ system for calculating buildup, decay, and processing of radioactive materials
             Recipe & U-235  & U-238  & Pu \\ 
             \hline
             Fresh \gls{UOX} Fuel & 3.1 & 96.9 & -   \\ 
-            Fresh \gls{MOX} Fuel & 0.2 & 90.7 & 9.1 \\ 
+            Fresh \gls{LWR} \gls{MOX} Fuel & 0.2 & 90.7 & 9.1 \\ 
             Fresh \gls{ASTRID} Fuel & 0.2 & 77.7 & 22 \\
             \hline
         \end{tabular}
