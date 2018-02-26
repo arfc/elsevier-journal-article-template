@@ -90,6 +90,7 @@ nuclear power in a global \cite{joskow_future_2012} and European context
 under construction. In the simulation, all  planned constructions are completed 
 without delay or failure and are assumed to reach a lifetime of 60 years.  
 
+\pagebreak
 \begin{table}[h]
     \centering
     \caption {Power Reactors under construction and planned.
@@ -109,7 +110,7 @@ without delay or failure and are assumed to reach a lifetime of 60 years.
         2024 & Finland & Hanhikivi & VVER1200 & 1200 \\
         2024 & Hungary & Paks 5 & VVER1200 & 1200 \\
         2025 & Hungary & Paks 6 & VVER1200 & 1200 \\
-        2025 & Bulgaria & Kozloduy 7 & AP1000? & 950 \\
+        2025 & Bulgaria & Kozloduy 7 & \footnotemark AP1000 & 950 \\
         2026 & UK & Hinkley Point C1 & EPR & 1670 \\
         2027 & UK & Hinkley Point C2 & EPR & 1670 \\
         2029 & Poland & Choczewo & N/A & 3000 \\
@@ -120,8 +121,11 @@ without delay or failure and are assumed to reach a lifetime of 60 years.
         \hline
     \end{tabular}
     }
-    
 \end{table}
+
+    \footnotetext{The fate of many planned reactors are uncertain. The proposed reactor types
+              are also unclear. The ones marked `N/A' for type are assumed to the \glspl{PWR}
+              in the simulation.}
 \FloatBarrier
 
 For each \gls{EU} nation, we categorize the growth trajectory is categorized from
@@ -303,7 +307,7 @@ minimum height=2em]
                 \node [block] (sr) {Mine (\texttt{SOURCE})};
                 \node [cloud, below of=sr] (nu) {Nat U};
                 \node [block, below of=nu] (enr) {Enrichment ({\footnotesize \texttt{ENRICHMENT}})};
-                \node [cloud, below of=enr] (uox) {\gls{UOX}};
+                \node [cloud, below of=enr] (uox) {\acrshort{UOX}};
                 \node [block, below of=uox] (lwr) {\gls{LWR} (\texttt{REACTOR})};
                 \node [cloud, right of=lwr] (snf) {\gls{UNF}};
                 \node [block, right of=snf] (pool) {Pool (\texttt{Storage})};
