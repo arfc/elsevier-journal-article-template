@@ -1,0 +1,139 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{cne2_reports_2015}
+\href{https://www.cne2.fr/index.php/en/cne-2-2007-to-this-day}{Reports of the
+  {CNE}2}, Tech. rep., Commission Nationae D'Evaluation (Jun. 2015).
+\newline\urlprefix\url{https://www.cne2.fr/index.php/en/cne-2-2007-to-this-day}
+
+\bibitem{huff_fundamental_2016}
+K.~D. Huff, M.~J. Gidden, R.~W. Carlsen, R.~R. Flanagan, M.~B. McGarry, A.~C.
+  Opotowsky, E.~A. Schneider, A.~M. Scopatz, P.~P.~H. Wilson,
+  \href{http://www.sciencedirect.com/science/article/pii/S0965997816300229}{Fundamental
+  concepts in the {Cyclus} nuclear fuel cycle simulation framework}, Advances
+  in Engineering Software 94 (2016) 46--59.
+\newblock \href {http://dx.doi.org/10.1016/j.advengsoft.2016.01.014}
+  {\path{doi:10.1016/j.advengsoft.2016.01.014}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0965997816300229}
+
+\bibitem{carre_overview_2009}
+F.~Carre, J.-M. Delbecq,
+  \href{https://www.researchgate.net/profile/Frank_Carre/publication/273751217_Overview_on_the_French_Nuclear_Fuel_Cycle_Strategy_and_Transition_Scenario_Studies/links/55f6ace108ae07629dbae8ea.pdf}{Overview
+  on the {French} nuclear fuel cycle strategy and transition scenario studies},
+  in: Proceedings of {GLOBAL}, Paris, France, 2009.
+\newline\urlprefix\url{https://www.researchgate.net/profile/Frank_Carre/publication/273751217_Overview_on_the_French_Nuclear_Fuel_Cycle_Strategy_and_Transition_Scenario_Studies/links/55f6ace108ae07629dbae8ea.pdf}
+
+\bibitem{martin_symbiotic_2017}
+G.~Martin, C.~Coquelet-Pascal,
+  \href{http://www.sciencedirect.com/science/article/pii/S0306454916308076}{Symbiotic
+  equilibrium between {Sodium} {Fast} {Reactors} and {Pressurized} {Water}
+  {Reactors} supplied with {MOX} fuel}, Annals of Nuclear Energy 103 (2017)
+  356--362.
+\newblock \href {http://dx.doi.org/10.1016/j.anucene.2017.01.041}
+  {\path{doi:10.1016/j.anucene.2017.01.041}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0306454916308076}
+
+\bibitem{freynet_multiobjective_2016}
+D.~Freynet, C.~Coquelet-Pascal, R.~Eschbach, G.~Krivtchik, E.~Merle-Lucotte,
+  \href{http://epjn.epj.org/articles/epjn/abs/2016/01/epjn150066/epjn150066.html}{Multiobjective
+  optimization for nuclear fleet evolution scenarios using {COSI}}, EPJ Nuclear
+  Sciences \& Technologies 2 (2016) 9.
+\newline\urlprefix\url{http://epjn.epj.org/articles/epjn/abs/2016/01/epjn150066/epjn150066.html}
+
+\bibitem{zhao_improving_2009}
+H.~Zhao, H.~Zhang, V.~A. Mousseau, P.~F. Peterson, Improving sfr economics
+  through innovations from thermal design and analysis aspects, Nuclear
+  Engineering and Design 239~(6) (2009) 1042--1055.
+
+\bibitem{varaine_pre-conceptual_2012}
+F.~Varaine, M.-S. Chenaud, P.~Marsault, B.~Bernardin, A.~Conti, P.~Sciora,
+  C.~Venard, B.~Fontaine, L.~Martin, G.~Mignot,
+  \href{https://www.researchgate.net/profile/Frederic_Varaine/publication/282657288_Pre-conceptual_design_study_of_ASTRID_core/links/56166d1908ae37cfe4090bb7.pdf}{Pre-conceptual
+  design study of {ASTRID} core}.
+\newline\urlprefix\url{https://www.researchgate.net/profile/Frederic_Varaine/publication/282657288_Pre-conceptual_design_study_of_ASTRID_core/links/56166d1908ae37cfe4090bb7.pdf}
+
+\bibitem{bae_arfc/transition-scenarios:_2017}
+J.~W. Bae, G.~T. Park, K.~Huff,
+  \href{https://zenodo.org/record/858671#.WahAzHWGPdJ}{arfc/transition-scenarios:
+  {Synergistic} {Spent} {Nuclear} {Fuel} {Dynamics} {Within} the {European}
+  {Union}}, dOI: 10.5281/zenodo.858671 (Aug. 2017).
+\newline\urlprefix\url{https://zenodo.org/record/858671#.WahAzHWGPdJ}
+
+\bibitem{huff_extensions_2014}
+K.~D. Huff, M.~Fratoni, H.~Greenberg, Extensions to the cyclus ecosystem in
+  support of market-driven transition capability, in: Transactions of the
+  American Nuclear Society, American Nuclear Society.
+
+\bibitem{gidden_agent-based_2015}
+M.~J. Gidden, An agent-based modeling framework and application for the generic
+  nuclear fuel cycle.
+
+\bibitem{iaea_pris_2017}
+IAEA, \href{https://www.iaea.org/pris/}{{PRIS} - {Home}} (Sep. 2017).
+\newline\urlprefix\url{https://www.iaea.org/pris/}
+
+\bibitem{world_nuclear_association_nuclear_2017}
+W.~N. Association,
+  \href{http://www.world-nuclear.org/information-library/country-profiles/others/european-union.aspx}{Nuclear
+  {Power} in the {European} {Union} - {World} {Nuclear} {Association}} (Feb.
+  2017).
+\newline\urlprefix\url{http://www.world-nuclear.org/information-library/country-profiles/others/european-union.aspx}
+
+\bibitem{joskow_future_2012}
+P.~L. Joskow, J.~E. Parsons,
+  \href{http://dspace.mit.edu/handle/1721.1/70857}{The {Future} of {Nuclear}
+  {Power} {After} {Fukushima}}, Working {Paper}, MIT CEEPR (Feb. 2012).
+\newline\urlprefix\url{http://dspace.mit.edu/handle/1721.1/70857}
+
+\bibitem{hatch_politics_2015}
+M.~T. Hatch, Politics and {Nuclear} {Power}: {Energy} {Policy} in {Western}
+  {Europe}, University Press of Kentucky, 2015, google-Books-ID: TrwfBgAAQBAJ.
+
+\bibitem{schneider_spent_2008}
+M.~Schneider, Y.~Marignac,
+  \href{http://www.psr.org/nuclear-bailout/resources/spent-nuclear-fuel.pdf}{Spent
+  nuclear fuel reprocessing in {France}}, 2008.
+\newline\urlprefix\url{http://www.psr.org/nuclear-bailout/resources/spent-nuclear-fuel.pdf}
+
+\bibitem{hugelmann_melox_1999}
+D.~Hugelmann, D.~Greneche,
+  \href{http://www.iaea.org/inis/collection/NCLCollectionStore/_Public/31/062/31062323.pdf#page=110}{{MELOX}
+  fuel fabrication plant: operational feedback and future prospects}, in: {MOX}
+  {Fuel} {Cycle} {Technologies} for {Medium} and {Long} {Term} {Deployment}
+  ({Proc}. {Symp}. {Vienna}, 1999), {C}\&{S} {Papers} {Series} {No}, Vol.~3,
+  1999, pp. 102--108.
+\newline\urlprefix\url{http://www.iaea.org/inis/collection/NCLCollectionStore/_Public/31/062/31062323.pdf#page=110}
+
+\bibitem{sutharshan_ap1000tm_2011}
+B.~Sutharshan, M.~Mutyala, R.~P. Vijuk, A.~Mishra,
+  \href{http://www.sciencedirect.com/science/article/pii/S1876610211015475}{The
+  {AP}1000tm {Reactor}: {Passive} {Safety} and {Modular} {Design}}, Energy
+  Procedia 7 (2011) 293--302.
+\newblock \href {http://dx.doi.org/10.1016/j.egypro.2011.06.038}
+  {\path{doi:10.1016/j.egypro.2011.06.038}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S1876610211015475}
+
+\bibitem{hinds_next-generation_2006}
+D.~Hinds, C.~Maslak, Next-generation nuclear energy: {The} {ESBWR}, Nuclear
+  News 49~(1) (2006) 35--40.
+
+\bibitem{parks_overview_1992}
+C.~Parks, Overview of origen2 and origen-s: Capabilities and limitations, Tech.
+  rep., Oak Ridge National Lab., TN (United States) (1992).
+
+\bibitem{wilson_adoption_2009}
+P.~Wilson, The {Adoption} of {Advanced} {Fuel} {Cycle} {Technology} {Under} a
+  {Single} {Repository} {Policy}, Tech. rep., University of Wisconsin --
+  Madison (2009).
+
+\bibitem{topfer_germany_2011}
+K.~T{\"o}pfer, M.~Kleiner, U.~Beck, U.~Fisher, K.~van Donhanyi, A.~Gluck,
+  J.~Hacker, J.~Hambrecht, V.~Hauff, W.~Hirche, et~al., Germany’s energy
+  turnaround--a collective effort for the future, Ethics Commission for a Safe
+  Energy Supply. On behalf of Federal Chancellor Dr. Angela Merkel.
+
+\end{thebibliography}
