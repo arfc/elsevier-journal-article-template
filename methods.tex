@@ -257,8 +257,9 @@ took place, the \glspl{SFR} would have enough fuel.  More realistically, the
 deployment of new \glspl{SFR} can be spread out by staggering scheduled 
 decommissioning of \glspl{LWR} through lifetime extensions. For example,
 we increased the original lifetime of French \glspl{LWR} (60 years) randomly 
-by sampling from a uniform distribution from zero to 25 years. 
-This results in a more moderate transition and \gls{ASTRID} construction
+by sampling from a uniform distribution of lifetime extension
+magnitudes between 0 and 25 years. 
+This results in a more gradual transition and \gls{ASTRID} construction
 burden, as shown in figure \ref{sfr_num_norm} and \ref{sfr_dep_norm}.
 
 \begin{figure}[htbp!]
@@ -389,24 +390,24 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
 \begin{table}[h]
     \centering
     \caption {Simulation Specifications}
-    \begin{tabularx}{\textwidth}{bb}
+    \begin{tabularx}{\linewidth}{bsx}
         \hline
-        \textbf{Specification} &\textbf{ Value} \\
+        \textbf{Specification} &\textbf{ Value} & \textbf{Units}\\
         \hline
-        Simulation Starts & 1970 \\
-        Simulation Ends & 2160 \\ 
-        Production of \gls{ASTRID} fuel begins & 2020 \\
-        Year \glspl{SFR} become available & 2040 \\
-        Reprocessed uranium usage &  None. Stockpile reprocessed U \\
-        Used fuel cool time prior usage  & 36 months \\
-        Separation efficiency & 99.8\% \\
-        Reprocessing streams & plutonium and uranium \\
-        Reprocessing capacity before 2020 & 91.6 tonnes of \gls{UNF} per month \cite{schneider_spent_2008} \\
-        Reprocessing capacity after 2020 & $\infty$  \\
-        \gls{LWR} \gls{MOX} fab. throughput & 16.25 tonnes of \gls{MOX} per month  \cite{hugelmann_melox_1999} \\
-        \gls{ASTRID} \gls{MOX} fab. throughput & $\infty$  \\
-        \gls{LWR} \gls{MOX} fuel rep. stage  &  Used \gls{MOX} is not reprocessed. \\
-        \gls{ASTRID} \gls{MOX} fuel rep. stage & Used \gls{MOX} is reprocessed infinitely. \\  
+        Simulation Starts & 1970 & year\\
+        Simulation Ends & 2160 & year\\ 
+        Production of \gls{ASTRID} fuel begins & 2020 & year\\
+        \glspl{SFR} become available & 2040 & year\\
+        Reprocessed uranium usage &  Not used anywhere & -\\
+        Minimum \gls{UNF} cooling time  & 36  & months\\
+        Separation efficiency of U and Pu & 99.8 & \% \\
+        Reprocessing streams & Pu and U & - \\
+        Reprocessing capacity before 2020 & 91.6 \cite{schneider_spent_2008} & $\frac{\text{metric tons of \gls{UNF}}}{month}$  \\
+        Reprocessing capacity after 2020 & $\infty$ & $\frac{\text{metric tons of \gls{UNF}}}{month}$\\
+        \gls{LWR} \gls{MOX} fabrication throughput & 16.25 \cite{hugelmann_melox_1999} & $\frac{\text{metric tons of \gls{MOX}}}{month}$\\
+        \gls{ASTRID} \gls{MOX} fabrication throughput & $\infty$ & $\frac{\text{metric tons of \gls{MOX}}}{month}$ \\
+        \gls{LWR} \gls{MOX} recycling  &  Not reprocessed & - \\
+        \gls{ASTRID} \gls{MOX} recycling & $\infty$-pass & - \\  
         \hline
     \end{tabularx}
     \label{tab:gen}
@@ -464,9 +465,9 @@ table \ref{tab:reactor-specs} which details the reactor specifications in this s
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
 and used fuel recipe is defined for each reactor type.
 For the compositions of the used fuel, a reference depletion calculation
-from ORIGEN is used (see \cref{tab:comp}). ORIGEN is a computer code
-system for calculating buildup, decay, and processing of radioactive materials
-\cite{parks_overview_1992} The recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
+from ORIGEN is used (see \cref{tab:comp}). ORIGEN calculates buildup,
+ decay, and processing of radioactive materials
+\cite{parks_overview_1992} This recipe recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
 
 \begin{table}[h]
     \centering
