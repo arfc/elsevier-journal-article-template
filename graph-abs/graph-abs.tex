@@ -45,53 +45,26 @@
 
 % hyperref %
 \usepackage[hidelinks]{hyperref}
-% after hyperref %
-\usepackage{cleveref}
-\usepackage{datatool}
-\usepackage[acronym,toc]{glossaries}
-\include{acros}
-
-\makeglossaries
 
 \begin{document}
 \begin{frontmatter}
-\title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
-
+\title{Graphical Abstract\\
+Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
 \date{}                     %% if you don't need date to appear
 
-%% Authors
-\input{authors}
-
-% Institutes of the authors
-\input{institutions}
-
-\begin{keyword}
-nuclear fuel cycle \sep
-european union \sep
-transition \sep 
-agent-based \sep 
-simulation \sep 
-spent nuclear fuel 
-\end{keyword}
-
-\input{abstract}
 \end{frontmatter}
-\glsresetall
 
-\linenumbers
 
-\input{introduction}
-\input{methods}
-\FloatBarrier
-\input{results}
-\input{sensitivity}
-\FloatBarrier
-\input{conclusion}
-\input{acks}
 
-\bibliography{bibliography}
 
-\pagebreak
-\input{appendix}
+
+\begin{figure}[htbp!]
+    \begin{center}
+        \includegraphics[width=\textwidth]{./onesim.png}
+    \end{center}
+    \caption{The simulated nuclear power deployment scheme. The historical operation of EU reactors is followed by the French transition to SFRs.  The steep transition from 2040 to 2060 reflects the scheduled decommissioning of reactors built in the 1975-2000 era of aggressive nuclear growth in France.}
+    \label{fig:tot_dep}
+\end{figure}
+
 
 \end{document}

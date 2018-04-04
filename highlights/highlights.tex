@@ -45,53 +45,19 @@
 
 % hyperref %
 \usepackage[hidelinks]{hyperref}
-% after hyperref %
-\usepackage{cleveref}
-\usepackage{datatool}
-\usepackage[acronym,toc]{glossaries}
-\include{acros}
-
-\makeglossaries
 
 \begin{document}
 \begin{frontmatter}
 \title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union}
-
-\date{}                     %% if you don't need date to appear
-
-%% Authors
-\input{authors}
-
-% Institutes of the authors
-\input{institutions}
-
-\begin{keyword}
-nuclear fuel cycle \sep
-european union \sep
-transition \sep 
-agent-based \sep 
-simulation \sep 
-spent nuclear fuel 
-\end{keyword}
-
-\input{abstract}
 \end{frontmatter}
-\glsresetall
-
-\linenumbers
-
-\input{introduction}
-\input{methods}
-\FloatBarrier
-\input{results}
-\input{sensitivity}
-\FloatBarrier
-\input{conclusion}
-\input{acks}
-
-\bibliography{bibliography}
-
-\pagebreak
-\input{appendix}
-
+\section*{Highlights}
+\begin{itemize}
+       \item Collaborative spent fuel management is feasible among nuclear 
+               nations in the  European Union. 
+       \item Collaborative EU spent fuel management could expedite a fast reactor 
+               technology transition in France.
+       \item By using spent fuel from other EU nations France can avoid 
+               building new light water reactors to support a transition to 
+               fast reactors.
+\end{itemize}
 \end{document}
