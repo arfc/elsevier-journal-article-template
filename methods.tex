@@ -8,7 +8,7 @@ using \Cyclus fuel cycle simulation framework and \Cycamore agents.
 In this simulation, the \gls{UNF} from \gls{EU} nations is stored for later use 
 in French \glspl{SFR} and France begins production of fuel for \glspl{SFR}
 in 2020 by recycling the stored \gls{UNF}.
-The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}.All scripts and data used for the simulations in this article are available in 
+The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine_pre-conceptual_2012}. All scripts and data used for the simulations in this article are available in 
 \cite{bae_arfc/transition-scenarios:_2018}.
 
 
@@ -17,7 +17,6 @@ The \glspl{SFR} are modeled after the \gls{ASTRID} breeder reactor \cite{varaine
 \Cyclus is an agent-based fuel cycle simulation framework 
 \cite{huff_fundamental_2016}, which means 
 that each reactor, reprocessing plant, and fuel fabrication plant is modeled as an agent.
-
 A \Cyclus simulation contains prototypes, which are fuel cycle facilities with
 pre-defined parameters, that are deployed in the simulation as \texttt{facility} agents.
 Encapsulating the \texttt{facility} agents are the \texttt{Institution} and \texttt{Region}.
@@ -47,7 +46,7 @@ a user-defined deployment scheme.
 
 The \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017} contains worldwide reactor
 operation history.
-We import this database directly as a csv file, to populate the simulation
+We import this database directly as a csv file to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (\gls{MWe}), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
@@ -80,7 +79,7 @@ which lists the individual reactor units as agents.
 
 
 Projections of future reactor deployment in this simulation are based on
-assessment of analyses from references such as \gls{PRIS} for reactors planned
+assessment of analyses from references, for instance \gls{PRIS}, for reactors planned
 for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
 \cite{world_nuclear_association_nuclear_2017}, and literature concerning the future of
 nuclear power in a global \cite{joskow_future_2012} and European context
@@ -123,15 +122,15 @@ without delay or failure and are assumed to reach a lifetime of 60 years.
     }
 \end{table}
 
-    \footnotetext{The fate of many planned reactors are uncertain. The proposed reactor types
+    \footnotetext{The fate of many planned reactors is uncertain. The proposed reactor types
               are also unclear. The ones marked `N/A' for type are assumed to the \glspl{PWR}
               in the simulation.}
 \FloatBarrier
 
 For each \gls{EU} nation, we categorize the growth trajectory is categorized from
-``Aggressive Growth'' to ``Aggressive Shutdown''. Aggressive growth is
-characterized by a rigorous expansion of nuclear power while
-Aggressive Shutdown is characterized as a transition to rapidly
+``Aggressive Growth'' to ``Aggressive Shutdown''. ``Aggressive growth'' is
+characterized by a rigorous expansion of nuclear power, while
+``Aggressive Shutdown'' is characterized as a transition to rapidly
 de-nuclearize the nation's electric grid. A nation's growth trajectory is
 categorized into five degrees depending on G, the growth trajectory metric.
 
@@ -251,9 +250,11 @@ era of aggressive nuclear growth in France.
 
 These figures reflect that, for the given assumptions, bursts of construction
 are necessary to maintain capacity.  In reality, a construction rate of five 
-reactors every year is highly unrealistic. However, this analysis is to analyze 
+reactors every year is ambitious, but might have the advantage of
+more assembly line like projection if major components can mostly be built off site.
+In any case, this analysis is to analyze 
 material flow, and demonstrates that, if such an aggressive deployment scheme 
-took place, the \glspl{SFR} would have enough fuel.  More realistically, the 
+took place, the \glspl{SFR} would have enough fuel.  Alternatively, the 
 deployment of new \glspl{SFR} can be spread out by staggering scheduled 
 decommissioning of \glspl{LWR} through lifetime extensions. For example,
 we increased the original lifetime of French \glspl{LWR} (60 years) randomly 
@@ -261,6 +262,7 @@ by sampling from a uniform distribution of lifetime extension
 magnitudes between 0 and 25 years. 
 This results in a more gradual transition and \gls{ASTRID} construction
 burden, as shown in figure \ref{fig:sfr_num_norm} and \ref{fig:sfr_dep_norm}.
+The effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life}.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -281,8 +283,6 @@ burden, as shown in figure \ref{fig:sfr_num_norm} and \ref{fig:sfr_dep_norm}.
              distribution from zero to 25 years.}
     \label{fig:sfr_dep_norm}
 \end{figure}
-
-effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life}.
 
 \subsection{Material Flow}
 
@@ -361,20 +361,22 @@ minimum height=2em]
 \end{figure}
 
 A mine facility provides natural uranium, which is enriched by an enrichment
-facility to produce \gls{UOX}. Enrichment waste (tails) is disposed of to a 
+facility to produce \gls{UOX}. Enrichment wastes (tails) are disposed of to a 
 sink facility representing ultimate disposal. The enriched \gls{UOX} fuels
 the \glspl{LWR} which in turn produce spent \gls{UOX}. The used fuel
-is sent to a wet storage facility to cool for at least 3 years \cite{carre_overview_2009}.
+is sent to a wet storage facility for a minimum of 72 months. \cite{carre_overview_2009}.
 
 The cooled fuel is then reprocessed to separate plutonium and uranium,
 or sent to the repository.
-The plutonium mixed with depleted uranium (tails) makes \gls{MOX}.
+The plutonium mixed with depleted uranium (tails) makes \gls{MOX} (Both for
+French \glspl{LWR} and \glspl{ASTRID}).
 Reprocessed uranium is unused and stockpiled. Uranium is reprocessed
 in order to separate the raffinate (minor actinides and fission products)
 from usable material. Though neglected in this work, reprocessed
 uranium may substitute depleted uranium for \gls{MOX} production. In the
-simulations, sufficient depleted uranium existed that using reprocessed
-uranium was overlooked. However, further in the future where the depleted
+simulations, sufficient depleted uranium existed that the complication of
+preparing reprocessed uranium for incorporation into reactor fuel
+was not included. However, further in the future where the depleted
 uranium inventory drains, reprocessed uranium (or, natural uranium) will need to be utilized. 
 
 \FloatBarrier
@@ -405,7 +407,7 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
         Reprocessing capacity before 2020 & 91.6 \cite{schneider_spent_2008} & $\frac{\text{metric tons of \gls{UNF}}}{month}$  \\
         Reprocessing capacity after 2020 & 183.2 & $\frac{\text{metric tons of \gls{UNF}}}{month}$\\
         \gls{LWR} \gls{MOX} fabrication throughput & 16.25 \cite{hugelmann_melox_1999} & $\frac{\text{metric tons of \gls{MOX}}}{month}$\\
-        \gls{ASTRID} \gls{MOX} fabrication throughput & $\infty$ & $\frac{\text{metric tons of \gls{MOX}}}{month}$ \\
+        \gls{ASTRID} \gls{MOX} fabrication throughput & No limit ($\infty$) & $\frac{\text{metric tons of \gls{MOX}}}{month}$ \\
         \gls{LWR} \gls{MOX} recycling  &  Not reprocessed & - \\
         \gls{ASTRID} \gls{MOX} recycling & $\infty$-pass & - \\  
         \hline
