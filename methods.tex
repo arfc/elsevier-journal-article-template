@@ -43,15 +43,16 @@ a user-defined deployment scheme.
 
 \subsection{Nuclear Deployment in the \gls{EU}}
 
-
 The \gls{IAEA} \gls{PRIS} database \cite{iaea_nuclear_2017} contains worldwide reactor
 operation history.
-We import this database directly as a csv file to populate the simulation
+The computational workflow in this work, shown in Figure \ref{diag:comp}, automates data extraction from the 
+\gls{PRIS} database. We import this database directly as a \texttt{csv} file to populate the simulation
 with deployment information, listing the country, reactor unit, type, net capacity (\gls{MWe}), status,
 operator, construction date, first criticality date, first grid date, commercial date, shutdown
 date (if applicable), and unit capacity factor for 2013. Then only the \gls{EU} countries are extracted
-from the csv file. We developed a python script to generate a \Cyclus input file from the csv file,
-which lists the individual reactor units as agents. 
+from the \texttt{csv} file. We developed a python script to generate
+a \Cyclus 
+compatible input file accordingly, which lists the individual reactor units as agents. 
 
 
 \begin{figure}
@@ -70,8 +71,8 @@ which lists the individual reactor units as agents.
 \draw [arrow] (cyclus) -- (output);
 \draw [arrow] (output) -- (script2);
 \end{tikzpicture}
-\caption{Computational workflow in this work. The green circles represent files, and the blue
-         boxes represent codes that process the files.}
+\caption{Green circles and blue boxes represent files and software 
+processes, respectively, in the computational workflow.}
 \label{diag:comp}
 \end{figure}
 
