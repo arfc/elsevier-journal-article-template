@@ -93,7 +93,6 @@ without delay or failure and reach a lifetime of 60 years.
     \centering
     \caption {Power reactors under construction and planned. Replicated from \cite{world_nuclear_association_nuclear_2017}.}
     \label{tab:eu_deployment}
-    \scalebox{0.9}{
     \begin{tabular}{ccccr}
         \hline
         \textbf{Exp. Operational }&\textbf{Country} &\textbf{Reactor} & \textbf{Type} & \textbf{Gross \gls{MWe}}\\
@@ -117,7 +116,6 @@ without delay or failure and reach a lifetime of 60 years.
         2040 & Czech Rep & Temelin 4 & AP1000 & 1200 \\
         \hline
     \end{tabular}
-    }
 \end{table}
 
     \footnotetext{The fate of many planned reactors is uncertain. The proposed reactor types
@@ -153,7 +151,7 @@ is listed in Table \ref{tab:eu_growth}.
 
 \begin{table}[h]
     \centering
-    \caption {Projected nuclear deployment strategies of \gls{EU} nations \cite{world_nuclear_association_nuclear_2017}}
+    \caption{Projected nuclear deployment strategies of \gls{EU} nations \cite{world_nuclear_association_nuclear_2017}}
         \begin{tabular}{lll}
             \hline 
                     \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
@@ -194,8 +192,7 @@ in nations such as Germany and Belgium.
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/power_plot.png}
     \end{center}
-    \caption{Installed nuclear capacity in the EU is distinguished by \texttt{Region}s in \Cyclus.
-             }
+    \caption{Installed nuclear capacity in the EU is distinguished by \texttt{Region}s in \Cyclus.}
     \label{fig:eu_pow}
 \end{figure}
 
@@ -297,7 +294,7 @@ The fuel cycle is represented by a series of facility agents whose material
 flow is illustrated in figure \ref{diag:fc}, along with
 the \Cyclus archetypes that were used to model each facility.
 In this diagram, \gls{MOX} Reactors include both French \glspl{PWR} and 
-\glspl{SFR}.}
+\glspl{SFR}.
 
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
@@ -331,7 +328,8 @@ minimum height=2em]
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
                 \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
                 \node [cloud, below of=mix] (mox) {\gls{MOX}};
-                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors (\texttt{REACTOR)};
+                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors 
+                (\texttt{REACTOR})};
                 \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
                 
                 \draw[->, thick] (sr) -- (nu);
@@ -364,7 +362,7 @@ minimum height=2em]
                 }
                 \caption{Fuel cycle facilities (blue boxes) represented by 
                         \Cyclus archetypes (in parentheses) pass materials (red 
-                        ovals) around the simulation. 
+                ovals) around the simulation.} 
                 \label{diag:fc}
 \end{figure}
 
@@ -400,7 +398,7 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
 
 \begin{table}[h]
     \centering
-    \caption {Simulation Specifications}
+    \caption{Simulation Specifications}
     \begin{tabularx}{\linewidth}{bsx}
         \hline
         \textbf{Specification} &\textbf{ Value} & \textbf{Units}\\
@@ -444,7 +442,7 @@ specifications are modified linearly for varying power capacity.
 
 \begin{table}[h]
     \centering
-    \caption {Baseline \gls{LWR} and \gls{ASTRID} simulation specifications.}
+    \caption{Baseline \gls{LWR} and \gls{ASTRID} simulation specifications.}
     \begin{tabular}{lrrr}
         \hline
         \textbf{Specification} & \textbf{\gls{PWR} \cite{sutharshan_ap1000tm_2011}} & \textbf{\gls{BWR} \cite{hinds_next-generation_2006}} & \textbf{\gls{SFR}} \cite{varaine_pre-conceptual_2012}\\
