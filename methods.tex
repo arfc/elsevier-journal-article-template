@@ -182,9 +182,9 @@ is listed in Table \ref{tab:eu_growth}.
 Using this categorization to drive facility deployment, the simulation captures 
 regional differences in reactor power capacity and \gls{UNF} production as a 
 function of time. Accordingly, \cref{fig:eu_pow} shows the resulting simulated 
-installed capacity in \gls{EU} nations.  The sudden capacity reductions in the 
-2040s are caused by predicted facility retirements and nuclear phaseout plans by nations such as Germany and Belgium.  
-
+installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
+2040s result from end-of-license reactor retirements and nuclear phaseout plans 
+in nations such as Germany and Belgium.  
     
   \label{tab:eu_growth}
 \end{table}
@@ -202,59 +202,64 @@ installed capacity in \gls{EU} nations.  The sudden capacity reductions in the
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
-\Cref{fig:sfr_num} and \ref{fig:dep} display
+\Cref{fig:sfr_num}
+shows
 the French transition to \glspl{SFR} modeled in this simulation.
-Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
-decommissioned French \gls{LWR} capacity. This results in an installed 
-\gls{SFR} 
-capacity of 66,000 \gls{MWe} by 2078 when the final \gls{LWR} is 
-decommissioned. 
+Historically aggressive growth of nuclear in the 1980s leads to a substantial 
+shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new 
+\glspl{SFR}. The net capacity is kept constant at 66 GWe.
 
 \begin{figure}[htbp!]
         \begin{center}
                 \includegraphics[scale=0.6]{./images/french-transition/power_plot.png}
         \end{center}
-        \caption{This plot shows the potential French transition from \glspl{LWR} to \glspl{SFR}.
-                 The aggressive growth of nuclear in the 1980s leads to a substantial shutdown
-                 of nuclear in the 2040s, which, in the simulation, are replaced by new 
-                 \glspl{SFR}. The net capacity is kept at a constant of 66 GWe.}
+        \caption{The potential French transition from \glspl{LWR} to 
+                \glspl{SFR} when assisted by \gls{UNF} from other \gls{EU} 
+        nations.}
         \label{fig:sfr_num}
 \end{figure}
+
+\Cref{fig:dep} shows the deployment required to support the transition in 
+\cref{fig:sfr_num}. France must build four reactors per year, on average, to 
+make up for the end-of-license decommissioning of power plants built in the 1980s and 1990s.  The second period of aggressive building occurs when the first generation of \glspl{SFR} decommission after 80 years. Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
+decommissioned French \gls{LWR} capacity. This results in an installed 
+\gls{SFR} 
+capacity of 66,000 \gls{MWe} by 2078 when the final \gls{LWR} is 
+decommissioned. 
+
+
+
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/french-transition/sfr_deploy.png}
     \end{center}
     \caption{The deployment of \glspl{SFR} in France is characterized by a period of
-             aggressive building. Four reactors on average are built per year to
-             make up for the decommissioned power plants built in the 1980s and 1990s.
-             The second period of aggressive building occurs when the first generation
-             of \glspl{SFR} decommission after 80 years.}
+    aggressive building.}
     \label{fig:dep}
 \end{figure}
+
+
+Finally, \Cref{fig:tot_dep} shows the total deployment scheme we simulated.  
+The French transition to \glspl{SFR} couples with the historical and projected 
+operation of \gls{EU} reactors.  The steep transition from 2040 to 2060 
+reflects the scheduled decommissioning of reactors built in the 1975-2000 era 
+of aggressive nuclear growth in France.
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/onesim.png}
     \end{center}
-    \caption{The total deployment scheme of the simulation. The historical
-             operation \gls{EU} reactors is followed by the French
-             transition to \glspl{SFR}.}
+    \caption{The total deployment scheme we simulated relies on \gls{UNF} 
+    collaboration among nations.} 
     \label{fig:tot_dep}
 \end{figure}
-
-
-\Cref{fig:tot_dep} displays the total deployment
-scheme of the simulation.
-The steep transition from 2040 to 2060 reflects the scheduled
-decommissioning of reactors built in the 1975-2000
-era of aggressive nuclear growth in France.
 
 These figures reflect that, for the given assumptions, bursts of construction
 are necessary to maintain capacity.  In reality, a construction rate of five 
 reactors every year is ambitious, but might have the advantage of
-more assembly line like projection if major components can mostly be built off site.
-In any case, this analysis is to analyze 
-material flow, and demonstrates that, if such an aggressive deployment scheme 
+larger scale production of components and more modular assembly and construction if major components can mostly be built off site.
+
+This analysis establishes a multi-national material flow and demonstrates that, if such an aggressive deployment scheme 
 took place, the \glspl{SFR} would have enough fuel.  Alternatively, the 
 deployment of new \glspl{SFR} can be spread out by staggering scheduled 
 decommissioning of \glspl{LWR} through lifetime extensions. For example,
@@ -269,9 +274,10 @@ The effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life
     \begin{center}
         \includegraphics[scale=0.6]{./images/french-transition/unif_0_25.png}
     \end{center}
-    \caption{Transition to \glspl{ASTRID} becomes less gradual if the
-             French \glspl{LWR} are given lifetime extensions from a 
-             uniform distribution from zero to 25 years.}
+    \caption{Transition to \glspl{ASTRID}
+            becomes more gradual if the
+             French \glspl{LWR} lifetime extensions are sampled from a 
+     uniform distribution $\in [0, 25]$ years.}
     \label{fig:sfr_num_norm}
 \end{figure}
 
@@ -279,9 +285,9 @@ The effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life
     \begin{center}
         \includegraphics[scale=0.6]{./images/french-transition/unif_0_25_dep.png}
     \end{center}
-    \caption{The construction burden of \glspl{ASTRID} lessen if the
-             lifetime of French \glspl{LWR} are extended by a uniform
-             distribution from zero to 25 years.}
+    \caption{The acute construction burden lessens if the
+             French \glspl{LWR} lifetime extensions are sampled from a 
+     uniform distribution $\in [0, 25]$ years.}
     \label{fig:sfr_dep_norm}
 \end{figure}
 
