@@ -56,7 +56,6 @@ which lists the individual reactor units as agents.
 
 \begin{figure}
         \centering
-        \scalebox{0.7}{
 \begin{tikzpicture}[node distance=1.5cm]
 \node (database) [object] {Database (\texttt{.csv})};
 \node (script) [process, below of=database] {Input Generation Script (\texttt{write\_input.py})};
@@ -71,7 +70,6 @@ which lists the individual reactor units as agents.
 \draw [arrow] (cyclus) -- (output);
 \draw [arrow] (output) -- (script2);
 \end{tikzpicture}
-}
 \caption{Computational workflow in this work. The green circles represent files, and the blue
          boxes represent codes that process the files.}
 \label{diag:comp}
