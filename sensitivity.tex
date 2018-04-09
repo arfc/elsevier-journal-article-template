@@ -12,9 +12,8 @@ sought to capture the full span of their uncertainty.
 
 \begin{table}[h]
     \centering
-    \caption {Two parameters were varied - the 
-              lifetime of French \glspl{LWR} and the breeding ratio of \glspl{ASTRID} -
-              to analyze their impact on the reprocessing demand during the transition.}
+    \caption {Both \gls{LWR} lifetime and \gls{ASTRID} breeding ratio impact 
+            transitional reprocessing demand.
     \begin{tabularx}{\textwidth}{lrr}
         \hline
         \textbf{Parameter} & \textbf{Default} & \textbf{Values} \\
@@ -30,29 +29,33 @@ sought to capture the full span of their uncertainty.
 \subsection{Breeding Ratio}
 
 Increase in the breeding ratio of \gls{ASTRID} reactors
-decreases the monthly \gls{LWR} \gls{UNF} reprocessing demand, as shown in figure \ref{fig:br_rep}.
-Increase in breeding ratio also reduces the number of total \gls{UOX} \gls{UNF}
+decreases the monthly \gls{LWR} \gls{UNF} reprocessing demand, as shown in 
+figure \ref{fig:br_rep}. 
+An increase in breeding ratio also reduces the number of total \gls{UOX} \gls{UNF}
 required for the transition, because the \gls{ASTRID} creates more plutonium.
-
+The demand previous to 2050 is unaffected by the 
+breeding ratio because only \gls{UOX} \gls{UNF} is reprocessed. 
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/sensitivity/br_tot_rep.png}
     \end{center}
-    \caption{Increasing the breeding ratio decreases the monthly reprocessing demand. The
-             demand up to 2050 is unaffected by breeding ratio because only \gls{UOX} \gls{UNF}
-             is reprocessed.}
+    \caption{Increasing the breeding ratio decreases the monthly reprocessing 
+    demand.}
     \label{fig:br_rep}
 \end{figure}
 
+
+The sensitivity analysis also shows, as demonstrated in \cref{fig:br_uox} that 
+increasing the breeding ratio decreases the mass of \gls{UOX} \gls{UNF} 
+required for the transition. The \glspl{ASTRID} produce more plutonium, reducing the plutonium demand from reprocessed \gls{UOX}.}
 
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/sensitivity/br_uox_unf_cum.png}
     \end{center}
-    \caption{Increasing the breeding ratio decreases the number of total \gls{UOX} \gls{UNF}
-             required. The \glspl{ASTRID} produce more plutonium, reducing the plutonium demand
-             from reprocessed \gls{UOX}.}
+    \caption{Sensitivity analysis demonstrates that increasing the breeding 
+    ratio decreases the required \gls{UOX} \gls{UNF}. }
     \label{fig:br_uox}
 \end{figure}
 
