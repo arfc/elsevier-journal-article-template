@@ -129,8 +129,8 @@ For each \gls{EU} nation, we categorize the growth trajectory is categorized fro
 ``Aggressive Growth'' to ``Aggressive Shutdown''. ``Aggressive growth'' is
 characterized by a rigorous expansion of nuclear power, while
 ``Aggressive Shutdown'' is characterized as a transition to rapidly
-de-nuclearize the nation's electric grid. A nation's growth trajectory is
-categorized into five degrees depending on G, the growth trajectory metric.
+de-nuclearize the nation's electric grid. We categorize each nation's growth 
+trajectory into five degrees depending on G, the growth trajectory metric:
 
  \[
  G = \left\{\begin{array}{ll}
@@ -145,17 +145,15 @@ categorized into five degrees depending on G, the growth trajectory metric.
   G = \text{Growth Trajectory  } [-] 
  \]
  \[
- C_{i} = \text{Nuclear Capacity in Year i  } [\gls{MWe}]
+ C_{i} = \text{Nuclear Capacity in Year i  } [\gls{MWe}].
  \]
 
 The growth trajectory and specific plan of each nation in the \gls{EU} 
-is listed in Table \ref{tab:eu_growth}. Meanwhile, \cref{fig:eu_pow} displays the
-timeseries of installed capacity in \gls{EU} nations.
-
+is listed in Table \ref{tab:eu_growth}.  
 
 \begin{table}[h]
     \centering
-    \caption {Future Nuclear Programs of \gls{EU} Nations \cite{world_nuclear_association_nuclear_2017}}
+    \caption {Projected nuclear deployment strategies of \gls{EU} nations \cite{world_nuclear_association_nuclear_2017}}
         \begin{tabular}{lll}
             \hline 
                     \textbf{Nation} & \textbf{Growth Trajectory} & \textbf{Specific Plan }\\
@@ -181,6 +179,12 @@ timeseries of installed capacity in \gls{EU} nations.
                     
         \end{tabular}
 
+Using this categorization to drive facility deployment, the simulation captures 
+regional differences in reactor power capacity and \gls{UNF} production as a 
+function of time. Accordingly, \cref{fig:eu_pow} shows the resulting simulated 
+installed capacity in \gls{EU} nations.  The sudden capacity reductions in the 
+2040s are caused by predicted facility retirements and nuclear phaseout plans by nations such as Germany and Belgium.  
+
     
   \label{tab:eu_growth}
 \end{table}
@@ -190,8 +194,7 @@ timeseries of installed capacity in \gls{EU} nations.
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/power_plot.png}
     \end{center}
-    \caption{The timeseries of installed nuclear capacity in the EU is separated by \texttt{Region}s in \Cyclus.
-             The sudden drops in capacity are caused by nuclear phaseout plans by nations such as Germany and Belgium.
+    \caption{Installed nuclear capacity in the EU is distinguished by \texttt{Region}s in \Cyclus.
              }
     \label{fig:eu_pow}
 \end{figure}
@@ -471,7 +474,7 @@ from ORIGEN is used (see \cref{tab:comp}). ORIGEN calculates buildup,
 
 \begin{table}[h]
     \centering
-    \caption{Fresh fuel compositions used for the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
+    \caption{Fresh fuel compositions in the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
 %   \scalebox{0.86}{
         \begin{tabular}{lrrr}
             \hline
