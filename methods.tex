@@ -274,8 +274,8 @@ The effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life
     \begin{center}
         \includegraphics[scale=0.6]{./images/french-transition/unif_0_25.png}
     \end{center}
-    \caption{Transition to \glspl{ASTRID}
-            becomes more gradual if the
+    \caption{The transition to \glspl{ASTRID}
+             becomes more gradual if the
              French \glspl{LWR} lifetime extensions are sampled from a 
      uniform distribution $\in [0, 25]$ years.}
     \label{fig:sfr_num_norm}
@@ -296,6 +296,8 @@ The effect of \gls{LWR} lifetime extension is discussed in Section \ref{sec:life
 The fuel cycle is represented by a series of facility agents whose material 
 flow is illustrated in figure \ref{diag:fc}, along with
 the \Cyclus archetypes that were used to model each facility.
+In this diagram, \gls{MOX} Reactors include both French \glspl{PWR} and 
+\glspl{SFR}.}
 
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
@@ -329,7 +331,7 @@ minimum height=2em]
                 \node [cloud, left of=rep] (pu) {Sep. Pu};
                 \node [block, left of=pu] (mix) {Fabrication (\texttt{MIXER})};
                 \node [cloud, below of=mix] (mox) {\gls{MOX}};
-                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors};
+                \node [block, below of=mox] (mxr) {\gls{MOX} Reactors (\texttt{REACTOR)};
                 \node [cloud, right of= mxr] (snmox) {Spent \gls{MOX}};
                 
                 \draw[->, thick] (sr) -- (nu);
@@ -360,10 +362,10 @@ minimum height=2em]
                 \end{tikzpicture}
         
                 }
-                \caption{The blue boxes represent fuel cycle facilities, and the red ovals
-                         represent materials. The facility names in parenthesis are archetype names
-                         used in \Cyclus. \gls{MOX} Reactors include both French \glspl{PWR} and
-                         \glspl{SFR}.}
+                \caption{Fuel cycle facilities (blue boxes) represented by 
+                        \Cyclus archetypes (in parentheses) pass materials (red 
+                        ovals) around the simulation. 
+                         used in \Cyclus.
                 \label{diag:fc}
 \end{figure}
 
