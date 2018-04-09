@@ -365,7 +365,6 @@ minimum height=2em]
                 \caption{Fuel cycle facilities (blue boxes) represented by 
                         \Cyclus archetypes (in parentheses) pass materials (red 
                         ovals) around the simulation. 
-                         used in \Cyclus.
                 \label{diag:fc}
 \end{figure}
 
@@ -392,7 +391,8 @@ uranium inventory drains, reprocessed uranium (or, natural uranium) will need to
 
 \section{Scenario Specifications}
 
-The scenario specifications  are listed in table \ref{tab:gen}.
+are listed in table \ref{tab:gen}.
+The scenario specifications defining the simulations presented in this work 
 The reprocessing and \gls{MOX} fabrication capacity in France
 prior to 2020 is modeled after the 
 French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999}.
@@ -438,13 +438,13 @@ weighing 523.4 kg.
 After each 18 month cycle, one-third of the 
 core (77 assemblies) discharges. Refueling
 is assumed to take two months to complete, during which the reactor
-is shut down. The specifications are defined in 
-table \ref{tab:reactor-specs} which details the reactor specifications in this simulation.
+is shut down. The specifications are defined in table \ref{tab:reactor-specs} 
+which details the reactor specifications in this simulation. \gls{LWR} 
+specifications are modified linearly for varying power capacity.  
 
 \begin{table}[h]
     \centering
-    \caption {Model \gls{LWR} and \gls{ASTRID} specifications used for the simulations are listed, and \glspl{LWR} are modified
-        linearly for varying power capacity. }
+    \caption {Baseline \gls{LWR} and \gls{ASTRID} simulation specifications.}
     \begin{tabular}{lrrr}
         \hline
         \textbf{Specification} & \textbf{\gls{PWR} \cite{sutharshan_ap1000tm_2011}} & \textbf{\gls{BWR} \cite{hinds_next-generation_2006}} & \textbf{\gls{SFR}} \cite{varaine_pre-conceptual_2012}\\
