@@ -13,7 +13,7 @@ distinguishes the
 
 \begin{table}[h]
 	\centering
-	\caption{Nuclear material inventory in the \gls{EU} in 2050.}
+        \caption{\gls{EU} nuclear material inventory in 2050.}
 \begin{tabularx}{\textwidth}{XrX}
 			\hline
                         \textbf{Category} & \textbf{Value} & Specifics \\
@@ -44,16 +44,15 @@ Spent fuel is discharged from reactors every refueling period.
 The entire core is discharged when the reactor decommissions.
 A total of about $1,000,000$ MTHM of tails and $100,000$ MTHM of
 \gls{UNF} have accumulated by 2050.
-Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
-
+Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}. The 
+tails mass accumulation rate is fairly steady, with peaks occurring when new 
+reactors are deployed.
 
 \begin{figure}[htbp!]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/tails.png}
 	\end{center}
-	\caption{This plot shows the timeseries of tails mass accumulation and discharge in the \gls{EU} nations.
-			 Tails mass accumulation rate is fairly steady, with peaks occurring when
-			 new reactors are deployed.}
+        \caption{\gls{EU} tails mass accumulation was simulated over time.}
 	\label{fig:eu_tail}
 \end{figure}
 
@@ -61,7 +60,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/total_fuel.png}
 	\end{center}
-	\caption{This plot shows the timeseries of total fuel usage in the \gls{EU} nations.}
+\caption{Total \gls{EU} fuel useage was simulated over time.}
 	\label{fig:eu_fuel}
 \end{figure}
 
@@ -79,7 +78,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 
 \begin{table}[h]
 	\centering
-	\caption{Plutonium from \gls{UNF} inventory.}
+	\caption{Plutonium in the \gls{UNF} inventory.}
 	\begin{tabular}{lrr}
 		\hline
 		\textbf{Isotope} & \textbf{Mass Fraction in Used Fuel [\%]} & \textbf{Quantity [t]} \\ \hline
@@ -113,24 +112,25 @@ reprocessing and fabrication capacity as well as abundant depleted uranium
 supply.
  
 Used \gls{MOX} from an ASTRID reactor is 23.95\% plutonium
-in this simulation (see \cref{tab:comp}), whereas a fresh \gls{MOX} is 22\% plutonium.
+in this simulation (see \cref{tab:comp}), whereas fresh \gls{MOX} is 22\% plutonium.
 The plutonium breeding ratio in this simulation is thus assumed to be
 $\approx 1.08$.
 
-\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.
-The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
-The initial loading of new \glspl{SFR} are done with the \gls{MOX} created
-from legacy \gls{UNF}. Once the deployed \glspl{SFR} create enough amounts
- of extra plutonium, the legacy \gls{UNF} is no longer used. 
+\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.  The plot 
+has peaks during a period of aggressive deployment of \glspl{SFR} followed by 
+an equilibrium at 100 \gls{MTHM}. The peaks reoccur with the deployment of the 
+second generation of \glspl{SFR}.  The spikes are due to initial fuel demand 
+correspoding to these new deployments.  The initial cores loaded into new 
+\glspl{SFR} rely on the \gls{MOX} created from legacy \gls{UNF}. Once the 
+deployed \glspl{SFR} create enough extra plutonium, the legacy \gls{UNF} is no 
+longer used. 
+
 
 \begin{figure}[htbp!]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/where_fuel.png}
 	\end{center}
-	\caption{This plot shows the timeseries of fuel loaded into \glspl{SFR}.
-			 The plot has peaks during a period of aggressive deployment of \glspl{SFR}
-			 followed by an equilibrium at 100 \gls{MTHM}. The peaks reoccur with the
-			 deployment of the second generation of \glspl{SFR}.}
+	\caption{Fuel loaded into \glspl{SFR} was simulated in discrete batches over time.
 	\label{fig:fuel}
 \end{figure}
 
