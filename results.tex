@@ -13,7 +13,7 @@ distinguishes the
 
 \begin{table}[h]
 	\centering
-	\caption{Nuclear material inventory in the \gls{EU} in 2050.}
+        \caption{\gls{EU} nuclear material inventory in 2050.}
 \begin{tabularx}{\textwidth}{XrX}
 			\hline
                         \textbf{Category} & \textbf{Value} & Specifics \\
@@ -44,16 +44,17 @@ Spent fuel is discharged from reactors every refueling period.
 The entire core is discharged when the reactor decommissions.
 A total of about $1,000,000$ MTHM of tails and $100,000$ MTHM of
 \gls{UNF} have accumulated by 2050.
-Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
-
+Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}. The 
+tails mass accumulation rate is fairly steady, with peaks occurring when new 
+reactors are deployed.
+In \cref{fig:eu_snf}, the peaks are caused by reactor decommissioning which 
+triggers all the batches in the final reactor core to be sent to the repository.
 
 \begin{figure}[htbp!]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/tails.png}
 	\end{center}
-	\caption{This plot shows the timeseries of tails mass accumulation and discharge in the \gls{EU} nations.
-			 Tails mass accumulation rate is fairly steady, with peaks occurring when
-			 new reactors are deployed.}
+        \caption{Simulated accumulation of tails in the \gls{EU} is shown as a function of time.}
 	\label{fig:eu_tail}
 \end{figure}
 
@@ -61,7 +62,7 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/eu_future/total_fuel.png}
 	\end{center}
-	\caption{This plot shows the timeseries of total fuel usage in the \gls{EU} nations.}
+\caption{Simulated total \gls{EU} fuel useage is shown as a function of time.}
 	\label{fig:eu_fuel}
 \end{figure}
 
@@ -70,16 +71,25 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 	\begin{center}
 			\includegraphics[scale=0.7]{./images/eu_future/snf_discharge.png}
 	\end{center}
-	\caption{This plot displays the timeseries of \gls{UNF} accumulation and discharge in the \gls{EU} nations.
-			 The peaks are caused by decommissioning of reactors, where all the core is sent to the repository.}
+        \caption{Simulated \gls{EU} \gls{UNF} accumulation and discharge is 
+shown as a function of time.}
 	\label{fig:eu_snf}
 \end{figure}
+
+
+\subsection{French \gls{SFR} Deployment}
 \FloatBarrier
 
+Reprocessing the \gls{UNF} collected from all EU nations can provide the 
+initial cores for approximately 180 \glspl{SFR}. Table \ref{tab:pu} lists the 
+isotope, mass fraction, and quantity of plutonium that can be obtained from the 
+2050 \gls{UNF} inventory.  With the \gls{SFR} breeding ratio above one, France 
+can transition into a fully \gls{SFR} fleet without extra construction of 
+\glspl{LWR}. 
 
 \begin{table}[h]
 	\centering
-	\caption{Plutonium from \gls{UNF} inventory.}
+	\caption{Plutonium in the \gls{UNF} inventory.}
 	\begin{tabular}{lrr}
 		\hline
 		\textbf{Isotope} & \textbf{Mass Fraction in Used Fuel [\%]} & \textbf{Quantity [t]} \\ \hline
@@ -94,16 +104,6 @@ Figure \ref{fig:eu_fuel} shows the amount of fuel used in the \gls{EU}.
 	\label{tab:pu}
 \end{table}
 
-
-
-\subsection{French \gls{SFR} Deployment}
-
-Reprocessing \gls{UNF} collected from all EU nations can start approximately
-180 \glspl{SFR}. Table \ref{tab:pu} lists the isotope, mass fraction,
-and quantity of plutonium that can be obtained from the 2050 \gls{UNF} inventory.
- With the \gls{SFR} breeding ratio above one, France can transition into
-a fully \gls{SFR} fleet without extra construction of \glspl{LWR}. 
-
 From Varaine et al. \cite{varaine_pre-conceptual_2012}, a French
 ASTRID-type 600\gls{MWe} \gls{SFR} consumes $1.225$ metric tons of
 plutonium a year, with an initial plutonium loading of $4.9$ metric tons. 
@@ -113,47 +113,44 @@ reprocessing and fabrication capacity as well as abundant depleted uranium
 supply.
  
 Used \gls{MOX} from an ASTRID reactor is 23.95\% plutonium
-in this simulation (see \cref{tab:comp}), whereas a fresh \gls{MOX} is 22\% plutonium.
+in this simulation (see \cref{tab:comp}), whereas fresh \gls{MOX} is 22\% plutonium.
 The plutonium breeding ratio in this simulation is thus assumed to be
 $\approx 1.08$.
 
-\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.
-The spikes are due to initial fuel demand for new deployment of \glspl{SFR}.
-The initial loading of new \glspl{SFR} are done with the \gls{MOX} created
-from legacy \gls{UNF}. Once the deployed \glspl{SFR} create enough amounts
- of extra plutonium, the legacy \gls{UNF} is no longer used. 
+\Cref{fig:fuel} shows \gls{MOX} loaded in the \glspl{SFR} per month.  The plot 
+has peaks during a period of aggressive deployment of \glspl{SFR} followed by 
+an equilibrium at 100 \gls{MTHM}. The peaks reoccur with the deployment of the 
+second generation of \glspl{SFR}.  The spikes are due to initial fuel demand 
+correspoding to these new deployments.  The initial cores loaded into new 
+\glspl{SFR} rely on the \gls{MOX} created from legacy \gls{UNF}. Once the 
+deployed \glspl{SFR} create enough extra plutonium, the legacy \gls{UNF} is no 
+longer used. Notably, this switch from a less preferred fuel origin to a more 
+preferred fuel origin is handled automatically within \Cyclus via user-defined preferences 
+within its dynamic resource exchange algorithm \cite{gidden_methodology_2016}.
+
 
 \begin{figure}[htbp!]
 	\begin{center}
-		\includegraphics[scale=0.7]{./images/french-transition/where_fuel.png}
+		\includegraphics[width=0.7\textwidth]{./images/french-transition/where_fuel.png}
 	\end{center}
-	\caption{This plot shows the timeseries of fuel loaded into \glspl{SFR}.
-			 The plot has peaks during a period of aggressive deployment of \glspl{SFR}
-			 followed by an equilibrium at 100 \gls{MTHM}. The peaks reoccur with the
-			 deployment of the second generation of \glspl{SFR}.}
+	\caption{Fuel loaded into \glspl{SFR} was simulated in discrete 
+        batches.}
 	\label{fig:fuel}
 \end{figure}
 
-
- \Cref{fig:pu_no_cum} shows the separated plutonium discharge
-per month from the reprocessing plant. The plutonium outflux
-does not precisely follow the fuel demand because \Cyclus agents have
-material buffers that store commodity fuel for later usage. The reprocessed
-plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}.
-\Cref{tab:sfr_sim_result} lists metrics obtained from the second simulation.
+\Cref{fig:pu_no_cum} shows the separated plutonium discharge per month from the reprocessing plant. The plutonium outflux does not precisely follow the fuel demand because \Cyclus agents have material buffers that store commodity fuel for later usage. The reprocessed plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}.  Plutonium separated from legacy \gls{UNF} meets plutonium demans sufficiently to reduce the reprocessing demand for the first aggressive deployment of \glspl{SFR}.  The plutonium from reprocessing legacy fuel is a flat rectangle because the reprocessing throughput was set to 183.2 $\frac{\gls{MTHM}}{month}$ to avoid reprocessing all the legacy in one timestep. 
+ 
 
 \begin{figure}[htbp!]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/pu.png}
 	\end{center}
-	\caption{This plot shows the separated plutonium discharge from the reprocessing plant.
-			 The reprocessing demand for the first aggressive deployment of \glspl{SFR}
-			 are lessened because the plutonium demand is met with plutonium separated from legacy \gls{UNF}.
-			 The plutonium from reprocessing legacy fuel is a flat rectangle because the 
-			 reprocessing throughput was set to 183.2 $\frac{\gls{MTHM}}{month}$ to avoid reprocessing
-			 all the legacy in one timestep. }
+	\caption{The separated plutonium discharge from the reprocessing plant 
+        in $\frac{\mbox{MTHM}}{\mbox{month}}$.}
 	\label{fig:pu_no_cum}
 \end{figure}
+
+ \Cref{tab:sfr_sim_result} lists metrics obtained from the second simulation.
 
 \begin{table}[h]
 	\centering
@@ -186,9 +183,11 @@ plutonium from legacy \gls{UNF} is stored for the initial loading of \glspl{SFR}
 		\label{tab:sfr_sim_result}
 \end {table}
 
-Despite the large amount of initial plutonium that has to be reprocessed
-prior to \gls{ASTRID} deployment, the 20 years of preparation of
-\gls{ASTRID} fuel (2020-2040) allows a reasonable level of average
+
+These results demonstrate that despite the large amount of initial plutonium that has to be reprocessed
+prior to \gls{ASTRID} deployment, the 20 years (2020-2040) of 
+\gls{ASTRID} fuel preparation
+allows a reasonable level of average
 \gls{UOX} reprocessing capacity demand. \gls{UOX} reprocessing continues 
 until 2057, when the \gls{ASTRID} spent fuel can supply the plutonium
 for its own fuel.
