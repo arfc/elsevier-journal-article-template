@@ -1,0 +1,436 @@
+%        File: revise.tex
+%     Created: Wed Oct 27 02:00 PM 2018 P
+% Last Change: Wed Oct 27 02:00 PM 2018 P
+%
+
+%
+% Copyright 2007, 2008, 2009 Elsevier Ltd
+%
+% This file is part of the 'Elsarticle Bundle'.
+% ---------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version.  The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% The list of all files belonging to the 'Elsarticle Bundle' is
+% given in the file `manifest.txt'.
+%
+
+% Template article for Elsevier's document class `elsarticle'
+% with numbered style bibliographic references
+% SP 2008/03/01
+%
+%
+%
+% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%
+%
+%\documentclass[preprint,12pt]{elsarticle}
+\documentclass[answers,11pt]{exam}
+
+% \documentclass[preprint,review,12pt]{elsarticle}
+
+% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+% for a journal layout:
+% \documentclass[final,1p,times]{elsarticle}
+% \documentclass[final,1p,times,twocolumn]{elsarticle}
+% \documentclass[final,3p,times]{elsarticle}
+% \documentclass[final,3p,times,twocolumn]{elsarticle}
+% \documentclass[final,5p,times]{elsarticle}
+% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% if you use PostScript figures in your article
+% use the graphics package for simple commands
+% \usepackage{graphics}
+% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+% or use the epsfig package if you prefer to use the old commands
+% \usepackage{epsfig}
+
+% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+% The amsthm package provides extended theorem environments
+% \usepackage{amsthm}
+\usepackage{amsmath}
+
+% The lineno packages adds line numbers. Start line numbering with
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+% I like to be in control
+\usepackage{placeins}
+
+% natbib.sty is loaded by default. However, natbib options can be
+% provided with \biboptions{...} command. Following options are
+% valid:
+
+%   round  -  round parentheses are used (default)
+%   square -  square brackets are used   [option]
+%   curly  -  curly braces are used      {option}
+%   angle  -  angle brackets are used    <option>
+%   semicolon  -  multiple citations separated by semi-colon
+%   colon  - same as semicolon, an earlier confusion
+%   comma  -  separated by comma
+%   numbers-  selects numerical citations
+%   super  -  numerical citations as superscripts
+%   sort   -  sorts multiple citations according to order in ref. list
+%   sort&compress   -  like sort, but also compresses numerical citations
+%   compress - compresses without sorting
+%
+% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+% Katy Huff addtions
+\usepackage{xspace}
+\usepackage{color}
+\usepackage[hyphens]{url}
+
+%\journal{Annals of Nuclear Energy}
+
+\begin{document}
+
+%\begin{frontmatter}
+
+% Title, authors and addresses
+
+% use the tnoteref command within \title for footnotes;
+% use the tnotetext command for the associated footnote;
+% use the fnref command within \author or \address for footnotes;
+% use the fntext command for the associated footnote;
+% use the corref command within \author for corresponding author footnotes;
+% use the cortext command for the associated footnote;
+% use the ead command for the email address,
+% and the form \ead[url] for the home page:
+%
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \address{Address\fnref{label3}}
+% \fntext[label3]{}
+
+\title{Synergistic Spent Nuclear Fuel Dynamics Within the European Union\\
+        \large Response to Review Comments}
+\author{Jin Whan Bae, Clifford E. Singer, Kathryn D. Huff}
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{<author name>}
+% \address[label1]{<address>}
+% \address[label2]{<address>}
+
+
+%\author[uiuc]{Kathryn Huff}
+%        \ead{kdhuff@illinois.edu}
+%  \address[uiuc]{Department of Nuclear, Plasma, and Radiological Engineering,
+%        118 Talbot Laboratory, MC 234, Universicy of Illinois at
+%        Urbana-Champaign, Urbana, IL 61801}
+%
+% \end{frontmatter}
+\maketitle
+\section*{Review General Response}
+We would like to thank the reviewers for their detailed assessment of
+this paper.
+
+
+\section*{Reviewer 1}
+\begin{questions}
+
+        %---------------------------------------------------------------------
+        \question Abstract. The abstract states that "These simulations 
+        demonstrate that France can avoid deployment of additional LWRs by 
+        accepting UNF from other EU nations, that lifetime extensions delay 
+        time-to-transition, and improved breeding ratios are not particularly 
+        impactful." These conclusions aren't highlighted or discussed properly 
+        in the section of the report which presents the results and neither are 
+        they highlighted in the conclusions.  
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question In figures 2 and 3 the colour scheme makes it difficult to 
+        distinguish the different data.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question 1st sentence of Section 3 has been corrupted, with the ending 
+        moved to the beginning.
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Table 4 and 5 both give imply U-235 compositions for PWR UOX 
+        fuel with a low U-235 content of just 3.1 w/o. This is inconsistent 
+        with the mean discharge burnups in the scenario, which would demand an 
+        initial enrichment of about 4.5 w/o (this also reflects current 
+        practice). If this interpretation is correct, it will affect the 
+        simulation and could impact the results. I suspect that the same may 
+        also apply to the BWR UOX fuel. 
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Table 5 isn't referred to in the text.
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Paragraph immediately after Table 6 the text should read nine 
+        tons of tails not nine times of tails.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Fig 10 caption: the correct spelling is usage
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Line 183 - corresponding is spelled incorrectly
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Sections 6.1 and 6.2 should discuss the sensitivities to 
+        breeding ratio and lifetime extension more completely and bring out the 
+        conclusions noted in the abstract.
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Line 239 should read: "The period during which ASTRID UNF.....
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question The conclusion should highlight the sensitivities to breeding 
+        ratio and lifetime extension, as they are the main results from the 
+        study.  
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+
+        \section*{Reviewer 2}
+
+
+        %---------------------------------------------------------------------
+        \question Overall, this paper does an excellent job of laying out its 
+        modeling assumptions used to support their conclusions as to the 
+        impacts of a spent fuel policy which would have France relying upon 
+        international imports of UNF from EU member states to augment its 
+        plutonium source material flows in order to "bootstrap" a fast reactor 
+        transition policy. The use of data visualizations here is done quite 
+        well, helping to visually guide the reader through the reasoning 
+        process of the authors. In general, this is a thorough and 
+        well-supported analysis which is worthwhile of publication.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+
+        \begin{solution}
+                Thank you for this thoughtful assessment.
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question First, in the introduction, it is stated, "However, the 
+        current inventory of French Used Nuclear Fuel (UNF) is insufficient to 
+        fuel that transition without building new Light Water Reactors (LWRs)." 
+        Is this conclusively established in the literature? (i.e., this seems 
+        like it may be covered in refs. 4 and/or 5, but a little bit more 
+        detail into how this conclusion has been reached / how limiting the 
+        present policy is would be useful).
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Table 3 indicates a minimum UNF cooling time of 36 months; 
+        yet on page 12 (line 120) the authors state a minimum residency time of 
+        72 months. Which one was used?
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question In section 4.1 (Material Depletion), I appreciate the fact 
+        that the authors have attempted to convey a realistic depletion-based 
+        recipe for their materials. However, the means by which they reached 
+        these values are unclear. Which version of Origen was used for this 
+        depletion analysis? What assumptions were made with respect to the fuel 
+        depletion? (i.e., what reactor libraries did the authors use to 
+        calculate depleted inventories?) This latter question is important 
+        particularly for establishing the isotopic vector of the MOX / ASTRID 
+        fuel; i.e., how was the flux spectrum shape treated to calculate these 
+        depletion values? This does not require an exhaustive recounting of the 
+        methods here, but a simple discussion of how the authors arrived at 
+        these results would aid in the reproducibility of this work. Similarly, 
+        I'm assuming a uniform irradiation power for each batch (reasonable for 
+        this type of project), but it may be useful to clarify. 
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question For figures used to indicate sensitivities to modeling 
+        assumptions (e.g., Figures 14, 15, 17, and 18). Here, I think 
+        displaying these values as either a ratio to the baseline value or as a 
+        net difference from the baseline would be more useful for conveying the 
+        net effect; here, our interest in the effect at the margin, I would 
+        assume, especially given that some of these differences are quite small 
+        save for a short time period (e.g., the time region where the 
+        decommissioning occurs). In as much, displaying these to represent the 
+        differential effect (either through a net change or a ratio from the 
+        baseline) would aid in highlighting the specific effect of these 
+        assumptions which otherwise are somewhat obscured. If the authors feel 
+        it necessary, a 2-axis design or a standalone articulation of these 
+        throughputs for the baseline could easily support these figures if 
+        showing the total throughput is required.)
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Line 58: Megawatt is one word
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Line 133: This section begins with a sentence fragment.
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+
+        \section*{Reviewer 3}
+        %---------------------------------------------------------------------
+        \question Very nice approach of extracting realistic reactor data from 
+        PRIS database and thorough literature review of other fuel cycle data
+        \begin{solution}
+                Thank you for this thoughtful assessment.
+        \end{solution}
+
+
+        %---------------------------------------------------------------------
+        \question There's no explanation for why ASTRID reactors would last 80 
+        years
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Varying the lifetime extension via random sampling is very 
+        innovative
+        \begin{solution}
+                Thank you !
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question How was the 36 month minimum cooling time decided? LWR UNF 
+        typically requires 5 years before decay heat sufficiently low for 
+        transport and for PUREX process
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question page 16, line 17, duplicate "recipe"
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Are the first SFR cores loaded entirely with fresh 
+        equilibrium fuel? At 22\% Pu?  If so, this will overpredict first core 
+        fissile requirements. If not, then there should be emphasis on how the 
+        initial core has different fuel zones with various Pu contents 
+        similating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+
+        %---------------------------------------------------------------------
+        \question The estimated 200 SFRs that can be started up with the 985 
+        tPu does not take into account the reload fuel required to sustain the 
+        first SFRs until they can recycle their own fuel (which may take a few 
+        years). Perhaps this is why Cyclus calculated 180 SFRs started up 
+        instead of 200. The startup reload fuel requirements should also be 
+        mentioned in addition to the startup first core requirements.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Several typos spotted. Run spell check and proof read.
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Did you just artificially change the breeding ratio of the 
+        SFR without design considerations?  i.e., changes in core size, 
+        spectrum, burnup, Pu content, etc. If so, these results may not be 
+        valid.  If not, please include descriptions of the SFR core 
+        modifications made to enable the different breeding ratios. If the 
+        excess reactivity decreases from BOC to EOC, then an increase in the 
+        breeding ratio may result in larger initial core Pu mass requirements.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question Can you show a figure of surplus separated Pu or surplus LWR 
+        UNF for the scenario to show how much margin there is? It is stated 
+        that there is enough Pu from the LWR UNF to start the SFR fleet, but by 
+        how much?
+
+        \begin{solution}
+                <++>
+        \end{solution}
+
+
+
+        %---------------------------------------------------------------------
+\end{questions}
+%\bibliographystyle{unsrt}
+%\bibliography{revise}
+\end{document}
+
+  %
+  % End of file `elsarticle-template-num.tex'.
