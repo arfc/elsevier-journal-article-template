@@ -407,7 +407,8 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
         Production of \gls{ASTRID} fuel begins & 2020 & year\\
         \glspl{SFR} become available & 2040 & year\\
         Reprocessed uranium usage &  Not used anywhere & -\\
-        Minimum \gls{UNF} cooling time  & 36  & months\\
+        Minimum \gls{LWR} \gls{UNF} cooling time & 72 & months \\
+        Minimum \gls{ASTRID} \gls{UNF} cooling time  & 36  & months\\
         Separation efficiency of U and Pu & 99.8 & \% \\
         Reprocessing streams & Pu and U & - \\
         Reprocessing capacity before 2020 & 91.6 \cite{schneider_spent_2008} & $\frac{\text{metric tons of \gls{UNF}}}{month}$  \\
@@ -437,7 +438,12 @@ core (77 assemblies) discharges. Refueling
 is assumed to take two months to complete, during which the reactor
 is shut down. The specifications are defined in table \ref{tab:reactor-specs} 
 which details the reactor specifications in this simulation. \gls{LWR} 
-specifications are modified linearly for varying power capacity.  
+specifications are modified linearly for varying power capacity.
+The \gls{ASTRID} design's target lifetime is 60 tears \cite{gauche_generation_2012}.
+However, we assume \glspl{ASTRID} will have lifetime extensions of 20 years,
+to a total lifetime of 80 years. This assumption is based on the fact that
+most French \glspl{LWR} have lifetime extensions.
+
 
 \begin{table}[h]
     \centering
@@ -459,7 +465,7 @@ specifications are modified linearly for varying power capacity.
         powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
 
                 Batches per core & 3 & 3 & 4\\
-        Initial Fissile Loading [t] & 3.1  $^{235}$U & 4.2  $^{235}$U & 4.9 Pu \\
+        Initial Fissile Loading [t] & 4.3  $^{235}$U & 5.8  $^{235}$U & 4.9 Pu \\
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
         \hline
     \end{tabular}
@@ -486,7 +492,7 @@ from ORIGEN is used (see table \ref{tab:comp_fresh}). ORIGEN calculates buildup,
              & \multicolumn{3}{c}{ Composition [\%]} \\
             Recipe & U-235  & U-238  & Pu \\ 
             \hline
-            Fresh \gls{UOX} Fuel & 3.1 & 96.9 & -   \\ 
+            Fresh \gls{UOX} Fuel & 4.29 & 96.9 & -   \\ 
             Fresh \gls{LWR} \gls{MOX} Fuel & 0.2 & 90.7 & 9.1 \\ 
             Fresh \gls{ASTRID} Fuel & 0.3 & 77.7 & 22 \\
             \hline
