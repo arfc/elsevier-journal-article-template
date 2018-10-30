@@ -147,7 +147,7 @@ this paper.
 
         %---------------------------------------------------------------------
         \question Abstract. The abstract states that "These simulations 
-        demonstrate that France can avoid deployment of additional LWRs by 
+        demonstrate that France can avoid deployment of addix tional LWRs by 
         accepting UNF from other EU nations, that lifetime extensions delay 
         time-to-transition, and improved breeding ratios are not particularly 
         impactful." These conclusions aren't highlighted or discussed properly 
@@ -171,7 +171,9 @@ this paper.
         \question In figures 2 and 3 the colour scheme makes it difficult to 
         distinguish the different data.
         \begin{solution}
-        	\textit{Not a fan of viridis? What should we do}
+        	Thank you for your input. We changed the color scheme so that
+        	it is more distinguishable.
+        	\includegraphics[width=0.7\textwidth]{../images/eu_future/onesim.png}
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -363,7 +365,12 @@ this paper.
         years
 
         \begin{solution}
-                <++>
+                The ASTRID design target is 60 years \cite{gauche_generation_2012},
+                but we assumed a lifetime
+                extension of 20 years, considering that most French nuclear reactors
+                have their lifetimes extended. We assume that technological
+                advances in materials and design will allow 80-year lifetimes
+                for ASTRID reactors.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -393,10 +400,22 @@ this paper.
         equilibrium fuel? At 22\% Pu?  If so, this will overpredict first core 
         fissile requirements. If not, then there should be emphasis on how the 
         initial core has different fuel zones with various Pu contents 
-        similating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
+        simulating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
 
         \begin{solution}
-                <++>
+                Thank you for your input, and you are right. We did assume
+                that the first SFR cores are loaded entirely with
+                fresh equilibrium fuel at 22\% Pu. However, we also assumed
+                that the core size is set so that the initial plutonium
+                loading (at 22\% enrichment) is 4.9 tons, as stated in
+                literature \cite{chenaud_status_2013}. Thus, we are
+                actually overpredicting the later refuel batch fissile
+                requirements by 74.9 kg ($\approx$ 6\%). For a better
+                accuracy of the more important part of this simulation
+                (LWR UNF required for transition), we thought the 
+                initial fissile loading is more important to get it right.
+                But ideally, as you mentioned, the initial fuel loading
+                should have varying enrichments.       
         \end{solution}
 
 
@@ -408,14 +427,19 @@ this paper.
         instead of 200. The startup reload fuel requirements should also be 
         mentioned in addition to the startup first core requirements.
         \begin{solution}
-                <++>
+                Thank you for your input. The 200 SFR calculation was
+                simply an algebraic calculation:
+                \[ \frac{985 tPu}{4.9 tPu per SFR} \approx 200 \]
+                But we do understand that it is confusing for the reader
+                to see this sentence, so we removed it since it does not
+                necessarily contribute to the flow of the paper.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Several typos spotted. Run spell check and proof read.
 
         \begin{solution}
-                <++>
+                Thank you for your input. The errors are fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -427,7 +451,13 @@ this paper.
         excess reactivity decreases from BOC to EOC, then an increase in the 
         breeding ratio may result in larger initial core Pu mass requirements.
         \begin{solution}
-                <++>
+                Thank you for your input. Yes, we did just artificially change
+                the breeding ratio of the SFR without design considerations.
+                The are large uncertainties introduced with this arbitrary
+                breeding ratio increase, and we plan to incorporate your
+                ideas as future work. These results contain large assumptions
+                and are first-order estimates of this fuel cycle transition
+                scenario.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -435,7 +465,6 @@ this paper.
         UNF for the scenario to show how much margin there is? It is stated 
         that there is enough Pu from the LWR UNF to start the SFR fleet, but by 
         how much?
-
         \begin{solution}
                 <++>
         \end{solution}
