@@ -90,6 +90,8 @@
 % Katy Huff addtions
 \usepackage{xspace}
 \usepackage{color}
+
+\usepackage{multirow}
 \usepackage[hyphens]{url}
 
 %\journal{Annals of Nuclear Energy}
@@ -155,16 +157,29 @@ this paper.
         they highlighted in the conclusions.  
 
         \begin{solution}
-                \textit{\begin{itemize}
-                	\item Breeding ratio - Write a sentence on percent difference of LWR UNF reprocessed
-                	\item Percent reduction of LWR UNF reprocessed:
-                	\begin{itemize}
-                		\item 1.11 br - 4.95\% reduction
-                		\item 1.15 br - 7.80\% reduction
-                		\item 1.18 br - 9.71\% reduction
-                	\end{itemize}
-                	\item Lifetime Extension - Write a sentence on percent difference of tot reprocessing (are under curve)
-                \end{itemize}}
+        	Thank you for your valuable input. We performed additional
+        	analysis to find quantitative values representing the effect
+        	of the change in breeding ratio and LWR lifetime extension.
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+        	 	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+        	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+        	 	\hline
+        	 \end{tabular}
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+        	 	& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+        	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+        	 	\hline
+        	 \end{tabular}
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -236,7 +251,8 @@ this paper.
         conclusions noted in the abstract.
 
         \begin{solution}
-                <++>
+                Thank you for your input. We have added more quantitative
+                analysis and discussion in sections 6.1 and 6.2.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -251,7 +267,15 @@ this paper.
         study.  
 
         \begin{solution}
-                <++>
+                Thank you for your input. We added this sentence in the conclusion:
+                
+                The sensitivity study explored the effect of increased SFR breeding
+                ratio and existing LWR lifetime extension. Increasing the breeding
+                ratio reduced the amount of LWR UNF required to transition
+                up to $9.7\%$ and decreased the total reprocessing demand up to $3.4\%$.
+                Increasing the lifetime of existing LWR was not significant
+                in reducing reprocessing demand, but provided the benefit of delayed
+                transition.
         \end{solution}
 
 
@@ -336,7 +360,30 @@ this paper.
         showing the total throughput is required.)
 
         \begin{solution}
-                <++>
+                Thank you for your input. We added a table showing the 
+                differences between the parameters
+                
+                
+                \begin{tabular}{lrrrr}
+                	\hline
+                	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+                	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+                	\hline
+                	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+                	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+                	\hline
+                \end{tabular}
+                
+                	\begin{tabular}{lrrrr}
+                		\hline
+                		\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+                		& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+                		\hline
+                		Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+                		LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+                		\hline
+                	\end{tabular}
+                
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -479,9 +526,9 @@ this paper.
 	        	Thank you for your input.
                 We added a paragraph saying:
                 
-                If France receives \gls{LWR} \gls{UNF} from all \gls{EU} nations,
+                If France receives LWR UNF from all EU nations,
                 except Sweden and Finland, due to their concrete waste management plan,
-                it will have a surplus of $30,648$ MTHM of \gls{LWR} \gls{UNF}. This
+                it will have a surplus of $30,648$ MTHM of LWR UNF. This
                 inventory can be leveraged to increase French nuclear power capacity as
                 the transition takes place. However, pragmatic limitations such
                 as new reactor construction, reprocessing throughput, and
