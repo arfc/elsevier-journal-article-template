@@ -84,7 +84,7 @@ for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
 nuclear power in a global \cite{joskow_future_2012} and European context
 \cite{hatch_politics_2015}.  Existing projections extend to 2050.
 
-\Cref{tab:eu_deployment} lists the reactors that are currently  planned or
+Figure \ref{tab:eu_deployment} lists the reactors that are currently  planned or
 under construction in the \gls{EU}. In the simulation, all  planned constructions are completed 
 without delay or failure and reach a lifetime of 60 years.  
 
@@ -174,20 +174,19 @@ is listed in Table \ref{tab:eu_growth}.
                     Sweden & Aggressive Reduction & All shut down 2050.\\
                     Germany & Aggressive Reduction & All shut down by 2022.\\
                     \hline
-                    
         \end{tabular}
 
-Using this categorization to drive facility deployment, the simulation captures 
-regional differences in reactor power capacity and \gls{UNF} production as a 
-function of time. Accordingly, \cref{fig:eu_pow} shows the resulting simulated 
-installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
-2040s result from end-of-license reactor retirements and nuclear phaseout plans 
-in nations such as Germany and Belgium.  
-    
   \label{tab:eu_growth}
 \end{table}
 \FloatBarrier
 
+Using this categorization to drive facility deployment, the simulation captures 
+regional differences in reactor power capacity and \gls{UNF} production as a 
+function of time. Accordingly, figure \ref{fig:eu_pow} shows the resulting simulated 
+installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
+2040s result from end-of-license reactor retirements and nuclear phaseout plans 
+in nations such as Germany and Belgium.
+    
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/power_plot.png}
@@ -199,8 +198,7 @@ in nations such as Germany and Belgium.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
-\Cref{fig:sfr_num}
-shows
+Figure \ref{fig:sfr_num} shows
 the French transition to \glspl{SFR} modeled in this simulation.
 Historically aggressive growth of nuclear in the 1980s leads to a substantial 
 shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new 
@@ -216,8 +214,8 @@ shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new
         \label{fig:sfr_num}
 \end{figure}
 
-\Cref{fig:dep} shows the deployment required to support the transition in 
-\cref{fig:sfr_num}. France must build four reactors per year, on average, to 
+Figure \ref{fig:dep} shows the deployment required to support the transition in 
+figure \ref{fig:sfr_num}. France must build four reactors per year, on average, to 
 make up for the end-of-license decommissioning of power plants built in the 1980s and 1990s.  The second period of aggressive building occurs when the first generation of \glspl{SFR} decommission after 80 years. Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
 decommissioned French \gls{LWR} capacity. This results in an installed 
 \gls{SFR} 
@@ -236,7 +234,7 @@ decommissioned.
 \end{figure}
 
 
-Finally, \Cref{fig:tot_dep} shows the total deployment scheme we simulated.  
+Finally, figure \ref{fig:tot_dep} shows the total deployment scheme we simulated.  
 The French transition to \glspl{SFR} couples with the historical and projected 
 operation of \gls{EU} reactors.  The steep transition from 2040 to 2060 
 reflects the scheduled decommissioning of reactors built in the 1975-2000 era 
@@ -492,7 +490,7 @@ from ORIGEN is used (see table \ref{tab:comp_fresh}). ORIGEN calculates buildup,
              & \multicolumn{3}{c}{ Composition [\%]} \\
             Recipe & U-235  & U-238  & Pu \\ 
             \hline
-            Fresh \gls{UOX} Fuel & 4.29 & 96.9 & -   \\ 
+            Fresh \gls{UOX} Fuel & 4.29 & 95.71 & -   \\ 
             Fresh \gls{LWR} \gls{MOX} Fuel & 0.2 & 90.7 & 9.1 \\ 
             Fresh \gls{ASTRID} Fuel & 0.3 & 77.7 & 22 \\
             \hline
