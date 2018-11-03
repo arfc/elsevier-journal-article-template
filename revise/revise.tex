@@ -149,7 +149,7 @@ this paper.
 
         %---------------------------------------------------------------------
         \question Abstract. The abstract states that "These simulations 
-        demonstrate that France can avoid deployment of addix tional LWRs by 
+        demonstrate that France can avoid deployment of additional LWRs by 
         accepting UNF from other EU nations, that lifetime extensions delay 
         time-to-transition, and improved breeding ratios are not particularly 
         impactful." These conclusions aren't highlighted or discussed properly 
@@ -157,7 +157,7 @@ this paper.
         they highlighted in the conclusions.  
 
         \begin{solution}
-        	Thank you for your valuable input. We performed additional
+        	Thank you for your valuable input. We performed an additional
         	analysis to find quantitative values representing the effect
         	of the change in breeding ratio and LWR lifetime extension.
         	 
@@ -187,7 +187,7 @@ this paper.
         distinguish the different data.
         \begin{solution}
         	Thank you for your input. We changed the color scheme so that
-        	it is more distinguishable.
+        	each component of the stacked chart can be more easily identified.
         	\includegraphics[width=0.7\textwidth]{../images/eu_future/onesim.png}
         \end{solution}
 
@@ -196,7 +196,7 @@ this paper.
         moved to the beginning.
 
         \begin{solution}
-                Thank you for your input. This error is fixed.
+                Thank you for catching this error. The sentence has been corrected.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -208,12 +208,14 @@ this paper.
         simulation and could impact the results. I suspect that the same may 
         also apply to the BWR UOX fuel. 
         \begin{solution}
-                Thank you for your input. You are correct, we rechecked the
+                Thank you for identifying this issue. You are correct. This was a clerical error. 
+                We double checked the source of the fuel compositions to identify the
                 initial enrichment used for generating the 51Gwd/MTHM burnup
-                recipe, and it was indeed using a higher enriched fuel of
-                enrichment 4.29 w/o. Thank you again for your keen observation.
+                recipe, and the fresh fuel composition indeed had a higher
+                enrichment, $4.29 \%$. Thank you again for your keen observation.
                 We have made the changes in the paper and in our input files
-                used to generate the outputs. This increased out tails inventory
+                used to generate the outputs. This increased the simulated 
+                tails inventory
                 and natural uranium by a substantial amount ($\approx 24\%$).
         \end{solution}
 
@@ -222,27 +224,28 @@ this paper.
 
         \begin{solution}
                 There was a table with the same label in Latex. The error
-                is fixed. Thank you.
+                is fixed. Thank you for catching this!
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Paragraph immediately after Table 6 the text should read nine 
         tons of tails not nine times of tails.
         \begin{solution}
-                Thank you for your input. This error is fixed.
+                Thank you for identifying this typo. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Fig 10 caption: the correct spelling is usage
 
         \begin{solution}
-                Thank you for your input. This error is fixed.
+                Thank you. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 183 - corresponding is spelled incorrectly
         \begin{solution}
-                Thank you for your input. This error is fixed.
+                Thank you for catching this. This error is fixed 
+                (and a full spellcheck has been conducted).
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -267,7 +270,7 @@ this paper.
         study.  
 
         \begin{solution}
-                Thank you for your input. We added this sentence in the conclusion:
+                We agree. We have added this sentence in the conclusion:
                 
                 The sensitivity study explored the effect of increased SFR breeding
                 ratio and existing LWR lifetime extension. Increasing the breeding
@@ -360,8 +363,10 @@ this paper.
         showing the total throughput is required.)
 
         \begin{solution}
-                Thank you for your input. We added a table showing the 
-                differences between the parameters
+                Thank you for this detailed comment. Your insight is very 
+                helpful here. To highlight the important differential effect
+                 more clearly, we have added tables showing the 
+                differences among the parameters, as below.
                 
                 
                 \begin{tabular}{lrrrr}
@@ -389,14 +394,14 @@ this paper.
         %---------------------------------------------------------------------
         \question Line 58: Megawatt is one word
         \begin{solution}
-                Thank you for your input. This error is fixed.
+                This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 133: This section begins with a sentence fragment.
 
         \begin{solution}
-                Thank you for your input. We changed the sentence
+                We have changed the sentence 
                 "The scenario specifications defining the simulations
                 presented in this work are listed in table 3."
                 to
@@ -460,19 +465,23 @@ this paper.
         simulating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
 
         \begin{solution}
-                Thank you for your input, and you are right. We did assume
+                Thank you for this detailed insight. Of course, you are quite right. 
+                We did originally assume
                 that the first SFR cores are loaded entirely with
                 fresh equilibrium fuel at 22\% Pu. However, we also assumed
                 that the core size is set so that the initial plutonium
                 loading (at 22\% enrichment) is 4.9 tons, as stated in
                 literature \cite{chenaud_status_2013}. Thus, we are
                 actually overpredicting the later refuel batch fissile
-                requirements by 74.9 kg ($\approx$ 6\%). For a better
-                accuracy of the more important part of this simulation
-                (LWR UNF required for transition), we thought the 
-                initial fissile loading is more important to get it right.
-                But ideally, as you mentioned, the initial fuel loading
-                should have varying enrichments.       
+                requirements by 74.9 kg ($\approx$ 6\%). 
+                Ideally, as you mentioned, the initial fuel loading
+                could be represented more faithfully with regard to initial
+                fuel zones.
+                This can be accomplished with the Cyclus simulator 
+                and Cycamore Reactor archetype, but will require depletion 
+                calculations outside of the current scope of this effort. We 
+                have listed your suggestion as potential future work as it 
+                would certainly improve the fidelity of future results.     
         \end{solution}
 
 
@@ -484,19 +493,21 @@ this paper.
         instead of 200. The startup reload fuel requirements should also be 
         mentioned in addition to the startup first core requirements.
         \begin{solution}
-                Thank you for your input. The 200 SFR calculation was
+                You are indeed correct. The 200 SFR calculation was
                 simply an algebraic calculation:
                 \[ \frac{985 tPu}{4.9 tPu per SFR} \approx 200 \]
                 But we do understand that it is confusing for the reader
                 to see this sentence, so we removed it since it does not
-                necessarily contribute to the flow of the paper.
+                contribute to the flow or conclusions of the paper.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Several typos spotted. Run spell check and proof read.
 
         \begin{solution}
-                Thank you for your input. The errors are fixed.
+                Thank you for noticing these issues. We apologize that these 
+                snuck past our initial review. We have conducted an additional
+                grammar and spelling check to catch these errors.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -508,13 +519,17 @@ this paper.
         excess reactivity decreases from BOC to EOC, then an increase in the 
         breeding ratio may result in larger initial core Pu mass requirements.
         \begin{solution}
-                Thank you for your input. Yes, we did just artificially change
+                Thank you. Your point is quite correct. 
+                Yes, we did just artificially change
                 the breeding ratio of the SFR without design considerations.
                 The are large uncertainties introduced with this arbitrary
-                breeding ratio increase, and we plan to incorporate your
-                ideas as future work. These results contain large assumptions
-                and are first-order estimates of this fuel cycle transition
-                scenario.
+                breeding ratio increase, and we have now suggested your
+                ideas as future work. This section of the analysis intends
+                only to identify first-order trends. The simulation itself
+                involves many simplifying assumptions regarding both 
+                policy and reactor physics. Accordingly, while individual 
+                depletion calculations regarding various breeding ratios 
+                would improve precision, it may not improve accuracy.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -523,8 +538,8 @@ this paper.
         that there is enough Pu from the LWR UNF to start the SFR fleet, but by 
         how much?
         \begin{solution}
-	        	Thank you for your input.
-                We added a paragraph saying:
+	        	Thank you for this great idea.
+                We added a paragraph describing the surplus:
                 
                 If France receives LWR UNF from all EU nations,
                 except Sweden and Finland, due to their concrete waste management plan,
