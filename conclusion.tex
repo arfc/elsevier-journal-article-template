@@ -5,9 +5,16 @@ a fully \gls{SFR} fleet with installed capacity of 66,000 \gls{MWe} without
 building additional \glspl{LWR}
 if France receives \gls{UNF} from other \gls{EU} nations.
 Supporting the \gls{SFR} fleet requires an average 
-reprocessing capacity of 73.27 \gls{MTHM} per month,
-and an average fabrication capacity of 45.29 \gls{MTHM} per month.
+reprocessing capacity of 63.23 \gls{MTHM} per month,
+and an average fabrication capacity of 45.32 \gls{MTHM} per month.
 
+The sensitivity study explored the effect of increased \gls{SFR} breeding
+ratio and existing \gls{LWR} lifetime extension. Increasing the breeding
+ratio reduced the amount of \gls{LWR} \gls{UNF} required to transition
+up to $9.7\%$ and decreased the total reprocessing demand up to $3.4\%$.
+Increasing the lifetime of existing \glspl{LWR} was not significant
+in reducing reprocessing demand, but provided the benefit of delayed
+transition.
 
 Since most \gls{EU} nations do not have an operating \gls{UNF}
 repository or a management plan, they have a strong incentive
@@ -18,14 +25,21 @@ incentive to take this fuel, since recycling used fuel from
 other nations will allow France to meet their MOX demand
 without new construction of \glspl{LWR}.
 
-\Cref{tab:which_send} lists \gls{EU} nations and their \gls{UNF} inventory
+Table \ref{tab:which_send} lists \gls{EU} nations and their \gls{UNF} inventory
 in 2050. We analyzed a strategy in which 
 the nations reducing their nuclear fleet send their \gls{UNF} to France.
 The sum of \gls{UNF} from Italy, Slovenia, Belgium, Spain and Germany
-provides enough \gls{UNF} for the simulated transition ($\approx 54,000$ MTHM). 
-These nations are shown in bold in \cref{tab:which_send}.
+provides enough \gls{UNF} for the simulated transition ($\approx 53,000$ MTHM). 
+These nations are shown in bold in table \ref{tab:which_send}.
 Sweden is not considered because of its concrete waste management plan.
 
+If France receives \gls{LWR} \gls{UNF} from all \gls{EU} nations,
+except Sweden and Finland,
+it will have a surplus of $30,648$ MTHM of \gls{LWR} \gls{UNF}. This
+inventory can be leveraged to increase nuclear power capacity as
+the transition takes place. However, pragmatic limitations such
+as new reactor construction, reprocessing throughput, and
+political concerns remain.
 
 \begin{table}[h]
     \centering
@@ -44,10 +58,10 @@ Sweden is not considered because of its concrete waste management plan.
                     Netherlands & Modest Reduction & 539\\
                     \textbf{Italy} & \textbf{Modest Reduction} & \textbf{583}\\
                     \textbf{Slovenia} & \textbf{Modest Reduction} & \textbf{765}\\
-                    \textbf{Lithuania} & \textbf{Modest Reduction} & \textbf{2,644} \\
+                    Lithuania & Modest Reduction & 2,644 \\
                     \textbf{Belgium} & \textbf{Aggressive Reduction} & \textbf{6,644}\\
                     \textbf{Spain} & \textbf{Modest Reduction} &  \textbf{9,771} \\
-                    \textbf{France} & \textbf{Modest Reduction} & \textbf{9,979} \\
+                    \textbf{France} & \textbf{Modest Reduction} & \textbf{12,494} \\
                     Sweden & Aggressive Reduction & 16,035\\
                     \textbf{Germany} & \textbf{Aggressive Reduction} & \textbf{23,868}\\
                     \hline
@@ -69,3 +83,13 @@ method described herein could readily be adapted to account for such possibiliti
 The collaborative option explored here may hold value for the \gls{EU} nuclear community,
 and may enable France to advance more rapidly into a closed fuel cycle. 
 \FloatBarrier
+
+
+\section{Future Work}
+
+This analysis relies on many simplifying assumptions concerning 
+reactor physics and depletion. Future work implementing higher 
+fidelity fuel burnup and depletion models may more faithfully resolve 
+plutonium vector changes in  \gls{ASTRID} and \gls{MOX} \gls{PWR} cores. 
+Additionally, incorporating true isotopic vectors for initial and end-of-life 
+core compositions will improve accuracy for many metrics of interest.

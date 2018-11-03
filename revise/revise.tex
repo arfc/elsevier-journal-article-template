@@ -90,6 +90,8 @@
 % Katy Huff addtions
 \usepackage{xspace}
 \usepackage{color}
+
+\usepackage{multirow}
 \usepackage[hyphens]{url}
 
 %\journal{Annals of Nuclear Energy}
@@ -155,14 +157,38 @@ this paper.
         they highlighted in the conclusions.  
 
         \begin{solution}
-                <++>
+        	Thank you for your valuable input. We performed an additional
+        	analysis to find quantitative values representing the effect
+        	of the change in breeding ratio and LWR lifetime extension.
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+        	 	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+        	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+        	 	\hline
+        	 \end{tabular}
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+        	 	& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+        	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+        	 	\hline
+        	 \end{tabular}
         \end{solution}
 
         %---------------------------------------------------------------------
         \question In figures 2 and 3 the colour scheme makes it difficult to 
         distinguish the different data.
         \begin{solution}
-                <++>
+        	Thank you for your input. We changed the color scheme so that
+        	each component of the stacked chart can be more easily identified.
+        	\includegraphics[width=0.7\textwidth]{../images/eu_future/onesim.png}
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -170,7 +196,7 @@ this paper.
         moved to the beginning.
 
         \begin{solution}
-                <++>
+                Thank you for catching this error. The sentence has been corrected.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -182,34 +208,44 @@ this paper.
         simulation and could impact the results. I suspect that the same may 
         also apply to the BWR UOX fuel. 
         \begin{solution}
-                <++>
+                Thank you for identifying this issue. You are correct. This was a clerical error. 
+                We double checked the source of the fuel compositions to identify the
+                initial enrichment used for generating the 51Gwd/MTHM burnup
+                recipe, and the fresh fuel composition indeed had a higher
+                enrichment, $4.29 \%$. Thank you again for your keen observation.
+                We have made the changes in the paper and in our input files
+                used to generate the outputs. This increased the simulated 
+                tails inventory
+                and natural uranium by a substantial amount ($\approx 24\%$).
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Table 5 isn't referred to in the text.
 
         \begin{solution}
-                <++>
+                There was a table with the same label in Latex. The error
+                is fixed. Thank you for catching this!
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Paragraph immediately after Table 6 the text should read nine 
         tons of tails not nine times of tails.
         \begin{solution}
-                <++>
+                Thank you for identifying this typo. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Fig 10 caption: the correct spelling is usage
 
         \begin{solution}
-                <++>
+                Thank you. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 183 - corresponding is spelled incorrectly
         \begin{solution}
-                <++>
+                Thank you for catching this. This error is fixed 
+                (and a full spellcheck has been conducted).
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -218,13 +254,14 @@ this paper.
         conclusions noted in the abstract.
 
         \begin{solution}
-                <++>
+                Thank you for your input. We have added more quantitative
+                analysis and discussion in sections 6.1 and 6.2.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 239 should read: "The period during which ASTRID UNF.....
         \begin{solution}
-                <++>
+                Thank you for your input. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -233,7 +270,15 @@ this paper.
         study.  
 
         \begin{solution}
-                <++>
+                We agree. We have added this sentence in the conclusion:
+                
+                The sensitivity study explored the effect of increased SFR breeding
+                ratio and existing LWR lifetime extension. Increasing the breeding
+                ratio reduced the amount of LWR UNF required to transition
+                up to $9.7\%$ and decreased the total reprocessing demand up to $3.4\%$.
+                Increasing the lifetime of existing LWR was not significant
+                in reducing reprocessing demand, but provided the benefit of delayed
+                transition.
         \end{solution}
 
 
@@ -250,9 +295,6 @@ this paper.
         well, helping to visually guide the reader through the reasoning 
         process of the authors. In general, this is a thorough and 
         well-supported analysis which is worthwhile of publication.
-        \begin{solution}
-                <++>
-        \end{solution}
 
 
         \begin{solution}
@@ -268,7 +310,9 @@ this paper.
         detail into how this conclusion has been reached / how limiting the 
         present policy is would be useful).
         \begin{solution}
-                <++>
+                \textit{Run a simulation with just France and show results?}
+                
+                \includegraphics{../images/french-transition/france_only_compare.png}
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -277,7 +321,10 @@ this paper.
         72 months. Which one was used?
 
         \begin{solution}
-                <++>
+        	Thank you for your input. Our intention was to have a 72-month
+        	cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
+        	This is now reflected and clarified in the revised version of
+        	this paper. Thank you for your comment.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -296,7 +343,7 @@ this paper.
         I'm assuming a uniform irradiation power for each batch (reasonable for 
         this type of project), but it may be useful to clarify. 
         \begin{solution}
-                <++>
+                \textit{Clearly describe how the VISION recipes are calculated}
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -316,20 +363,50 @@ this paper.
         showing the total throughput is required.)
 
         \begin{solution}
-                <++>
+                Thank you for this detailed comment. Your insight is very 
+                helpful here. To highlight the important differential effect
+                 more clearly, we have added tables showing the 
+                differences among the parameters, as below.
+                
+                
+                \begin{tabular}{lrrrr}
+                	\hline
+                	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+                	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+                	\hline
+                	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+                	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+                	\hline
+                \end{tabular}
+                
+                	\begin{tabular}{lrrrr}
+                		\hline
+                		\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
+                		& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+                		\hline
+                		Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+                		LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+                		\hline
+                	\end{tabular}
+                
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 58: Megawatt is one word
         \begin{solution}
-                <++>
+                This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Line 133: This section begins with a sentence fragment.
 
         \begin{solution}
-                <++>
+                We have changed the sentence 
+                "The scenario specifications defining the simulations
+                presented in this work are listed in table 3."
+                to
+                "Table 3 lists the scenario specifications defining the
+                simulations presented in this work."
         \end{solution}
 
 
@@ -347,7 +424,12 @@ this paper.
         years
 
         \begin{solution}
-                <++>
+                The ASTRID design target is 60 years \cite{gauche_generation_2012},
+                but we assumed a lifetime
+                extension of 20 years, considering that most French nuclear reactors
+                have their lifetimes extended. We assume that technological
+                advances in materials and design will allow 80-year lifetimes
+                for ASTRID reactors.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -363,13 +445,16 @@ this paper.
         transport and for PUREX process
 
         \begin{solution}
-                <++>
+                Thank you for your input. Our intention was to have a 72-month
+                cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
+                This is now reflected and clarified in the revised version of
+                this paper. Thank you for your comment.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question page 16, line 17, duplicate "recipe"
         \begin{solution}
-                <++>
+                Thank you for your input. This error is fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -377,10 +462,26 @@ this paper.
         equilibrium fuel? At 22\% Pu?  If so, this will overpredict first core 
         fissile requirements. If not, then there should be emphasis on how the 
         initial core has different fuel zones with various Pu contents 
-        similating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
+        simulating burned fuel (at 13\%, 16\%, 19\%, 22\%, for example)
 
         \begin{solution}
-                <++>
+                Thank you for this detailed insight. Of course, you are quite right. 
+                We did originally assume
+                that the first SFR cores are loaded entirely with
+                fresh equilibrium fuel at 22\% Pu. However, we also assumed
+                that the core size is set so that the initial plutonium
+                loading (at 22\% enrichment) is 4.9 tons, as stated in
+                literature \cite{chenaud_status_2013}. Thus, we are
+                actually overpredicting the later refuel batch fissile
+                requirements by 74.9 kg ($\approx$ 6\%). 
+                Ideally, as you mentioned, the initial fuel loading
+                could be represented more faithfully with regard to initial
+                fuel zones.
+                This can be accomplished with the Cyclus simulator 
+                and Cycamore Reactor archetype, but will require depletion 
+                calculations outside of the current scope of this effort. We 
+                have listed your suggestion as potential future work as it 
+                would certainly improve the fidelity of future results.     
         \end{solution}
 
 
@@ -392,14 +493,21 @@ this paper.
         instead of 200. The startup reload fuel requirements should also be 
         mentioned in addition to the startup first core requirements.
         \begin{solution}
-                <++>
+                You are indeed correct. The 200 SFR calculation was
+                simply an algebraic calculation:
+                \[ \frac{985 tPu}{4.9 tPu per SFR} \approx 200 \]
+                But we do understand that it is confusing for the reader
+                to see this sentence, so we removed it since it does not
+                contribute to the flow or conclusions of the paper.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Several typos spotted. Run spell check and proof read.
 
         \begin{solution}
-                <++>
+                Thank you for noticing these issues. We apologize that these 
+                snuck past our initial review. We have conducted an additional
+                grammar and spelling check to catch these errors.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -411,7 +519,17 @@ this paper.
         excess reactivity decreases from BOC to EOC, then an increase in the 
         breeding ratio may result in larger initial core Pu mass requirements.
         \begin{solution}
-                <++>
+                Thank you. Your point is quite correct. 
+                Yes, we did just artificially change
+                the breeding ratio of the SFR without design considerations.
+                The are large uncertainties introduced with this arbitrary
+                breeding ratio increase, and we have now suggested your
+                ideas as future work. This section of the analysis intends
+                only to identify first-order trends. The simulation itself
+                involves many simplifying assumptions regarding both 
+                policy and reactor physics. Accordingly, while individual 
+                depletion calculations regarding various breeding ratios 
+                would improve precision, it may not improve accuracy.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -419,9 +537,18 @@ this paper.
         UNF for the scenario to show how much margin there is? It is stated 
         that there is enough Pu from the LWR UNF to start the SFR fleet, but by 
         how much?
-
         \begin{solution}
-                <++>
+	        	Thank you for this great idea.
+                We added a paragraph describing the surplus:
+                
+                If France receives LWR UNF from all EU nations,
+                except Sweden and Finland, due to their concrete waste management plan,
+                it will have a surplus of $30,648$ MTHM of LWR UNF. This
+                inventory can be leveraged to increase French nuclear power capacity as
+                the transition takes place. However, pragmatic limitations such
+                as new reactor construction, reprocessing throughput, and
+                political / economical concerns remain. 
+                
         \end{solution}
 
 

@@ -31,7 +31,7 @@ deploys agents at user-defined timesteps.
 At each timestep (one month),
 agents make requests for materials or bid to supply them and exchange
 with one another. A market-like mechanism called the dynamic resource exchange
-\cite{gidden_agent-based_2015} governs the exchanges.
+\cite{gidden_methodology_2016} governs the exchanges.
 Each material resource has a quantity, composition, name, and a unique identifier
 for output analysis. 
 
@@ -84,7 +84,7 @@ for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
 nuclear power in a global \cite{joskow_future_2012} and European context
 \cite{hatch_politics_2015}.  Existing projections extend to 2050.
 
-\Cref{tab:eu_deployment} lists the reactors that are currently  planned or
+Figure \ref{tab:eu_deployment} lists the reactors that are currently  planned or
 under construction in the \gls{EU}. In the simulation, all  planned constructions are completed 
 without delay or failure and reach a lifetime of 60 years.  
 
@@ -134,7 +134,7 @@ trajectory into five degrees depending on G, the growth trajectory metric:
  G = \left\{\begin{array}{ll}
  \text{Aggressive Growth}, & \text{for } G \geq 2\\
  \text{Modest Growth}, & \text{for } 1.2 \leq G < 2\\
- \text{Maintanence}, & \text{for } 0.8 \leq G < 1.2 \\
+ \text{Maintenance}, & \text{for } 0.8 \leq G < 1.2 \\
  \text{Modest Reduction}, & \text{for } 0.5 \leq G< 0.8\\
  \text{Aggressive Reduction}, & \text{for } G \leq 0.5
  \end{array}\right\} = \frac{C_{2040}}{C_{2017}}\\\\
@@ -174,20 +174,19 @@ is listed in Table \ref{tab:eu_growth}.
                     Sweden & Aggressive Reduction & All shut down 2050.\\
                     Germany & Aggressive Reduction & All shut down by 2022.\\
                     \hline
-                    
         \end{tabular}
 
-Using this categorization to drive facility deployment, the simulation captures 
-regional differences in reactor power capacity and \gls{UNF} production as a 
-function of time. Accordingly, \cref{fig:eu_pow} shows the resulting simulated 
-installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
-2040s result from end-of-license reactor retirements and nuclear phaseout plans 
-in nations such as Germany and Belgium.  
-    
   \label{tab:eu_growth}
 \end{table}
 \FloatBarrier
 
+Using this categorization to drive facility deployment, the simulation captures 
+regional differences in reactor power capacity and \gls{UNF} production as a 
+function of time. Accordingly, figure \ref{fig:eu_pow} shows the resulting simulated 
+installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
+2040s result from end-of-license reactor retirements and nuclear phaseout plans 
+in nations such as Germany and Belgium.
+    
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/power_plot.png}
@@ -199,8 +198,7 @@ in nations such as Germany and Belgium.
 
 \subsection{French \gls{SFR} Deployment Schedule}
 
-\Cref{fig:sfr_num}
-shows
+Figure \ref{fig:sfr_num} shows
 the French transition to \glspl{SFR} modeled in this simulation.
 Historically aggressive growth of nuclear in the 1980s leads to a substantial 
 shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new 
@@ -216,8 +214,8 @@ shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new
         \label{fig:sfr_num}
 \end{figure}
 
-\Cref{fig:dep} shows the deployment required to support the transition in 
-\cref{fig:sfr_num}. France must build four reactors per year, on average, to 
+Figure \ref{fig:dep} shows the deployment required to support the transition in 
+figure \ref{fig:sfr_num}. France must build four reactors per year, on average, to 
 make up for the end-of-license decommissioning of power plants built in the 1980s and 1990s.  The second period of aggressive building occurs when the first generation of \glspl{SFR} decommission after 80 years. Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
 decommissioned French \gls{LWR} capacity. This results in an installed 
 \gls{SFR} 
@@ -236,7 +234,7 @@ decommissioned.
 \end{figure}
 
 
-Finally, \Cref{fig:tot_dep} shows the total deployment scheme we simulated.  
+Finally, figure \ref{fig:tot_dep} shows the total deployment scheme we simulated.  
 The French transition to \glspl{SFR} couples with the historical and projected 
 operation of \gls{EU} reactors.  The steep transition from 2040 to 2060 
 reflects the scheduled decommissioning of reactors built in the 1975-2000 era 
@@ -388,9 +386,8 @@ uranium inventory drains, reprocessed uranium (or, natural uranium) will need to
 \FloatBarrier
 
 \section{Scenario Specifications}
-
-are listed in table \ref{tab:gen}.
-The scenario specifications defining the simulations presented in this work 
+Table \ref{tab:gen} lists the scenario specifications defining the
+simulations presented in this work.
 The reprocessing and \gls{MOX} fabrication capacity in France
 prior to 2020 is modeled after the 
 French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999}.
@@ -408,7 +405,8 @@ French La Hague and MELOX sites \cite{schneider_spent_2008, hugelmann_melox_1999
         Production of \gls{ASTRID} fuel begins & 2020 & year\\
         \glspl{SFR} become available & 2040 & year\\
         Reprocessed uranium usage &  Not used anywhere & -\\
-        Minimum \gls{UNF} cooling time  & 36  & months\\
+        Minimum \gls{LWR} \gls{UNF} cooling time & 72 & months \\
+        Minimum \gls{ASTRID} \gls{UNF} cooling time  & 36  & months\\
         Separation efficiency of U and Pu & 99.8 & \% \\
         Reprocessing streams & Pu and U & - \\
         Reprocessing capacity before 2020 & 91.6 \cite{schneider_spent_2008} & $\frac{\text{metric tons of \gls{UNF}}}{month}$  \\
@@ -438,7 +436,12 @@ core (77 assemblies) discharges. Refueling
 is assumed to take two months to complete, during which the reactor
 is shut down. The specifications are defined in table \ref{tab:reactor-specs} 
 which details the reactor specifications in this simulation. \gls{LWR} 
-specifications are modified linearly for varying power capacity.  
+specifications are modified linearly for varying power capacity.
+The \gls{ASTRID} design targets a 60 year lifetime \cite{gauche_generation_2012}.
+We assume technology and material robustness improvements before deployment in 2040. 
+Accordingly, we optimistically assume an 80 year lifetime instead, reflecting 20 year 
+lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.```
+
 
 \begin{table}[h]
     \centering
@@ -460,7 +463,7 @@ specifications are modified linearly for varying power capacity.
         powers are modeled with a linear mass assumption.} & 193  & 764 & -- \\
 
                 Batches per core & 3 & 3 & 4\\
-        Initial Fissile Loading [t] & 3.1  $^{235}$U & 4.2  $^{235}$U & 4.9 Pu \\
+        Initial Fissile Loading [t] & 4.3  $^{235}$U & 5.8  $^{235}$U & 4.9 Pu \\
                 Fuel & \gls{UOX} or \gls{MOX} & \gls{UOX} & \gls{MOX} \\
         \hline
     \end{tabular}
@@ -474,9 +477,9 @@ specifications are modified linearly for varying power capacity.
 Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
 and used fuel recipe is defined for each reactor type.
 For the compositions of the used fuel, a reference depletion calculation
-from ORIGEN is used (see \cref{tab:comp}). ORIGEN calculates buildup,
+from ORIGEN is used (see table \ref{tab:comp_fresh}). ORIGEN calculates buildup,
  decay, and processing of radioactive materials
-\cite{parks_overview_1992}. This recipe recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
+\cite{parks_overview_1992}. This recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
 
 \begin{table}[h]
     \centering
@@ -487,11 +490,11 @@ from ORIGEN is used (see \cref{tab:comp}). ORIGEN calculates buildup,
              & \multicolumn{3}{c}{ Composition [\%]} \\
             Recipe & U-235  & U-238  & Pu \\ 
             \hline
-            Fresh \gls{UOX} Fuel & 3.1 & 96.9 & -   \\ 
+            Fresh \gls{UOX} Fuel & 4.29 & 95.71 & -   \\ 
             Fresh \gls{LWR} \gls{MOX} Fuel & 0.2 & 90.7 & 9.1 \\ 
-            Fresh \gls{ASTRID} Fuel & 0.2 & 77.7 & 22 \\
+            Fresh \gls{ASTRID} Fuel & 0.3 & 77.7 & 22 \\
             \hline
         \end{tabular}
         
-        \label{tab:sim_result}
+        \label{tab:comp_fresh}
 \end {table}
