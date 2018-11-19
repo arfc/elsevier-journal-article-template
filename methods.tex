@@ -474,16 +474,26 @@ lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.```
 
 
 \subsection{Material Definitions}
-Depletion calculations of the nuclear fuel are recipe-based, such that a fresh 
-and used fuel recipe is defined for each reactor type.
-For the compositions of the used fuel, a reference depletion calculation
-from ORIGEN is used (see table \ref{tab:comp_fresh}). ORIGEN calculates buildup,
- decay, and processing of radioactive materials
-\cite{parks_overview_1992}. This recipe has also been used for repository performance modeling \cite{wilson_adoption_2009}.
+Reactor transmutation of the nuclear fuel was modeled using isotopic `recipes',
+such that fresh and spent fuel recipes were defined for each reactor type (see
+tables \ref{tab:comp_fresh} and \ref{tab:comp}).
+
+This work relied on reference \gls{LWR} \gls{UOX} and \gls{LWR} \gls{MOX}
+compositions retrieved from \gls{AFCI} analyses in Appendix C of
+\cite{piet_fuel_2006}.
+The \gls{LWR} \gls{UOX} depletion calculations were conducted using ORIGEN2
+with the \gls{PWR} one group cross sections provided with ORIGEN2. Meanwhile,
+the \gls{LWR} \gls{MOX} depletion calculations relied on WIMS8
+\cite{wims8_wims_1999} to provide accurate cross sections to ORIGEN. For this
+purpose, WIMS8 calculations used the 172-group, JEF2.2-based cross section
+library.
+
+Finally, the \gls{ASTRID} compostions were retrieved from the \gls{ASTRID}
+design as published in \cite{varaine_pre-conceptual_2012}. 
 
 \begin{table}[h]
     \centering
-    \caption{Fresh fuel compositions in the simulation \cite{wilson_adoption_2009, varaine_pre-conceptual_2012}.}
+    \caption{Fresh fuel compositions in the simulation \cite{piet_fuel_2006, varaine_pre-conceptual_2012}.}
 %   \scalebox{0.86}{
         \begin{tabular}{lrrr}
             \hline
