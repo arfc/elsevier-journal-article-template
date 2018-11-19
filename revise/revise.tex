@@ -399,7 +399,7 @@ paper.
         \begin{solution}
                 Thank you for pointing this out. The source of these recipes 
                 was the \gls{AFCI} program libraries developed for fuel cycle 
-                assessments in 2006 \cite{piet_fuel_2006}. These compositions 
+                assessments in 2006 \cite{piet_fuel_2006}. The \gls{LWR} compositions 
                 were calculated by \gls{ANL} personnel T.K. Kim as part of 
                 Simulation, Evaluation, and Trade Study (SETS) work 
                 package during FY2005 with followup work in FY2006. These 
@@ -410,7 +410,30 @@ paper.
                 discharge burnup of 50,000 MW-day/tonne. 
 
 
-                Text regarding this has been added to the paper thus:
+                Text regarding this has been added to Material Definitions 
+                section thus:
+
+                Reactor transmutation of the nuclear fuel was modeled using 
+                isotopic `recipes', such that fresh and spent fuel recipes were 
+                defined for each reactor type (see tables [fresh] 
+                and [spent]).
+                
+                This work relied on reference \gls{LWR} \gls{UOX} and \gls{LWR} \gls{MOX} 
+                compositions retrieved from \gls{AFCI} analyses in Appendix C 
+                of \cite{piet_fuel_2006}.
+                
+                The \gls{LWR} \gls{UOX} depletion calculations were conducted 
+                using ORIGEN2 with the \gls{PWR} one group cross sections 
+                provided with ORIGEN2. Meanwhile, the \gls{LWR} \gls{MOX} 
+                depletion calculations relied on WIMS8 \cite{wims8_wims_1999} 
+                to provide accurate cross sections to ORIGEN. For this purpose, 
+                WIMS8 calculations used the 172-group, JEF2.2-based cross 
+                section library.
+
+                Finally, the \gls{ASTRID} compostions were retrieved from the 
+                \gls{ASTRID} design as published in 
+                \cite{varaine_pre-conceptual_2012}.
+
 
 
         \end{solution}
@@ -521,7 +544,7 @@ paper.
         \question Very nice approach of extracting realistic reactor data from 
         PRIS database and thorough literature review of other fuel cycle data
         \begin{solution}
-                Thank you for this thoughtful assessment.
+                Thank you.
         \end{solution}
 
 
@@ -542,7 +565,7 @@ paper.
 The \gls{ASTRID} design targets a 60 year lifetime \cite{gauche_generation_2012}.
 We assume technology and material robustness improvements before deployment in 2040.
 Accordingly, we optimistically assume an 80 year lifetime instead, reflecting 20 year
-lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.```
+lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.
 
         \end{solution}
 
