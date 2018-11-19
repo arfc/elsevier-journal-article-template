@@ -94,6 +94,12 @@
 \usepackage{multirow}
 \usepackage[hyphens]{url}
 
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
 %\journal{Annals of Nuclear Energy}
 
 \begin{document}
@@ -279,12 +285,13 @@ paper.
         conclusions noted in the abstract.
 
         \begin{solution}
-                Thank you for your input. We have added more quantitative
-                analysis and discussion in sections 6.1 and 6.2.
+                Thank you, we agree with this suggestion. We have added more quantitative
+		analysis and discussion in sections 6.1 and 6.2 as well as the
+		conclusion, as discussed in the response to comment 1 above.
         \end{solution}
 
         %---------------------------------------------------------------------
-        \question Line 239 should read: "The period during which ASTRID UNF.....
+        \question Line 239 should read: ``The period during which ASTRID UNF.....
         \begin{solution}
                 Thank you for your input. This error is fixed.
         \end{solution}
@@ -323,21 +330,43 @@ paper.
 
 
         \begin{solution}
-                Thank you for this thoughtful assessment.
+		Thank you for this thoughtful assessment. Bootstrap is a great
+		word for this and we've replaced ``enable'' with ``bootstrap''
+		in the abstract. 
         \end{solution}
 
         %---------------------------------------------------------------------
-        \question First, in the introduction, it is stated, "However, the 
+        \question First, in the introduction, it is stated, ``However, the 
         current inventory of French Used Nuclear Fuel (UNF) is insufficient to 
-        fuel that transition without building new Light Water Reactors (LWRs)." 
+        fuel that transition without building new Light Water Reactors 
+        (LWRs).''
         Is this conclusively established in the literature? (i.e., this seems 
         like it may be covered in refs. 4 and/or 5, but a little bit more 
         detail into how this conclusion has been reached / how limiting the 
         present policy is would be useful).
         \begin{solution}
-                \textit{Run a simulation with just France and show results?}
-                
-                \includegraphics{../images/french-transition/france_only_compare.png}
+                You raise an excellent point. Thank you. We have run an 
+                additional simulation regarding just france, and have now added 
+                the following figure, with some dicussion, as below:
+
+                First, we confirmed that France does not have enough \gls{LWR} 
+                \gls{UNF} to transition into a fully \gls{SFR} fleet. As shown 
+                in figure (below). France cannot meet the 
+                \gls{ASTRID} fuel demand without receiving \gls{LWR} \gls{UNF} 
+                from other \gls{EU} nations. France is able to fuel some of its 
+                \glspl{ASTRID} and breed more plutonium, but cannot meet the 
+                fuel demand of all \glspl{ASTRID} with this aggressive 
+                deployment scheme.  
+
+		\includegraphics{../images/french-transition/france_only_compare.png}
+
+	        Caption: \gls{ASTRID} fuel demand compared with fuel supply from only
+			 France in the simulation. The lack of initial \gls{ASTRID} fuel
+			 is caused by the lack of \gls{LWR} \gls{UNF} to reprocess. The
+			 initial shortage then causes a decrease in plutonium bred by
+			 \glspl{ASTRID}, thus a decrease in \gls{ASTRID} fuel supply.
+
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -346,10 +375,10 @@ paper.
         72 months. Which one was used?
 
         \begin{solution}
-        	Thank you for your input. Our intention was to have a 72-month
+        	Thank you for noticing this ambiguity. Our intention was to have a 72-month
         	cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
         	This is now reflected and clarified in the revised version of
-        	this paper. Thank you for your comment.
+        	this paper.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -470,10 +499,11 @@ paper.
         transport and for PUREX process
 
         \begin{solution}
-                Thank you for your input. Our intention was to have a 72-month
+                Thank you for your input. Our intention, reflected in our 
+                simulations, was to have a 72-month
                 cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
                 This is now reflected and clarified in the revised version of
-                this paper. Thank you for your comment.
+                this paper everywhere these durations are mentioned.
         \end{solution}
 
         %---------------------------------------------------------------------
