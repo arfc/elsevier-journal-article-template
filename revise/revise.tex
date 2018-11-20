@@ -94,6 +94,12 @@
 \usepackage{multirow}
 \usepackage[hyphens]{url}
 
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
 %\journal{Annals of Nuclear Energy}
 
 \begin{document}
@@ -141,7 +147,8 @@
 \maketitle
 \section*{Review General Response}
 We would like to thank the reviewers for their detailed assessment of
-this paper.
+this paper. Your comments have resulted in changes which certainly improved the 
+paper.
 
 
 \section*{Reviewer 1}
@@ -160,11 +167,13 @@ this paper.
         	Thank you for your valuable input. We performed an additional
         	analysis to find quantitative values representing the effect
         	of the change in breeding ratio and LWR lifetime extension.
+                This quantitative assessment of the differential was described 
+                via two new tables in the results section:
         	 
         	 \begin{tabular}{lrrrr}
         	 	\hline
-        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
-        	 	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+        	 	  & \multicolumn{4}{c}{\% Difference} \\
+                         \textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
         	 	\hline
         	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
         	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
@@ -173,13 +182,26 @@ this paper.
         	 
         	 \begin{tabular}{lrrrr}
         	 	\hline
-        	 	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
-        	 	& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+        	 	& \multicolumn{4}{c}{\% Difference} \\
+                         \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
         	 	\hline
         	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
         	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
         	 	\hline
         	 \end{tabular}
+
+                 These were additionally noted in the conclusions with the 
+                 following text: 
+                 
+                 The sensitivity study explored the effect of increased 
+                 \gls{SFR} breeding ratio and existing \gls{LWR} lifetime 
+                 extension. Increasing the breeding ratio reduced the amount of 
+                 \gls{LWR} \gls{UNF} required to transition up to $9.7\%$ and 
+                 decreased the total reprocessing demand up to $3.4\%$.  
+                 Increasing the lifetime of existing \glspl{LWR} was not 
+                 significant in reducing reprocessing demand, but provided the 
+                 benefit of delayed transition.
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -188,7 +210,11 @@ this paper.
         \begin{solution}
         	Thank you for your input. We changed the color scheme so that
         	each component of the stacked chart can be more easily identified.
+                Both impacted graphs have been altered with the new color 
+                scheme below.
+
         	\includegraphics[width=0.7\textwidth]{../images/eu_future/onesim.png}
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -212,19 +238,24 @@ this paper.
                 We double checked the source of the fuel compositions to identify the
                 initial enrichment used for generating the 51Gwd/MTHM burnup
                 recipe, and the fresh fuel composition indeed had a higher
-                enrichment, $4.29 \%$. Thank you again for your keen observation.
-                We have made the changes in the paper and in our input files
-                used to generate the outputs. This increased the simulated 
-                tails inventory
-                and natural uranium by a substantial amount ($\approx 24\%$).
+                enrichment, $4.29 \%$, than was assumed in the simulation 
+                default parameters. Thank you again for your keen observation.
+                We have made the changes in the paper and have re-run the 
+                simulation with new input files. The only impacted parameter
+                relevant to the study was the tails inventory and required 
+                natural uranium feed. The simulated tails inventory
+                and natural uranium both increased substantially ($\approx 
+                24\%$).
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Table 5 isn't referred to in the text.
 
         \begin{solution}
-                There was a table with the same label in Latex. The error
-                is fixed. Thank you for catching this!
+                There was a table with the same label in \LaTeX. Accordingly, 
+                the reference in the text  to this table was misattributed. The 
+                error is fixed and all tables are referred to in the text. 
+                Thank you for catching this!
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -254,12 +285,13 @@ this paper.
         conclusions noted in the abstract.
 
         \begin{solution}
-                Thank you for your input. We have added more quantitative
-                analysis and discussion in sections 6.1 and 6.2.
+                Thank you, we agree with this suggestion. We have added more quantitative
+		analysis and discussion in sections 6.1 and 6.2 as well as the
+		conclusion, as discussed in the response to comment 1 above.
         \end{solution}
 
         %---------------------------------------------------------------------
-        \question Line 239 should read: "The period during which ASTRID UNF.....
+        \question Line 239 should read: ``The period during which ASTRID UNF.....
         \begin{solution}
                 Thank you for your input. This error is fixed.
         \end{solution}
@@ -298,21 +330,43 @@ this paper.
 
 
         \begin{solution}
-                Thank you for this thoughtful assessment.
+		Thank you for this thoughtful assessment. Bootstrap is a great
+		word for this and we've replaced ``enable'' with ``bootstrap''
+		in the abstract. 
         \end{solution}
 
         %---------------------------------------------------------------------
-        \question First, in the introduction, it is stated, "However, the 
+        \question First, in the introduction, it is stated, ``However, the 
         current inventory of French Used Nuclear Fuel (UNF) is insufficient to 
-        fuel that transition without building new Light Water Reactors (LWRs)." 
+        fuel that transition without building new Light Water Reactors 
+        (LWRs).''
         Is this conclusively established in the literature? (i.e., this seems 
         like it may be covered in refs. 4 and/or 5, but a little bit more 
         detail into how this conclusion has been reached / how limiting the 
         present policy is would be useful).
         \begin{solution}
-                \textit{Run a simulation with just France and show results?}
-                
-                \includegraphics{../images/french-transition/france_only_compare.png}
+                You raise an excellent point. Thank you. We have run an 
+                additional simulation regarding just france, and have now added 
+                the following figure, with some dicussion, as below:
+
+                First, we confirmed that France does not have enough \gls{LWR} 
+                \gls{UNF} to transition into a fully \gls{SFR} fleet. As shown 
+                in figure (below). France cannot meet the 
+                \gls{ASTRID} fuel demand without receiving \gls{LWR} \gls{UNF} 
+                from other \gls{EU} nations. France is able to fuel some of its 
+                \glspl{ASTRID} and breed more plutonium, but cannot meet the 
+                fuel demand of all \glspl{ASTRID} with this aggressive 
+                deployment scheme.  
+
+		\includegraphics{../images/french-transition/france_only_compare.png}
+
+	        Caption: \gls{ASTRID} fuel demand compared with fuel supply from only
+			 France in the simulation. The lack of initial \gls{ASTRID} fuel
+			 is caused by the lack of \gls{LWR} \gls{UNF} to reprocess. The
+			 initial shortage then causes a decrease in plutonium bred by
+			 \glspl{ASTRID}, thus a decrease in \gls{ASTRID} fuel supply.
+
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -321,10 +375,10 @@ this paper.
         72 months. Which one was used?
 
         \begin{solution}
-        	Thank you for your input. Our intention was to have a 72-month
+        	Thank you for noticing this ambiguity. Our intention was to have a 72-month
         	cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
         	This is now reflected and clarified in the revised version of
-        	this paper. Thank you for your comment.
+        	this paper.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -343,7 +397,45 @@ this paper.
         I'm assuming a uniform irradiation power for each batch (reasonable for 
         this type of project), but it may be useful to clarify. 
         \begin{solution}
-                \textit{Clearly describe how the VISION recipes are calculated}
+                Thank you for pointing this out. The source of these recipes 
+                was the \gls{AFCI} program libraries developed for fuel cycle 
+                assessments in 2006 \cite{piet_fuel_2006}. The \gls{LWR} compositions 
+                were calculated by \gls{ANL} personnel T.K. Kim as part of 
+                Simulation, Evaluation, and Trade Study (SETS) work 
+                package during FY2005 with followup work in FY2006. These 
+                recipes, based on Appendix C of that document, were generated with 
+                ORIGEN2, for high-burnup \gls{PWR} fuel using the one-group 
+                cross sections that were provided with the code.  The high 
+                burnup fuel has an initial enrichment of 4.2\% $^{235}U$ and a 
+                discharge burnup of 50,000 MW-day/tonne. 
+
+
+                Text regarding this has been added to Material Definitions 
+                section thus:
+
+                Reactor transmutation of the nuclear fuel was modeled using 
+                isotopic `recipes', such that fresh and spent fuel recipes were 
+                defined for each reactor type (see tables [fresh] 
+                and [spent]).
+                
+                This work relied on reference \gls{LWR} \gls{UOX} and \gls{LWR} \gls{MOX} 
+                compositions retrieved from \gls{AFCI} analyses in Appendix C 
+                of \cite{piet_fuel_2006}.
+                
+                The \gls{LWR} \gls{UOX} depletion calculations were conducted 
+                using ORIGEN2 with the \gls{PWR} one group cross sections 
+                provided with ORIGEN2. Meanwhile, the \gls{LWR} \gls{MOX} 
+                depletion calculations relied on WIMS8 \cite{wims8_wims_1999} 
+                to provide accurate cross sections to ORIGEN. For this purpose, 
+                WIMS8 calculations used the 172-group, JEF2.2-based cross 
+                section library.
+
+                Finally, the \gls{ASTRID} compostions were retrieved from the 
+                \gls{ASTRID} design as published in 
+                \cite{varaine_pre-conceptual_2012}.
+
+
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -364,9 +456,46 @@ this paper.
 
         \begin{solution}
                 Thank you for this detailed comment. Your insight is very 
-                helpful here. To highlight the important differential effect
-                 more clearly, we have added tables showing the 
-                differences among the parameters, as below.
+                helpful here and also appeared in comments from Reviewer 1. To 
+                highlight the important differential effect
+                 more clearly, 
+                we performed an additional
+        	analysis to find quantitative values representing the effect
+        	of the change in breeding ratio and LWR lifetime extension.
+                This quantitative assessment of the differential was described 
+                via two new tables in the results section:
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	  & \multicolumn{4}{c}{\% Difference} \\
+                         \textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+        	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+        	 	\hline
+        	 \end{tabular}
+        	 
+        	 \begin{tabular}{lrrrr}
+        	 	\hline
+        	 	& \multicolumn{4}{c}{\% Difference} \\
+                         \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+        	 	\hline
+        	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+        	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+        	 	\hline
+        	 \end{tabular}
+
+                 These were additionally noted in the conclusions with the 
+                 following text: 
+                 
+                 The sensitivity study explored the effect of increased 
+                 \gls{SFR} breeding ratio and existing \gls{LWR} lifetime 
+                 extension. Increasing the breeding ratio reduced the amount of 
+                 \gls{LWR} \gls{UNF} required to transition up to $9.7\%$ and 
+                 decreased the total reprocessing demand up to $3.4\%$.  
+                 Increasing the lifetime of existing \glspl{LWR} was not 
+                 significant in reducing reprocessing demand, but provided the 
+                 benefit of delayed transition.
                 
                 
                 \begin{tabular}{lrrrr}
@@ -415,7 +544,7 @@ this paper.
         \question Very nice approach of extracting realistic reactor data from 
         PRIS database and thorough literature review of other fuel cycle data
         \begin{solution}
-                Thank you for this thoughtful assessment.
+                Thank you.
         \end{solution}
 
 
@@ -429,7 +558,15 @@ this paper.
                 extension of 20 years, considering that most French nuclear reactors
                 have their lifetimes extended. We assume that technological
                 advances in materials and design will allow 80-year lifetimes
-                for ASTRID reactors.
+                for ASTRID reactors. We have added the following text to the 
+                paper:
+
+
+The \gls{ASTRID} design targets a 60 year lifetime \cite{gauche_generation_2012}.
+We assume technology and material robustness improvements before deployment in 2040.
+Accordingly, we optimistically assume an 80 year lifetime instead, reflecting 20 year
+lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.
+
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -445,10 +582,11 @@ this paper.
         transport and for PUREX process
 
         \begin{solution}
-                Thank you for your input. Our intention was to have a 72-month
+                Thank you for your input. Our intention, reflected in our 
+                simulations, was to have a 72-month
                 cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
                 This is now reflected and clarified in the revised version of
-                this paper. Thank you for your comment.
+                this paper everywhere these durations are mentioned.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -555,8 +693,8 @@ this paper.
 
         %---------------------------------------------------------------------
 \end{questions}
-%\bibliographystyle{unsrt}
-%\bibliography{revise}
+\bibliographystyle{unsrt}
+\bibliography{revise}
 \end{document}
 
   %
