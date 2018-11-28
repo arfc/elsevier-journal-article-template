@@ -7,8 +7,17 @@ from the perspective of material availability,
 but the aggressive transition demands a significant increase in reprocessing capacity.
 
 We explored the impact of two key variables, the lifetime of French \glspl{LWR} and the
-breeding ratio of \gls{ASTRID} reactors. The range over which we varied these parameters (\cref{tab:sen_par})
+breeding ratio of \gls{ASTRID} reactors. The range over which we varied these parameters (table \ref{tab:sen_par})
 sought to capture the full span of their uncertainty.
+
+Note that \gls{ASTRID} breeding ratios are arbitrarily increased
+by direct adjustment of their output fuel compositions. We did not 
+take into account the other reactor parameters (e.g. core size, initial
+fuel composition, fuel residence time, etc.)
+that would be neccessary to achieve a higher breeding ratio. More detailed analyses
+of the reactor physics and their effect on this transition scenario 
+should be pursued in future work.
+
 
 \begin{table}[h]
     \centering
@@ -27,13 +36,12 @@ sought to capture the full span of their uncertainty.
 
 \subsection{Breeding Ratio}
 
+
 Increase in the breeding ratio of \gls{ASTRID} reactors
-decreases the monthly \gls{LWR} \gls{UNF} reprocessing demand, as shown in 
-figure \ref{fig:br_rep}. 
-An increase in breeding ratio also reduces the number of total \gls{UOX} \gls{UNF}
-required for the transition, because the \gls{ASTRID} creates more plutonium.
+decreases the total reprocessing demand, as shown in 
+figure \ref{fig:br_rep}.
 The demand previous to 2050 is unaffected by the 
-breeding ratio because only \gls{UOX} \gls{UNF} is reprocessed. 
+breeding ratio because only \gls{UOX} \gls{UNF} is reprocessed.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -44,10 +52,15 @@ breeding ratio because only \gls{UOX} \gls{UNF} is reprocessed.
     \label{fig:br_rep}
 \end{figure}
 
-
-The sensitivity analysis also shows, as demonstrated in \cref{fig:br_uox} that 
+The sensitivity analysis also shows, as demonstrated in figure \ref{fig:br_uox} that 
 increasing the breeding ratio decreases the mass of \gls{UOX} \gls{UNF} 
-required for the transition. The \glspl{ASTRID} produce more plutonium, reducing the plutonium demand from reprocessed \gls{UOX}.
+required for the transition. The \glspl{ASTRID} produce 
+more plutonium, reducing the plutonium demand from 
+reprocessed \gls{UOX}. However, since \gls{LWR} \gls{UNF} is not
+the limiting factor for this transition scenario,
+increasing the breeding ratio does not play a significant
+role in the transition scenario, especially considering the technical difficulty
+in achieving a high breeding ratio.
 
 \begin{figure}[htbp!]
     \begin{center}
@@ -58,53 +71,100 @@ required for the transition. The \glspl{ASTRID} produce more plutonium, reducing
     \label{fig:br_uox}
 \end{figure}
 
+The differential impacts of varying the breeding ratios are
+shown in table \ref{tab:br_diff}. The differences were calculated
+using the following equation:
+
+\[ \epsilon = \frac{(x - x_{base})}{x_base} * 100 \]
+
+\begin{table}[h]
+	\centering
+        \caption{Breeding ratio impact on reprocessing requirements.}
+	\begin{tabular}{lrrrr}
+		\hline
+                & \multicolumn{4}{c}{\% Difference} \\
+		\textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+		\hline
+		Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
+		\hline
+	\end{tabular}
+	\label{tab:br_diff}
+\end{table}
+
 
 \subsection{Lifetime Extension of French \glspl{LWR}}\label{sec:life}
-Extending the lifetime of French \glspl{LWR} dramatically lowers the average
+Extending the lifetime of French \glspl{LWR} lowers the average
 monthly \gls{UOX} reprocessing demand, since the \gls{ASTRID} deployment becomes 
 delayed (shown in figure \ref{fig:pow_diff}). The plutonium demand is delayed,
  allowing the reprocessing plant more time to prepare plutonium for \gls{ASTRID} reactors.
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[height=0.25\textheight]{./images/sensitivity/pow_ratio.png}
+        \includegraphics[scale=0.7]{./images/sensitivity/pow_ratio.png}
     \end{center}
     \caption{The ratio of \glspl{ASTRID} to \glspl{LWR} in France demarcates 
     the transition period.}
     \label{fig:pow_diff}
 \end{figure}
 
- Increasing \gls{LWR} lifetimes also enables a less aggressive transition to 
- \glspl{ASTRID}. 
 Figure \ref{fig:ext_uox} shows the decrease in the average monthly
-\gls{UOX} reprocessing burden with increased \gls{LWR} lifetimes,
-which reduces to the current capacity of the La Hague site if all the
-French \glspl{LWR} extended their operation for 20 years.
-However, figure \ref{fig:ext_all} shows that lifetime extension has little
-effect on the average total monthly reprocessing demand, because
-the amount of plutonium in the \gls{ASTRID} used fuel remains the same.
-The initial increase is caused by the delay of \gls{ASTRID} deployment
-delaying the first \gls{ASTRID} \gls{UNF} reprocessing. The period of which
-\gls{ASTRID} \gls{UNF} is reprocessed decreases, which increases
-the average.
+\gls{UOX} reprocessing burden with increased \gls{LWR} lifetimes.
+This is balanced by extending the necessary duration of 
+\gls{LWR} \gls{UNF} reprocessing,
+so
+the total amount of \gls{LWR} \gls{UNF} reprocessed increases nonetheless.
+
+
+The differential impacts of varying the French \gls{LWR} lifetimes are
+shown in table \ref{tab:ext_diff}. The differences were calculated
+using the same equation used for the breeding ratio sensitivity study.
+
 
 \begin{figure}[htbp!]
-    \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/ext_uox_rep.png}
-    \end{center}
-    \caption{Increasing the lifetime of French \glspl{LWR} decreases the monthly
-    \gls{UOX} reprocessing demand.}
-    \label{fig:ext_uox}
+	\begin{center}
+		\includegraphics[scale=0.7]{./images/sensitivity/ext_uox_rep.png}
+	\end{center}
+	\caption{Increasing the lifetime of French \glspl{LWR} decreases the monthly
+		\gls{UOX} reprocessing demand, but increases the duration of \gls{LWR} \gls{UNF}
+		reprocessing, thereby increasing the total amount of \gls{LWR} \gls{UNF} reprocessed.}
+	\label{fig:ext_uox}
 \end{figure}
 
+Figure \ref{fig:ext_all} shows that lifetime extension has little
+effect on the \emph{average} monthly reprocessing demand, because
+the amount of plutonium in the \gls{ASTRID} used fuel remains the same.
+The delay of \gls{ASTRID} deployment simply provides more time for
+France to prepare the fuel. 
+Extended \gls{LWR} lifetimes delay transition, and provide France with
+time to accumulate \gls{LWR} \gls{UNF}. However, these 
+license extensions do not reduce
+the total reprocessing capacity required for transition.
+
 
 \begin{figure}[htbp!]
     \begin{center}
-        \includegraphics[scale=0.6]{./images/sensitivity/ext_tot_rep.png}
+        \includegraphics[scale=0.7]{./images/sensitivity/ext_tot_rep.png}
     \end{center}
     \caption{Increasing the lifetime of French \glspl{LWR} simply delays the
              reprocessing demand, and has little impact on the total 
      reprocessing capacity required.}
     \label{fig:ext_all}
 \end{figure}
+
+\begin{table}[h]
+	\centering
+        \caption{\gls{LWR} lifetime extension impact on reprocessing 
+        requirements.}
+	\begin{tabular}{lrrrr}
+		\hline
+		  & \multicolumn{4}{c}{\% Difference} \\
+		 \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+		\hline
+		Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+		\hline
+	\end{tabular}
+	\label{tab:ext_diff}
+\end{table}
 
