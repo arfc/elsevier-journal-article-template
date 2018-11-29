@@ -108,63 +108,51 @@ delayed (shown in figure \ref{fig:pow_diff}). The plutonium demand is delayed,
     \label{fig:pow_diff}
 \end{figure}
 
-Figure \ref{fig:ext_uox} shows the decrease in the average monthly
-\gls{UOX} reprocessing burden with increased \gls{LWR} lifetimes.
-This is balanced by extending the necessary duration of 
-\gls{LWR} \gls{UNF} reprocessing,
-so
-the total amount of \gls{LWR} \gls{UNF} reprocessed increases nonetheless.
 
+Figure \ref{fig:ext_fuel} shows the change in \gls{ASTRID} fuel loading with
+\gls{LWR} lifetime extension. The \gls{ASTRID} fuel loaded with plutonium
+from \gls{LWR} \gls{UNF} convey the corresponding \gls{LWR} \gls{UNF} reprocessing demand.
+The change in \gls{ASTRID} deployment alters \gls{ASTRID} fuel loading patterns,
+but does not increase the \gls{LWR} \gls{UNF} demand significantly.
 
-The differential impacts of varying the French \gls{LWR} lifetimes are
-shown in table \ref{tab:ext_diff}. The differences were calculated
-using the same equation used for the breeding ratio sensitivity study.
-
-
-\begin{figure}[htbp!]
-	\begin{center}
-		\includegraphics[scale=0.7]{./images/sensitivity/ext_uox_rep.png}
-	\end{center}
-	\caption{Increasing the lifetime of French \glspl{LWR} decreases the monthly
-		\gls{UOX} reprocessing demand, but increases the duration of \gls{LWR} \gls{UNF}
-		reprocessing, thereby increasing the total amount of \gls{LWR} \gls{UNF} reprocessed.}
-	\label{fig:ext_uox}
+\begin{figure}[!ht]
+	\centering
+	\subfloat{\includegraphics[width=.45\textwidth]{./images/sensitivity/base.png}}\quad
+	\subfloat{\includegraphics[width=.45\textwidth]{./images/sensitivity/5yr_ext.png}}\\
+	\subfloat{\includegraphics[width=.45\textwidth]{./images/sensitivity/10yr_ext.png}}\quad
+	\subfloat{\includegraphics[width=.45\textwidth]{./images/sensitivity/20yr_ext.png}}
+	\caption{\gls{ASTRID} fuel loading patters are altered by changes in \gls{ASTRID} deployment
+			 caused by the lifetime extension of \glspl{LWR}.}
+	\label{fig:ext_fuel}
 \end{figure}
 
-Figure \ref{fig:ext_all} shows that lifetime extension has little
-effect on the \emph{average} monthly reprocessing demand, because
-the amount of plutonium in the \gls{ASTRID} used fuel remains the same.
-The delay of \gls{ASTRID} deployment simply provides more time for
-France to prepare the fuel. 
-Extended \gls{LWR} lifetimes delay transition, and provide France with
-time to accumulate \gls{LWR} \gls{UNF}. However, these 
-license extensions do not reduce
-the total reprocessing capacity required for transition.
-
-
-\begin{figure}[htbp!]
-    \begin{center}
-        \includegraphics[scale=0.7]{./images/sensitivity/ext_tot_rep.png}
-    \end{center}
-    \caption{Increasing the lifetime of French \glspl{LWR} simply delays the
-             reprocessing demand, and has little impact on the total 
-     reprocessing capacity required.}
-    \label{fig:ext_all}
-\end{figure}
+The quantitative effects of
+\gls{LWR} lifetime extensions are shown in table \ref{tab:ext_met}.
+The differences were calculated using the same equation used for the
+breeding ratio study. Different metrics were studied for the lifetime
+extension study since there are less \gls{ASTRID} fuel produced due to
+the shortening of \gls{ASTRID} operations caused by \gls{LWR} lifetime
+extension. Therefore, it is not fair to compare the mass of total \gls{UNF} reprocessed,
+since less plutonium is extracted from \gls{UNF}. Instead, we compared the
+average reprocessing values and the total amount of \gls{LWR} \gls{UNF} reprocessed.
+There is not a significant change (less than $6\%$ increase )in the amount of \gls{LWR}
+\gls{UNF} reprocessed, but the delay in \gls{ASTRID} deployment
+dramatically reduces (up to $26\%$) the average reprocessing demand, since there is
+more time to prepare the plutonium for \gls{ASTRID} deployment.
 
 \begin{table}[h]
 	\centering
-        \caption{\gls{LWR} lifetime extension impact on reprocessing 
-        requirements.}
+	\caption{\gls{LWR} lifetime extension impact on reprocessing requirements.}
 	\begin{tabular}{lrrrr}
 		\hline
-		  & \multicolumn{4}{c}{\% Difference} \\
-		 \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+		& \multicolumn{4}{c}{\% Difference} \\
+		\textbf{\gls{LWR} lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
 		\hline
-		Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
-		\gls{LWR} \gls{UNF} reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
+		Total \gls{ASTRID} fuel produced & 0.0 & -3.5 & -9.3 & -17.2 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & 5.6 & 5.4 & 4.4 \\
+		Average \gls{LWR} \gls{UNF} reprocessing & 0.0 & 1.2 & -8.2 & -26.6 \\
+		Average \gls{UNF} reprocessing & 0.0 & 1.0 & -1.9 & -6.4 \\
 		\hline
 	\end{tabular}
-	\label{tab:ext_diff}
+	\label{tab:ext_met}
 \end{table}
-
