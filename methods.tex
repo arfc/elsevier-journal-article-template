@@ -84,7 +84,7 @@ for construction \cite{iaea_nuclear_2017}, the World Nuclear Association
 nuclear power in a global \cite{joskow_future_2012} and European context
 \cite{hatch_politics_2015}.  Existing projections extend to 2050.
 
-Figure \ref{tab:eu_deployment} lists the reactors that are currently  planned or
+Table \ref{tab:eu_deployment} lists the reactors that are currently  planned or
 under construction in the \gls{EU}. In the simulation, all  planned constructions are completed 
 without delay or failure and reach a lifetime of 60 years.  
 
@@ -95,7 +95,8 @@ without delay or failure and reach a lifetime of 60 years.
     \label{tab:eu_deployment}
     \begin{tabular}{ccccr}
         \hline
-        \textbf{Exp. Operational }&\textbf{Country} &\textbf{Reactor} & \textbf{Type} & \textbf{Gross \gls{MWe}}\\
+        \textbf{Expected}&\textbf{Nation} &\textbf{Reactor} & \textbf{Type} & \textbf{Gross}\\
+            \textbf{Operation}& & &  & \textbf{\gls{MWe}}\\
         \hline
         2018 & Slovakia  & Mochovce 3 & PWR & 440\\
         2018 & Slovakia & Mochovce 4 & PWR & 440 \\
@@ -442,7 +443,7 @@ is shut down. The specifications are defined in table \ref{tab:reactor-specs}
 which details the reactor specifications in this simulation. \gls{LWR} 
 specifications are modified linearly for varying power capacity.
 The \gls{ASTRID} design targets a 60 year lifetime, which this 
-simulation assumes for all \glspl{ASTRID} \cite{gauche_generation_2012}.`
+simulation assumes for all \glspl{ASTRID} \cite{gauche_generation_2012}.
 
 
 \begin{table}[h]
@@ -484,7 +485,7 @@ This work relied on reference \gls{LWR} \gls{UOX} and \gls{LWR} \gls{MOX}
 compositions retrieved from \gls{AFCI} analyses in Appendix C of
 \cite{piet_fuel_2006}.
 The \gls{LWR} \gls{UOX} depletion calculations were conducted using ORIGEN2
-with the \gls{PWR} one group cross sections provided with ORIGEN2. Meanwhile,
+with the \gls{PWR} one group cross sections provided by default. Meanwhile,
 the \gls{LWR} \gls{MOX} depletion calculations relied on WIMS8
 \cite{wims8_wims_1999} to provide accurate cross sections to ORIGEN. For this
 purpose, WIMS8 calculations used the 172-group, JEF2.2-based cross section
