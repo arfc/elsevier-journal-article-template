@@ -183,15 +183,16 @@ is listed in Table \ref{tab:eu_growth}.
 Using this categorization to drive facility deployment, the simulation captures 
 regional differences in reactor power capacity and \gls{UNF} production as a 
 function of time. Accordingly, figure \ref{fig:eu_pow} shows the resulting simulated 
-installed capacity in \gls{EU} nations.  Sudden capacity reductions seen in the 
+installed capacity in \gls{EU} nations.  Sudden capacity reductions seen near 2025 and in the 
 2040s result from end-of-license reactor retirements and nuclear phaseout plans 
-in nations such as Germany and Belgium.
+in nations such as Germany, Belgium and Sweden.
     
 \begin{figure}[htbp!]
     \begin{center}
         \includegraphics[scale=0.6]{./images/eu_future/power_plot.png}
     \end{center}
-    \caption{Installed nuclear capacity in the EU is distinguished by \texttt{Region}s in \Cyclus.}
+    \caption{Installed nuclear capacity in the EU is distinguished by \texttt{Region}s in \Cyclus.
+	    	 The large shift near 2025 is caused by total nuclear phaseout in Germany and Belgium.}
     \label{fig:eu_pow}
 \end{figure}
 
@@ -202,7 +203,8 @@ Figure \ref{fig:sfr_num} shows
 the French transition to \glspl{SFR} modeled in this simulation.
 Historically aggressive growth of nuclear in the 1980s leads to a substantial 
 shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new 
-\glspl{SFR}. The net capacity is kept constant at 66 GWe.
+\glspl{SFR}. The net capacity is kept constant at 64.7 GWe, which is the maximum predicted
+installed capacity in France.
 
 \begin{figure}[htbp!]
         \begin{center}
@@ -215,11 +217,13 @@ shutdown of nuclear in the 2040s, which, in the simulation, are replaced by new
 \end{figure}
 
 Figure \ref{fig:dep} shows the deployment required to support the transition in 
-figure \ref{fig:sfr_num}. France must build four reactors per year, on average, to 
-make up for the end-of-license decommissioning of power plants built in the 1980s and 1990s.  The second period of aggressive building occurs when the first generation of \glspl{SFR} decommission after 80 years. Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
+figure \ref{fig:sfr_num}. France must build 1.78 \glspl{ASTRID} per year, on average, to 
+make up for the end-of-license decommissioning of power plants built in the 1980s and 1990s. 
+The second period of aggressive building occurs when the first generation of \glspl{SFR} decommission
+after 60 years. Starting in 2040, France deploys 600-\gls{MWe} \glspl{SFR} to make up for 
 decommissioned French \gls{LWR} capacity. This results in an installed 
 \gls{SFR} 
-capacity of 66,000 \gls{MWe} by 2078 when the final \gls{LWR} is 
+capacity of 64.7 GWe by 2078 when the final \gls{LWR} is 
 decommissioned. 
 
 
@@ -430,17 +434,15 @@ Three major reactors are used in the simulation, \gls{PWR}, \gls{BWR}, and ASTRI
 For \glspl{LWR}, we used a linear core size model to capture
 varying reactor capacity. For example, a 
 1,200 \gls{MWe} PWR has $193*\frac{1,200}{1,000} = 232$ \gls{UOX} assemblies, each
-weighing 523.4 kg.
+weighing 446 kg.
 After each 18 month cycle, one-third of the 
 core (77 assemblies) discharges. Refueling
 is assumed to take two months to complete, during which the reactor
 is shut down. The specifications are defined in table \ref{tab:reactor-specs} 
 which details the reactor specifications in this simulation. \gls{LWR} 
 specifications are modified linearly for varying power capacity.
-The \gls{ASTRID} design targets a 60 year lifetime \cite{gauche_generation_2012}.
-We assume technology and material robustness improvements before deployment in 2040. 
-Accordingly, we optimistically assume an 80 year lifetime instead, reflecting 20 year 
-lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.```
+The \gls{ASTRID} design targets a 60 year lifetime, which this 
+simulation assumes for all \glspl{ASTRID} \cite{gauche_generation_2012}.`
 
 
 \begin{table}[h]
@@ -451,11 +453,11 @@ lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.```
         \textbf{Specification} & \textbf{\gls{PWR} \cite{sutharshan_ap1000tm_2011}} & \textbf{\gls{BWR} \cite{hinds_next-generation_2006}} & \textbf{\gls{SFR}} \cite{varaine_pre-conceptual_2012}\\
         \hline
                 Lifetime [y] \tablefootnote{The simulated reactor lifetime reaches the licensed lifetime unless 
-        the reactor is shut down prematurely.} & 60 & 60 & 80 \\
+        the reactor is shut down prematurely.} & 60 & 60 & 60 \\
                 Cycle Time [mos.]& 18 & 18 & 12\\ 
                 Refueling Outage [mos.]& 2 & 2  & 2\\
                 Rated Power [\gls{MWe}] & 1000 & 1000 & 600\\
-                Assembly mass [kg] & 523.4 & 180 & -- \\
+                Assembly mass [kg] & 446 & 180 & -- \\
                 Batch mass [kg] & -- & -- & 5,568\\
                 Discharge Burnup [GWd/tHM] & 51 & 51 & 105 \\
                 Assemblies per core \tablefootnote{Number of assemblies and corresponding \gls{LWR} core 
