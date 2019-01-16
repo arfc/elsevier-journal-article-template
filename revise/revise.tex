@@ -148,18 +148,19 @@
 \section*{Review General Response}
 We would like to thank the reviewers for their detailed assessment of
 this paper. Your comments have resulted in changes which certainly improved the 
-paper.
+paper. We have re-run the many simulations in this paper according to the 
+suggestions in this work and the results have been updated.
 
 
 \section*{Reviewer 1}
 \begin{questions}
 
         %---------------------------------------------------------------------
-        \question Abstract. The abstract states that "These simulations 
+        \question Abstract. The abstract states that ``These simulations 
         demonstrate that France can avoid deployment of additional LWRs by 
         accepting UNF from other EU nations, that lifetime extensions delay 
         time-to-transition, and improved breeding ratios are not particularly 
-        impactful." These conclusions aren't highlighted or discussed properly 
+        impactful.'' These conclusions aren't highlighted or discussed properly 
         in the section of the report which presents the results and neither are 
         they highlighted in the conclusions.  
 
@@ -167,40 +168,45 @@ paper.
         	Thank you for your valuable input. We performed an additional
         	analysis to find quantitative values representing the effect
         	of the change in breeding ratio and LWR lifetime extension.
+                Additionally, re-running the calculations with 
                 This quantitative assessment of the differential was described 
                 via two new tables in the results section:
-        	 
-        	 \begin{tabular}{lrrrr}
-        	 	\hline
-        	 	  & \multicolumn{4}{c}{\% Difference} \\
-                         \textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
-        	 	\hline
-        	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
-        	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
-        	 	\hline
-        	 \end{tabular}
-        	 
-        	 \begin{tabular}{lrrrr}
-        	 	\hline
-        	 	& \multicolumn{4}{c}{\% Difference} \\
-                         \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
-        	 	\hline
-        	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
-        	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
-        	 	\hline
-        	 \end{tabular}
+
+
+	\begin{tabular}{lrrrr}
+		\hline
+                & \multicolumn{4}{c}{\% Difference} \\
+		\textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+		\hline
+		Total reprocessing demand & 0.0 & -5.3 & -7.8 & -10.3 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & -4.8 & -7.2 & -9.6 \\
+		\hline
+	\end{tabular}
+
+
+	\begin{tabular}{lrrrr}
+		\hline
+		& \multicolumn{4}{c}{\% Difference} \\
+		\textbf{\gls{LWR} lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+		\hline
+		Total \gls{ASTRID} fuel produced & 0.0 & -3.9 & -8.0 & -16.3 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & -0.7 & -0.7 & -0.7 \\
+		Average \gls{LWR} \gls{UNF} reprocessed & 0.0 & -16.0 & -25.7 & -39.8 \\
+		Average \gls{UNF} reprocessed & 0.0 & -2.3 & -4.2 & -8.3 \\
+		\hline
+	\end{tabular}
 
                  These were additionally noted in the conclusions with the 
                  following text: 
                  
-                 The sensitivity study explored the effect of increased 
-                 \gls{SFR} breeding ratio and existing \gls{LWR} lifetime 
-                 extension. Increasing the breeding ratio reduced the amount of 
-                 \gls{LWR} \gls{UNF} required to transition up to $9.7\%$ and 
-                 decreased the total reprocessing demand up to $3.4\%$.  
-                 Increasing the lifetime of existing \glspl{LWR} was not 
-                 significant in reducing reprocessing demand, but provided the 
-                 benefit of delayed transition.
+
+The sensitivity study explored the effect of increased \gls{SFR} breeding
+ratio and existing \gls{LWR} lifetime extension. Increasing the breeding
+ratio reduced the amount of \gls{LWR} \gls{UNF} required to transition
+up to $9.6\%$ and decreased the total reprocessing demand up to $10.3\%$.
+Increasing the lifetime of existing \glspl{LWR} was not significant
+in reducing the \gls{LWR} \gls{UNF} required to transition, but provided the benefit of
+decreased average reprocessing demand due to delayed \gls{ASTRID} transition.
 
         \end{solution}
 
@@ -234,28 +240,28 @@ paper.
         simulation and could impact the results. I suspect that the same may 
         also apply to the BWR UOX fuel. 
         \begin{solution}
-                Thank you for identifying this issue. You are correct. This was a clerical error. 
-                We double checked the source of the fuel compositions to identify the
-                initial enrichment used for generating the 51Gwd/MTHM burnup
-                recipe, and the fresh fuel composition indeed had a higher
-                enrichment, $4.29 \%$, than was assumed in the simulation 
-                default parameters. Thank you again for your keen observation.
-                We have made the changes in the paper and have re-run the 
-                simulation with new input files. The only impacted parameter
-                relevant to the study was the tails inventory and required 
-                natural uranium feed. The simulated tails inventory
-                and natural uranium both increased substantially ($\approx 
-                24\%$).
+                Thank you for identifying this issue. You are correct. This was 
+                a clerical error.  We double checked the source of the fuel 
+                compositions to identify the initial enrichment used for 
+                generating the 51Gwd/MTHM burnup recipe, and the fresh fuel 
+                composition indeed had a higher enrichment, $4.29 \%$, than was 
+                assumed in the simulation default parameters. Thank you again 
+                for your keen observation.  We have made the changes in the 
+                paper and have re-run the simulation with new input files 
+                correcting this error. The primary impacted parameter relevant 
+                to the study was the tails inventory and required natural 
+                uranium feed. The simulated tails inventory and natural uranium 
+                both increased substantially ($\approx 24\%$).
         \end{solution}
 
         %---------------------------------------------------------------------
         \question Table 5 isn't referred to in the text.
 
         \begin{solution}
-                There was a table with the same label in \LaTeX. Accordingly, 
-                the reference in the text  to this table was misattributed. The 
-                error is fixed and all tables are referred to in the text. 
-                Thank you for catching this!
+                There was a table accidentally possessing the same label in 
+                \LaTeX. Accordingly, the reference in the text  to this table 
+                was misattributed. The error is fixed and all tables are 
+                referred to in the text.  Thank you for catching this!
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -302,15 +308,18 @@ paper.
         study.  
 
         \begin{solution}
-                We agree. We have added this sentence in the conclusion:
-                
-                The sensitivity study explored the effect of increased SFR breeding
-                ratio and existing LWR lifetime extension. Increasing the breeding
-                ratio reduced the amount of LWR UNF required to transition
-                up to $9.7\%$ and decreased the total reprocessing demand up to $3.4\%$.
-                Increasing the lifetime of existing LWR was not significant
-                in reducing reprocessing demand, but provided the benefit of delayed
-                transition.
+                We agree. We have made significant additions to the conclusion 
+                in this regard including this paragraph:
+
+
+The sensitivity study explored the effect of increased \gls{SFR} breeding
+ratio and existing \gls{LWR} lifetime extension. Increasing the breeding
+ratio reduced the amount of \gls{LWR} \gls{UNF} required to transition
+up to $9.6\%$ and decreased the total reprocessing demand up to $10.3\%$.
+Increasing the lifetime of existing \glspl{LWR} was not significant
+in reducing the \gls{LWR} \gls{UNF} required to transition, but provided the benefit of
+decreased average reprocessing demand due to delayed \gls{ASTRID} transition.
+
         \end{solution}
 
 
@@ -330,7 +339,7 @@ paper.
 
 
         \begin{solution}
-		Thank you for this thoughtful assessment.
+		Thank you for this assessment.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -347,18 +356,21 @@ paper.
                 additional simulation regarding just france, and have now added 
                 the following figure, with some dicussion, as below:
 
-                First, we confirmed that France does not have enough \gls{LWR} 
-                \gls{UNF} to transition into a fully \gls{SFR} fleet. As shown 
-                in figure (below). France cannot meet the 
-                \gls{ASTRID} fuel demand without receiving \gls{LWR} \gls{UNF} 
-                from other \gls{EU} nations. France is able to fuel some of its 
-                \glspl{ASTRID} and breed more plutonium, but cannot meet the 
-                fuel demand of all \glspl{ASTRID} with this aggressive 
-                deployment scheme.  
+
+
+First, we confirmed that France does not have enough
+\gls{LWR} \gls{UNF} to transition into a fully \gls{SFR}
+fleet. As shown in figure \ref{fig:only_france}, France
+cannot meet the \gls{ASTRID} fuel demand without receiving
+\gls{LWR} \gls{UNF} from other \gls{EU} nations. France
+is able to fuel some of its \glspl{ASTRID} and breed more
+plutonium, but cannot meet the fuel demand of
+all \glspl{ASTRID} with this aggressive deployment scheme.
+
 
 		\includegraphics{../images/french-transition/france_only_compare.png}
 
-	        Caption: \gls{ASTRID} fuel demand compared with fuel supply from only
+                Caption: \gls{ASTRID} fuel demand compared with fuel supply from only
 			 France in the simulation. The lack of initial \gls{ASTRID} fuel
 			 is caused by the lack of \gls{LWR} \gls{UNF} to reprocess. The
 			 initial shortage then causes a decrease in plutonium bred by
@@ -422,7 +434,7 @@ paper.
                 
                 The \gls{LWR} \gls{UOX} depletion calculations were conducted 
                 using ORIGEN2 with the \gls{PWR} one group cross sections 
-                provided with ORIGEN2. Meanwhile, the \gls{LWR} \gls{MOX} 
+                provided by default. Meanwhile, the \gls{LWR} \gls{MOX} 
                 depletion calculations relied on WIMS8 \cite{wims8_wims_1999} 
                 to provide accurate cross sections to ORIGEN. For this purpose, 
                 WIMS8 calculations used the 172-group, JEF2.2-based cross 
@@ -462,59 +474,43 @@ paper.
         	of the change in breeding ratio and LWR lifetime extension.
                 This quantitative assessment of the differential was described 
                 via two new tables in the results section:
-        	 
-        	 \begin{tabular}{lrrrr}
-        	 	\hline
-        	 	  & \multicolumn{4}{c}{\% Difference} \\
-                         \textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
-        	 	\hline
-        	 	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
-        	 	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
-        	 	\hline
-        	 \end{tabular}
-        	 
-        	 \begin{tabular}{lrrrr}
-        	 	\hline
-        	 	& \multicolumn{4}{c}{\% Difference} \\
-                         \textbf{LWR lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
-        	 	\hline
-        	 	Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
-        	 	LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
-        	 	\hline
-        	 \end{tabular}
+
+
+	\begin{tabular}{lrrrr}
+		\hline
+                & \multicolumn{4}{c}{\% Difference} \\
+		\textbf{Breeding Ratio $\longrightarrow$}& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
+		\hline
+		Total reprocessing demand & 0.0 & -5.3 & -7.8 & -10.3 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & -4.8 & -7.2 & -9.6 \\
+		\hline
+	\end{tabular}
+
+
+	\begin{tabular}{lrrrr}
+		\hline
+		& \multicolumn{4}{c}{\% Difference} \\
+		\textbf{\gls{LWR} lifetime extension $\longrightarrow$}& \textbf{0 years}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
+		\hline
+		Total \gls{ASTRID} fuel produced & 0.0 & -3.9 & -8.0 & -16.3 \\
+		\gls{LWR} \gls{UNF} reprocessed & 0.0  & -0.7 & -0.7 & -0.7 \\
+		Average \gls{LWR} \gls{UNF} reprocessed & 0.0 & -16.0 & -25.7 & -39.8 \\
+		Average \gls{UNF} reprocessed & 0.0 & -2.3 & -4.2 & -8.3 \\
+		\hline
+	\end{tabular}
 
                  These were additionally noted in the conclusions with the 
                  following text: 
                  
-                 The sensitivity study explored the effect of increased 
-                 \gls{SFR} breeding ratio and existing \gls{LWR} lifetime 
-                 extension. Increasing the breeding ratio reduced the amount of 
-                 \gls{LWR} \gls{UNF} required to transition up to $9.7\%$ and 
-                 decreased the total reprocessing demand up to $3.4\%$.  
-                 Increasing the lifetime of existing \glspl{LWR} was not 
-                 significant in reducing reprocessing demand, but provided the 
-                 benefit of delayed transition.
-                
-                
-                \begin{tabular}{lrrrr}
-                	\hline
-                	\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
-                	& \textbf{1.08}& \textbf{1.11} & \textbf{1.15} & \textbf{1.18} \\
-                	\hline
-                	Total reprocessing demand & 0.0 & -1.8 & -2.6 & -3.4 \\ 
-                	LWR UNF reprocessed & 0.0  & -4.9 & -8.0 & -9.7 \\
-                	\hline
-                \end{tabular}
-                
-                	\begin{tabular}{lrrrr}
-                		\hline
-                		\multirow{2}{*}{\textbf{Parameter}} & \multicolumn{4}{c}{\% Difference} \\
-                		& \textbf{base}& \textbf{5 years} & \textbf{10 years} & \textbf{20 years} \\
-                		\hline
-                		Total reprocessing demand & 0.0 & -5.9 & -3.3 & 3.1 \\
-                		LWR UNF reprocessed & 0.0  & 4.2 & 8.6 & 17.8 \\
-                		\hline
-                	\end{tabular}
+
+The sensitivity study explored the effect of increased \gls{SFR} breeding
+ratio and existing \gls{LWR} lifetime extension. Increasing the breeding
+ratio reduced the amount of \gls{LWR} \gls{UNF} required to transition
+up to $9.6\%$ and decreased the total reprocessing demand up to $10.3\%$.
+Increasing the lifetime of existing \glspl{LWR} was not significant
+in reducing the \gls{LWR} \gls{UNF} required to transition, but provided the benefit of
+decreased average reprocessing demand due to delayed \gls{ASTRID} transition.
+
                 
         \end{solution}
 
@@ -529,11 +525,11 @@ paper.
 
         \begin{solution}
                 We have changed the sentence 
-                "The scenario specifications defining the simulations
-                presented in this work are listed in table 3."
+                ``The scenario specifications defining the simulations
+                presented in this work are listed in table 3.''
                 to
-                "Table 3 lists the scenario specifications defining the
-                simulations presented in this work."
+                ``Table 3 lists the scenario specifications defining the
+                simulations presented in this work.''
         \end{solution}
 
 
@@ -548,23 +544,16 @@ paper.
 
         %---------------------------------------------------------------------
         \question There's no explanation for why ASTRID reactors would last 80 
-        years
+        years.
 
         \begin{solution}
-                The ASTRID design target is 60 years \cite{gauche_generation_2012},
-                but we assumed a lifetime
-                extension of 20 years, considering that most French nuclear reactors
-                have their lifetimes extended. We assume that technological
-                advances in materials and design will allow 80-year lifetimes
-                for ASTRID reactors. We have added the following text to the 
-                paper:
-
-
-The \gls{ASTRID} design targets a 60 year lifetime \cite{gauche_generation_2012}.
-We assume technology and material robustness improvements before deployment in 2040.
-Accordingly, we optimistically assume an 80 year lifetime instead, reflecting 20 year
-lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.
-
+                Quite so. The ASTRID design target is 60 years 
+                \cite{gauche_generation_2012}, but our original simulations assumed a lifetime
+                extension of 20 years. Due to your comment, we have 
+                reconsidered this assumption and have re-run the simulations 
+                with 60 year lifetimes instead. The impact was as one would 
+                expect. We additionally included this lifetime in the 
+                sensitivity analysis.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -583,12 +572,12 @@ lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.
                 Thank you for your input. Our intention, reflected in our 
                 simulations, was to have a 72-month
                 cooling time for LWR UNF, and a 36-month cooling time for SFR UNF.
-                This is now reflected and clarified in the revised version of
+                This is now reflected and the text is clarified in the revised version of
                 this paper everywhere these durations are mentioned.
         \end{solution}
 
         %---------------------------------------------------------------------
-        \question page 16, line 17, duplicate "recipe"
+        \question page 16, line 17, duplicate ``recipe''
         \begin{solution}
                 Thank you for your input. This error is fixed.
         \end{solution}
@@ -679,11 +668,11 @@ lifetime extensions for each \gls{ASTRID} reactor in 2100 and beyond.
                 
                 If France receives LWR UNF from all EU nations,
                 except Sweden and Finland, due to their concrete waste management plan,
-                it will have a surplus of $30,648$ MTHM of LWR UNF. This
+                it will have a surplus of $20,516$ MTHM of LWR UNF. This
                 inventory can be leveraged to increase French nuclear power capacity as
                 the transition takes place. However, pragmatic limitations such
                 as new reactor construction, reprocessing throughput, and
-                political / economical concerns remain. 
+                political concerns remain. 
                 
         \end{solution}
 
