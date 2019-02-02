@@ -157,6 +157,31 @@ within its dynamic resource exchange algorithm \cite{gidden_methodology_2016}.
 	\label{fig:fuel}
 \end{figure}
 
+Figure \ref{fig:avg_tot_rep} shows the average monthly reprocessing demand
+and total reprocessing demand for each timestep. The average monthly reprocessing
+demand grows steeply with the deployment of \glspl{ASTRID}, and later decreases
+when \gls{LWR} \gls{UNF} is no longer reprocessed. 
+The average monthly reprocessing demand is calculated for each timestep $i$
+with equation \eqref{eqn:avg_rep}. Timestep 600 is the year 2020, when reprocessing
+begins for \gls{ASTRID} fuel.
+
+\begin{equation}
+\label{eqn:avg_rep}
+\overline{\dot{m}}_i = \frac{\text{Total UNF reprocessed up until timestep i}}{\text{i - 600}}
+\end{equation}
+
+
+\begin{figure}[htbp!]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{./images/french-transition/avg_tot_rep.png}
+	\end{center}
+	\caption{Average monthly reprocessing demand and total reprocessing demand are plotted
+			 for each timestep.}
+	\label{fig:avg_tot_rep}
+\end{figure}
+
+
+
 Figure \ref{fig:pu_no_cum} shows the separated plutonium discharge per 
 month from the reprocessing plant. The plutonium outflux does not precisely 
 follow the fuel demand because \Cyclus agents have material buffers that 
@@ -167,17 +192,17 @@ reprocessing demand for the first aggressive deployment of \glspl{SFR}.
 The plutonium from reprocessing legacy fuel is a flat rectangle because the 
 reprocessing throughput was set to 183.2 $\frac{\gls{MTHM}}{month}$ to 
 avoid reprocessing all the legacy in one timestep.
- 
 
 \begin{figure}[htbp!]
 	\begin{center}
 		\includegraphics[scale=0.7]{./images/french-transition/pu.png}
 	\end{center}
 	\caption{The separated plutonium discharge from the reprocessing plant 
-        in $\frac{\mbox{MTHM}}{\mbox{month}}$. The plutonium from \gls{LWR} \gls{UNF}
+        in $\frac{\mbox{Tonne Pu}}{\mbox{month}}$. The plutonium from \gls{LWR} \gls{UNF}
         is created after the demand is gone due to material buffers in \Cyclus.}
 	\label{fig:pu_no_cum}
 \end{figure}
+
 
 \begin{table}[h]
 	\centering
