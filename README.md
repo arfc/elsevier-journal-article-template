@@ -2,7 +2,7 @@
 
 This repository contains a template for journal
 articles published by Elsevier. This template is
-based on the paper ``Synergistic Spent Nuclear Fuel
+based on the paper "Synergistic Spent Nuclear Fuel
 Dynamics Within the European Union" by Bae et al.
 
 # Outline
