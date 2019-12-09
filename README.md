@@ -1,9 +1,11 @@
 # journal-article-template
 
 This repository contains a template for journal
-articles published by Elsevier. This template is
-based on the paper "Synergistic Spent Nuclear Fuel
-Dynamics Within the European Union" by Bae et al.
+articles published by Elsevier. This template
+repository is largely derived from the github
+repository for the paper "Synergistic Spent Nuclear
+Fuel Dynamics Within the European Union" by Bae et
+al.
 
 # Outline
 The `base` directory should contain all TeX files for
