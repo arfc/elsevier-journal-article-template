@@ -1,0 +1,23 @@
+\section{Methodology}
+This is the methodology section.
+
+\pagebreak
+\subsection{Subsection}
+
+\begin{figure}[h]
+        \centering
+\begin{tikzpicture}[node distance=1.5cm]
+\node (start) [object] {Start};
+\node (step1) [process, below of=start] {Step 1};
+\node (intermediate) [object, below of=step1] {Intermediate};
+\node (step2) [process, below of=intermediate] {Step 2};
+\node (end) [object, below of=step2]{End};
+
+\draw [arrow] (start) -- (step1); 
+\draw [arrow] (step1) -- (intermediate);
+\draw [arrow] (intermediate) -- (step2); 
+\draw [arrow] (step2) -- (end);
+\end{tikzpicture}
+\caption{A caption for the flowchart.}
+\label{fig:comp}
+\end{figure}
