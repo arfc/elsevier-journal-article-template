@@ -1,4 +1,4 @@
-manuscript = europe_nuclear_paper
+manuscript = main
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -file-line-error
 
