@@ -6,7 +6,8 @@ articles published by Elsevier. This template
 repository is largely derived from the github
 repository for the paper "Synergistic Spent Nuclear
 Fuel Dynamics Within the European Union" by Bae et
-al.
+al., and initialized from that repository to preserve
+the original git and contribution histories.
 
 # Outline
 The `base` directory should contain all TeX files for
