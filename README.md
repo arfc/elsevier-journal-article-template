@@ -10,7 +10,7 @@ al., and initialized from that repository to preserve
 the original git and contribution histories.
 
 # Outline
-The `base` directory should contain all TeX files for
+The top-level directory should contain all TeX files for
 the journal article itself.
 
 The `graph-abs` directory holds all files for the
@@ -29,4 +29,4 @@ file.
 
 # To compile
 Run `make` after making appropriate edits to the
-`main.tex` file.
+`main.tex` file and adding content to other tex files as needed.

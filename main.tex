@@ -8,7 +8,7 @@
 \modulolinenumbers[5]
 
 %% Journal name here
-\journal{Progress in Nuclear Energy}
+\journal{FIXME: The Journal Title Goes Here}
 
 %% `Elsevier LaTeX' style
 \bibliographystyle{elsarticle-num}
@@ -22,23 +22,15 @@
 \usepackage{amsmath}
 \usepackage{subfig}
 
-%\usepackage[demo]{graphicx}
-%\usepackage{caption}
-%\usepackage{subcaption}
-
 \usepackage{booktabs}
 \usepackage{threeparttable, tablefootnote}
 
 \usepackage{tabularx}
-\newcolumntype{b}{>{\hsize=1.0\hsize}X}
-\newcolumntype{s}{>{\hsize=.5\hsize}X}
-\newcolumntype{m}{>{\hsize=.75\hsize}X}
-\newcolumntype{x}{>{\hsize=.25\hsize}X}
 
 %% Special typesetting for Cyclus
 \newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
 \newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
-\graphicspath{ {images/} }
+\graphicspath{images/}
 
 % tikz %
 \usepackage{tikz}
@@ -61,22 +53,23 @@
 
 \begin{document}
 \begin{frontmatter}
-\title{A Simple, Concise Article Title}
+\title{FIXME: The Title Goes Here}
 
-\date{}                     %% if you don't need date to appear
+%\date{}                     % uncomment if you don't need date to appear
 
-%% Authors
+% Authors
 \input{authors}
 
 % Institutes of the authors
 \input{institutions}
 
 \begin{keyword}
-nuclear fuel cycle \sep
-multiphysics \sep
-transition \sep
-simulation \sep 
-microreactor 
+FIXME \sep
+key words \sep
+go here \sep
+like: \sep 
+simulation \sep
+spent nuclear fuel 
 \end{keyword}
 
 \input{abstract}
@@ -94,7 +87,9 @@ microreactor
 
 \bibliography{bibliography}
 
-\pagebreak
-\input{appendix}
+% Prof. Huff discourages appendices in journal articles.
+% But, if you must, include one like so:
+%\pagebreak
+%\input{appendix}
 
 \end{document}

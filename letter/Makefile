@@ -33,6 +33,6 @@ realclean: clean
 	convert $< $@
 
 zip:
-	zip paper.zip *.tex *.eps *.bib
+	zip $(manuscript).zip *.tex *.eps *.bib
 
 .PHONY: all clean
