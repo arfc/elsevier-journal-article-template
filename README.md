@@ -28,7 +28,8 @@ of revisions should be covered in a separate TeX
 file.
 
 # To review
-The ``elsarticle`` format comes with convenient options for viewing.
+The ``elsarticle`` format supports convenient options for viewing.
+
 To view the article in a "review" format, modify the first line of the
 ``main.tex`` file so that it reads
 
