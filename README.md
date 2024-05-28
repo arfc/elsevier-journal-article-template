@@ -1,4 +1,4 @@
-# journal-article-template
+# elsevier-journal-article-template
 This repository contains a template for journal
 articles published by Elsevier. This template
 repository is largely derived from the github
